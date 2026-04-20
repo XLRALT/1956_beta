@@ -3134,29 +3134,6 @@ country_event = {
 	}
 }
 
-############################################## SOKOL DECISION
-
-country_event = {
-	id = CZE.403
-	title = CZE.403.t
-	desc = CZE.403.d
-	picture = GFX_CZKE_sokol_report
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = CZE.403.a
-		ai_chance = { factor = 0.9 }	
-		add_ideas = CZE_sokol_movement_1
-	}
-
-	option = {
-		name = CZE.403.b
-		ai_chance = { factor = 0.1 }
-		add_ideas = CZE_sokol_movement_2
-	}
-}
-
 ############################################## RED UNIONS DECISION
 
 country_event = {
@@ -3873,8 +3850,7 @@ country_event = {
 				remove_ideas = CZE_military_intelligence_service_idea
 				remove_ideas = CZE_vonapo20_idea
 				remove_ideas = CZE_minority_mobilization_plan
-				remove_ideas = CZE_sokol_movement_1
-				remove_ideas = CZE_sokol_movement_2
+				remove_ideas = CZE_sokol_movement_ns
 				remove_ideas = CZE_internationalism
 				remove_ideas = CZE_state_defense_law_idea
 				remove_ideas = CZE_press_law_idea
@@ -3953,8 +3929,7 @@ country_event = {
 				remove_ideas = CZE_military_intelligence_service_idea
 				remove_ideas = CZE_vonapo20_idea
 				remove_ideas = CZE_minority_mobilization_plan
-				remove_ideas = CZE_sokol_movement_1
-				remove_ideas = CZE_sokol_movement_2
+				remove_ideas = CZE_sokol_movement_ns
 				remove_ideas = CZE_internationalism
 				remove_ideas = CZE_state_defense_law_idea
 				remove_ideas = CZE_press_law_idea
@@ -4107,8 +4082,7 @@ country_event = {
 			remove_ideas = CZE_vonapo20_idea
 			remove_ideas = CZE_military_intelligence_service_idea
 			remove_ideas = CZE_minority_mobilization_plan
-			remove_ideas = CZE_sokol_movement_1
-			remove_ideas = CZE_sokol_movement_2
+			remove_ideas = CZE_sokol_movement_ns
 			remove_ideas = CZE_internationalism
 			remove_ideas = CZE_state_defense_law_idea
 			remove_ideas = CZE_press_law_idea

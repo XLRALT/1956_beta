@@ -1803,7 +1803,7 @@ ideas = {
 
 		############################## POLITICS
 
-		CZE_sokol_movement = {
+		CZE_sokol_movement_ns = {
 
 			allowed = { always = no	}
 
@@ -1817,9 +1817,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = 0.05
-				political_power_gain = 0.1
-				conscription = 0.005
+				stability_factor = 0.03
+				political_power_factor = 0.05
+				conscription = 0.002
 			}
 		}
 

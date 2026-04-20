@@ -7,7 +7,7 @@ CZE_the_second_czechoslovak_republic = {
 	visible = {
 		always = yes
 	}
-	priority = 50
+	priority = 10
 }
 
 CZE_bunkers = {
@@ -20,5 +20,20 @@ CZE_bunkers = {
 
 	visible = {
 		has_completed_focus = CZE_R56_allocate_funds_to_rop
+	}
+}
+
+CZE_minority_management = {
+	icon = GFX_decision_category_generic_mountain_fortification
+	priority = 21
+	visible_when_empty = yes
+
+	scripted_gui = CZE_internal_woes_decision_ui
+
+	allowed = {
+		original_tag = CZE
+	}
+
+	visible = {
 	}
 }

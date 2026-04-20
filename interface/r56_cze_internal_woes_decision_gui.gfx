@@ -1,0 +1,27 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_flag_SDT"
+		texturefile = "gfx/flags/SDT_fascism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_flag_SLO"
+		texturefile = "gfx/flags/SLO_fascism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_flag_HUN"
+		texturefile = "gfx/flags/HUN_neutrality.dds"
+	}
+
+	spriteType = {
+		name = "GFX_flag_RUT"
+		texturefile = "gfx/flags/RUT_democratic.dds"
+	}
+
+	spriteType = {
+		name = "GFX_flag_ZAO"
+		texturefile = "gfx/flags/ZAO_neutrality.dds"
+	}
+}

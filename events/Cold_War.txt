@@ -185,8 +185,7 @@ country_event = {
         if = {
             limit = {
                 NOT = {
-                    has_idea = CZE_sokol_movement_1
-                    has_idea = CZE_sokol_movement_2
+                    has_idea = CZE_sokol_movement_ns
                 }
             }
             complete_national_focus = CZE_sokol_movement

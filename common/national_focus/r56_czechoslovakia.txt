@@ -5043,16 +5043,7 @@ focus_tree = {
 		ai_will_do = { factor = 0.7 }
 
 		completion_reward = {
-			country_event = { id = CZE.403 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_sokol_movement_tooltip_reward
-			effect_tooltip = {
-				add_ideas = CZE_sokol_movement_1
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_ideas = CZE_sokol_movement_2
-			}
+			add_ideas = CZE_sokol_movement_ns
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}

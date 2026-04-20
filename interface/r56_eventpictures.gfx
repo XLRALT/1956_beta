@@ -1392,11 +1392,6 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_CZKE_sokol_report" ####### EVENT CZKE.403
-		texturefile = "gfx/event_pictures/CZE/CZKE_sokol_report.dds"
-	}
-
-	spriteType = {
 		name = "GFX_red_unions_report" ####### EVENT CZKE.404
 		texturefile = "gfx/event_pictures/CZE/CZKE_red_unions_report.dds"
 	}

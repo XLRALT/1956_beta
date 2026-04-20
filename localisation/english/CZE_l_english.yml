@@ -684,15 +684,8 @@
  CZE.402.a:0 "Open Masaryk Military Hospital."
  CZE_sokol_movement:0 "Support Sokol Movement"
  CZE_sokol_movement_desc:0 "The Sokol movement (from the Slavic word for falcon) is an all-age gymnastics organization initially founded in Prague in 1862 by Miroslav Tyrš and Jindřich Fügner. It was based upon the principle of "a strong mind in a sound body" but was also crucial for the revival of Czech national identity."
- CZE_sokol_movement_tooltip_reward:0 "\n §YStability§! OR §YManpower§! related §YNational Idea§!."
- CZE.403.t:0 "History of the Sokol Movement"
- CZE.403.d:0 "The Sokol movement (from the Slavic word for falcon) is an all-age gymnastics organization initially founded in Prague in 1862 by Miroslav Tyrš and Jindřich Fügner. It was based upon the principle of "a strong mind in a sound body" but was also crucial for the revival of Czech national identity.\n\nThe patriotism of Sokol was to be seen from the very beginning. Sokols made trips in national costumes (Kroj), were present at national ceremonies and public exercises, and generally encouraged people to show patriotism.\n\nThe biggest event organized by Sokol is the "všesokolský slet" (meeting of all Sokol members) that takes place once every six years. These meetings originated in June 1882, and the first "slet" counted more than 700 sportspeople.\n\nSokol flourished during the interwar period, and during this time, the membership grew to over a million. Influential politicians, including the first two presidents of the Czechoslovak Republic, Masaryk and Beneš, were members of Sokol.\n\nIn this period, nationalism increased, and ethnic discrimination or even anti-semitism was nothing exceptional. Sokol members also actively participated in the "Czechization" of ethnic Germans in the border regions and German language islands and generally shared the responsibility with other Czech and German associations for the resulting national hatred between Czechs and Germans in the interwar period.\n\nSokol was almost liquidated three times and was banned by all totalitarian regimes in Czechoslovak history. Firstly, Sokol was banned in 1915 during World War I. Secondly, it happened during the Nazi occupation of Czech lands. Finally, Sokol was banned by the communists after 1948. In 1968, struggles for Sokol revival were killed by normalization, and so after 42 years of hibernation, Sokol was restored for the fourth time in 1990."
- CZE.403.a:0 "Encourage patriotism."
- CZE.403.b:0 "Support physical exercises."
- CZE_sokol_movement_1:0 "Sokol Movement"
- CZE_sokol_movement_1_desc:0 "'Mens sana in corpore sano'"
- CZE_sokol_movement_2:0 "Sokol Movement"
- CZE_sokol_movement_2_desc:0 "'Mens sana in corpore sano'"
+ CZE_sokol_movement_ns:0 "Sokol Movement"
+ CZE_sokol_movement_ns_desc:0 "'Mens sana in corpore sano'"
  CZE_empower_internationalism:0 "Galvanize Red Unions"
  CZE_empower_internationalism_desc:0 "KSČ was the Czechoslovak section of the Communist International, and the so-called Red Unions were established in 1922. As of 1928, the party was the second-largest section of the International, with an estimated membership of around 138,000."
  CZE.404.t:0 "Profintern in Czechoslovakia"
@@ -1151,6 +1144,14 @@ CZE_sdp_radicalization:0 "SdP Radicalization Crisis"
 CZE_sdp_radicalization_desc:0 "German minority in Sudetenland is actively pursuing closer ties with [GER.getNameDef]. They demand higher autonomy within the state and threaten to increase the resistance against the state authorities in their territories."
 
 end_of_czechoslovakia:0 "Czechoslovakia has met its fate"
+
+#INTERNAL WOES
+ CZE_minority_management: "Internal Woes"
+ CZE_internal_woes_sdt_val_text: "[?CZE_iw_sdt_val]"
+ CZE_internal_woes_slo_val_text: "[?CZE_iw_slo_val]"
+ CZE_internal_woes_hun_val_text: "[?CZE_iw_hun_val]"
+ CZE_internal_woes_rut_val_text: "[?CZE_iw_rut_val]"
+ CZE_internal_woes_zao_val_text: "[?CZE_iw_zao_val]"
 
 # NEW TOOLTIPS/MODIFERS
 

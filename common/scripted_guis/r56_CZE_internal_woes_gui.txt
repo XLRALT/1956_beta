@@ -1,0 +1,17 @@
+scripted_gui = {
+	CZE_internal_woes_decision_ui = {
+
+		context_type = decision_category
+
+		window_name = "CZE_internal_woes_decision_ui_window"
+
+		properties = {
+		}
+
+		triggers = {
+		}
+
+		effects = {
+		}
+	}
+}
