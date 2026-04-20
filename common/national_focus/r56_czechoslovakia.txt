@@ -95,6 +95,37 @@ focus_tree = {
 	}
 
 	focus = {
+		id = CZE_levy_liechtenstein_properties
+		icon = GFX_goal_generic_befriend_liechtenstein
+
+		prerequisite = { focus = CZE_R56_devalue_the_koruna }
+
+		available = {
+			is_subject = no
+			controls_state = 75
+			country_exists = LIE
+			NOT = {
+				has_war_with = LIE
+				has_government = communism
+			}
+		}	
+
+		ai_will_do = { factor = 0.8 }
+
+		relative_position_id = CZE_R56_devalue_the_koruna
+		x = 5
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			add_ideas = CZE_liechtenstein_properties
+			LIE = {
+				add_opinion_modifier = { target = ROOT modifier = large_increase }
+			}
+ 		}
+	}
+
+	focus = {
 		id = CZE_R56_ramp_up_cement_production
 		icon = GFX_goal_generic_construction_tools
 		x = -3
@@ -4295,10 +4326,10 @@ focus_tree = {
 		id = CZE_2nd_departnment
 		icon = GFX_goal_CAN_CAMP_X
 		prerequisite = {
-			focus = CZE_france_alliance focus = CZE_extend_military_service
+			focus = CZE_france_alliance
 		}
 		x = 2
-		y = 2
+		y = 1
 		relative_position_id = CZE_france_alliance
 		cost = 5
 		ai_will_do = {
@@ -4566,118 +4597,793 @@ focus_tree = {
 		}
 	}
 
-####### SOVIET RELATION
+####### POLITICS TREE ################################################################################################################################################
+
+####### POLITICS TREE - DEMOCRACY/MILITARY DICTATORSHIP
 
 	focus = {
-		id = CZE_soviet_treaties
-		icon = GFX_focus_chi_mission_to_the_soviet_union
+		id = CZE_czechoslovak_government_reform
+		icon = GFX_goal_cze_reform_czechoslovak_government
 
-		prerequisite = { focus = CZE_military_education }
-		mutually_exclusive = { focus = CZE_revive_little_entente }
+		mutually_exclusive = { focus = CZE_state_defense_law focus = CZE_empower_internationalism }
+		
+		x = 32
+		y = 0
+		cost = 5
 
-		available = {
-			country_exists = SOV
-			if = {
-				limit = {
-					NOT = {
-						OR = {
-							has_government = fascism 
-							has_government = neutrality
-						}  
-					}
-				}
-				SOV = {
-					NOT = {
-						OR = {
-							has_government = fascism 
-							has_government = neutrality
-						}  
-					}				
-				}				
-			}
-			NOT = {
-				has_war_with = SOV
-			}
-
+		ai_will_do = {
+			factor = 1
 		}
 
-		relative_position_id = CZE_french_military_mission
+		completion_reward = {
+			add_political_power = 75
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
 
-		x = -2
+	focus = {
+		id = CZE_national_unity_government
+		icon = GFX_goal_morale_bonus
+
+		prerequisite = { focus = CZE_czechoslovak_government_reform }
+
+		available = {
+			GER = {
+				has_country_flag = sudetenland_acquired
+			}
+		}
+
+		ai_will_do = { factor = 1 }
+
+		x = 0
 		y = 1
-		cost = 5
-		ai_will_do = { factor = 0.7 }	
+		relative_position_id = CZE_czechoslovak_government_reform
+		cost = 1
+
+		bypass = {
+			OR = {
+				has_government = fascism
+				is_subject = yes
+			}
+		}
 
 		completion_reward = {
-			country_event = { id = CZE.316 days = 1 }
-			#custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_soviet_treaties_tooltip_reward_1
-			custom_effect_tooltip = report_reward	
-			event_option_tooltip = CZE.318.a
+			country_event = { id = CZE.409 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_national_unity_government_tooltip_reward
+			effect_tooltip = {
+				set_party_name = { ideology = democratic long_name = CZE_national_unity_party name = CZE_national_unity_party }
+				create_country_leader = {
+					name = "Rudolf Beran"
+					desc = " "
+					picture = "gfx/leaders/r56_generic/r56_portrait_BEL_generic_land_1.dds"	#added this since he would be a full mr. generico
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						leader_of_the_agrarian_union
+					}
+				}	
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.2
+				}
+				add_ideas = CZE_national_unity_government_idea
+			}
 		}
 	}
 
 	focus = {
-		id = CZE_acquire_access_for_soviets
-		icon = GFX_focus_generic_russian_deal_communist
-		prerequisite = { focus = CZE_soviet_treaties }
- 
+		id = CZE_extend_military_service
+		icon = GFX_goal_generic_army
+
+		prerequisite = { focus = CZE_czechoslovak_government_reform }
+
+		x = 3
+		y = 1
+		relative_position_id = CZE_czechoslovak_government_reform
+		cost = 5
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			country_event = { id = CZE.401 days = 1 }
+			custom_effect_tooltip = report_reward
+			effect_tooltip = {
+				r56_conscription_law_level_up = yes
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_ideas = CZE_minority_mobilization_plan
+			}
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = CZE_partial_mobilization
+		icon = GFX_goal_generic_army_mobilization
+
+		prerequisite = { focus = CZE_extend_military_service }
+
+		available = {
+			GER = {
+				has_completed_focus = GER_anschluss
+			}
+		}
+
 		bypass = {
-			is_subject_of = SOV
+			GER = { has_country_flag = sudetenland_acquired }
+			is_in_faction_with = GER
+		}
+
+		x = 2
+		y = 1
+		relative_position_id = CZE_extend_military_service
+		cost = 5
+
+		ai_will_do = { factor = 3 }
+		
+		completion_reward = {
+			custom_effect_tooltip = new_idea
+			add_ideas = CZE_partial_mobilization_1938
+			country_event = { id = CZE.411 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_partial_mobilization_tooltip_reward	
+			effect_tooltip = {
+				if = {
+					limit = {
+						has_idea = tot_economic_mobilisation
+					}
+					add_political_power = 75
+				}
+
+				if = {
+					limit = {
+						has_idea = war_economy
+					}
+					add_political_power = 75
+				}
+
+				if = {
+					limit = {
+						has_idea = partial_economic_mobilisation
+					}
+					add_ideas = war_economy
+				}
+
+				if = {
+					limit = {
+						has_idea = low_economic_mobilisation
+					}
+					add_ideas = partial_economic_mobilisation
+				}		
+
+				if = {
+					limit = {
+						has_idea = civilian_economy
+					}
+					add_ideas = low_economic_mobilisation
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
+		id = CZE_military_coup
+		icon = GFX_goal_generic_partisans
+
+		mutually_exclusive = { focus = CZE_democratic_reforms }
+		prerequisite = { focus = CZE_extend_military_service }
+
+		allow_branch = {
+			NOT = {	#more of a pre-war thing to do
+				has_country_flag = yalta_unlock_focuses
+			}
 		}
 
 		available = {
-			country_exists = SOV
-			if = {
-				limit = {
-					NOT = {
-						OR = {
-							has_government = fascism 
-							has_government = neutrality
-						}  
-					}
+			custom_trigger_tooltip = { 
+				tooltip = CZE_military_coup_tt 
+				strength_ratio = { tag = GER ratio > 0.5 } 
+			}
+			OR = {
+				GER = {
+					has_completed_focus = GER_anschluss
 				}
-				SOV = {
-					NOT = {
-						OR = {
-							has_government = fascism 
-							has_government = neutrality
-						}  
-					}				
-				}				
+				has_government = neutrality
 			}
-			NOT = {
-				has_war_with = SOV
+			is_in_faction = no
+			NOT = { 
+				GER = { 
+					has_country_flag = sudetenland_acquired
+				} 
 			}
-		
-			threat > 0.30	
 		}
 
-		relative_position_id = CZE_soviet_treaties
-	
+
+		continue_if_invalid = yes
+		cancel_if_invalid = no
+
+		bypass = {
+			CZE = { has_government = fascism }
+			is_in_faction_with = GER
+		}
+
 		x = 0
-		y = 4
+		y = 1
+		relative_position_id = CZE_extend_military_service
+		cost = 10
+
+		ai_will_do = { factor = 0.2 }		
+
+		completion_reward = {
+			hidden_effect = {
+				remove_ideas = CZE_unruly_minorities
+				remove_ideas = CZE_unruly_minorities_2
+				remove_ideas = CZE_fifth_column
+			}
+			if = {
+				limit = { has_idea = CZE_divided_nation }
+				add_stability = -0.1	#To account for national spirit
+				swap_ideas = {
+					remove_idea = CZE_divided_nation
+					add_idea = CZE_divided_nation_2
+				}
+				custom_effect_tooltip = CHL_skip_one_line_tt
+			}
+			if = {
+				limit = { has_idea = CZE_divided_nation_2 }
+				add_stability = -0.1	#To account for national spirit
+				remove_ideas = CZE_divided_nation_2
+				custom_effect_tooltip = CHL_skip_one_line_tt
+			}
+			add_ideas = CZE_oppressed_minorities
+			#custom_effect_tooltip = new_military_advisor
+			#show_ideas_tooltip = CZE_lev_prchala_high_command			
+			country_event = { id = CZE.413 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_military_coup_tooltip_reward	
+			effect_tooltip = {
+				create_country_leader = {
+					name = "Jan Syrový"
+					picture = "gfx/leaders/CZE/Portrait_Czech_Jan_Syrovy.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						army_connections
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = CZE_state_defense_guard
+		icon = GFX_goal_crush_resistance
+
+		prerequisite = { focus = CZE_state_defense_law focus = CZE_military_coup }
+
+		x = 3
+		y = 1
+		relative_position_id = CZE_military_coup
+		cost = 5
+
+		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			country_event = { id = CZE.408 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_state_defense_guard_tooltip_reward
+			effect_tooltip = {
+				add_ideas = CZE_sos
+				add_tech_bonus = {
+					name = mp_tech_bonus_name
+					bonus = 1
+					uses = 1
+					technology = tech_military_police
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CZE_ban_communism
+		icon = GFX_goal_generic_comm_purge
+		prerequisite = { focus = CZE_state_defense_guard }
+
+		available = { has_government = fascism }
+
+		x = 0
+		y = 1
+		relative_position_id = CZE_state_defense_guard
 		cost = 10
 
 		completion_reward = {
-			SOV = { country_event = CZE.320 }
-			custom_effect_tooltip = report_reward	
-			custom_effect_tooltip = CZE_acquire_access_for_soviets_tooltip_reward
+			custom_effect_tooltip = removes_communism_ideas	
+			if = {
+				limit = { has_idea = CZE_divided_nation }
+				add_stability = -0.1	#To account for national spirit
+				swap_ideas = {
+					remove_idea = CZE_divided_nation
+					add_idea = CZE_divided_nation_2
+				}
+				custom_effect_tooltip = CHL_skip_one_line_tt
+			}
+			if = {
+				limit = { has_idea = CZE_divided_nation_2 }
+				add_stability = -0.1	#To account for national spirit
+				remove_ideas = CZE_divided_nation_2
+				custom_effect_tooltip = CHL_skip_one_line_tt
+			}	
+			hidden_effect = {
+				remove_ideas = CZE_soviet_military
+				remove_ideas = CZE_vonapo20_idea
+			}
+			#custom_effect_tooltip = new_military_advisor
+			#show_ideas_tooltip = CZE_lev_prchala_high_command			Was commented out of history file and spamming the error log
+			country_event = { id = CZE.429 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_ban_communism_tooltip_reward
+			effect_tooltip = {
+				add_ideas = CZE_oppressed_minorities
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_ideas = CZE_military_youth_idea
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_ideas = CZE_anti_communism
+			}
 		}
 	}
 
-####### LITTLE-ENTENTE BRANCH ###############
-
 	focus = {
-		id = CZE_revive_little_entente
-		icon = GFX_goal_cze_revive_the_little_entente
-		prerequisite = { focus = CZE_french_military_mission }
-		mutually_exclusive = { focus = CZE_soviet_treaties }
-		allow_branch = {
+		id = CZE_zaolzie_for_alliance
+		icon = GFX_focus_generic_polish_deal
+
+		prerequisite = { focus = CZE_military_coup }
+
+		available = {
+			is_subject = no
+			has_war = no
 			NOT = {
-				has_country_flag = hide_interwar_diplomacy
+				is_in_faction_with = GER
+			}
+			POL = {
+				exists = yes
+				is_subject = no
+				has_war = no
+				NOT = {
+					is_in_faction_with = GER
+				}
 			}
 		}
+
+		x = 0
+		y = 1
+		relative_position_id = CZE_military_coup
+		cost = 10
+
+		ai_will_do = { factor = 0.2 }
+
+		completion_reward = {
+			country_event = { id = CZE.414 days = 1 }
+			custom_effect_tooltip = report_reward
+			custom_effect_tooltip = CZE_zaolzie_for_alliance_tooltip_reward_1
+			custom_effect_tooltip = report_reward
+			custom_effect_tooltip = CZE_zaolzie_for_alliance_tooltip_reward_2
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = CZE_together_against_berlin
+		icon = GFX_focus_attack_germany
+		prerequisite = { focus = CZE_zaolzie_for_alliance }
+		available = {
+			NOT = { is_ally_with = GER }
+		}
+		x = 0
+		y = 1
+		relative_position_id = CZE_zaolzie_for_alliance
+		cost = 10
+		ai_will_do = {
+			base = 0.05
+			modifier = {
+				factor = 0.1
+				has_war_support > 0.65
+			}
+			modifier = {
+				factor = 0.1
+				has_government = communism
+			}
+			modifier = {
+				factor = 0
+				has_government = fascism
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = topple_government
+				target = GER
+				expire = 0
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = CZE_sokol_movement
+		icon = GFX_goal_cze_support_sokol_movement
+
+		prerequisite = { focus = CZE_czechoslovak_government_reform }
+
+		available = { 
+			NOT = { 
+				OR = {
+					has_government = communism
+					has_government = fascism
+				} 
+			} 
+		}
+
+		x = -3
+		y = 1
+		relative_position_id = CZE_czechoslovak_government_reform
+		cost = 5
+
+		ai_will_do = { factor = 0.7 }
+
+		completion_reward = {
+			country_event = { id = CZE.403 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_sokol_movement_tooltip_reward
+			effect_tooltip = {
+				add_ideas = CZE_sokol_movement_1
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_ideas = CZE_sokol_movement_2
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
+		id = CZE_democratic_reforms
+		icon = GFX_goal_generic_befriend_czech
+
+		mutually_exclusive = { focus = CZE_military_coup }
+		prerequisite = { focus = CZE_sokol_movement }
+
+		available = { 
+			has_government = democratic 
+			NOT = {
+				has_country_flag = CZE_karlsbad_program 
+			} 
+		}
+
+		bypass = {
+			GER = { has_country_flag = sudetenland_acquired }
+			custom_trigger_tooltip = {
+				tooltip = CZE_join_allies_tt
+				OR = {
+					ENG = { is_in_faction_with = CZE }
+					FRA = { is_in_faction_with = CZE }
+				}
+			}
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = CZE_sokol_movement
+		cost = 10
+
+		ai_will_do = { factor = 0.2	}
+
+		completion_reward = {
+			set_country_flag = CZE_constitutional_reforms_flag		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
+			country_event = { id = CZE.406 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_democratic_reforms_tooltip_reward
+			effect_tooltip = {
+				add_timed_idea = { idea = CZE_constitutional_reforms days = 365 }
+			}
+		}
+	}
+
+	focus = {
+		id = CZE_sudetenland_autonomy
+		icon = GFX_goal_support_democracy
+
+		prerequisite = { focus = CZE_democratic_reforms }
+
+		available = { 
+			69 = { is_owned_by = CZE }
+			NOT = { 
+				GER = { 
+					has_country_flag = sudetenland_acquired
+				} 
+			} 
+			custom_trigger_tooltip = { 
+				tooltip = CZE_democratic_reforms_tooltip
+				NOT = { has_idea = CZE_constitutional_reforms }
+				has_country_flag = CZE_constitutional_reforms_flag
+			}
+		}	
+
+		ai_will_do = { factor = 0.8 }
+
+		bypass = { GER = { has_country_flag = sudetenland_acquired } }
+
+		x = 0
+		y = 1
+		relative_position_id = CZE_democratic_reforms
+		cost = 10
+
+		completion_reward = {
+			country_event = { id = CZE.410 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_sudetenland_autonomy_tooltip_reward
+			effect_tooltip = {
+				add_political_power = -100
+				add_ideas = CZE_content_minorities	
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				69 = { remove_core_of = CZE	}
+				1078 = { remove_core_of = CZE	}
+				74 = { remove_core_of = CZE	}
+				remove_ideas = CZE_unruly_minorities		
+				custom_effect_tooltip = CHL_skip_one_line_tt	
+				#69 = {		- Pretty sure this was made before state modifiers were a thing.
+					#remove_building = {
+						#type = industrial_complex
+						#level = 2
+					#}
+				#}
+				every_controlled_state = {
+					limit = {
+						OR = {
+							state = 69
+							state = 1078
+						}
+					}
+					add_dynamic_modifier = { modifier = autonomous_state }
+				}
+			}
+ 		}
+	}
+
+	focus = {    ###### Requires changes in germany.40 event in order to work properly
+ 		id = CZE_petition_league_of_nations
+ 		icon = GFX_goal_cze_petition_league_of_nations
+
+ 		prerequisite = { focus = CZE_democratic_reforms }
+		mutually_exclusive = { focus = CZE_revive_little_entente }
+ 		
+ 		available = {
+ 			country_exists = ENG
+ 			country_exists = FRA
+ 			has_government = democratic 
+ 			has_war = no 
+ 			GER = { 
+ 				NOT = { 
+ 					has_country_flag = sudetenland_acquired 
+ 				} 
+ 			} 
+ 		}		
+
+		bypass = {
+			OR = {
+				AND = {
+					GER = { has_country_flag = sudetenland_acquired }
+					custom_trigger_tooltip = {
+						tooltip = CZE_join_allies_tt
+						OR = {
+							ENG = { is_in_faction_with = CZE }
+							FRA = { is_in_faction_with = CZE }
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							ENG = {
+								is_ai = no
+							}
+							FRA = {
+								is_ai = no
+							}
+						}
+					}
+					AND = {
+						ENG = { is_ai = no }
+						FRA = { is_ai = no }
+					}
+				}
+			}
+		}
+
+ 		x = -2
+ 		y = 2
+		relative_position_id = CZE_democratic_reforms
+ 		cost = 10
+
+ 		ai_will_do = { factor = 1 }
+
+		completion_reward = {
+			country_event = { id = CZE.438 days = 1 }
+			custom_effect_tooltip = report_reward
+			custom_effect_tooltip = CZE_petition_league_of_nations_tooltip_reward
+			if = {
+				limit = { has_idea = CZE_divided_nation }
+				custom_effect_tooltip = CHL_skip_one_line_tt
+				add_political_power = -50
+				add_stability = -0.05	#To account for national spirit
+				swap_ideas = {
+					remove_idea = CZE_divided_nation
+					add_idea = CZE_divided_nation_2
+				}
+			}
+			if = {
+				limit = { has_idea = CZE_divided_nation_2 }
+				custom_effect_tooltip = CHL_skip_one_line_tt
+				add_political_power = -50
+				add_stability = -0.5	#To account for national spirit
+				remove_ideas = CZE_divided_nation_2
+			}
+ 		}
+ 	}
+
+	focus = {
+ 		id = CZE_join_allies
+ 		icon = GFX_focus_ARG_join_the_allies
+
+ 		prerequisite = { focus = CZE_petition_league_of_nations }
+ 		
+			
+		 available = {
+			is_subject = no
+			is_in_faction = no
+			any_other_country = {
+				is_major = yes
+				has_government = democratic
+				is_faction_leader = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = PREV
+						has_war_with = ROOT
+					}
+				}						
+			}	
+		}
+
+		bypass = {
+		custom_trigger_tooltip = {
+			tooltip = CZE_join_allies_tt
+				OR = {
+				ENG = { is_in_faction_with = CZE }
+				FRA = { is_in_faction_with = CZE }
+				}
+			}
+		}
+
+ 		x = 0
+ 		y = 1
+		relative_position_id = CZE_petition_league_of_nations
+ 		cost = 10
+
+		completion_reward = {
+			if = {
+				limit = {
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+						NOT = {
+							has_completed_focus = ENG_a_change_in_course
+							has_completed_focus = ENG_visit_germany
+						}
+						has_capitulated = no
+						NOT = { has_war_with = ROOT }
+					}
+					NOT = {
+						any_other_country = {
+							is_in_faction_with = ENG
+							has_war_with = ROOT
+						}
+					}					
+				}
+				ENG = {
+					country_event = { id = generic.2 }
+				}
+			}
+			else_if = {
+				limit = {
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+						has_capitulated = no
+						NOT = { has_war_with = ROOT }
+					}
+					NOT = {
+						any_other_country = {
+							is_in_faction_with = FRA
+							has_war_with = ROOT
+						}
+					}					
+				}
+				FRA = {
+					country_event = { id = generic.2 }
+				}
+			}			
+			else = {
+				get_best_alliance_match_democratic_effect = yes
+				var:best_leader = {
+					country_event = generic.2
+				}
+			}
+ 		}
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+ 	}
+
+	focus = {
+		id = CZE_faction_research_exchange
+		icon = GFX_goal_research_silver_cooperation
+
+		prerequisite = { focus = CZE_join_allies }
+
+		available = { is_in_faction = yes }
+
+		x = 0
+		y = 1
+		relative_position_id = CZE_join_allies
+
+		cost = 14.3
+
+		ai_will_do = {	factor = 1 }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 1
+				category = industry
+			}	
+			add_tech_bonus = {
+				name = air_plane_models
+				bonus = 1
+				uses = 1
+				category = light_air
+				category = medium_air
+				category = heavy_air
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+		focus = {
+		id = CZE_revive_little_entente
+		icon = GFX_goal_cze_revive_the_little_entente
+		prerequisite = { focus = CZE_democratic_reforms }
+		mutually_exclusive = { focus = CZE_petition_league_of_nations }
+
 		available = {
 			NOT = {
 				has_government = communism
@@ -4690,10 +5396,9 @@ focus_tree = {
 			has_war = no 
 		}
 		
-		relative_position_id = CZE_french_military_mission
-		
-		x = 0
-		y = 1
+ 		x = 2
+ 		y = 2
+		relative_position_id = CZE_democratic_reforms
 		cost = 10
 		ai_will_do = {
 			factor = 0.3
@@ -4870,7 +5575,7 @@ focus_tree = {
 
 		relative_position_id = CZE_hungary_intervention
 		x = 1
-		y = 4
+		y = 1
 
 		cost = 10
 		ai_will_do = { 
@@ -4926,8 +5631,255 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
+####### POLITICS TREE - FASCISM
 
-####### POLITICS TREE ################################################################################################################################################
+	focus = {
+		id = CZE_state_defense_law
+		icon = GFX_goal_generic_political_pressure
+
+		mutually_exclusive = { focus = CZE_czechoslovak_government_reform focus = CZE_empower_internationalism }
+
+		x = 10
+		y = 0
+		relative_position_id = CZE_czechoslovak_government_reform
+		cost = 5
+
+		ai_will_do = { 
+			factor = 0.6 
+			modifier = {
+				factor = 0
+				has_war = yes
+				NOT = {
+					has_government = fascism
+				}
+				any_country = {
+					is_major = yes
+					has_government = fascism
+				}
+
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = new_idea
+			add_timed_idea = { idea = CZE_state_defense_law_idea days = 1200 }
+			country_event = { id = CZE.405 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_state_defense_law_tooltip_reward
+			effect_tooltip = {
+				add_political_power = 75
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_political_power = -75
+				if = {
+					limit = {
+						has_idea = limited_exports
+					}
+					add_political_power = 75
+				}
+				if = {
+					limit = {
+						has_idea = export_focus
+					}
+					add_ideas = limited_exports
+				}
+				if = {
+					limit = {
+						has_idea = tot_economic_mobilisation
+					}
+					add_political_power = 75
+				}
+				if = {
+					limit = {
+						has_idea = war_economy
+					}
+					add_political_power = 75
+				}
+				if = {
+					limit = {
+						has_idea = partial_economic_mobilisation
+					}
+					add_ideas = war_economy
+				}
+				if = {
+					limit = {
+						has_idea = low_economic_mobilisation
+					}
+					add_ideas = partial_economic_mobilisation
+				}		
+				if = {
+					limit = {
+						has_idea = civilian_economy
+					}
+					add_ideas = low_economic_mobilisation
+				}
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_political_power = -150
+				69 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}	
+				74 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		search_filters = {  FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = CZE_czech_fascism_onrise
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = CZE_state_defense_law }
+
+		available = {
+			NOT = {
+				GER = {
+					has_war_with = ROOT
+					has_government = fascism					
+				}
+			}
+		}
+
+		bypass = { 
+			OR = { 
+				has_idea = CZE_felix_achille_de_la_camara
+				is_in_faction_with = GER
+				has_government = fascism
+				has_government = neutrality 
+			}
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = CZE_state_defense_law
+		cost = 10
+		
+		completion_reward = {
+		if = {
+			limit = { has_idea = CZE_vladimir_clementis }
+			hidden_effect = { remove_ideas = CZE_vladimir_clementis }
+		}
+
+		if = {
+			limit = { has_idea = CZE_felix_achille_de_la_camara }
+			add_political_power = 75
+		}
+
+		if = {
+			limit = {
+				NOT = { has_idea = CZE_felix_achille_de_la_camara }
+			}
+			custom_effect_tooltip = new_idea
+			add_ideas = CZE_felix_achille_de_la_camara
+		} 
+
+			country_event = { id = CZE.418 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_czech_fascism_onrise_tooltip_reward
+			effect_tooltip = {
+				add_popularity = {
+					ideology = communism
+					popularity = -0.05
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.05
+				}
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.05
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.05
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = CZE_join_axis
+		icon = GFX_focus_chi_mission_to_germany
+        prerequisite = { focus = CZE_czech_fascism_onrise }
+		mutually_exclusive = { focus = CZE_nazi_puppet }
+
+		x = -1
+		y = 1
+		relative_position_id = CZE_czech_fascism_onrise
+		cost = 10
+
+		available = {
+			country_exists = GER
+			is_in_faction = no
+			NOT = {
+				has_war_with = GER
+			}			
+		}
+
+		bypass = { OR = { is_in_faction_with = GER }
+		}
+
+		completion_reward = {
+			country_event = { id = CZE.430 days = 1 }
+			custom_effect_tooltip = report_reward
+			custom_effect_tooltip = CZE_join_axis_tooltip_reward
+			custom_effect_tooltip = report_reward
+			custom_effect_tooltip = CZE_join_axis_tooltip_reward_2
+		}
+	}
+
+	focus = {
+		id = CZE_nazi_puppet
+		icon = GFX_focus_CZE_german_puppet
+
+		prerequisite = { focus = CZE_czech_fascism_onrise }
+		mutually_exclusive = { focus = CZE_join_axis }
+
+		x = 1
+		y = 1
+		relative_position_id = CZE_czech_fascism_onrise
+     	cost = 10
+
+     	available = {
+			is_in_faction = no
+			GER = {
+				has_government = fascism
+			}
+			NOT = {
+				has_war_with = GER
+			}
+		}
+
+     	bypass = { 
+			 OR = { 
+				 is_subject_of = GER 
+				 is_in_faction_with = GER 
+			} 
+		}
+		
+		completion_reward = {
+			GER = { country_event = { id = CZE.435 days = 1 } }
+			custom_effect_tooltip = report_reward
+			custom_effect_tooltip = CZE_nazi_puppet_tooltip_reward
+		}	
+	}
 
 ####### POLITICS TREE - COMMUNISM
 
@@ -4935,24 +5887,27 @@ focus_tree = {
 		id = CZE_empower_internationalism
 		icon = GFX_goal_workers_support
 
-		available = { 
-			NOT = { 
-				OR = {
-					has_government = fascism 
-					has_government = neutrality 
-				} 
-			}
-		}
+		mutually_exclusive = { focus = CZE_czechoslovak_government_reform focus = CZE_state_defense_law }
 
-		x = 40
+		x = 10
 		y = 0
+		relative_position_id = CZE_state_defense_law
 		cost = 5
 
 		ai_will_do = {
-			factor = 0.7
+			base = 0.7
 			modifier = {
 				is_historical_focus_on = yes
 				factor = 0
+			}
+		}
+
+		available = {
+			NOT = { 
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
 			}
 		}
 
@@ -5213,7 +6168,6 @@ focus_tree = {
 		ai_will_do = { factor = 0.2	}
 
 		completion_reward = {
-			country_event = { id = CZE.310 days = 1 }
 			add_ideas = CZE_vonapo20_idea
 			if = {
 				limit = {
@@ -5642,1133 +6596,101 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
-	#OLD POLITICS
-
 	focus = {
-		id = CZE_czechoslovak_government_reform
-		icon = GFX_goal_cze_reform_czechoslovak_government
-		
-		x = 30
-		y = 0
-		cost = 5
+		id = CZE_soviet_treaties
+		icon = GFX_focus_chi_mission_to_the_soviet_union
 
-		ai_will_do = { factor = 1 }
-
-		completion_reward = {
-			add_political_power = 75
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = CZE_extend_military_service
-		icon = GFX_goal_generic_army
-
-		prerequisite = { focus = CZE_czechoslovak_government_reform }
-
-		x = 29
-		y = 1
-		cost = 5
-
-		ai_will_do = { factor = 1 }
-
-		completion_reward = {
-
-			country_event = { id = CZE.401 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_extend_military_service_tooltip_reward
-			effect_tooltip = {
-				if = {
-					limit = {
-						has_idea = extensive_conscription
-					}
-					add_political_power = 150
-				}
-		
-				if = {
-					limit = {
-						has_idea = service_by_requirement
-					}
-					add_political_power = 150
-				}
-		
-				if = {
-					limit = {
-						has_idea = all_adults_serve
-					}
-					add_political_power = 150
-				}
-		
-				if = {
-					limit = {
-						has_idea = scraping_the_barrel
-					}
-					add_political_power = 150
-				}
-		
-				if = {
-					limit = {
-						NOT = { has_idea = extensive_conscription }
-					}
-					add_ideas = extensive_conscription
-				}
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_ideas = CZE_minority_mobilization_plan
-			}
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER }
-	}
-
-	focus = {
-		id = CZE_sokol_movement
-		icon = GFX_goal_cze_support_sokol_movement
-
-		prerequisite = { focus = CZE_czechoslovak_government_reform }
-
-		available = { 
-			NOT = { 
-				OR = {
-					has_government = communism
-					has_government = fascism
-				} 
-			} 
-		}
-
-		x = 31
-		y = 1
-		cost = 5
-
-		ai_will_do = { factor = 0.7 }
-
-		completion_reward = {
-			country_event = { id = CZE.403 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_sokol_movement_tooltip_reward
-			effect_tooltip = {
-				add_ideas = CZE_sokol_movement_1
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_ideas = CZE_sokol_movement_2
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CZE_state_defense_law
-		icon = GFX_goal_generic_political_pressure
-
-		prerequisite = { focus = CZE_sokol_movement }
-		mutually_exclusive = { focus = CZE_democratic_reforms }
-
-		x = 30
-		y = 2
-		cost = 5
-
-		ai_will_do = { 
-			factor = 0.6 
-			modifier = {
-				factor = 0
-				has_war = yes
-				NOT = {
-					has_government = fascism
-				}
-				any_country = {
-					is_major = yes
-					has_government = fascism
-				}
-
-			}
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = new_idea
-			add_timed_idea = { idea = CZE_state_defense_law_idea days = 1200 }
-			country_event = { id = CZE.405 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_state_defense_law_tooltip_reward
-			effect_tooltip = {
-				add_political_power = 75
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_political_power = -75
-				if = {
-					limit = {
-						has_idea = limited_exports
-					}
-					add_political_power = 75
-				}
-				if = {
-					limit = {
-						has_idea = export_focus
-					}
-					add_ideas = limited_exports
-				}
-				if = {
-					limit = {
-						has_idea = tot_economic_mobilisation
-					}
-					add_political_power = 75
-				}
-				if = {
-					limit = {
-						has_idea = war_economy
-					}
-					add_political_power = 75
-				}
-				if = {
-					limit = {
-						has_idea = partial_economic_mobilisation
-					}
-					add_ideas = war_economy
-				}
-				if = {
-					limit = {
-						has_idea = low_economic_mobilisation
-					}
-					add_ideas = partial_economic_mobilisation
-				}		
-				if = {
-					limit = {
-						has_idea = civilian_economy
-					}
-					add_ideas = low_economic_mobilisation
-				}
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_political_power = -150
-				69 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}	
-				74 = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-		}
-		search_filters = {  FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = CZE_democratic_reforms
-		icon = GFX_goal_generic_befriend_czech
-
-		prerequisite = { focus = CZE_sokol_movement }
-		mutually_exclusive = { focus = CZE_state_defense_law }
-
-		allow_branch = {
-			NOT = {
-				has_country_flag = hide_interwar_diplomacy
-			}
-		}
-
-		available = { 
-			has_government = democratic 
-			NOT = {
-				has_country_flag = CZE_karlsbad_program 
-			} 
-		}
-
-		bypass = {
-			GER = { has_country_flag = sudetenland_acquired }
-			custom_trigger_tooltip = {
-				tooltip = CZE_join_allies_tt
-				OR = {
-					ENG = { is_in_faction_with = CZE }
-					FRA = { is_in_faction_with = CZE }
-				}
-			}
-		}
-
-		x = 32
-		y = 2
-		cost = 10
-
-		ai_will_do = { factor = 0.2	}
-
-		completion_reward = {
-			set_country_flag = CZE_constitutional_reforms_flag		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
-			country_event = { id = CZE.406 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_democratic_reforms_tooltip_reward
-			effect_tooltip = {
-				add_timed_idea = { idea = CZE_constitutional_reforms days = 365 }
-			}
-		}
-	}
-
-	focus = {
-		id = CZE_state_defense_guard
-		icon = GFX_goal_crush_resistance
-
-		prerequisite = { focus = CZE_state_defense_law focus = CZE_extend_military_service }
-
-		x = 29
-		y = 3
-		cost = 5
-
-		ai_will_do = { factor = 1 }
-
-		completion_reward = {
-			country_event = { id = CZE.408 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_state_defense_guard_tooltip_reward
-			effect_tooltip = {
-				add_ideas = CZE_sos
-				add_tech_bonus = {
-					name = mp_tech_bonus_name
-					bonus = 1
-					uses = 1
-					technology = tech_military_police
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = CZE_national_unity_government
-		icon = GFX_goal_morale_bonus
-
-		prerequisite = { focus = CZE_state_defense_law focus = CZE_democratic_reforms }
-
-		allow_branch = {
-			NOT = {	#already happened irl
-				has_country_flag = yalta_unlock_focuses
-			}
-		}
-
-		available = { 
-			GER = { 
-				has_country_flag = sudetenland_acquired
-			}	
-		}
-
-		ai_will_do = { factor = 1 }
-
-		x = 31
-		y = 3
-		cost = 1
-
-		bypass = {
-			OR = {
-				has_government = fascism
-				is_subject = yes
-			}
-		}
-
-		completion_reward = {
-			country_event = { id = CZE.409 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_national_unity_government_tooltip_reward
-			effect_tooltip = {
-				set_party_name = { ideology = democratic long_name = CZE_national_unity_party name = CZE_national_unity_party }
-				create_country_leader = {
-					name = "Rudolf Beran"
-					desc = " "
-					picture = "gfx/leaders/r56_generic/r56_portrait_BEL_generic_land_1.dds"	#added this since he would be a full mr. generico
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-						leader_of_the_agrarian_union
-					}
-				}	
-				set_politics = {
-					ruling_party = democratic
-					elections_allowed = no
-				}
-				add_popularity = {
-					ideology = democratic
-					popularity = -0.2
-				}
-				add_ideas = CZE_national_unity_government_idea
-			}
-		}
-	}
-
-	focus = {
-		id = CZE_sudetenland_autonomy
-		icon = GFX_goal_support_democracy
-
-		prerequisite = { focus = CZE_democratic_reforms }
-
-		available = { 
-			69 = { is_owned_by = CZE }
-			NOT = { 
-				GER = { 
-					has_country_flag = sudetenland_acquired
-				} 
-			} 
-			custom_trigger_tooltip = { 
-				tooltip = CZE_democratic_reforms_tooltip
-				NOT = { has_idea = CZE_constitutional_reforms }
-				has_country_flag = CZE_constitutional_reforms_flag
-			}
-		}	
-
-		ai_will_do = { factor = 0.8 }
-
-		bypass = { GER = { has_country_flag = sudetenland_acquired } }
-
-		x = 33
-		y = 3
-		cost = 10
-
-		completion_reward = {
-			country_event = { id = CZE.410 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_sudetenland_autonomy_tooltip_reward
-			effect_tooltip = {
-				add_political_power = -100
-				add_ideas = CZE_content_minorities	
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				69 = { remove_core_of = CZE	}
-				1078 = { remove_core_of = CZE	}
-				74 = { remove_core_of = CZE	}
-				remove_ideas = CZE_unruly_minorities		
-				custom_effect_tooltip = CHL_skip_one_line_tt	
-				#69 = {		- Pretty sure this was made before state modifiers were a thing.
-					#remove_building = {
-						#type = industrial_complex
-						#level = 2
-					#}
-				#}
-				every_controlled_state = {
-					limit = {
-						OR = {
-							state = 69
-							state = 1078
-						}
-					}
-					add_dynamic_modifier = { modifier = autonomous_state }
-				}
-			}
- 		}
-	}
-
-	focus = {
-		id = CZE_levy_liechtenstein_properties
-		icon = GFX_goal_generic_befriend_liechtenstein
-
-		prerequisite = { focus = CZE_national_unity_government focus = CZE_sudetenland_autonomy }
+		prerequisite = { focus = CZE_empower_internationalism }
 
 		available = {
-			is_subject = no
-			controls_state = 75
-			country_exists = LIE
-			NOT = {
-				has_war_with = LIE
-			}
-		}	
-
-		ai_will_do = { factor = 0.8 }
-
-		relative_position_id = CZE_sudetenland_autonomy
-		x = -1
-		y = 1
-		cost = 10
-
-		completion_reward = {
-			add_ideas = CZE_liechtenstein_properties
-			LIE = {
-				add_opinion_modifier = { target = ROOT modifier = large_increase }
-			}
- 		}
-	}
-
-####### POLITICS TREE - MILITARY GOVERNMENT
-
-	focus = {
-		id = CZE_partial_mobilization
-		icon = GFX_goal_generic_army_mobilization
-
-		prerequisite = { focus = CZE_state_defense_guard focus = CZE_intelligence_service_defense }
-
-		mutually_exclusive = { focus = CZE_czech_fascism_onrise }
-
-		allow_branch = {
-			NOT = {
-				has_country_flag = hide_interwar_diplomacy
-			}
-		}
-
-		available = {
-			GER = {
-				has_completed_focus = GER_anschluss
-			}
-		}
-
-		bypass = {
-			GER = { has_country_flag = sudetenland_acquired }
-			is_in_faction_with = GER
-		}
-
-		x = 28
-		y = 4
-		cost = 5
-
-		ai_will_do = { factor = 3 }
-		
-		completion_reward = {
-			custom_effect_tooltip = new_idea
-			add_ideas = CZE_partial_mobilization_1938
-			country_event = { id = CZE.411 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_partial_mobilization_tooltip_reward	
-			effect_tooltip = {
-				if = {
-					limit = {
-						has_idea = tot_economic_mobilisation
-					}
-					add_political_power = 75
-				}
-
-				if = {
-					limit = {
-						has_idea = war_economy
-					}
-					add_political_power = 75
-				}
-
-				if = {
-					limit = {
-						has_idea = partial_economic_mobilisation
-					}
-					add_ideas = war_economy
-				}
-
-				if = {
-					limit = {
-						has_idea = low_economic_mobilisation
-					}
-					add_ideas = partial_economic_mobilisation
-				}		
-
-				if = {
-					limit = {
-						has_idea = civilian_economy
-					}
-					add_ideas = low_economic_mobilisation
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CZE_military_coup
-		icon = GFX_goal_generic_partisans
-
-		prerequisite = { focus = CZE_partial_mobilization focus = CZE_czech_fascism_onrise }
-     	mutually_exclusive = { focus = CZE_ban_communism }
-
-		allow_branch = {
-			NOT = {	#more of a pre-war thing to do
-				has_country_flag = yalta_unlock_focuses
-			}
-		}
-
-		available = {
-			custom_trigger_tooltip = { 
-				tooltip = CZE_military_coup_tt 
-				strength_ratio = { tag = GER ratio > 0.5 } 
-			}
-			OR = {
-				GER = {
-					has_completed_focus = GER_anschluss
-				}
-				has_government = neutrality
-			}
-			is_in_faction = no
-			NOT = { 
-				GER = { 
-					has_country_flag = sudetenland_acquired
-				} 
-			}
-		}
-
-
-		continue_if_invalid = yes
-		cancel_if_invalid = no
-
-		bypass = {
-			CZE = { has_government = fascism }
-			is_in_faction_with = GER
-		}
-
-		x = 28
-		y = 5
-		cost = 10
-
-		ai_will_do = { factor = 0.2 }		
-
-		completion_reward = {
-			hidden_effect = {
-				remove_ideas = CZE_unruly_minorities
-				remove_ideas = CZE_unruly_minorities_2
-				remove_ideas = CZE_fifth_column
-			}
-			if = {
-				limit = { has_idea = CZE_divided_nation }
-				add_stability = -0.1	#To account for national spirit
-				swap_ideas = {
-					remove_idea = CZE_divided_nation
-					add_idea = CZE_divided_nation_2
-				}
-				custom_effect_tooltip = CHL_skip_one_line_tt
-			}
-			if = {
-				limit = { has_idea = CZE_divided_nation_2 }
-				add_stability = -0.1	#To account for national spirit
-				remove_ideas = CZE_divided_nation_2
-				custom_effect_tooltip = CHL_skip_one_line_tt
-			}
-			add_ideas = CZE_oppressed_minorities
-			#custom_effect_tooltip = new_military_advisor
-			#show_ideas_tooltip = CZE_lev_prchala_high_command			
-			country_event = { id = CZE.413 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_military_coup_tooltip_reward	
-			effect_tooltip = {
-				create_country_leader = {
-					name = "Jan Syrový"
-					picture = "gfx/leaders/CZE/Portrait_Czech_Jan_Syrovy.dds"
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-						army_connections
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
-	}
-
-	focus = {
-		id = CZE_zaolzie_for_alliance
-		icon = GFX_focus_generic_polish_deal
-
-		prerequisite = { focus = CZE_military_coup focus = CZE_ban_communism }
-  		mutually_exclusive = { focus = CZE_join_axis }
-
-		allow_branch = {
-			NOT = {
-				has_country_flag = hide_interwar_diplomacy
-			}
-		}
-
-		available = {
-			is_subject = no
-			has_war = no
-			NOT = {
-				is_in_faction_with = GER
-			}
-			POL = {
-				exists = yes
-				is_subject = no
-				has_war = no
-				NOT = {
-					is_in_faction_with = GER
-				}
-			}
-		}
-
-		x = 27
-		y = 6
-		cost = 10
-
-		ai_will_do = { factor = 0.2 }
-
-		completion_reward = {
-			country_event = { id = CZE.414 days = 1 }
-			custom_effect_tooltip = report_reward
-			custom_effect_tooltip = CZE_zaolzie_for_alliance_tooltip_reward_1
-			custom_effect_tooltip = report_reward
-			custom_effect_tooltip = CZE_zaolzie_for_alliance_tooltip_reward_2
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = CZE_together_against_berlin
-		icon = GFX_focus_attack_germany
-		prerequisite = { focus = CZE_zaolzie_for_alliance }
-		allow_branch = {
-			NOT = { has_country_flag = hide_interwar_diplomacy }
-		}
-		available = {
-			NOT = { is_ally_with = GER }
-		}
-		x = 28
-		y = 7
-		cost = 10
-		ai_will_do = {
-			base = 0.05
-			modifier = {
-				factor = 0.1
-				has_war_support > 0.65
-			}
-			modifier = {
-				factor = 0.1
-				has_government = communism
-			}
-			modifier = {
-				factor = 0
-				has_government = fascism
-			}
-		}
-		completion_reward = {
-			create_wargoal = {
-				type = topple_government
-				target = GER
-				expire = 0
-			}
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-	}
-
-####### POLITICS TREE - CZECH FASCISM
-
-	focus = {
-		id = CZE_czech_fascism_onrise
-		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = CZE_state_defense_law }
-
-		mutually_exclusive = { focus = CZE_partial_mobilization }
-
-		available = {
-			NOT = {
-				GER = {
-					has_war_with = ROOT
-					has_government = fascism					
-				}
-			}
-		}
-
-		bypass = { 
-			OR = { 
-				has_idea = CZE_felix_achille_de_la_camara
-				is_in_faction_with = GER
-				has_government = fascism
-				has_government = neutrality 
-			}
-		}
-
-		x = 30
-		y = 4
-		cost = 10
-		
-		completion_reward = {
-		if = {
-			limit = { has_idea = CZE_vladimir_clementis }
-			hidden_effect = { remove_ideas = CZE_vladimir_clementis }
-		}
-
-		if = {
-			limit = { has_idea = CZE_felix_achille_de_la_camara }
-			add_political_power = 75
-		}
-
-		if = {
-			limit = {
-				NOT = { has_idea = CZE_felix_achille_de_la_camara }
-			}
-			custom_effect_tooltip = new_idea
-			add_ideas = CZE_felix_achille_de_la_camara
-		} 
-
-			country_event = { id = CZE.418 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_czech_fascism_onrise_tooltip_reward
-			effect_tooltip = {
-				add_popularity = {
-					ideology = communism
-					popularity = -0.05
-				}
-				add_popularity = {
-					ideology = democratic
-					popularity = -0.05
-				}
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.05
-				}
-				add_popularity = {
-					ideology = democratic
-					popularity = -0.05
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = CZE_ban_communism
-		icon = GFX_goal_generic_comm_purge
-		prerequisite = { focus = CZE_czech_fascism_onrise }
-		mutually_exclusive = { focus = CZE_military_coup }
-
-		available = { has_government = fascism	}
-
-		x = 30
-		y = 5
-		cost = 10
-
-		completion_reward = {
-			custom_effect_tooltip = removes_communism_ideas	
-			if = {
-				limit = { has_idea = CZE_divided_nation }
-				add_stability = -0.1	#To account for national spirit
-				swap_ideas = {
-					remove_idea = CZE_divided_nation
-					add_idea = CZE_divided_nation_2
-				}
-				custom_effect_tooltip = CHL_skip_one_line_tt
-			}
-			if = {
-				limit = { has_idea = CZE_divided_nation_2 }
-				add_stability = -0.1	#To account for national spirit
-				remove_ideas = CZE_divided_nation_2
-				custom_effect_tooltip = CHL_skip_one_line_tt
-			}	
-			hidden_effect = {
-				remove_ideas = CZE_soviet_military
-				remove_ideas = CZE_vonapo20_idea
-			}
-			#custom_effect_tooltip = new_military_advisor
-			#show_ideas_tooltip = CZE_lev_prchala_high_command			Was commented out of history file and spamming the error log
-			country_event = { id = CZE.429 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_ban_communism_tooltip_reward
-			effect_tooltip = {
-				add_ideas = CZE_oppressed_minorities
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_ideas = CZE_military_youth_idea
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_ideas = CZE_anti_communism
-			}
-		}
-	}
-
-####### POLITICS TREE - CZECH NAZISM
-
-	focus = {
-		id = CZE_join_axis
-		icon = GFX_focus_chi_mission_to_germany
-        prerequisite = { focus = CZE_ban_communism focus = CZE_military_coup }
-		mutually_exclusive = { focus = CZE_nazi_puppet focus = CZE_zaolzie_for_alliance }
-
-		x = 29
-		y = 6
-		cost = 10
-
-		allow_branch = {
-			NOT = {
-				has_country_flag = hide_interwar_diplomacy
-			}
-		}
-
-		available = {
-			country_exists = GER
-			is_in_faction = no
-			NOT = {
-				has_war_with = GER
-			}			
-		}
-
-		bypass = { OR = { is_in_faction_with = GER }
-		}
-
-		completion_reward = {
-			country_event = { id = CZE.430 days = 1 }
-			custom_effect_tooltip = report_reward
-			custom_effect_tooltip = CZE_join_axis_tooltip_reward
-			custom_effect_tooltip = report_reward
-			custom_effect_tooltip = CZE_join_axis_tooltip_reward_2
-		}
-	}
-
-####### POLITICS TREE - NAZI PUPPET
-
-	focus = {
-		id = CZE_nazi_puppet
-		icon = GFX_focus_CZE_german_puppet
-
-		prerequisite = { focus = CZE_national_unity_government focus = CZE_ban_communism focus = CZE_petition_league_of_nations }
-		mutually_exclusive = { focus = CZE_join_axis }
-
-		x = 31
-		y = 6
-     	cost = 10
-
-		allow_branch = {
-			NOT = {
-				has_country_flag = hide_interwar_diplomacy
-			}
-		}
-
-     	available = {
-			is_in_faction = no
-			GER = {
-				has_government = fascism
-			}
-			NOT = {
-				has_war_with = GER
-			}
-		}
-
-     	bypass = { 
-			 OR = { 
-				 is_subject_of = GER 
-				 is_in_faction_with = GER 
-			} 
-		}
-		
-		completion_reward = {
-			GER = { country_event = { id = CZE.435 days = 1 } }
-			custom_effect_tooltip = report_reward
-			custom_effect_tooltip = CZE_nazi_puppet_tooltip_reward
-		}	
-	}
-
-####### POLITICS TREE - JOIN ALLIES
-
-	focus = {    ###### Requires changes in germany.40 event in order to work properly
- 		id = CZE_petition_league_of_nations
- 		icon = GFX_goal_cze_petition_league_of_nations
-
- 		prerequisite = { focus = CZE_sudetenland_autonomy }
- 		
- 		available = {
- 			country_exists = ENG
- 			country_exists = FRA
- 			has_government = democratic 
- 			has_war = no 
- 			GER = { 
- 				NOT = { 
- 					has_country_flag = sudetenland_acquired 
- 				} 
- 			} 
- 		}		
-
-		allow_branch = {
-			NOT = { has_country_flag = hide_interwar_diplomacy }	#I think this was supposed to be here? -- focus was colliding with post-yalta content
-		}
-		bypass = {
-			OR = {
-				AND = {
-					GER = { has_country_flag = sudetenland_acquired }
-					custom_trigger_tooltip = {
-						tooltip = CZE_join_allies_tt
-						OR = {
-							ENG = { is_in_faction_with = CZE }
-							FRA = { is_in_faction_with = CZE }
-						}
-					}
-				}
-				if = {
-					limit = {
-						OR = {
-							ENG = {
-								is_ai = no
-							}
-							FRA = {
-								is_ai = no
-							}
-						}
-					}
-					AND = {
-						ENG = { is_ai = no }
-						FRA = { is_ai = no }
-					}
-				}
-			}
-		}
-
- 		x = 33
- 		y = 5
- 		cost = 10
-
- 		ai_will_do = { factor = 1 }
-
-		completion_reward = {
-			country_event = { id = CZE.438 days = 1 }
-			custom_effect_tooltip = report_reward
-			custom_effect_tooltip = CZE_petition_league_of_nations_tooltip_reward
-			if = {
-				limit = { has_idea = CZE_divided_nation }
-				custom_effect_tooltip = CHL_skip_one_line_tt
-				add_political_power = -50
-				add_stability = -0.05	#To account for national spirit
-				swap_ideas = {
-					remove_idea = CZE_divided_nation
-					add_idea = CZE_divided_nation_2
-				}
-			}
-			if = {
-				limit = { has_idea = CZE_divided_nation_2 }
-				custom_effect_tooltip = CHL_skip_one_line_tt
-				add_political_power = -50
-				add_stability = -0.5	#To account for national spirit
-				remove_ideas = CZE_divided_nation_2
-			}
- 		}
- 	}
-
-	focus = {
- 		id = CZE_join_allies
- 		icon = GFX_focus_ARG_join_the_allies
-
- 		prerequisite = { focus = CZE_petition_league_of_nations }
- 		
-			
-		 available = {
-			is_subject = no
-			is_in_faction = no
-			any_other_country = {
-				is_major = yes
-				has_government = democratic
-				is_faction_leader = yes
-				has_capitulated = no
-				NOT = { has_war_with = ROOT }
-				NOT = {
-					any_other_country = {
-						is_in_faction_with = PREV
-						has_war_with = ROOT
-					}
-				}						
-			}	
-		}
-
-		bypass = {
-		custom_trigger_tooltip = {
-			tooltip = CZE_join_allies_tt
-				OR = {
-				ENG = { is_in_faction_with = CZE }
-				FRA = { is_in_faction_with = CZE }
-				}
-			}
-		}
-
- 		x = 33
- 		y = 8
- 		cost = 10
-
-		completion_reward = {
+			country_exists = SOV
 			if = {
 				limit = {
-					ENG = {
-						has_government = democratic
-						is_faction_leader = yes
-						NOT = {
-							has_completed_focus = ENG_a_change_in_course
-							has_completed_focus = ENG_visit_germany
-						}
-						has_capitulated = no
-						NOT = { has_war_with = ROOT }
-					}
 					NOT = {
-						any_other_country = {
-							is_in_faction_with = ENG
-							has_war_with = ROOT
-						}
-					}					
-				}
-				ENG = {
-					country_event = { id = generic.2 }
-				}
-			}
-			else_if = {
-				limit = {
-					FRA = {
-						has_government = democratic
-						is_faction_leader = yes
-						has_capitulated = no
-						NOT = { has_war_with = ROOT }
+						OR = {
+							has_government = fascism 
+							has_government = neutrality
+						}  
 					}
+				}
+				SOV = {
 					NOT = {
-						any_other_country = {
-							is_in_faction_with = FRA
-							has_war_with = ROOT
-						}
-					}					
-				}
-				FRA = {
-					country_event = { id = generic.2 }
-				}
-			}			
-			else = {
-				get_best_alliance_match_democratic_effect = yes
-				var:best_leader = {
-					country_event = generic.2
-				}
+						OR = {
+							has_government = fascism 
+							has_government = neutrality
+						}  
+					}				
+				}				
 			}
- 		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
- 	}
+			NOT = {
+				has_war_with = SOV
+			}
 
-####### FACTION RESEARCH BONUS #########
+		}
 
- 	focus = {
- 		id = CZE_faction_research_exchange
- 		icon = GFX_goal_research_silver_cooperation
+		relative_position_id = CZE_empower_internationalism
 
- 		prerequisite = { focus = CZE_join_allies focus = CZE_join_axis focus = CZE_nazi_puppet focus = CZE_claims_bohemian_crown }
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = { factor = 0.7 }	
 
- 		available = { is_in_faction = yes }
+		completion_reward = {
+			country_event = { id = CZE.316 days = 1 }
+			#custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_soviet_treaties_tooltip_reward_1
+			custom_effect_tooltip = report_reward	
+			event_option_tooltip = CZE.318.a
+		}
+	}
 
- 		x = 30
- 		y = 9
-
- 		cost = 14.3
+	focus = {
+		id = CZE_acquire_access_for_soviets
+		icon = GFX_focus_generic_russian_deal_communist
+		prerequisite = { focus = CZE_soviet_treaties }
  
- 		ai_will_do = {	factor = 1 }
+		bypass = {
+			is_subject_of = SOV
+		}
 
- 		completion_reward = {
-			add_tech_bonus = {
-				name = electronics_bonus
-				bonus = 1
-				uses = 1
-				category = electronics
+		available = {
+			country_exists = SOV
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_government = fascism 
+							has_government = neutrality
+						}  
+					}
+				}
+				SOV = {
+					NOT = {
+						OR = {
+							has_government = fascism 
+							has_government = neutrality
+						}  
+					}				
+				}				
 			}
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1
-				uses = 1
-				category = industry
-			}	
-			add_tech_bonus = {
-				name = air_plane_models
-				bonus = 1
-				uses = 1
-				category = light_air
-				category = medium_air
-				category = heavy_air
+			NOT = {
+				has_war_with = SOV
 			}
- 		}
- 		search_filters = { FOCUS_FILTER_RESEARCH }
-	 }
+		
+			threat > 0.30	
+		}
+
+		relative_position_id = CZE_soviet_treaties
+	
+		x = 1
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			SOV = { country_event = CZE.320 }
+			custom_effect_tooltip = report_reward	
+			custom_effect_tooltip = CZE_acquire_access_for_soviets_tooltip_reward
+		}
+	}
+
 }

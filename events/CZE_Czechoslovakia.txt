@@ -3097,48 +3097,13 @@ country_event = {
 
 	option = { 
 		name = CZE.401.a
-		ai_chance = { factor = 0.9 }
-
-		if = {
-			limit = {
-				has_idea = extensive_conscription
-			}
-			add_political_power = 150
-		}
-
-		if = {
-			limit = {
-				has_idea = service_by_requirement
-			}
-			add_political_power = 150
-		}
-
-		if = {
-			limit = {
-				has_idea = all_adults_serve
-			}
-			add_political_power = 150
-		}
-
-		if = {
-			limit = {
-				has_idea = scraping_the_barrel
-			}
-			add_political_power = 150
-		}
-
-		if = {
-			limit = {
-				NOT = { has_idea = extensive_conscription }
-			}
-			custom_effect_tooltip = new_conscription_law_report
-			add_ideas = extensive_conscription
-		}
+		ai_chance = { base = 0.9 }
+		r56_conscription_law_level_up = yes
 	}
 
 	option = { 
 		name = CZE.401.b
-		ai_chance = { factor = 0.1 }		
+		ai_chance = { base = 0.1 }		
 		add_ideas = CZE_minority_mobilization_plan
 	}
 }
