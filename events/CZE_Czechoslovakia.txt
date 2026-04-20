@@ -3128,23 +3128,6 @@ country_event = {
 
 ############################################## NATIONAL FOCUS TREE EVENTS - POLITICS
 
-############################################## REFORM CZECHOSLOVAK GOVERNNMENT REPORT
-
-country_event = {
-	id = CZE.400
-	title = CZE.400.t
-	desc = CZE.400.d
-	picture = GFX_hodza_prime_minister_report
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = CZE.400.a
-
-		add_political_power = 75
-	}
-}
-
 ############################################## MILITARY SERVICE DECISION
 
 country_event = {

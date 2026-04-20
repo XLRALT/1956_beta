@@ -4566,90 +4566,6 @@ focus_tree = {
 			FOCUS_FILTER_ESPIONAGE
 		}
 	}
-	
-	focus = {
-		id = CZE_soviet_intelligence
-
-		icon = GFX_goal_HON_nkvd_assistance
-
-		prerequisite = { focus = CZE_intelligence_service_defense }
-		mutually_exclusive = { focus = CZE_military_coup }
-
-		available = { NOT = { has_government = fascism has_government = neutrality } }
-
-		x = 26
-		y = 5
-		cost = 10
-
-		ai_will_do = { factor = 0.2	}
-
-		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
-			country_event = { id = CZE.310 days = 1 }
-			custom_effect_tooltip = report_reward	
-			#custom_effect_tooltip = CZE_soviet_intelligence_tooltip_reward
-			effect_tooltip = {
-				add_ideas = CZE_vonapo20_idea
-			}
-		}
-		search_filters = { FOCUS_FILTER_ESPIONAGE }
-	}
-
- 	focus = {
- 		id = CZE_uranium_for_soviets
- 		icon = GFX_goal_generic_positive_trade_relations
-
- 		prerequisite = { focus = CZE_soviet_intelligence focus = CZE_acquire_access_for_soviets }
- 		
- 		available = { has_completed_focus = CZE_R56_establish_new_uranium_mines country_exists = SOV NOT = { has_government = fascism has_government = neutrality } }
-
- 		x = 26
- 		y = 7
- 		cost = 10
-
-		ai_will_do = { factor = 0.2	}
-
-		completion_reward = {
-			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
-			country_event = CZE.311 
-			custom_effect_tooltip = report_reward	
-			#custom_effect_tooltip = CZE_uranium_for_soviets_tooltip_reward
-			effect_tooltip = {
-				add_resource = {
-					type = oil
-					amount = 6
-					state = 73
-				}
-				add_resource = {
-					type = tungsten
-					amount = 12
-					state = 73
-				}
-		
-				add_resource = {
-					type = chromium
-					amount = 6
-					state = 73
-				}
-		
-				73 = {
-					remove_building = {
-						type = industrial_complex
-						level = 1
-					}
-				}
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_resource = {
-					type = oil
-					amount = 6
-					state = 73
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_OIL FOCUS_FILTER_TUNGSTEN FOCUS_FILTER_CHROMIUM }
- 	}
 
 ####### SOVIET RELATION
 
@@ -5020,6 +4936,701 @@ focus_tree = {
 
 ####### POLITICS TREE ################################################################################################################################################
 
+####### POLITICS TREE - COMMUNISM
+
+	focus = {
+		id = CZE_empower_internationalism
+		icon = GFX_goal_workers_support
+
+		available = { 
+			NOT = { 
+				OR = {
+					has_government = fascism 
+					has_government = neutrality 
+				} 
+			}
+		}
+
+		x = 40
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 0.7
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.	#Not vanilla standard, and PDX later added -actual- decisions.
+			country_event = { id = CZE.404 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_empower_internationalism_tooltip_reward
+			effect_tooltip = {
+				add_timed_idea = { idea = CZE_internationalism days = 1250 }
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_timed_idea = { idea = CZE_red_union_strikes days = 365 }
+			}
+		}
+	}
+
+	focus = {
+		id = CZE_boycott_press_law
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+
+		prerequisite = { focus = CZE_empower_internationalism }
+
+		x = 0
+		y = 1
+		relative_position_id = CZE_empower_internationalism
+		cost = 5
+
+		ai_will_do = { factor = 0.2	}
+
+		completion_reward = {
+ 
+			custom_effect_tooltip = new_idea
+			add_timed_idea = { idea = CZE_press_law_idea days = 1200 }
+			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
+			country_event = { id = CZE.407 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_boycott_press_law_tooltip_reward
+			effect_tooltip = {
+				add_timed_idea = { idea = CZE_communist_obstructions_idea days = 365 }
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_political_power = -75
+				add_popularity = {
+					ideology = communism
+					popularity = 0.10
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = CZE_collectivize_key_industries
+		icon = GFX_goal_generic_commie_investments
+
+		x = -3
+		y = 1
+		relative_position_id = CZE_boycott_press_law
+
+		prerequisite = {
+			focus = CZE_boycott_press_law
+		}
+
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = GER_collectivize_industry_idea
+		}
+	}
+
+	focus = {
+		id = CZE_collectivize_farms
+		icon = GFX_focus_POL_agrarian_reform
+		x = -1
+		y = 1
+		relative_position_id = CZE_collectivize_key_industries
+		cost = 10
+
+		prerequisite = { focus = CZE_collectivize_key_industries }
+
+		available = {
+			has_government = communism
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_timed_idea = {
+				idea = POL_the_Agrarian_Reform_Focus
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = CZE_suppress_the_church
+		icon = GFX_focus_mex_triumph_over_the_cristeros
+		x = 0
+		y = 1
+		relative_position_id = CZE_collectivize_farms
+		cost = 10
+
+		prerequisite = {
+			focus = CZE_collectivize_farms
+		}
+
+		available = {
+			has_government = communism
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = { has_idea = CZE_divided_nation }
+				add_stability = -0.1	#To account for national spirit
+				swap_ideas = {
+					remove_idea = CZE_divided_nation
+					add_idea = CZE_divided_nation_2
+				}
+			}
+			if = {
+				limit = { has_idea = CZE_divided_nation_2 }
+				add_stability = -0.1	#To account for national spirit
+				remove_ideas = CZE_divided_nation_2
+			}
+			add_ideas = ETH_secular_education
+		}
+	}
+
+	focus = {
+		id = CZE_five_year_plan
+		icon = GFX_five_year_plan_continue
+		x = 1
+		y = 1
+		relative_position_id = CZE_collectivize_key_industries
+		cost = 10
+
+		prerequisite = { focus = CZE_collectivize_key_industries }
+
+		available = {
+			has_government = communism
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = steel_mill
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = steel_mill
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				prioritize = { 70 71 }	#Slovakia
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 3
+				category = excavation_tech
+			}
+			add_ideas = CZE_inflation
+			set_country_flag = CZE_started_five_year_plan
+		}
+	}
+
+	focus = {
+		id = CZE_currency_reform
+		icon = GFX_goal_generic_financial_markets
+		x = 0
+		y = 1
+		relative_position_id = CZE_five_year_plan
+		cost = 5
+
+		prerequisite = {
+			focus = CZE_five_year_plan
+		}
+
+		available = {
+			has_country_flag = {
+				flag = CZE_started_five_year_plan
+				days > 365
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = -0.1
+			}
+			remove_ideas = CZE_inflation
+		}
+	}
+
+	focus = {
+		id = CZE_strengthen_communism
+		icon = GFX_goal_support_communism
+
+		prerequisite = { focus = CZE_boycott_press_law }
+		mutually_exclusive = { focus = CZE_handle_the_communist_power_grab }
+
+		x = 1
+		y = 1
+		relative_position_id = CZE_boycott_press_law
+		cost = 10
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = yalta_unlock_focuses
+					is_subject_of = SOV
+				}
+				has_government = communism
+			}
+		}
+
+		completion_reward = {
+ 
+			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
+			country_event = { id = CZE.442 days = 1 } 
+			hidden_effect = {
+				country_event = { id = CZE.447 days = 10 } 
+			}
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_strengthen_communism_tooltip_reward
+			effect_tooltip = {
+				if = {
+					limit = { has_idea = CZE_vladimir_clementis }
+					add_political_power = 75
+				}
+				if = {
+					limit = { has_idea = CZE_felix_achille_de_la_camara }
+					remove_ideas = CZE_felix_achille_de_la_camara
+					add_ideas = CZE_vladimir_clementis
+				}
+				else = {
+					add_ideas = CZE_vladimir_clementis
+				} 
+			}
+		}
+	}
+
+	focus = {
+		id = CZE_handle_the_communist_power_grab
+		icon = GFX_focus_usa_voter_registration_act
+		x = -1
+		y = 1
+		relative_position_id = CZE_boycott_press_law
+		cost = 10
+
+		prerequisite = {
+			focus = CZE_boycott_press_law
+		}
+
+		mutually_exclusive = {
+			focus = CZE_strengthen_communism
+		}
+
+		available = {
+			is_subject_of = SOV
+			NOT = {
+				has_government = communism
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = cold_war.6
+		}
+	}
+
+	focus = {
+		id = CZE_soviet_intelligence
+		icon = GFX_goal_HON_nkvd_assistance
+
+		prerequisite = { focus = CZE_handle_the_communist_power_grab }
+
+		available = { NOT = { has_government = fascism has_government = neutrality } }
+
+		x = 1
+		y = 1
+		relative_position_id = CZE_handle_the_communist_power_grab
+		cost = 10
+
+		ai_will_do = { factor = 0.2	}
+
+		completion_reward = {
+			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
+			country_event = { id = CZE.310 days = 1 }
+			custom_effect_tooltip = report_reward	
+			#custom_effect_tooltip = CZE_soviet_intelligence_tooltip_reward
+			effect_tooltip = {
+				add_ideas = CZE_vonapo20_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+	}
+
+ 	focus = {
+ 		id = CZE_uranium_for_soviets
+ 		icon = GFX_goal_generic_positive_trade_relations
+
+ 		prerequisite = { focus = CZE_soviet_intelligence }
+ 		
+ 		available = { has_completed_focus = CZE_R56_establish_new_uranium_mines country_exists = SOV NOT = { has_government = fascism has_government = neutrality } }
+
+ 		x = 0
+ 		y = 1
+		relative_position_id = CZE_soviet_intelligence
+ 		cost = 10
+
+		ai_will_do = { factor = 0.2	}
+
+		completion_reward = {
+			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
+			country_event = CZE.311 
+			custom_effect_tooltip = report_reward	
+			#custom_effect_tooltip = CZE_uranium_for_soviets_tooltip_reward
+			effect_tooltip = {
+				add_resource = {
+					type = oil
+					amount = 6
+					state = 73
+				}
+				add_resource = {
+					type = tungsten
+					amount = 12
+					state = 73
+				}
+		
+				add_resource = {
+					type = chromium
+					amount = 6
+					state = 73
+				}
+		
+				73 = {
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_resource = {
+					type = oil
+					amount = 6
+					state = 73
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_OIL FOCUS_FILTER_TUNGSTEN FOCUS_FILTER_CHROMIUM }
+ 	}
+
+	focus = {
+		id = CZE_peoples_revolution
+		icon = GFX_goal_red_army
+
+		prerequisite = { focus = CZE_strengthen_communism }
+
+		available = { 
+			AND = { 
+				has_government = communism
+				69 = { is_owned_by = CZE }
+				1078 = { is_owned_by = CZE }
+				74 = { is_owned_by = CZE }
+			}
+		}
+
+		x = 1
+		y = 1
+		relative_position_id = CZE_strengthen_communism
+		cost = 10
+
+		completion_reward = {
+			effect_tooltip = {
+				add_corps_commander_role = {
+					character = CZE_richard_tesarik
+					traits = { armor_officer }
+					skill = 2
+					attack_skill = 4
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+					legacy_id=-1
+					visible = {
+						has_completed_focus = CZE_peoples_revolution
+					}
+				}
+			}
+			hidden_effect = {
+				remove_ideas = CZE_unruly_minorities
+				remove_ideas = CZE_unruly_minorities_2
+			}
+			custom_effect_tooltip = new_idea
+			add_ideas = CZE_oppressed_minorities
+			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
+			country_event = { id = CZE.443 days = 1 }
+			custom_effect_tooltip = report_reward
+			#custom_effect_tooltip = CZE_peoples_revolution_tooltip_reward
+			effect_tooltip = {
+				add_political_power = -75
+				69 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}	
+				74 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_timed_idea = { idea = CZE_collectivist_ethos_idea days = 1095 }
+			}
+			custom_effect_tooltip = alternative_diplomatic_reward
+			effect_tooltip = {
+				add_ideas = CZE_peoples_militia_idea
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = CZE_join_commitern
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+
+ 		prerequisite = { focus = CZE_peoples_revolution }
+
+		x = 0
+		y = 1
+		relative_position_id = CZE_peoples_revolution
+		cost = 10
+
+		available = { country_exists = SOV is_in_faction = no has_government = communism }
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = CZE_join_comitern_tt
+					SOV = { is_in_faction_with = CZE }
+				}
+			}
+			
+		completion_reward = {
+			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
+			SOV = { country_event = { id = CZE.444 days = 1 } }
+			custom_effect_tooltip = report_reward	
+			custom_effect_tooltip = CZE_join_commitern_tooltip_reward
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ALLIANCE
+		}
+	}
+
+	focus = {
+		id = CZE_expand_soviet_ties
+		icon = GFX_focus_generic_russian_deal_communist
+ 		prerequisite = { focus = CZE_join_commitern }
+		x = 0
+		y = 1
+		relative_position_id = CZE_join_commitern
+		cost = 5
+		available = {
+			has_government = communism
+			SOV = {
+				has_government = communism
+				is_in_faction_with = ROOT
+			}
+		}
+		completion_reward = {
+			SOV = { country_event = { id = CZE.448 days = 1 } }
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				add_opinion_modifier = { target = SOV modifier = CZE_friendship_with_USSR }
+				reverse_add_opinion_modifier = { target = SOV modifier = CZE_friendship_with_USSR }
+				custom_effect_tooltip = CHL_skip_one_line_tt
+				add_ideas = CZE_help_from_sov
+			}
+		}
+	}
+
+	focus = {
+		id = CZE_split_poland
+		icon = GFX_goal_generic_attack_poland
+		prerequisite = { focus = CZE_expand_soviet_ties focus = CZE_uranium_for_soviets }
+		relative_position_id = CZE_expand_soviet_ties
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+			has_government = communism
+			SOV = {
+				has_government = communism
+				is_in_faction_with = ROOT
+			}
+			NOT = {
+				POL = { is_ally_with = ROOT }
+				is_in_faction_with = POL
+			}
+		}
+		bypass = { 
+			POL = { is_subject_of = ROOT }
+		}
+		completion_reward = {
+			SOV = { 
+				country_event = { id = CZE.451 days = 1 } 
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				create_wargoal = {
+					type = annex_everything
+					target = POL
+				}
+				SOV = {
+					add_state_claim = 89
+					add_state_claim = 91
+					add_state_claim = 93
+					add_state_claim = 94
+					add_state_claim = 95
+					add_state_claim = 96
+					add_state_claim = 935
+					add_state_claim = 936
+					create_wargoal = {
+						type = take_state_focus
+						target = POL
+						generator = { 89 91 93 94 95 96 935 936 }
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = CZE_union_with_warsaw
+		icon = GFX_goal_cze_westslavia
+ 		prerequisite = { focus = CZE_split_poland }
+		relative_position_id = CZE_split_poland
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			is_subject = no
+			has_government = communism
+			custom_trigger_tooltip = {
+				tooltip = CZE_union_with_warsaw_trigger_tt
+				10 = {
+					is_controlled_by = ROOT
+					compliance > 50
+					resistance > 5
+				}
+				87 = {
+					is_controlled_by = ROOT
+					compliance > 50
+					resistance > 5
+				}
+				90 = {
+					is_controlled_by = ROOT
+					compliance > 50
+					resistance > 5
+				}
+				98 = {
+					is_controlled_by = ROOT
+					compliance > 50
+					resistance > 5
+				}
+				88 = {
+					is_controlled_by = ROOT
+					compliance > 50
+					resistance > 5
+				}
+				934 = {
+					is_controlled_by = ROOT
+					compliance > 50
+					resistance > 5
+				}
+				97 = {
+					is_controlled_by = ROOT
+					compliance > 50
+					resistance > 5
+				}
+				92 = {
+					is_controlled_by = ROOT
+					compliance > 50
+					resistance > 5
+				}
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = form_country_gs_required_coring_states_tt
+			custom_effect_tooltip = CZE_union_with_warsaw_effect_tt
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			every_controlled_state = {
+				limit = { 
+					is_core_of = POL	#If Poland has cores on these lands, it would make sense for you to get them too if they're controlled by you.
+					OR = {
+						state = 67 #Oberschliesen
+						state = 66 #Niederschliesen
+						state = 68 #Neumark
+						state = 63 #Hinterpommern
+						state = 5 #Ermland-Masuren
+						state = 784 #Wilno
+						state = 96 #Wilejka
+						state = 936 #Outer Wilno
+						state = 935 #Grodno
+						state = 95 #Nowogrodek
+						state = 94 #Polesie
+						state = 93 #Wolyn
+						state = 91 #Lwow
+						state = 89 #Stanislawow
+						state = 86 #Poznan
+						state = 762 #Katowice
+						state = 807 #Gdynia
+						state = 85 #Danzig
+					} 
+				}
+				add_core_of = ROOT
+			}
+			hidden_effect = {
+				set_cosmetic_tag = CZE_westslavia
+				add_state_core = 88 #Krakow
+				add_state_core = 90 #Kielce
+				add_state_core = 92 #Lublin
+				add_state_core = 10 #Warsaw
+				add_state_core = 98 #Plock
+				add_state_core = 87 #Lodz
+				add_state_core = 97 #Bialystok
+				add_state_core = 934 #Suwalki
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	#OLD POLITICS
+
 	focus = {
 		id = CZE_czechoslovak_government_reform
 		icon = GFX_goal_cze_reform_czechoslovak_government
@@ -5031,13 +5642,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
-			country_event = { id = CZE.400 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_czechoslovak_government_reform_tooltip_reward
-			effect_tooltip = {
-				add_political_power = 75
-			}
+			add_political_power = 75
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -5109,7 +5714,6 @@ focus_tree = {
 		icon = GFX_goal_cze_support_sokol_movement
 
 		prerequisite = { focus = CZE_czechoslovak_government_reform }
-		mutually_exclusive = { focus = CZE_empower_internationalism }
 
 		available = { 
 			NOT = { 
@@ -5140,49 +5744,6 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CZE_empower_internationalism
-		icon = GFX_goal_workers_support
-
-		prerequisite = { focus = CZE_czechoslovak_government_reform }
-		mutually_exclusive = { focus = CZE_sokol_movement }
-
-		available = { 
-			NOT = { 
-				OR = {
-					has_government = fascism 
-					has_government = neutrality 
-				} 
-			}
-		}
-
-		x = 33
-		y = 1
-		cost = 5
-
-		ai_will_do = {
-			factor = 0.7
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-
-		completion_reward = {
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.	#Not vanilla standard, and PDX later added -actual- decisions.
-			country_event = { id = CZE.404 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_empower_internationalism_tooltip_reward
-			effect_tooltip = {
-				add_timed_idea = { idea = CZE_internationalism days = 1250 }
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_timed_idea = { idea = CZE_red_union_strikes days = 365 }
-			}
-		}
 	}
 
 	focus = {
@@ -5296,8 +5857,8 @@ focus_tree = {
 		id = CZE_democratic_reforms
 		icon = GFX_goal_generic_befriend_czech
 
-		prerequisite = { focus = CZE_empower_internationalism focus = CZE_sokol_movement }
-		mutually_exclusive = { focus = CZE_state_defense_law focus = CZE_boycott_press_law }
+		prerequisite = { focus = CZE_sokol_movement }
+		mutually_exclusive = { focus = CZE_state_defense_law }
 
 		allow_branch = {
 			NOT = {
@@ -5338,62 +5899,6 @@ focus_tree = {
 			effect_tooltip = {
 				add_timed_idea = { idea = CZE_constitutional_reforms days = 365 }
 			}
-		}
-	}
-
-	focus = {
-		id = CZE_boycott_press_law
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-
-		prerequisite = { focus = CZE_empower_internationalism }
-		mutually_exclusive = { focus = CZE_democratic_reforms }
-
-		x = 34
-		y = 2
-		cost = 5
-
-		ai_will_do = { factor = 0.2	}
-
-		completion_reward = {
- 
-			custom_effect_tooltip = new_idea
-			add_timed_idea = { idea = CZE_press_law_idea days = 1200 }
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
-			country_event = { id = CZE.407 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_boycott_press_law_tooltip_reward
-			effect_tooltip = {
-				add_timed_idea = { idea = CZE_communist_obstructions_idea days = 365 }
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_political_power = -75
-				add_popularity = {
-					ideology = communism
-					popularity = 0.10
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = CZE_collectivize_key_industries    #mines, banks
-		icon = GFX_goal_generic_commie_investments
-
-		x = 1
-		y = 1
-		relative_position_id = CZE_boycott_press_law
-
-		prerequisite = {
-			focus = CZE_boycott_press_law
-		}
-
-		cost = 5
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_ideas = GER_collectivize_industry_idea
 		}
 	}
 
@@ -5666,7 +6171,7 @@ focus_tree = {
 		icon = GFX_goal_generic_partisans
 
 		prerequisite = { focus = CZE_partial_mobilization focus = CZE_czech_fascism_onrise }
-     	mutually_exclusive = { focus = CZE_soviet_intelligence focus = CZE_ban_communism }
+     	mutually_exclusive = { focus = CZE_ban_communism }
 
 		allow_branch = {
 			NOT = {	#more of a pre-war thing to do
@@ -6227,533 +6732,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ALLIANCE }
  	}
 
-####### POLITICS TREE - COMMUNISM
-
-
-	focus = {
-		id = CZE_strengthen_communism
-		icon = GFX_goal_support_communism
-
-		prerequisite = { focus = CZE_boycott_press_law }
-		mutually_exclusive = {
-			focus = CZE_handle_the_communist_power_grab
-		}
-
-		x = 34
-		y = 4
-		cost = 10
-
-		available = {
-			if = {
-				limit = {
-					has_country_flag = yalta_unlock_focuses
-					is_subject_of = SOV
-				}
-				has_government = communism
-			}
-		}
-
-		completion_reward = {
- 
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
-			country_event = { id = CZE.442 days = 1 } 
-			hidden_effect = {
-				country_event = { id = CZE.447 days = 10 } 
-			}
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_strengthen_communism_tooltip_reward
-			effect_tooltip = {
-				if = {
-					limit = { has_idea = CZE_vladimir_clementis }
-					add_political_power = 75
-				}
-				if = {
-					limit = { has_idea = CZE_felix_achille_de_la_camara }
-					remove_ideas = CZE_felix_achille_de_la_camara
-					add_ideas = CZE_vladimir_clementis
-				}
-				else = {
-					add_ideas = CZE_vladimir_clementis
-				} 
-			}
-		}
-	}
-
-	focus = {
-		id = CZE_collectivize_farms
-		icon = GFX_focus_POL_agrarian_reform
-		x = 1
-		y = 1
-		relative_position_id = CZE_strengthen_communism
-		cost = 10
-
-		prerequisite = {
-			focus = CZE_strengthen_communism
-		}
-
-		available = {
-			has_government = communism
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_timed_idea = {
-				idea = POL_the_Agrarian_Reform_Focus
-				days = 365
-			}
-		}
-	}
-
-	focus = {   #1949
-		id = CZE_suppress_the_church
-		icon = GFX_focus_mex_triumph_over_the_cristeros
-		x = 0
-		y = 1
-		relative_position_id = CZE_collectivize_farms
-		cost = 10
-
-		prerequisite = {
-			focus = CZE_collectivize_farms
-		}
-
-		available = {
-			has_government = communism
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			if = {
-				limit = { has_idea = CZE_divided_nation }
-				add_stability = -0.1	#To account for national spirit
-				swap_ideas = {
-					remove_idea = CZE_divided_nation
-					add_idea = CZE_divided_nation_2
-				}
-			}
-			if = {
-				limit = { has_idea = CZE_divided_nation_2 }
-				add_stability = -0.1	#To account for national spirit
-				remove_ideas = CZE_divided_nation_2
-			}
-			add_ideas = ETH_secular_education
-		}
-	}
-
-	focus = {   #1949
-		id = CZE_five_year_plan
-		icon = GFX_five_year_plan_continue
-		x = 3
-		y = 1
-		relative_position_id = CZE_strengthen_communism
-		cost = 10
-
-		prerequisite = {
-			focus = CZE_strengthen_communism
-		}
-
-		available = {
-			has_government = communism
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = steel_mill
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = steel_mill
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-				}
-				prioritize = { 70 71 }	#Slovakia
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1
-				uses = 3
-				category = excavation_tech
-			}
-			add_ideas = CZE_inflation
-			set_country_flag = CZE_started_five_year_plan
-		}
-	}
-	focus = {   #1953
-		id = CZE_currency_reform
-		icon = GFX_goal_generic_financial_markets
-		x = 0
-		y = 1
-		relative_position_id = CZE_five_year_plan
-		cost = 5
-
-		prerequisite = {
-			focus = CZE_five_year_plan
-		}
-
-		available = {
-			has_country_flag = {
-				flag = CZE_started_five_year_plan
-				days > 365
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_popularity = {
-				ideology = ROOT
-				popularity = -0.1
-			}
-			remove_ideas = CZE_inflation
-		}
-	}
-
-	focus = {   #February 1948
-		id = CZE_handle_the_communist_power_grab
-		icon = GFX_focus_usa_voter_registration_act
-		x = 2
-		y = 2
-		relative_position_id = CZE_boycott_press_law
-		cost = 10
-
-		allow_branch = {
-			has_country_flag = yalta_unlock_focuses
-		}
-
-		prerequisite = {
-			focus = CZE_boycott_press_law
-		}
-
-		mutually_exclusive = {
-			focus = CZE_strengthen_communism
-		}
-
-		available = {
-			is_subject_of = SOV
-			NOT = {
-				has_government = communism
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			country_event = cold_war.6
-		}
-	}
-
-	focus = {
-		id = CZE_peoples_revolution
-		icon = GFX_goal_red_army
-
-		prerequisite = { focus = CZE_strengthen_communism }
-
-		available = { 
-			AND = { 
-				has_government = communism
-				69 = { is_owned_by = CZE }
-				1078 = { is_owned_by = CZE }
-				74 = { is_owned_by = CZE }
-			}
-		}
-
-		x = 34
-		y = 7
-		cost = 10
-
-		completion_reward = {
-			effect_tooltip = {
-				add_corps_commander_role = {
-					character = CZE_richard_tesarik
-					traits = { armor_officer }
-					skill = 2
-					attack_skill = 4
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
-					legacy_id=-1
-					visible = {
-						has_completed_focus = CZE_peoples_revolution
-					}
-				}
-			}
-			hidden_effect = {
-				remove_ideas = CZE_unruly_minorities
-				remove_ideas = CZE_unruly_minorities_2
-			}
-			custom_effect_tooltip = new_idea
-			add_ideas = CZE_oppressed_minorities
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
-			country_event = { id = CZE.443 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_peoples_revolution_tooltip_reward
-			effect_tooltip = {
-				add_political_power = -75
-				69 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}	
-				74 = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_timed_idea = { idea = CZE_collectivist_ethos_idea days = 1095 }
-			}
-			custom_effect_tooltip = alternative_diplomatic_reward
-			effect_tooltip = {
-				add_ideas = CZE_peoples_militia_idea
-			}
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
-	}
-
-	focus = {
-		id = CZE_join_commitern
-		icon = GFX_focus_chi_mission_to_the_soviet_union
-
- 		prerequisite = { focus = CZE_peoples_revolution }
- 		prerequisite = { focus = CZE_uranium_for_soviets }
-
-		x = 28
-		y = 8
-		cost = 10
-
-		available = { country_exists = SOV is_in_faction = no has_government = communism }
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = CZE_join_comitern_tt
-					SOV = { is_in_faction_with = CZE }
-				}
-			}
-			
-		completion_reward = {
-			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
-			SOV = { country_event = { id = CZE.444 days = 1 } }
-			custom_effect_tooltip = report_reward	
-			custom_effect_tooltip = CZE_join_commitern_tooltip_reward
-		}
-
-		search_filters = {
-			FOCUS_FILTER_ALLIANCE
-		}
-	}
-
-	focus = {
-		id = CZE_expand_soviet_ties
-		icon = GFX_focus_generic_russian_deal_communist
- 		prerequisite = { focus = CZE_join_commitern }
-		x = 28
-		y = 9
-		cost = 5
-		available = {
-			has_government = communism
-			SOV = {
-				has_government = communism
-				is_in_faction_with = ROOT
-			}
-		}
-		completion_reward = {
-			SOV = { country_event = { id = CZE.448 days = 1 } }
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				add_opinion_modifier = { target = SOV modifier = CZE_friendship_with_USSR }
-				reverse_add_opinion_modifier = { target = SOV modifier = CZE_friendship_with_USSR }
-				custom_effect_tooltip = CHL_skip_one_line_tt
-				add_ideas = CZE_help_from_sov
-			}
-		}
-	}
-
-	focus = {
-		id = CZE_split_poland
-		icon = GFX_goal_generic_attack_poland
-		prerequisite = { focus = CZE_expand_soviet_ties }
-		relative_position_id = CZE_expand_soviet_ties
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			has_government = communism
-			SOV = {
-				has_government = communism
-				is_in_faction_with = ROOT
-			}
-			NOT = {
-				POL = { is_ally_with = ROOT }
-				is_in_faction_with = POL
-			}
-		}
-		bypass = { 
-			POL = { is_subject_of = ROOT }
-		}
-		completion_reward = {
-			SOV = { 
-				country_event = { id = CZE.451 days = 1 } 
-			}
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				create_wargoal = {
-					type = annex_everything
-					target = POL
-				}
-				SOV = {
-					add_state_claim = 89
-					add_state_claim = 91
-					add_state_claim = 93
-					add_state_claim = 94
-					add_state_claim = 95
-					add_state_claim = 96
-					add_state_claim = 935
-					add_state_claim = 936
-					create_wargoal = {
-						type = take_state_focus
-						target = POL
-						generator = { 89 91 93 94 95 96 935 936 }
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-	}
-
-	focus = {
-		id = CZE_union_with_warsaw
-		icon = GFX_goal_cze_westslavia
- 		prerequisite = { focus = CZE_split_poland }
-		relative_position_id = CZE_split_poland
-		x = 0
-		y = 1
-		cost = 5
-		available = {
-			is_subject = no
-			has_government = communism
-			custom_trigger_tooltip = {
-				tooltip = CZE_union_with_warsaw_trigger_tt
-				10 = {
-					is_controlled_by = ROOT
-					compliance > 50
-					resistance > 5
-				}
-				87 = {
-					is_controlled_by = ROOT
-					compliance > 50
-					resistance > 5
-				}
-				90 = {
-					is_controlled_by = ROOT
-					compliance > 50
-					resistance > 5
-				}
-				98 = {
-					is_controlled_by = ROOT
-					compliance > 50
-					resistance > 5
-				}
-				88 = {
-					is_controlled_by = ROOT
-					compliance > 50
-					resistance > 5
-				}
-				934 = {
-					is_controlled_by = ROOT
-					compliance > 50
-					resistance > 5
-				}
-				97 = {
-					is_controlled_by = ROOT
-					compliance > 50
-					resistance > 5
-				}
-				92 = {
-					is_controlled_by = ROOT
-					compliance > 50
-					resistance > 5
-				}
-			}
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = form_country_gs_required_coring_states_tt
-			custom_effect_tooltip = CZE_union_with_warsaw_effect_tt
-			custom_effect_tooltip = CHL_skip_one_line_tt
-			every_controlled_state = {
-				limit = { 
-					is_core_of = POL	#If Poland has cores on these lands, it would make sense for you to get them too if they're controlled by you.
-					OR = {
-						state = 67 #Oberschliesen
-						state = 66 #Niederschliesen
-						state = 68 #Neumark
-						state = 63 #Hinterpommern
-						state = 5 #Ermland-Masuren
-						state = 784 #Wilno
-						state = 96 #Wilejka
-						state = 936 #Outer Wilno
-						state = 935 #Grodno
-						state = 95 #Nowogrodek
-						state = 94 #Polesie
-						state = 93 #Wolyn
-						state = 91 #Lwow
-						state = 89 #Stanislawow
-						state = 86 #Poznan
-						state = 762 #Katowice
-						state = 807 #Gdynia
-						state = 85 #Danzig
-					} 
-				}
-				add_core_of = ROOT
-			}
-			hidden_effect = {
-				set_cosmetic_tag = CZE_westslavia
-				add_state_core = 88 #Krakow
-				add_state_core = 90 #Kielce
-				add_state_core = 92 #Lublin
-				add_state_core = 10 #Warsaw
-				add_state_core = 98 #Plock
-				add_state_core = 87 #Lodz
-				add_state_core = 97 #Bialystok
-				add_state_core = 934 #Suwalki
-			}
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-	}
-
 ####### FACTION RESEARCH BONUS #########
 
  	focus = {
  		id = CZE_faction_research_exchange
  		icon = GFX_goal_research_silver_cooperation
 
- 		prerequisite = { focus = CZE_join_allies focus = CZE_join_axis focus = CZE_join_commitern focus = CZE_nazi_puppet focus = CZE_claims_bohemian_crown }
+ 		prerequisite = { focus = CZE_join_allies focus = CZE_join_axis focus = CZE_nazi_puppet focus = CZE_claims_bohemian_crown }
 
  		available = { is_in_faction = yes }
 
