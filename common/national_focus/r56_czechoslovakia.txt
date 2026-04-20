@@ -4270,7 +4270,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = new_theorist
 			show_ideas_tooltip = CZE_louis_eugene_faucher
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.315 days = 12 }
 			effect_tooltip = {
 				add_opinion_modifier = { target = FRA modifier = CZE_czech_france_alliance }
@@ -4610,7 +4609,6 @@ focus_tree = {
 		ai_will_do = { factor = 0.7 }	
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.316 days = 1 }
 			#custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_soviet_treaties_tooltip_reward_1
@@ -4662,7 +4660,6 @@ focus_tree = {
 		cost = 10
 
 		completion_reward = {
-			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			SOV = { country_event = CZE.320 }
 			custom_effect_tooltip = report_reward	
 			custom_effect_tooltip = CZE_acquire_access_for_soviets_tooltip_reward
@@ -4710,7 +4707,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.329 days = 1 }
 			custom_effect_tooltip = report_reward
 			custom_effect_tooltip = CZE_revive_little_entente_tooltip_reward	
@@ -4745,7 +4741,6 @@ focus_tree = {
 
 		ai_will_do = { factor = 0.3 }
 		completion_reward = {
-			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			YUG = { country_event = CZE.331 }
 			custom_effect_tooltip = if_they_accept_tt
 			custom_effect_tooltip = CZE_invite_yugoslavia_tooltip_reward
@@ -4787,7 +4782,6 @@ focus_tree = {
 
 		ai_will_do = { factor = 0.7 }	
 		completion_reward = {
-			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			ROM = { country_event = CZE.331 }
 			custom_effect_tooltip = if_they_accept_tt
 			custom_effect_tooltip = CZE_invite_romania_tooltip_reward
@@ -4889,7 +4883,6 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.350 days = 1 }
 			custom_effect_tooltip = report_reward	
 			#custom_effect_tooltip = CZE_claims_bohemian_crown_tooltip_reward
@@ -4964,16 +4957,20 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.404 days = 1 }
 			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_empower_internationalism_tooltip_reward
 			effect_tooltip = {
-				add_timed_idea = { idea = CZE_internationalism days = 1250 }
+				add_timed_idea = {
+					idea = CZE_internationalism
+					days = 1250
+				}
 			}
 			custom_effect_tooltip = alternative_diplomatic_reward
 			effect_tooltip = {
-				add_timed_idea = { idea = CZE_red_union_strikes days = 365 }
+				add_timed_idea = {
+					idea = CZE_red_union_strikes
+					days = 365
+				}
 			}
 		}
 	}
@@ -4992,15 +4989,17 @@ focus_tree = {
 		ai_will_do = { factor = 0.2	}
 
 		completion_reward = {
- 
-			custom_effect_tooltip = new_idea
-			add_timed_idea = { idea = CZE_press_law_idea days = 1200 }
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
+			add_timed_idea = {
+				idea = CZE_press_law_idea
+				days = 1200
+			}
 			country_event = { id = CZE.407 days = 1 }
 			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_boycott_press_law_tooltip_reward
 			effect_tooltip = {
-				add_timed_idea = { idea = CZE_communist_obstructions_idea days = 365 }
+				add_timed_idea = {
+					idea = CZE_communist_obstructions_idea
+					days = 365
+				}
 			}
 			custom_effect_tooltip = alternative_diplomatic_reward
 			effect_tooltip = {
@@ -5139,12 +5138,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1
-				uses = 3
-				category = excavation_tech
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = CZE_inflation
 			set_country_flag = CZE_started_five_year_plan
 		}
@@ -5175,55 +5169,8 @@ focus_tree = {
 				ideology = ROOT
 				popularity = -0.1
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			remove_ideas = CZE_inflation
-		}
-	}
-
-	focus = {
-		id = CZE_strengthen_communism
-		icon = GFX_goal_support_communism
-
-		prerequisite = { focus = CZE_boycott_press_law }
-		mutually_exclusive = { focus = CZE_handle_the_communist_power_grab }
-
-		x = 1
-		y = 1
-		relative_position_id = CZE_boycott_press_law
-		cost = 10
-
-		available = {
-			if = {
-				limit = {
-					has_country_flag = yalta_unlock_focuses
-					is_subject_of = SOV
-				}
-				has_government = communism
-			}
-		}
-
-		completion_reward = {
- 
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
-			country_event = { id = CZE.442 days = 1 } 
-			hidden_effect = {
-				country_event = { id = CZE.447 days = 10 } 
-			}
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_strengthen_communism_tooltip_reward
-			effect_tooltip = {
-				if = {
-					limit = { has_idea = CZE_vladimir_clementis }
-					add_political_power = 75
-				}
-				if = {
-					limit = { has_idea = CZE_felix_achille_de_la_camara }
-					remove_ideas = CZE_felix_achille_de_la_camara
-					add_ideas = CZE_vladimir_clementis
-				}
-				else = {
-					add_ideas = CZE_vladimir_clementis
-				} 
-			}
 		}
 	}
 
@@ -5235,13 +5182,7 @@ focus_tree = {
 		relative_position_id = CZE_boycott_press_law
 		cost = 10
 
-		prerequisite = {
-			focus = CZE_boycott_press_law
-		}
-
-		mutually_exclusive = {
-			focus = CZE_strengthen_communism
-		}
+		mutually_exclusive = { focus = CZE_strengthen_communism }
 
 		available = {
 			is_subject_of = SOV
@@ -5272,13 +5213,35 @@ focus_tree = {
 		ai_will_do = { factor = 0.2	}
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.310 days = 1 }
-			custom_effect_tooltip = report_reward	
-			#custom_effect_tooltip = CZE_soviet_intelligence_tooltip_reward
-			effect_tooltip = {
-				add_ideas = CZE_vonapo20_idea
+			add_ideas = CZE_vonapo20_idea
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					NOT = {
+						has_done_agency_upgrade = upgrade_form_department
+					}
+				}
+				upgrade_intelligence_agency = upgrade_form_department
 			}
+			else_if = {
+				limit = {
+					has_dlc = "La Resistance"
+					NOT = {
+						has_done_agency_upgrade = upgrade_decryption_boost
+					}
+				}
+				upgrade_intelligence_agency = upgrade_decryption_boost
+			}    
+			else_if = {
+				limit = {
+					has_dlc = "La Resistance"
+					NOT = {
+						has_done_agency_upgrade = upgrade_decryption_boost_2
+					}
+				}
+				upgrade_intelligence_agency = upgrade_decryption_boost_2            
+			}	
 		}
 		search_filters = { FOCUS_FILTER_ESPIONAGE }
 	}
@@ -5292,14 +5255,13 @@ focus_tree = {
  		available = { has_completed_focus = CZE_R56_establish_new_uranium_mines country_exists = SOV NOT = { has_government = fascism has_government = neutrality } }
 
  		x = 0
- 		y = 1
+ 		y = 2
 		relative_position_id = CZE_soviet_intelligence
  		cost = 10
 
 		ai_will_do = { factor = 0.2	}
 
 		completion_reward = {
-			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = CZE.311 
 			custom_effect_tooltip = report_reward	
 			#custom_effect_tooltip = CZE_uranium_for_soviets_tooltip_reward
@@ -5341,10 +5303,43 @@ focus_tree = {
  	}
 
 	focus = {
+		id = CZE_strengthen_communism
+		icon = GFX_goal_support_communism
+
+		prerequisite = { focus = CZE_boycott_press_law }
+		mutually_exclusive = { focus = CZE_handle_the_communist_power_grab }
+
+		x = 1
+		y = 1
+		relative_position_id = CZE_boycott_press_law
+		cost = 10
+
+		available = {
+			if = {
+				limit = {
+					is_subject_of = SOV
+				}
+				has_government = communism
+			}
+		}
+
+		completion_reward = {
+			hidden_effect = {
+				country_event = { id = CZE.447 days = 10 } 
+			}
+			add_political_power = 75
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+		}
+	}
+
+	focus = {
 		id = CZE_peoples_revolution
 		icon = GFX_goal_red_army
 
-		prerequisite = { focus = CZE_strengthen_communism }
+		prerequisite = { focus = CZE_strengthen_communism focus = CZE_handle_the_communist_power_grab }
 
 		available = { 
 			AND = { 
@@ -5355,48 +5350,64 @@ focus_tree = {
 			}
 		}
 
-		x = 1
-		y = 1
+		x = 0
+		y = 2
 		relative_position_id = CZE_strengthen_communism
 		cost = 10
 
 		completion_reward = {
-			effect_tooltip = {
-				add_corps_commander_role = {
-					character = CZE_richard_tesarik
-					traits = { armor_officer }
-					skill = 2
-					attack_skill = 4
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
-					legacy_id=-1
-					visible = {
-						has_completed_focus = CZE_peoples_revolution
+			show_unit_leaders_tooltip = CZE_richard_tesarik
+			if = {
+				limit = {
+					has_idea = CZE_unruly_minorities
+				}
+				swap_ideas = {
+					remove_idea = CZE_unruly_minorities
+					add_idea = CZE_oppressed_minorities
+				}
+				else_if = {
+					limit = {
+						has_idea = CZE_unruly_minorities_2
+					}
+					swap_ideas = {
+						remove_idea = CZE_unruly_minorities_2
+						add_idea = CZE_oppressed_minorities
 					}
 				}
+				else = {
+					add_ideas = CZE_oppressed_minorities
+					custom_effect_tooltip = generic_skip_one_line_tt
+				}
 			}
-			hidden_effect = {
-				remove_ideas = CZE_unruly_minorities
-				remove_ideas = CZE_unruly_minorities_2
-			}
-			custom_effect_tooltip = new_idea
-			add_ideas = CZE_oppressed_minorities
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.443 days = 1 }
 			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_peoples_revolution_tooltip_reward
 			effect_tooltip = {
 				add_political_power = -75
-				69 = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					prioritize = { 69 }
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
 						level = 2
 						instant_build = yes
 					}
-				}	
-				74 = {
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					prioritize = { 74 }
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
@@ -5407,25 +5418,28 @@ focus_tree = {
 			}
 			custom_effect_tooltip = alternative_diplomatic_reward
 			effect_tooltip = {
-				add_timed_idea = { idea = CZE_collectivist_ethos_idea days = 1095 }
+				add_timed_idea = {
+					idea = CZE_collectivist_ethos_idea
+					days = 1095
+				}
 			}
 			custom_effect_tooltip = alternative_diplomatic_reward
 			effect_tooltip = {
 				add_ideas = CZE_peoples_militia_idea
 			}
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_CHARACTER }
 	}
 
 	focus = {
 		id = CZE_join_commitern
 		icon = GFX_focus_chi_mission_to_the_soviet_union
 
- 		prerequisite = { focus = CZE_peoples_revolution }
+ 		prerequisite = { focus = CZE_strengthen_communism }
 
-		x = 0
+		x = 1
 		y = 1
-		relative_position_id = CZE_peoples_revolution
+		relative_position_id = CZE_strengthen_communism
 		cost = 10
 
 		available = { country_exists = SOV is_in_faction = no has_government = communism }
@@ -5438,7 +5452,6 @@ focus_tree = {
 			}
 			
 		completion_reward = {
-			#custom_effect_tooltip = new_diplomatic_event	#No need to tell the player they're getting an event via this tooltip, when the game already has one.	#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			SOV = { country_event = { id = CZE.444 days = 1 } }
 			custom_effect_tooltip = report_reward	
 			custom_effect_tooltip = CZE_join_commitern_tooltip_reward
@@ -5454,7 +5467,7 @@ focus_tree = {
 		icon = GFX_focus_generic_russian_deal_communist
  		prerequisite = { focus = CZE_join_commitern }
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = CZE_join_commitern
 		cost = 5
 		available = {
@@ -5661,7 +5674,6 @@ focus_tree = {
 
 		completion_reward = {
 
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.401 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_extend_military_service_tooltip_reward
@@ -5731,7 +5743,6 @@ focus_tree = {
 		ai_will_do = { factor = 0.7 }
 
 		completion_reward = {
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.403 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_sokol_movement_tooltip_reward
@@ -5776,7 +5787,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = new_idea
 			add_timed_idea = { idea = CZE_state_defense_law_idea days = 1200 }
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.405 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_state_defense_law_tooltip_reward
@@ -5891,8 +5901,7 @@ focus_tree = {
 		ai_will_do = { factor = 0.2	}
 
 		completion_reward = {
-			set_country_flag = CZE_constitutional_reforms_flag
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
+			set_country_flag = CZE_constitutional_reforms_flag		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.406 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_democratic_reforms_tooltip_reward
@@ -5915,7 +5924,6 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.408 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_state_defense_guard_tooltip_reward
@@ -5964,7 +5972,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.409 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_national_unity_government_tooltip_reward
@@ -6022,7 +6029,6 @@ focus_tree = {
 		cost = 10
 
 		completion_reward = {
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.410 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_sudetenland_autonomy_tooltip_reward
@@ -6122,7 +6128,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = new_idea
 			add_ideas = CZE_partial_mobilization_1938
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.411 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_partial_mobilization_tooltip_reward	
@@ -6237,7 +6242,6 @@ focus_tree = {
 			add_ideas = CZE_oppressed_minorities
 			#custom_effect_tooltip = new_military_advisor
 			#show_ideas_tooltip = CZE_lev_prchala_high_command			
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.413 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_military_coup_tooltip_reward	
@@ -6292,7 +6296,6 @@ focus_tree = {
 		ai_will_do = { factor = 0.2 }
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.414 days = 1 }
 			custom_effect_tooltip = report_reward
 			custom_effect_tooltip = CZE_zaolzie_for_alliance_tooltip_reward_1
@@ -6390,7 +6393,6 @@ focus_tree = {
 			add_ideas = CZE_felix_achille_de_la_camara
 		} 
 
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.418 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_czech_fascism_onrise_tooltip_reward
@@ -6454,7 +6456,6 @@ focus_tree = {
 			}
 			#custom_effect_tooltip = new_military_advisor
 			#show_ideas_tooltip = CZE_lev_prchala_high_command			Was commented out of history file and spamming the error log
-			#custom_effect_tooltip = new_decision	#Not vanilla standard, and PDX later added -actual- decisions.
 			country_event = { id = CZE.429 days = 1 }
 			custom_effect_tooltip = report_reward
 			#custom_effect_tooltip = CZE_ban_communism_tooltip_reward
@@ -6502,7 +6503,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.430 days = 1 }
 			custom_effect_tooltip = report_reward
 			custom_effect_tooltip = CZE_join_axis_tooltip_reward
@@ -6548,7 +6548,6 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			GER = { country_event = { id = CZE.435 days = 1 } }
 			custom_effect_tooltip = report_reward
 			custom_effect_tooltip = CZE_nazi_puppet_tooltip_reward
@@ -6616,7 +6615,6 @@ focus_tree = {
  		ai_will_do = { factor = 1 }
 
 		completion_reward = {
-			#custom_effect_tooltip = new_report		#No need to tell the player they're getting an event via this tooltip, when the game already has one.
 			country_event = { id = CZE.438 days = 1 }
 			custom_effect_tooltip = report_reward
 			custom_effect_tooltip = CZE_petition_league_of_nations_tooltip_reward
