@@ -1,7 +1,7 @@
 characters = {
 
-	# Július Ďuriš, Ján Osoha  a Ľudovít Benada (backroom backstabber?) Troika illegal slovak communist party 1939
-	#also check other commies Ján Osoha (ideological crusader), Oto Krajňák, Vincent  Škrabala,  Štefan  Dubček  a Jozef  Lietavec
+	# Július Ďuriš, Ján Osoha a Ľudovít Benada (backroom backstabber?) Troika illegal slovak communist party 1939
+	#also check other commies Ján Osoha (ideological crusader), Oto Krajňák, Vincent Škrabala, Štefan Dubček a Jozef Lietavec
 	#Zdeněk Fierlinger democrat/communist (more communist) compassionate_gentleman CZE
 	# Karol Šmidke communist chief of the pro allied third slovak national council 
 	# TO Add: two neutral, two democrats and check war industrialist
@@ -17,7 +17,7 @@ characters = {
 #			}			
 #			traits = { backroom_backstabber }
 #		}	
-#		SLO_jaroslav_kratochvil = {  # A guy from the Bohemia Moravia Protectorate...
+#		SLO_jaroslav_kratochvil = { # A guy from the Bohemia Moravia Protectorate...
 #			picture = generic_political_advisor_europe_2
 #			
 #			allowed = {
@@ -607,23 +607,23 @@ characters = {
 					has_autonomy_state = autonomy_supervised_state
 				}
 			}
-			traits  = {
+			traits = {
 				democratic_reformer 
 			}
 			do_effect = {
-				not  = {
+				not = {
 					has_government = democratic 
 				}
 			}
 			#get better AI if change focus tree
-			ai_will_do  = {
-				factor  = 0
+			ai_will_do = {
+				factor = 0
 			}
 		}
 	#	advisor = {
 	#		slot = political_advisor
 	#		idea_token = SLO_jozef_lettrich_2
-	#		allowed  = {
+	#		allowed = {
 	#			original_tag = SLO
 	#		}
 	#		available = { 
@@ -632,40 +632,67 @@ characters = {
 	#				has_government = neutrality
 	#			}	
 	#		}				
-	#		traits  = {
+	#		traits = {
 	#			compassionate_gentleman 
 	#		}
 	#	}		
 	}
 	SLO_karol_smidke = {
-		name = "Karol Smidke"
-		portraits = {
-			army = {
-				small = "GFX_idea_SLO_karol_smidke"
+		instance = {
+			allowed = {
+				has_dlc = "Peace For Our Time"
+			}
+			name = SLO_karol_smidke
+			portraits = {
+				civilian = {
+					large = GFX_portrait_SLO_karol_smidke
+					small = GFX_portrait_SLO_karol_smidke_small
+				}
+			}
+			country_leader = {
+				ideology = stalinism
+				expire = "1965.1.1"
+				id = -1
+				traits = {
+					veteran_communist
+				}
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = SLO_karol_smidke
-			allowed  = {
-				original_tag  = SLO
-			}
-			available = {
+		instance = {
+			allowed = {
 				NOT = {
-					has_autonomy_state = autonomy_supervised_state
+					has_dlc = "Peace For Our Time"
 				}
 			}
-			traits  = {
-				communist_revolutionary 
-			}
-			do_effect  = {
-				not  = {
-					has_government  = communism 
+			name = SLO_karol_smidke
+			portraits = {
+				army = {
+					small = "GFX_idea_SLO_karol_smidke"
 				}
 			}
-			#get better AI if change focus tree
-			ai_will_do  = {
-				factor  = 0
+			advisor = {
+				slot = political_advisor
+				idea_token = SLO_karol_smidke
+				allowed = {
+					original_tag = SLO
+				}
+				available = {
+					NOT = {
+						has_autonomy_state = autonomy_supervised_state
+					}
+				}
+				traits = {
+					communist_revolutionary 
+				}
+				do_effect = {
+					not = {
+						has_government = communism 
+					}
+				}
+				#get better AI if change focus tree
+				ai_will_do = {
+					factor = 0
+				}
 			}
 		}
 	}
@@ -679,25 +706,25 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_alexander_mach
-			allowed  = {
-				original_tag  = SLO
+			allowed = {
+				original_tag = SLO
 			}
 			available = {
 				NOT = {
 					has_autonomy_state = autonomy_supervised_state
 				}
 			}
-			traits  = {
+			traits = {
 				fascist_demagogue 
 			}
-			do_effect  = {
-				not  = {
-					has_government  = fascism
+			do_effect = {
+				not = {
+					has_government = fascism
 				}
 			}
 			#get better AI if change focus tree
-			ai_will_do  = {
-				factor  = 0
+			ai_will_do = {
+				factor = 0
 			}
 		}
 	}
@@ -711,7 +738,7 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_vavro_srobar
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
@@ -720,7 +747,7 @@ characters = {
 					has_government = neutrality
 				}	
 			}				
-			traits  = {
+			traits = {
 				silent_workhorse 
 			}
 			ai_will_do = {
@@ -744,7 +771,7 @@ characters = {
 		advisor = { #soc dem
 			slot = political_advisor
 			idea_token = SLO_ivan_derer
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
@@ -753,7 +780,7 @@ characters = {
 					has_government = neutrality
 				}	
 			}				
-			traits  = {
+			traits = {
 				captain_of_industry 
 			}
 		}		
@@ -768,13 +795,13 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_jan_osoha
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
 					has_government = communism	
 			}				
-			traits  = {
+			traits = {
 				ideological_crusader 
 			}
 		}		
@@ -789,13 +816,13 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_ludovit_benada
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
 					has_government = communism	
 			}				
-			traits  = {
+			traits = {
 				backroom_backstabber 
 			}
 		}		
@@ -810,13 +837,13 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_frano_kral
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
 					has_government = communism	
 			}				
-			traits  = {
+			traits = {
 				revolutionary_writer 
 			}
 		}		
@@ -831,13 +858,13 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_karol_sidor
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
 				has_government = neutrality
 			}				
-			traits  = {
+			traits = {
 				backroom_backstabber 
 			}
 		}		
@@ -852,13 +879,13 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_vojtech_tuka
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
 				has_government = fascism
 			}				
-			traits  = {
+			traits = {
 				prince_of_terror 
 			}
 		}		
@@ -873,13 +900,13 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_fritz_gejza
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
 				has_government = fascism
 			}				
-			traits  = {
+			traits = {
 				backroom_backstabber 
 			}
 		}		
@@ -894,13 +921,13 @@ characters = {
 		advisor = {
 			slot = political_advisor
 			idea_token = SLO_ferdinand_durcansky
-			allowed  = {
+			allowed = {
 				original_tag = SLO
 			}
 			available = { 
 					has_government = fascism	
 			}				
-			traits  = {
+			traits = {
 				ideological_crusader 
 			}
 		}		
