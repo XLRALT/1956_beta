@@ -528,10 +528,7 @@ ideas = {
 			picture = generic_intel_bonus
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				NOT = {
 					has_government = communism
 				}
@@ -611,22 +608,19 @@ ideas = {
 			picture = trotskyite_plot
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				NOT = {
 					has_government = communism
 				}
 			}
 			
 			modifier = {
-				communism_drift = 0.02
-				political_power_cost = -0.1
+				communism_drift = 0.03
+				political_power_factor = -0.1
 			}
 		}
 
-		 CZE_red_union_strikes = { ###### ADDED VIA EVENT CZE.404
+		CZE_red_union_strikes = { ###### ADDED VIA EVENT CZE.404
 			
 			allowed = {	always = no	}
 
@@ -637,18 +631,15 @@ ideas = {
 			picture = trotskyite_plot
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				NOT = {
 					has_government = communism
 				}
 			}
 			
 			modifier = {
-				communism_drift = 0.1
-				industrial_capacity_factory =  -0.15
+				communism_drift = 0.07
+				industrial_capacity_factory = -0.1
 			}
 		}
 
@@ -661,10 +652,7 @@ ideas = {
 			removal_cost = -1
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				has_government = democratic
 			}
 			
@@ -686,10 +674,7 @@ ideas = {
 			picture = neutrality_idea
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				NOT = {
 					has_government = democratic
 				}
@@ -712,10 +697,7 @@ ideas = {
 			picture = generic_intel_bonus
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				has_government = democratic
 			}
 			
@@ -737,10 +719,7 @@ ideas = {
 			picture = trotskyite_plot
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				NOT = {
 					has_government = communism
 				}
@@ -776,10 +755,7 @@ ideas = {
 			picture = generic_spy_coup
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				NOT = {
 					has_government = fascism
 				}
@@ -836,10 +812,7 @@ ideas = {
 			picture = great_depression
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				has_government = democratic
 				
 			}
@@ -863,10 +836,7 @@ ideas = {
 			picture = FRA_scw_intervention_nationalists_focus
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				has_government = democratic
 			}
 	
@@ -888,10 +858,7 @@ ideas = {
 			picture = FRA_scw_intervention_nationalists_focus
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				NOT = {
 					has_government = fascism
 				}
@@ -918,10 +885,7 @@ ideas = {
 			picture = generic_disjointed_gov
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				has_government = communism
 			}
 	
@@ -941,10 +905,7 @@ ideas = {
 			picture = FRA_scw_intervention_nationalists_focus
 
 			cancel = {
-				OR = {
-					is_subject = yes
-					is_puppet = yes
-				}
+				is_subject = yes
 				has_government = democratic
 			}
 	
