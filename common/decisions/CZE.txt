@@ -7,6 +7,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -28,6 +29,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 			has_global_flag = CZE_skoda_focus_activation
@@ -50,6 +52,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -77,6 +80,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -207,6 +211,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -350,6 +355,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -399,6 +405,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -425,6 +432,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -470,6 +478,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -501,6 +510,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -533,6 +543,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 			has_country_flag = DEBUG_MUN_show_all_state_dynamic_modifiers_but_one_flag
@@ -555,6 +566,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -601,6 +613,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 			has_country_flag = DEBUG_MUN_show_all_state_dynamic_modifiers_but_one_flag
@@ -655,6 +668,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 			has_country_flag = DEBUG_MUN_show_all_state_dynamic_modifiers_but_one_flag
@@ -707,6 +721,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 			has_country_flag = DEBUG_MUN_show_all_state_dynamic_modifiers_but_one_flag
@@ -759,6 +774,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}
@@ -780,6 +796,7 @@ debug_decisions = {
 		}
 
 		visible = {
+			has_global_flag = cze_dlc_focus_tree
 			is_ai = no
 			is_debug = yes
 		}

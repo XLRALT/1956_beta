@@ -4346,6 +4346,10 @@ ideas = {
 				}
 			}
 
+			visible = {
+				has_global_flag = cze_dlc_focus_tree
+			}
+
 			research_bonus = {
 				armor = 0.15
 				artillery = 0.05
@@ -4376,6 +4380,7 @@ ideas = {
 			}
 
 			visible = { #We don't need to hide these right away since these ton of space in the GUI for Manufacturers
+				has_global_flag = cze_dlc_focus_tree
 				NOT = {
 					has_completed_focus = GER_oppose_hitler
 					has_completed_focus = GER_oppose_hitler_ww
@@ -4417,6 +4422,7 @@ ideas = {
 			}
 
 			visible = { #We don't need to hide these since these ton of space in the GUI for Manufacturers
+				has_global_flag = cze_dlc_focus_tree
 				NOT = {
 					has_completed_focus = GER_oppose_hitler
 					has_completed_focus = GER_oppose_hitler_ww
@@ -4665,6 +4671,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				NOT = {
 					has_completed_focus = CZE_invest_in_the_smaller_air_plants
 				}
@@ -4698,6 +4705,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				has_completed_focus = CZE_invest_in_the_smaller_air_plants
 			}
 
@@ -4740,6 +4748,7 @@ ideas = {
 			}
 			
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				if = {
 					limit = {
 						original_tag = CZE
@@ -4786,6 +4795,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				has_completed_focus = CZE_invest_in_the_smaller_air_plants
 			}
 
@@ -4826,6 +4836,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				OR = {
 					original_tag = CZE
 					AND = {
@@ -5014,6 +5025,10 @@ ideas = {
 				has_dlc = "Peace For Our Time"
 			}
 
+			visible = {
+				has_global_flag = cze_dlc_focus_tree
+			}
+
 			research_bonus = {
 				infantry_weapons = 0.05
 				support_tech = 0.10
@@ -5065,6 +5080,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				if = {
 					limit = {
 						original_tag = GER
@@ -5116,6 +5132,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				if = {
 					limit = {
 						original_tag = CZE
@@ -5166,6 +5183,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				has_completed_focus = CZE_the_slovak_arrow
 			}
 
@@ -5526,6 +5544,7 @@ ideas = {
 
 			
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				NOT = {
 					has_completed_focus = CZE_redirect_the_fortification_councils_funds
 				}
@@ -5583,6 +5602,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				has_completed_focus = CZE_redirect_the_fortification_councils_funds
 			}
 
@@ -5636,6 +5656,10 @@ ideas = {
 				has_completed_focus = CZE_bolster_domestic_construction
 			}
 
+			visible = {
+				has_global_flag = cze_dlc_focus_tree
+			}
+
 			traits = { construction_company_shell }
 
 			modifier = {
@@ -5680,12 +5704,7 @@ ideas = {
 			}
 
 			visible = {
-				if = {
-					limit = {
-						original_tag = CZE
-					}
-					always = yes
-				}
+				has_global_flag = cze_dlc_focus_tree
 			}
 
 			available = {
@@ -5735,6 +5754,10 @@ ideas = {
 			available = {
 				has_completed_focus = CZE_diversify_bata
 				controls_state = 75
+			}
+
+			visible = {
+				has_global_flag = cze_dlc_focus_tree
 			}
 
 			traits = { consumer_goods_conglomerate }
@@ -5838,6 +5861,10 @@ ideas = {
 				}
 			}
 
+			visible = {
+				has_global_flag = cze_dlc_focus_tree
+			}
+
 			traits = { energy_supply_company_zse }
 
 			research_bonus = {
@@ -5882,6 +5909,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				NOT = {
 					has_completed_focus = CZE_merge_the_oil_companies
 				}
@@ -5963,6 +5991,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				has_completed_focus = CZE_merge_the_oil_companies
 			}
 
@@ -6027,6 +6056,10 @@ ideas = {
 					original_tag = PRU
 				}
 				has_dlc = "Peace For Our Time"
+			}
+
+			visible = {
+				has_global_flag = cze_dlc_focus_tree
 			}
 
 			available = {
@@ -6116,6 +6149,7 @@ ideas = {
 			}
 
 			visible = {
+				has_global_flag = cze_dlc_focus_tree
 				if = {
 					limit = {
 						original_tag = CZE

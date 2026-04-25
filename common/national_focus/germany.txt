@@ -12124,6 +12124,7 @@ focus_tree = {
 
 		allow_branch = {
 			has_dlc = "Peace For Our Time"
+			has_global_flag = cze_dlc_focus_tree
 			if = {
 				limit = {
 					has_game_rule = {
@@ -12742,6 +12743,7 @@ focus_tree = {
 			trigger = {
 				NOT = {
 					has_dlc = "Peace For Our Time"
+					has_global_flag = cze_dlc_focus_tree
 				}
 			}
 		}

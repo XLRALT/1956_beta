@@ -38,6 +38,7 @@
  RAJ_FOCUS_TREE_SELECTION:0 "@RAJ India"
  IRQ_FOCUS_TREE_SELECTION:0 "@IRQ Iraq"
  CHI_FOCUS_TREE_SELECTION:0 "@CHI China"
+ CZE_FOCUS_TREE_SELECTION:0 "@CZE Czechoslovakia"
  
  ###---> AI Behavior <><> <><> <><>
  RULE_GROUP_AI_BEHAVIOR:0 "AI Behavior"

@@ -21,9 +21,10 @@ focus_tree = {
 		factor = 0
 		
 		modifier = {
-			add = 50
+			add = 10
 			tag = CZE
 			has_dlc = "Peace For Our Time"
+			has_global_flag = cze_dlc_focus_tree
 		}
 	}
 

@@ -59,10 +59,10 @@ country_event = {
 							original_tag = CZE
 						}
 					}
-				news_event = { hours = 6 id = CZE.3 }
+					news_event = { hours = 6 id = CZE.3 }
+				}
 			}
 		}
-	}
 	}
 	
 	option = {

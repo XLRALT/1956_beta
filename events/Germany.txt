@@ -3555,6 +3555,7 @@ country_event = {
 		if = { 
 			limit = {
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 			if = {
 				limit = {

@@ -186,6 +186,10 @@ CZE_skoda_plzen_tank_destroyer_organization = {
 		has_dlc = "Peace For Our Time"
 	}
 
+	visible = {
+		has_global_flag = cze_dlc_focus_tree
+	}
+
 	available = {
 		if = {
 			limit = {
@@ -624,6 +628,10 @@ CZE_benees_mraz_organization = {
 		}
 	}
 
+	visible = {
+		has_global_flag = cze_dlc_focus_tree
+	}
+
 	add_trait = {
 		token = CZE_mio_trait_walter_co
 		name = CZE_mio_trait_walter_co_name
@@ -636,6 +644,7 @@ CZE_benees_mraz_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -675,6 +684,7 @@ CZE_benees_mraz_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -711,6 +721,10 @@ CZE_zlin_aircraft_organization = {
 		tag = CZE
 	}
 
+	visible = {
+		has_global_flag = cze_dlc_focus_tree
+	}
+
 	add_trait = {
 		token = CZE_mio_trait_walter_co
 		name = CZE_mio_trait_walter_co_name
@@ -723,6 +737,7 @@ CZE_zlin_aircraft_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -762,6 +777,7 @@ CZE_zlin_aircraft_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -822,6 +838,7 @@ CZE_avia_german_organization = {
 	research_categories = {	mio_cat_all_light_fighter_and_modules }
 
 	visible = {
+		has_global_flag = cze_dlc_focus_tree
 		IF = {
 			limit = { FROM = { original_tag = GER } }
 			FROM = { has_completed_focus = GER_integrate_czech_manufacturers }
@@ -900,6 +917,7 @@ CZE_avia_german_organization = {
 			FROM = { 
 				original_tag = GER
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1029,6 +1047,7 @@ CZE_ceska_zbrojovka_uhersky_brod_organization = {
 	}
 
 	visible = {
+		has_global_flag = cze_dlc_focus_tree
 		OR = {
 			FROM = {
 				OR = {
@@ -1096,6 +1115,7 @@ CZE_ceska_zbrojovka_uhersky_brod_organization = {
 				NOT = {
 					has_completed_focus = CZE_kickstart_rapid_rearmanent 
 				}
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 		
@@ -1127,6 +1147,7 @@ CZE_ceska_zbrojovka_uhersky_brod_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1168,6 +1189,7 @@ CZE_ceska_zbrojovka_uhersky_brod_organization = {
 			FROM = { 
 				original_tag = GER
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1226,6 +1248,7 @@ CZE_praga_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1257,6 +1280,7 @@ CZE_praga_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1296,6 +1320,11 @@ CZE_tatra_armored_car_organization = { #r56
 			has_dlc = "Peace For Our Time"
 		}
 	}
+	visible = {
+		NOT = {
+			has_global_flag = cze_dlc_focus_tree
+		}
+	}
 	initial_trait = {
 		name = generic_armored_car_organization
 		equipment_bonus = {
@@ -1317,6 +1346,10 @@ CZE_ringhoffer_tatra_organization = {
 		}
 	}
 
+	visible = {
+		has_global_flag = cze_dlc_focus_tree
+	}
+
 	add_trait = {
 		token = CZE_mio_trait_expanded_production_facilities_ringhoffer
 		name = USA_mio_trait_expanded_production_facilities
@@ -1330,6 +1363,7 @@ CZE_ringhoffer_tatra_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1358,6 +1392,7 @@ CZE_ringhoffer_tatra_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1397,6 +1432,10 @@ CZE_zbrojovka_vsetin_organization = {
 		}
 	}
 
+	visible = {
+		has_global_flag = cze_dlc_focus_tree
+	}
+
 	add_trait = {
 		token = CZE_mio_trait_bata_corporation
 		name = CZE_bata_corporation_name
@@ -1409,6 +1448,7 @@ CZE_zbrojovka_vsetin_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1445,6 +1485,10 @@ CZE_CKD_plzen_organization = {
 		tag = CZE
 	}
 
+	visible = {
+		has_global_flag = cze_dlc_focus_tree
+	}
+
 	initial_trait = {
 		name = generic_mio_initial_trait_generic_train_manufacturer
 		limit_to_equipment_type = { 
@@ -1473,6 +1517,7 @@ CZE_CKD_plzen_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1501,6 +1546,7 @@ CZE_CKD_plzen_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1550,6 +1596,7 @@ CZE_praga_aviation_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1586,6 +1633,7 @@ CZE_praga_aviation_organization = {
 				NOT = {
 					has_completed_focus = CZE_kickstart_rapid_rearmanent 
 				}
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 
@@ -1617,6 +1665,7 @@ CZE_praga_aviation_organization = {
 			FROM = { 
 				original_tag = CZE
 				has_dlc = "Peace For Our Time"
+				has_global_flag = cze_dlc_focus_tree
 			}
 		}
 

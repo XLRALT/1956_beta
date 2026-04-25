@@ -129,304 +129,61 @@ set_variable = {
 }
 
 ####czechoslovak industry
+set_variable = { CZE_ci_repair_speed_arms_factory_factor = 0.10 }
+set_variable = { CZE_ci_line_change_production_efficiency_factor = 0.15 }
+set_variable = { CZE_ci_production_factory_efficiency_gain_factor = 0.15 }
+set_variable = { CZE_ai_industrial_capacity_factory = 0.10 }
+set_variable = { CZE_ci_consumer_goods_factor = -0.10 }
+set_variable = { CZE_ci_civilian_intel_to_others = 15 }
 
-### DYNAMIC MODIFIERS AND VARIABLES ###
-if = {
-	limit = {
-		has_dlc = "Peace For Our Time"
-	}
+set_variable = { CZE_ci_trade_opinion_factor = 0 }
+set_variable = { CZE_ci_civ_construction_speed = 0 }
+set_variable = { CZE_ci_weekly_manpower = 0 }
 
-	#Skoda Variables
-	set_variable = { skoda_plane_x = 208 } 
-	set_variable = { skoda_optimization_tier = 2 } #Starting Optimization Tier
-	set_variable = { skoda_max_optimization_tier = 4 } #Starting Optimization Cap
-	set_variable = { skoda_focus_var = 0 } 
+add_dynamic_modifier = { modifier = CZE_czechoslovak_industry_dynamic_modifier }
+add_ideas = CZE_hidden_industrial_ns
 
-	# CZE_update_skoda_tier = yes #Is triggered by event MUN_czech_skoda_priority.1
+# Air force
 
-	#Days Remove Variable that is changed to be a lower value as an effect for Fortification Program Decisions
-	set_variable = { CZE_second_sudetenland_fortification_program_days_remove_variable_0 = 125 } #Days
-	set_variable = { CZE_second_sudetenland_fortification_program_days_remove_variable_1 = 175 } #Days
-	set_variable = { CZE_second_sudetenland_fortification_program_days_remove_variable_2 = 325 } #Days
-	
-	###Dynamic Modifiers###
-	#State Modifiers for Fortification Program State Modifiers
-	if = {
-		limit = {
-			has_dlc = "Gotterdammerung"
-		}
-		every_owned_state = {
-			limit = {
-				OR = {
-					state = 9 #Bohemia
-					state = 69 #North Sudetenland
-					state = 1078 #South Sudetenland - R56 - Was 972
-					state = 74 #Czeske Slezsko
-					state = 70 #Western Slovakia
-				}
-			}
-			add_dynamic_modifier = {
-				modifier = CZE_first_sudetenland_fortification_program_GD
-			}
-		}
-	}
-	if = {
-		limit = {
-			NOT = {
-				has_dlc = "Gotterdammerung"
-			}
-		}
-		every_owned_state = {
-			limit = {
-				OR = {
-					state = 9 #Bohemia
-					state = 69 #North Sudetenland
-					state = 1078 #South Sudetenland - R56 - Was 972
-					state = 74 #Czeske Slezsko
-					state = 70 #Western Slovakia
-				}
-			}
-			add_dynamic_modifier = {
-				modifier = CZE_first_sudetenland_fortification_program
-			}
-		}
-	}
+add_dynamic_modifier = { modifier = CZE_czechoslovak_airforce_modifier }
 
-	##Dynamic Modifiers for Divided Nation start here##
-	#Divided Nation Dynamic Modifier National Spirit and related state modifiers# 
-	#DANGER! Number changes here must have changes with how these stats decrease in CZE_a_divided_nation_category decisions, and should be divisible by 10* (* the number of start date states CZE own). Also CZE_a_divided_nation_fake_ns ideas numbers must also be updated to reflect changes.
-	set_variable = { CZE_a_divided_nation_stability_factor = -0.20 } #Should be divisible by 10*
-	set_variable = { CZE_a_divided_nation_drift_defence_factor = -0.30 } #DANGER WILL ROBINSON DANGER!!! This value is a variable that is used for the remove check on when CZE_a_divided_nation_dynamic_modifier is removed in the CZE_a_divided_nation_category. Should be divisible by 10*
-	set_variable = { CZE_a_divided_nation_political_power_cost = 0.30 } #Should be divisible by 10*
+set_variable = { CZE_af_air_mission_efficiency = 0.1 }
+set_variable = { CZE_af_air_ace_generation_chance_factor = 0.05 }
+set_variable = { CZE_af_air_agility_factor = 0 }
 
-	add_dynamic_modifier = { modifier = CZE_a_divided_nation_dynamic_modifier }
+# Army
 
-	#Decision Costs Variables
-	set_variable = { CZE_divided_nation_25_default = 25 } #PP
-	set_variable = { CZE_divided_nation_15_default = 15 } #PP
-
-	#Days Remove Variables
-	set_variable = { CZE_a_divided_nation_days_remove_variable = 40 } #Days
-
-	#State Modifiers for Divided Nation#
-	every_owned_state = {
-		limit = {
-			OR = {
-				state = 69 #North Sudetenland
-				state = 1078 #South Sudetenland - R56 - Was 972
-				state = 74 #Czeske Slezsko
-			}
-		}
-		add_dynamic_modifier = {
-			modifier = CZE_sudetenland_german_state_modifier
-			scope = ROOT
-		}
-	}
-
-	every_owned_state = {
-		limit = {
-			state = 72 #Tesinko
-		}
-		add_dynamic_modifier = {
-			modifier = CZE_tesinko_polish_state_modifier
-			scope = ROOT
-		}
-	}
-
-	every_owned_state = {
-		limit = {
-			OR = {
-				state = 9 #Bohemia
-				state = 75 #Morvia
-			}
-		}
-		add_dynamic_modifier = {
-			modifier = CZE_czech_state_modifier
-			scope = ROOT
-		}
-	}
-
-	every_owned_state = {
-		limit = {
-			OR = {
-				state = 70 #Western Slovakia
-				state = 71 #Eastern Slovakia
-			}
-		}
-		add_dynamic_modifier = {
-			modifier = CZE_slovakia_state_modifier
-			scope = ROOT
-		}
-	}
-
-	every_owned_state = {
-		limit = {
-			state = 664 #Southern Slovakia
-		}
-		add_dynamic_modifier = {
-			modifier = CZE_hungarian_state_modifier
-			scope = ROOT
-		}
-	}
-
-	every_owned_state = {
-		limit = {
-			state = 73 #Podkarpatska Rus 
-		}
-		add_dynamic_modifier = {
-			modifier = CZE_ukrainian_state_modifier
-			scope = ROOT
-		}
-	}
-
-	set_rule = { #Prevent ideology change from bypassing a focus
-		can_send_volunteers = no
-	}
-
-	#Skoda Works Dynamic Modifier - Not to be confused with the GUI
-	set_variable = { CZE_skoda_works_dynamic_modifier_industrial_capacity_factory = 0.05 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_factory_max_efficiency_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_factory_efficiency_gain_factor = 0 } 
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_arms_factory_factor = 0 } 
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_buildings_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_facility_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_industrial_capacity_dockyard = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_synthetic_refinery_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_fuel_gain_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_rail_way_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_infrastructure_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_industry_air_damage_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_line_change_production_efficiency_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_buildings_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_equipment_conversion_speed = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_factory_start_efficiency_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_lack_of_resource_penalty_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_industrial_infrastructure_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_production_speed_energy_infrastructure_factor = 0 }
-	set_variable = { CZE_skoda_works_dynamic_modifier_out_of_power_impact_factor = 0 }
-
-	#Czech Army
-	set_variable = { CZE_ceskoslovenska_armada_training_time_factor = 0.10 }
-	set_variable = { CZE_ceskoslovenska_armada_experience_gain_army_unit_factor = 0.05 }
-	set_variable = { CZE_ceskoslovenska_armada_army_org_factor = -0.15 }
-	set_variable = { CZE_ceskoslovenska_armada_supply_combat_penalties_on_core_factor = -0.10 }
-	set_variable = { CZE_ceskoslovenska_armada_out_of_supply_factor = 0.10 }
-	set_variable = { CZE_ceskoslovenska_armada_conscription_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_dig_in_speed_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_special_forces_out_of_supply_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_special_forces_cap = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_unit_artillery_brigade_design_cost_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_org_loss_when_moving = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_army_speed_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_truck_attrition_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_army_core_defence_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_army_armor_attack_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_field_officer_promotion_penalty = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_military_leader_cost_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_max_dig_in_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_army_core_attack_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_coordination_bonus = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_army_regain = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_acclimatization_cold_climate_gain_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_cas_damage_reduction = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_equipment_capture_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_intel_from_combat_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_experience_gain_army_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_modifier_army_sub_unit_militia_defence_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_dynamic_modifier_army_morale_factor = 0 }
-	set_variable = { CZE_ceskoslovenska_armada_dynamic_modifier_command_power_gain_mult = 0 }
-
-	add_dynamic_modifier = { modifier = CZE_ceskoslovenska_armada_dynamic_modifier }
-
-	#Czech Air Force
-	set_variable = { CZE_ceskoslovenske_letectvo_air_untrained_pilots_penalty_factor = -0.25 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_training_xp_gain_factor = 0.05 }
-	set_variable = { CZE_ceskoslovenske_letectvo_dynamic_air_volunteer_cap = 1 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_accidents_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_ace_generation_chance_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_ace_effectiveness_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_production_speed_air_base_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_production_speed_anti_air_building_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_home_defence_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_superiority_efficiency = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_range_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_strategic_bomber_bombing_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_cas_efficiency = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_attack_factor = 0.0 }
-	set_variable = { CZE_ceskoslovenske_letectvo_air_night_penalty = 0.0 }
-	
-	#Czech Navy 
-	set_variable = { CZE_ceskoslovenske_alecne_lodstvo_experience_gain_navy_factor= 0.10 }
-	set_variable = { CZE_ceskoslovenske_alecne_lodstvo_navy_capital_ship_attack_factor = 0 }
-	set_variable = { CZE_ceskoslovenske_alecne_lodstvo_navy_screen_attack_factor = 0 }
-	set_variable = { CZE_ceskoslovenske_alecne_lodstvo_screening_efficiency = 0 }
-	set_variable = { CZE_ceskoslovenske_alecne_lodstvo_convoy_raiding_efficiency_factor = 0 }
-	set_variable = { CZE_ceskoslovenske_alecne_lodstvo_naval_heavy_gun_hit_chance_factor = 0 }
-	set_variable = { CZE_ceskoslovenske_alecne_lodstvo_sortie_efficiency = 0 }
-	set_variable = { CZE_ceskoslovenske_alecne_lodstvo_navy_max_range_factor = 0 }
-
-	else = {
-		set_variable = { CZE_ci_repair_speed_arms_factory_factor = 0.10 }
-		set_variable = { CZE_ci_line_change_production_efficiency_factor = 0.15 }
-		set_variable = { CZE_ci_production_factory_efficiency_gain_factor = 0.15 }
-		set_variable = { CZE_ai_industrial_capacity_factory = 0.10 }
-		set_variable = { CZE_ci_consumer_goods_factor = -0.10 }
-		set_variable = { CZE_ci_civilian_intel_to_others = 15 }
-		
-		set_variable = { CZE_ci_trade_opinion_factor = 0 }
-		set_variable = { CZE_ci_civ_construction_speed = 0 }
-		set_variable = { CZE_ci_weekly_manpower = 0 }
-		
-		add_dynamic_modifier = { modifier = CZE_czechoslovak_industry_dynamic_modifier }
-		add_ideas = CZE_hidden_industrial_ns
-	
-		# Air force
-		
-		add_dynamic_modifier = { modifier = CZE_czechoslovak_airforce_modifier }
-		
-		set_variable = { CZE_af_air_mission_efficiency = 0.1 }
-		set_variable = { CZE_af_air_ace_generation_chance_factor = 0.05 }
-		set_variable = { CZE_af_air_agility_factor = 0 }
-		
-		# Army
-		
-		set_variable = { CZE_bm_army_org_factor = -0.05 }
-		set_variable = { CZE_bm_army_speed_factor = 0.025 }
-		set_variable = { CZE_bm_supply_consumption_factor = -0.05 }
-		set_variable = { CZE_bm_army_intel_to_others = 45 }
-		
-		
-		set_variable = { CZE_bm_max_planning_factor = 0 }
-		set_variable = { CZE_bm_promote_cost_factor = 0 }
-		set_variable = { CZE_bm_max_dig_in_factor = 0 }
-		set_variable = { CZE_bm_planning_speed = 0 }
-		set_variable = { CZE_bm_army_core_defence_factor = 0 }
-		set_variable = { CZE_bm_army_artillery_attack_factor = 0 }
-		set_variable = { CZE_bm_conscription = 0 }
-		set_variable = { CZE_bm_production_speed_bunker_factor = 0 }
-		set_variable = { CZE_bm_send_volunteer_divisions_required = 0 }
-		set_variable = { CZE_bm_out_of_supply = 0 }
-		set_variable = { CZE_bm_send_volunteer_size = 0 }
-		set_variable = { CZE_bm_army_armor_speed_factor = 0 }
-		set_variable = { CZE_bm_special_forces_attack_factor = 0 }
-		set_variable = { CZE_bm_special_forces_out_of_supply_factor = 0 }
-		set_variable = { CZE_bm_modifier_army_sub_unit_mountaineers_defence_factor = 0 }
-		set_variable = { CZE_bm_modifier_army_sub_unit_mountaineers_max_org_factor = 0 }
-		set_variable = { CZE_bm_special_forces_cap = 0 }
-		set_variable = { CZE_bm_dig_in_speed_factor = 0 }
-		set_variable = { CZE_bm_army_morale_factor = 0 }
-		set_variable = { CZE_bm_research_speed_factor = 0 }
-		
-		add_dynamic_modifier = { modifier = CZE_czechoslovak_army_modifier }
-		add_ideas = CZE_hidden_branna_moc_ns
-	
-		###
-	
-		country_event = { id = CZE.2 days = 617 }		#TGM dies
-	}
-}
+set_variable = { CZE_bm_army_org_factor = -0.05 }
+set_variable = { CZE_bm_army_speed_factor = 0.025 }
+set_variable = { CZE_bm_supply_consumption_factor = -0.05 }
+set_variable = { CZE_bm_army_intel_to_others = 45 }
 
 
+set_variable = { CZE_bm_max_planning_factor = 0 }
+set_variable = { CZE_bm_promote_cost_factor = 0 }
+set_variable = { CZE_bm_max_dig_in_factor = 0 }
+set_variable = { CZE_bm_planning_speed = 0 }
+set_variable = { CZE_bm_army_core_defence_factor = 0 }
+set_variable = { CZE_bm_army_artillery_attack_factor = 0 }
+set_variable = { CZE_bm_conscription = 0 }
+set_variable = { CZE_bm_production_speed_bunker_factor = 0 }
+set_variable = { CZE_bm_send_volunteer_divisions_required = 0 }
+set_variable = { CZE_bm_out_of_supply = 0 }
+set_variable = { CZE_bm_send_volunteer_size = 0 }
+set_variable = { CZE_bm_army_armor_speed_factor = 0 }
+set_variable = { CZE_bm_special_forces_attack_factor = 0 }
+set_variable = { CZE_bm_special_forces_out_of_supply_factor = 0 }
+set_variable = { CZE_bm_modifier_army_sub_unit_mountaineers_defence_factor = 0 }
+set_variable = { CZE_bm_modifier_army_sub_unit_mountaineers_max_org_factor = 0 }
+set_variable = { CZE_bm_special_forces_cap = 0 }
+set_variable = { CZE_bm_dig_in_speed_factor = 0 }
+set_variable = { CZE_bm_army_morale_factor = 0 }
+set_variable = { CZE_bm_research_speed_factor = 0 }
+
+add_dynamic_modifier = { modifier = CZE_czechoslovak_army_modifier }
+add_ideas = CZE_hidden_branna_moc_ns
+
+###
 
 recruit_character = CZE_jan_antonin_bata			#instanced for DLC
 recruit_character = CZE_emil_kolben					#instanced for DLC
@@ -855,4 +612,3 @@ if = {
 	}
 
 }
-
