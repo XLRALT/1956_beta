@@ -1476,6 +1476,9 @@ CZE_bunkers = {
 	}
 }
 
+CZE_minority_management = {
+}
+
 CZE_prespm_bop_cat = {
 
 	CZE_national_unity_government = {
@@ -1501,6 +1504,9 @@ CZE_prespm_bop_cat = {
 				NOT = {
 					has_government = fascism
 					is_subject = yes
+					has_completed_focus = CZE_military_coup
+					has_completed_focus = CZE_state_defense_law
+					has_completed_focus = CZE_empower_internationalism
 				}
 			}
 		}
@@ -1509,10 +1515,15 @@ CZE_prespm_bop_cat = {
 			GER = {
 				has_country_flag = sudetenland_acquired
 			}
+			check_variable = {
+				CZE_iw_sdt_val < 1
+				tooltip = CZE_national_unity_government_trigger_tt
+			}
 			NOT = {
 				has_government = fascism
 				is_subject = yes
 			}
+			has_completed_focus = CZE_democratic_reforms
 		}
 
 		complete_effect = {

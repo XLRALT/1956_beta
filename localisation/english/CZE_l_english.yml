@@ -1140,6 +1140,7 @@ end_of_czechoslovakia:0 "Czechoslovakia has met its fate"
  CZE_national_unity_government_desc: "The Party of National Unity was created in November 1938 after German occupation as a kind of a last attempt to save Czechoslovakia.\n\nIt included almost all center-right parties and the Czechoslovak National Socialist Party."
  CZE_national_unity_government_tooltip_trigger: "§YYalta Conference§! didn't happen"
  CZE_national_unity_government_tooltip_reward: "\n §OSpecial Bonus:§! Removes §YMinority Penalties§!, changes §YGovernment§!."
+ CZE_national_unity_government_trigger_tt: "[SDT.GetFlag] Less than §Y1§! Sudeten Separatism"
 
 #INTERNAL WOES
  CZE_minority_management: "Internal Woes"
@@ -1148,6 +1149,12 @@ end_of_czechoslovakia:0 "Czechoslovakia has met its fate"
  CZE_internal_woes_hun_val_text: "[?CZE_iw_hun_val]"
  CZE_internal_woes_rut_val_text: "[?CZE_iw_rut_val]"
  CZE_internal_woes_zao_val_text: "[?CZE_iw_zao_val]"
+
+ CZE_internal_woes_sdt_val_trigger_tt: "[SDT.GetFlag] Sudeten Separatism"
+ CZE_internal_woes_slo_val_trigger_tt: "[SLO.GetFlag] Slovak Separatism"
+ CZE_internal_woes_hun_val_trigger_tt: "[HUN.GetFlag] Hungarian Separatism"
+ CZE_internal_woes_rut_val_trigger_tt: "[RUT.GetFlag] Ruthenian Separatism"
+ CZE_internal_woes_zao_val_trigger_tt: "[ZAO.GetFlag] Polish Separatism"
 
 #POWER BALANCE
  CZE_prespm_power_balance: "The Power Struggle"

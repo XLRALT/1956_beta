@@ -23924,4 +23924,117 @@ on_actions = {
 			}
 		}
 	}
+
+	on_daily_CZE = {
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						controls_state = 69
+						controls_state = 74
+						controls_state = 1078
+					}
+				}
+				set_variable = {
+					CZE_iw_sdt_val = 0
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						controls_state = 71
+						controls_state = 72
+					}
+				}
+				set_variable = {
+					CZE_iw_slo_val = 0
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						controls_state = 664
+					}
+				}
+				set_variable = {
+					CZE_iw_hun_val = 0
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						controls_state = 73
+						controls_state = 996
+					}
+				}
+				set_variable = {
+					CZE_iw_rut_val = 0
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						controls_state = 72
+					}
+				}
+				set_variable = {
+					CZE_iw_zao_val = 0
+				}
+			}
+		}
+	}
+	on_monthly_CZE = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						controls_state = 69
+						controls_state = 74
+						controls_state = 1078
+					}
+				}
+				add_to_variable = {
+					CZE_iw_sdt_val = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						controls_state = 71
+						controls_state = 72
+					}
+				}
+				add_to_variable = {
+					CZE_iw_slo_val = 1
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 664
+				}
+				add_to_variable = {
+					CZE_iw_hun_val = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						controls_state = 73
+						controls_state = 996
+					}
+				}
+				add_to_variable = {
+					CZE_iw_rut_val = 1
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 72
+				}
+				add_to_variable = {
+					CZE_iw_zao_val = 1
+				}
+			}
+		}
+	}
 }
