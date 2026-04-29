@@ -8,6 +8,9 @@ focus_tree = {
 		modifier = {
 			add = 15
 			tag = CZE
+			NOT = {
+				has_global_flag = cze_dlc_focus_tree
+			}
 		}
 	}
 
@@ -4626,61 +4629,6 @@ focus_tree = {
 			add_political_power = 75
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = CZE_national_unity_government
-		icon = GFX_goal_morale_bonus
-
-		prerequisite = { focus = CZE_czechoslovak_government_reform }
-
-		available = {
-			GER = {
-				has_country_flag = sudetenland_acquired
-			}
-		}
-
-		ai_will_do = { factor = 1 }
-
-		x = 0
-		y = 1
-		relative_position_id = CZE_czechoslovak_government_reform
-		cost = 1
-
-		bypass = {
-			OR = {
-				has_government = fascism
-				is_subject = yes
-			}
-		}
-
-		completion_reward = {
-			country_event = { id = CZE.409 days = 1 }
-			custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_national_unity_government_tooltip_reward
-			effect_tooltip = {
-				set_party_name = { ideology = democratic long_name = CZE_national_unity_party name = CZE_national_unity_party }
-				create_country_leader = {
-					name = "Rudolf Beran"
-					desc = " "
-					picture = "gfx/leaders/r56_generic/r56_portrait_BEL_generic_land_1.dds"	#added this since he would be a full mr. generico
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-						leader_of_the_agrarian_union
-					}
-				}	
-				set_politics = {
-					ruling_party = democratic
-					elections_allowed = no
-				}
-				add_popularity = {
-					ideology = democratic
-					popularity = -0.2
-				}
-				add_ideas = CZE_national_unity_government_idea
-			}
-		}
 	}
 
 	focus = {

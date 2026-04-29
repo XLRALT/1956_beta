@@ -2,7 +2,7 @@ CZE_prespm_power_balance = {
 	initial_value = -0.1
 	left_side = CZE_prespm_pres
 	right_side = CZE_prespm_pm
-	#decision_category = 
+	decision_category = CZE_prespm_bop_cat
 
 	### Neutral status
 	range = {

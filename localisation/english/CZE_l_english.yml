@@ -729,10 +729,6 @@
  CZE.408.a:0 "Establish State Defense Guard"
  CZE_sos:0 "State Defense Guard"
  CZE_sos_desc:0 "State Defense Guard was established and is guarding the borders of Czechoslovakia."
- CZE_national_unity_government:0 "Form Party of National Unity"
- CZE_national_unity_government_desc:0 "The Party of National Unity was created in November 1938 after German occupation as a kind of a last attempt to save Czechoslovakia.\n\nIt included almost all center-right parties and the Czechoslovak National Socialist Party."
- CZE_national_unity_government_tooltip_trigger:0 "§YYalta Conference§! didn't happen"
- CZE_national_unity_government_tooltip_reward:0 "\n §OSpecial Bonus:§! Removes §YMinority Penalties§!, changes §YGovernment§!."
  CZE.409.t:0 "Party of National Unity Formed"
  CZE.409.d:0 "In hopes of appeasing the Germans after the Munich Agreement, Rudolf Beran gathered most of the country's non-socialist parties into the Party of National Unity, with himself as the leader. He also subjected the press to strict censorship. He did, however, preside over granting the Slovaks and Ruthenians' longstanding demands for autonomy. None of these measures were enough to prevent Slovakia from seceding on 14 March or Germany from occupying the remainder of the country a day later. He then served as the first prime minister of the Protectorate of Bohemia and Moravia until his retirement on 27 April 1939.\n\nAfter the war, Beran was arrested as a collaborator by the Communist authorities and, in a manipulated political trial, was sentenced to twenty years in prison. He died in Leopoldov prison in 1954."
  CZE.409.a:0 "So be it."
@@ -1139,6 +1135,11 @@ CZE_sdp_radicalization:0 "SdP Radicalization Crisis"
 CZE_sdp_radicalization_desc:0 "German minority in Sudetenland is actively pursuing closer ties with [GER.getNameDef]. They demand higher autonomy within the state and threaten to increase the resistance against the state authorities in their territories."
 
 end_of_czechoslovakia:0 "Czechoslovakia has met its fate"
+
+ CZE_national_unity_government: "Form Party of National Unity"
+ CZE_national_unity_government_desc: "The Party of National Unity was created in November 1938 after German occupation as a kind of a last attempt to save Czechoslovakia.\n\nIt included almost all center-right parties and the Czechoslovak National Socialist Party."
+ CZE_national_unity_government_tooltip_trigger: "§YYalta Conference§! didn't happen"
+ CZE_national_unity_government_tooltip_reward: "\n §OSpecial Bonus:§! Removes §YMinority Penalties§!, changes §YGovernment§!."
 
 #INTERNAL WOES
  CZE_minority_management: "Internal Woes"
