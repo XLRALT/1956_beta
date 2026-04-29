@@ -37,40 +37,7 @@ country_event = {
 }
 
 ##### FUNERAL OF TGM
-
-country_event = {
-	id = CZE.2
-	title = CZE.2.t
-	desc = CZE.2.d
-	picture = GFX_CZKE_tgm_funeral_report
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	immediate = {
-		hidden_effect = {
-			every_country = { 
-				if = {
-					limit = {
-						exists = yes
-						has_capitulated = no
-						OR = {
-							is_neighbor_of = CZE
-							original_tag = CZE
-						}
-					}
-					news_event = { hours = 6 id = CZE.3 }
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = CZE.2.a
-		remove_ideas = tgm
-	}
-}
-
+#country_event replaced by vanilla's MUN_czech.5
 news_event = {
 	id = CZE.3
 	title = CZE.3.t

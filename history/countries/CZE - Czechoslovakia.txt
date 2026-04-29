@@ -336,16 +336,11 @@ add_ideas = {
 }
 
 # RETIRE CHARCTER EVENTS
-if = {
-	limit = {
-		has_dlc = "Peace For Our Time"
-	}
-	#The death of Tomas Masaryk
-	country_event = {
-		id = MUN_czech.5
-		days = 622
-		random_hours = 12
-	}
+#The death of Tomas Masaryk
+country_event = {
+	id = MUN_czech.5
+	days = 622
+	random_hours = 12
 }
 
 country_event = { #Flavor for a real start date non-aligned party leader placeholder Hlinka to be retired - hidden

@@ -1549,8 +1549,6 @@ on_actions = {
 				}
 				else = { #Extra RT56 Content Here
 					CZE = {
-						country_event = { id = CZE.2 days = 617 }		#TGM dies
-
 						retire_character = CZE_antonin_hampl		#Demo leader during second Republic.
 						retire_character = CZE_edvard_benesh		#r56: Moved into DLC block because we have him as an idea for the DLC people I guess
 						retire_character = CZE_emil_hacha			#neutrality party leader
