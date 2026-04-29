@@ -708,13 +708,19 @@ characters={
 			advisor={
 				slot = political_advisor
 				idea_token = CZE_stefan_osusky
-				allowed  = {
-					original_tag  = CZE
+				allowed = {
+					original_tag = CZE
 				}
-				available  = {
-					has_completed_focus = CZE_democratic_bastion 
-					NOT  = {
-						has_autonomy_state  = autonomy_supervised_state
+				available = {
+					NOT = {
+						has_autonomy_state = autonomy_supervised_state
+					}
+				}
+				visible = {
+					NOT = {
+						has_completed_focus = CZE_state_defense_law
+						has_completed_focus = CZE_empower_internationalism
+						has_completed_focus = CZE_military_coup
 					}
 				}
 				traits  = {
