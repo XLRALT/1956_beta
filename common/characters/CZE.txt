@@ -118,6 +118,21 @@ characters={
 		}
 	}
 
+	CZE_rudolf_beran = {
+		name="Rudolf Beran"
+		portraits = {
+			civilian={
+				large="gfx/leaders/CZE/r56_portrait_CZE_Rudolf_Beran.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+			traits={ leader_of_the_agrarian_union }
+		}
+	}
+
 	#political advisors
 	CZE_josef_rozsevac = {
 		name = CZE_josef_rozsevac
