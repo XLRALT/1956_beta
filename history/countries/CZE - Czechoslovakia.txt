@@ -349,33 +349,6 @@ country_event = { #Flavor for a real start date non-aligned party leader placeho
 	random_hours = 12
 }
 
-# BALANCE OF POWER SETUP
-if = {
-	limit = {
-		has_dlc = "Peace For Our Time"
-	}
-	#BOP 
-	# set_power_balance = {
-	# 	id = CZE_bop_army_readiness
-	# 	set_default = yes  # whether or not to reset the power balance to the initial value, default = no
-	# }
-
-	#Starts BOP
-	country_event = {
-		id = MUN_czech_bop.1
-		days = 8
-		random_hours = 4
-	}
-}
-
-#MISSION ACTIVATIONS
-if = {
-	limit = {
-		has_dlc = "Peace For Our Time"
-	}
-	activate_mission = CZE_fate_of_the_ro
-}
-
 if = {
 	limit = { has_dlc = "La Resistance" }
 	create_operative_leader = {

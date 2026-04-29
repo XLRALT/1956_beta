@@ -4728,7 +4728,6 @@ focus_tree = {
 		ai_will_do = { factor = 3 }
 		
 		completion_reward = {
-			custom_effect_tooltip = new_idea
 			add_ideas = CZE_partial_mobilization_1938
 			country_event = { id = CZE.411 days = 1 }
 			custom_effect_tooltip = report_reward

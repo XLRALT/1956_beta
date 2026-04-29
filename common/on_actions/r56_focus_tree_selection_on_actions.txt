@@ -1546,6 +1546,23 @@ on_actions = {
 						}
 						add_ideas = CZE_legacy_of_the_czechoslovak_legion_army_spirit
 					}
+
+					# BALANCE OF POWER SETUP
+					#BOP 
+					# set_power_balance = {
+					# 	id = CZE_bop_army_readiness
+					# 	set_default = yes  # whether or not to reset the power balance to the initial value, default = no
+					# }
+
+					#Starts BOP
+					country_event = {
+						id = MUN_czech_bop.1
+						days = 8
+						random_hours = 4
+					}
+
+					#MISSION ACTIVATIONS
+					activate_mission = CZE_fate_of_the_ro
 				}
 				else = { #Extra RT56 Content Here
 					CZE = {
