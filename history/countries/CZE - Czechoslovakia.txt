@@ -130,6 +130,7 @@ set_variable = {
 
 set_power_balance = {
 	id = CZE_prespm_power_balance
+	set_value = -0.1
 }
 
 ####czechoslovak industry

@@ -1148,6 +1148,20 @@ end_of_czechoslovakia:0 "Czechoslovakia has met its fate"
  CZE_internal_woes_rut_val_text: "[?CZE_iw_rut_val]"
  CZE_internal_woes_zao_val_text: "[?CZE_iw_zao_val]"
 
+#POWER BALANCE
+ CZE_prespm_power_balance: "The Power Struggle"
+ CZE_prespm_balanced: "Status Quo"
+ CZE_prespm_pres: "The Castle"
+ CZE_prespm_pres_1: "Low Castle Control"
+ CZE_prespm_pres_2: "Medium Castle Control"
+ CZE_prespm_pres_3: "High Castle Control"
+ CZE_prespm_pres_4: "Total Castle Control"
+ CZE_prespm_pm: "The Chamber"
+ CZE_prespm_pm_1: "Low Chamber Control"
+ CZE_prespm_pm_2: "Medium Chamber Control"
+ CZE_prespm_pm_3: "High Chamber Control"
+ CZE_prespm_pm_4: "Total Chamber Control"
+
 # NEW TOOLTIPS/MODIFERS
 
  CZE_modify_bm_tt: "Modify §Y$CZE_czechoslovak_army_modifier$§! by:"
