@@ -569,7 +569,6 @@
  CZE_france_alliance_desc:0 "During the interwar period, Czech-French relations had a privileged status. Therefore, scientific and cultural relations between France and Czechoslovakia were structured and developed as such – as politically privileged relations. The Francophile lobby was represented in critical positions at the Czechoslovak Ministries of Education and Military."
  CZE_soviet_treaties:0 "Improve Treaties With [SOV.getAdjective]s"
  CZE_soviet_treaties_desc:0 "On May 16, 1935, Czechoslovakia and the Soviet Union signed the Treaty of Alliance due to the Soviet alliance with France. During the critical years before Munich, many in Czechoslovakia hoped that the Soviet Union would help should war break out."
- CZE_soviet_treaties_tooltip_reward_1:0 "\n§G[SOV.getAdjective]-Czechoslovak Treaty of Alliance§!, and §YDiplomatic Event§!.\n"
  CZE_soviet_treaties_tooltip_reward_2:0 "\nNegotiation for §YMilitary Technology§!:\n§OTactical Bomber I§! (90% chance)."
  CZE_soviet_treaties_positive:0 "[SOV.getAdjective]-Czechoslovak Treaty of Alliance"
  CZE_soviet_treaties_negative:0 "[SOV.getAdjective]-Czechoslovak Treaty of Alliance"

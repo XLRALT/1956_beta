@@ -128,6 +128,10 @@ set_variable = {
 	CZE_iw_pol_val = 15
 }
 
+set_power_balance = {
+	id = CZE_prespm_power_balance
+}
+
 ####czechoslovak industry
 set_variable = { CZE_ci_repair_speed_arms_factory_factor = 0.10 }
 set_variable = { CZE_ci_line_change_production_efficiency_factor = 0.15 }
@@ -322,36 +326,13 @@ if = {
 	}
 }
 
-
-### SETUP NATIONAL SPIRITS PFOT ### - WARNING: NEEDS TO GO AFTER CHARACTER RECRUITMENT!
-if = {
-	limit = {
-		has_dlc = "Peace For Our Time"
-	}
-	add_ideas = {
-		CZE_sudeten_german_quandary
-		CZE_taticek_of_czechoslovakia
-		CZE_industrialists_veto
-		CZE_agrarian_politics_1
-		CZE_a_divided_nation_fake_ns
-		CZE_edvard_benesh_idea
-	}
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		add_ideas = CZE_legacy_of_the_czechoslovak_legion_army_spirit
-	}
-	else = {
-		add_ideas = {
-			limited_conscription
-			tgm
-			edvard_benes
-			CZE_divided_nation
-			#r56_CZE_current_weapon_exporter
-			r56_YUG_little_entente
-		}
-	}
+add_ideas = {
+	limited_conscription
+	tgm
+	edvard_benes
+	CZE_divided_nation
+	#r56_CZE_current_weapon_exporter
+	r56_YUG_little_entente
 }
 
 # RETIRE CHARCTER EVENTS

@@ -1224,6 +1224,83 @@ on_actions = {
 					load_focus_tree = mu_czech_focus
 					set_global_flag = cze_dlc_focus_tree
 
+					#RT56 CONTENT REMOVAL
+					# Internal Woes
+					set_variable = {
+						CZE_iw_sdt_val = 0
+					}
+					set_variable = {
+						CZE_iw_slo_val = 0
+					}
+					set_variable = {
+						CZE_iw_hun_val = 0
+					}
+					set_variable = {
+						CZE_iw_rut_val = 0
+					}
+					set_variable = {
+						CZE_iw_pol_val = 0
+					}
+
+					remove_power_balance = {
+						id = CZE_prespm_power_balance
+					}
+
+					set_variable = { CZE_ci_repair_speed_arms_factory_factor = 0 }
+					set_variable = { CZE_ci_line_change_production_efficiency_factor = 0 }
+					set_variable = { CZE_ci_production_factory_efficiency_gain_factor = 0 }
+					set_variable = { CZE_ai_industrial_capacity_factory = 0 }
+					set_variable = { CZE_ci_consumer_goods_factor = 0 }
+					set_variable = { CZE_ci_civilian_intel_to_others = 0 }
+
+					set_variable = { CZE_ci_trade_opinion_factor = 0 }
+					set_variable = { CZE_ci_civ_construction_speed = 0 }
+					set_variable = { CZE_ci_weekly_manpower = 0 }
+
+					remove_dynamic_modifier = { modifier = CZE_czechoslovak_industry_dynamic_modifier }
+					remove_ideas = CZE_hidden_industrial_ns
+
+					# Air force
+
+					remove_dynamic_modifier = { modifier = CZE_czechoslovak_airforce_modifier }
+
+					set_variable = { CZE_af_air_mission_efficiency = 0 }
+					set_variable = { CZE_af_air_ace_generation_chance_factor = 0 }
+					set_variable = { CZE_af_air_agility_factor = 0 }
+
+					# Army
+
+					set_variable = { CZE_bm_army_org_factor = 0 }
+					set_variable = { CZE_bm_army_speed_factor = 0 }
+					set_variable = { CZE_bm_supply_consumption_factor = 0 }
+					set_variable = { CZE_bm_army_intel_to_others = 0 }
+
+
+					set_variable = { CZE_bm_max_planning_factor = 0 }
+					set_variable = { CZE_bm_promote_cost_factor = 0 }
+					set_variable = { CZE_bm_max_dig_in_factor = 0 }
+					set_variable = { CZE_bm_planning_speed = 0 }
+					set_variable = { CZE_bm_army_core_defence_factor = 0 }
+					set_variable = { CZE_bm_army_artillery_attack_factor = 0 }
+					set_variable = { CZE_bm_conscription = 0 }
+					set_variable = { CZE_bm_production_speed_bunker_factor = 0 }
+					set_variable = { CZE_bm_send_volunteer_divisions_required = 0 }
+					set_variable = { CZE_bm_out_of_supply = 0 }
+					set_variable = { CZE_bm_send_volunteer_size = 0 }
+					set_variable = { CZE_bm_army_armor_speed_factor = 0 }
+					set_variable = { CZE_bm_special_forces_attack_factor = 0 }
+					set_variable = { CZE_bm_special_forces_out_of_supply_factor = 0 }
+					set_variable = { CZE_bm_modifier_army_sub_unit_mountaineers_defence_factor = 0 }
+					set_variable = { CZE_bm_modifier_army_sub_unit_mountaineers_max_org_factor = 0 }
+					set_variable = { CZE_bm_special_forces_cap = 0 }
+					set_variable = { CZE_bm_dig_in_speed_factor = 0 }
+					set_variable = { CZE_bm_army_morale_factor = 0 }
+					set_variable = { CZE_bm_research_speed_factor = 0 }
+
+					remove_dynamic_modifier = { modifier = CZE_czechoslovak_army_modifier }
+					remove_ideas = CZE_hidden_branna_moc_ns
+
+					#PFOT CONTENT
 					### DYNAMIC MODIFIERS AND VARIABLES ###
 					#Skoda Variables
 					set_variable = { skoda_plane_x = 208 } 
@@ -1453,10 +1530,81 @@ on_actions = {
 					set_variable = { CZE_ceskoslovenske_alecne_lodstvo_naval_heavy_gun_hit_chance_factor = 0 }
 					set_variable = { CZE_ceskoslovenske_alecne_lodstvo_sortie_efficiency = 0 }
 					set_variable = { CZE_ceskoslovenske_alecne_lodstvo_navy_max_range_factor = 0 }
+
+					### SETUP NATIONAL SPIRITS PFOT ### - WARNING: NEEDS TO GO AFTER CHARACTER RECRUITMENT!
+					add_ideas = {
+						CZE_sudeten_german_quandary
+						CZE_taticek_of_czechoslovakia
+						CZE_industrialists_veto
+						CZE_agrarian_politics_1
+						CZE_a_divided_nation_fake_ns
+						CZE_edvard_benesh_idea
+					}
+					if = {
+						limit = {
+							has_dlc = "No Step Back"
+						}
+						add_ideas = CZE_legacy_of_the_czechoslovak_legion_army_spirit
+					}
 				}
 				else = { #Extra RT56 Content Here
 					CZE = {
 						country_event = { id = CZE.2 days = 617 }		#TGM dies
+
+						retire_character = CZE_antonin_hampl		#Demo leader during second Republic.
+						retire_character = CZE_edvard_benesh		#r56: Moved into DLC block because we have him as an idea for the DLC people I guess
+						retire_character = CZE_emil_hacha			#neutrality party leader
+						retire_character = CZE_bohumir_smeral		#alternate communist leader
+						retire_character = CZE_kamil_krofta		#advisor
+						retire_character = CZE_konrad_henlein		#r56: Moved into DLC block because we got Felix Achille for non-DLC
+						retire_character = CZE_stefan_osusky		#r56: Moved into DLC block because Hodza's non-DLC trait otherwise is the same as his
+						retire_character = CZE_karel_englis		#r56: Moved into DLC block because we got Josef Kalfus for non-DLC
+						retire_character = CZE_karel_domin			#advisor
+						retire_character = CZE_josef_guttman		#communist editor
+						retire_character = CZE_milada_horakova		#womens rights activist
+						retire_character = CZE_ferdinand_peroutka	#"liberal journalist"
+						retire_character = CZE_bohumil_lausman		#cpt of industry
+						retire_character = CZE_jan_dostalek		#advisor
+						retire_character = CZE_emil_franke			#advisor
+						retire_character = CZE_jan_krcmar			#advisor
+						retire_character = CZE_pavel_reiman		#"socialist writer"
+						retire_character = CZE_vaclav_kopecky		#stalinist backroom backstabber
+						retire_character = CZE_josef_rozsevac		#monarchofascist advisor
+						retire_character = CZE_jan_ruckl			#csl economist
+						retire_character = CZE_vladimir_mandl		#advisor
+						retire_character = CZE_ernst_fischer		#advisor - r56: renamed from AUS_ to CZE_ since we added Fischer to Austria
+						retire_character = CZE_ludwig_czech		#advisor
+						retire_character = CZE_jan_sramek			#advisor
+						retire_character = CZE_frantisek_chvalkovsky #advisor
+						retire_character = CZE_stanislav_bukovsky	#advisor
+						retire_character = CZE_augustin_voloshyn 	#advisor
+						retire_character = CZE_bozena_machacova_dostalova #advisor
+						retire_character = CZE_josef_cerny			#advisor
+						retire_character =	CZE_rudolf_mlcoch 		#advisor
+						retire_character =	CZE_alois_tucny			#advisor
+						retire_character = CZE_rudolf_bechyne 		#advisor
+						retire_character = CZE_simon_drgac			#generic head of intelligence for the context of having dlc as františek moravec has a custom trait
+						retire_character = CZE_bedrich_homola		#general
+						retire_character = CZE_emil_linhart		#general
+						retire_character = CZE_frantisek_hrabcik	#general
+						retire_character = CZE_stefan_jurech		#general
+						retire_character = CZE_melichar_frantisek	#general and advisor, unlocked by focus
+						retire_character = CZE_mikulas_dolezal		#defensive army chief - replaces Krejci so he can be high command
+						retire_character = CZE_antonin_pavlik		#armor hc
+						retire_character = CZE_vladimir_prikryl	#artillery hc - born 1888, not to be confused with the general born in 1895
+						retire_character = CZE_alois_elias			#general, unlocked by focus
+						retire_character = CZE_josef_vana			#general, unlocked by focus
+						retire_character = CZE_emanuel_moravec		#general, unlocked by focus
+						#retire_character = CZE_jaroslav_kejla 	#air chief - r56: we had him first, in non-DLC section
+						retire_character = CZE_karel_prochazka		#air chief replacement for Kuttelwascher
+						retire_character = CZE_frantisek_placak	#navy chief
+						retire_character = CZE_karel_pavala_army	#general, split character to avoid a bug that doesn't allow admiral/commander on one character
+						retire_character = CZE_jaroslav_slechta	#advisor
+						retire_character = CZE_hugo_vavrecka		#advisor
+
+						#R56: Slovakian nationalists that Road removed but PFOT added a DLC instance for, so at least that part needs to be available
+						retire_character = CZE_vojtech_tuka
+						retire_character = CZE_jozef_tiso
 					}
 				}
 			}

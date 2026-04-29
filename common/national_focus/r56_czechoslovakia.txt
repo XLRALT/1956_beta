@@ -6149,8 +6149,6 @@ focus_tree = {
 
 		prerequisite = { focus = CZE_handle_the_communist_power_grab }
 
-		available = { NOT = { has_government = fascism has_government = neutrality } }
-
 		x = 1
 		y = 1
 		relative_position_id = CZE_handle_the_communist_power_grab
@@ -6197,7 +6195,10 @@ focus_tree = {
 
  		prerequisite = { focus = CZE_soviet_intelligence }
  		
- 		available = { has_completed_focus = CZE_R56_establish_new_uranium_mines country_exists = SOV NOT = { has_government = fascism has_government = neutrality } }
+ 		available = {
+			has_completed_focus = CZE_R56_establish_new_uranium_mines
+			country_exists = SOV
+		}
 
  		x = 0
  		y = 2
@@ -6286,13 +6287,11 @@ focus_tree = {
 
 		prerequisite = { focus = CZE_strengthen_communism focus = CZE_handle_the_communist_power_grab }
 
-		available = { 
-			AND = { 
-				has_government = communism
-				69 = { is_owned_by = CZE }
-				1078 = { is_owned_by = CZE }
-				74 = { is_owned_by = CZE }
-			}
+		available = {
+			has_government = communism
+			controls_state = 69
+			controls_state = 1078
+			controls_state = 74
 		}
 
 		x = 0
@@ -6302,6 +6301,7 @@ focus_tree = {
 
 		completion_reward = {
 			show_unit_leaders_tooltip = CZE_richard_tesarik
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					has_idea = CZE_unruly_minorities
@@ -6392,9 +6392,9 @@ focus_tree = {
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = CZE_join_comitern_tt
-					SOV = { is_in_faction_with = CZE }
-				}
+				SOV = { is_in_faction_with = CZE }
 			}
+		}
 			
 		completion_reward = {
 			SOV = { country_event = { id = CZE.444 days = 1 } }
@@ -6616,7 +6616,6 @@ focus_tree = {
 			NOT = {
 				has_war_with = SOV
 			}
-
 		}
 
 		relative_position_id = CZE_empower_internationalism
@@ -6628,8 +6627,6 @@ focus_tree = {
 
 		completion_reward = {
 			country_event = { id = CZE.316 days = 1 }
-			#custom_effect_tooltip = report_reward
-			#custom_effect_tooltip = CZE_soviet_treaties_tooltip_reward_1
 			custom_effect_tooltip = report_reward	
 			event_option_tooltip = CZE.318.a
 		}
@@ -6652,7 +6649,7 @@ focus_tree = {
 						OR = {
 							has_government = fascism 
 							has_government = neutrality
-						}  
+						}
 					}
 				}
 				SOV = {
@@ -6660,19 +6657,18 @@ focus_tree = {
 						OR = {
 							has_government = fascism 
 							has_government = neutrality
-						}  
-					}				
-				}				
+						}
+					}
+				}
 			}
 			NOT = {
 				has_war_with = SOV
 			}
-		
 			threat > 0.30	
 		}
 
 		relative_position_id = CZE_soviet_treaties
-	
+
 		x = 1
 		y = 1
 		cost = 10
