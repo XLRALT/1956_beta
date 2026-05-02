@@ -4,16 +4,15 @@ focus_tree = {
 	
 	country = {
 		factor = 0
-
+		
 		modifier = {
 			add = 10
 			tag = SLO
 		}
 	}
 
-	#shared_focus = AH_austro_hungarian_unification
-	shared_focus = HABSBURG_part_of_something_bigger
-	continuous_focus_position = { x = 1200 y = 800 }	
+    shared_focus = HABSBURG_part_of_something_bigger
+    continuous_focus_position = { x = 50 y = 900 }
 
 	default = no
 	reset_on_civilwar = no
@@ -52,8 +51,8 @@ focus_tree = {
 					bonus = 1
 					uses = 1
 					category = industry
-				}				
-			}			
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -102,7 +101,7 @@ focus_tree = {
 				bonus = 1.0
 				uses = 2
 				category = r56_special_forces_training_tech 
-			}			
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -130,7 +129,7 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_support_bonus
 		icon = GFX_goal_machine_gun
@@ -163,7 +162,7 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_motorization_effort
 		icon = GFX_goal_generic_army_motorized
@@ -232,7 +231,7 @@ focus_tree = {
 				uses = 1
 				technology = basic_light_tank
 				technology = improved_light_tank
-			}			
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -258,7 +257,7 @@ focus_tree = {
 				has_capitulated = no
 			}
 			OR = {
-				SLO = {is_subject_of = GER}
+				is_subject_of = GER
 				is_in_faction_with = GER
 			}
 			has_doctrine = new_mobile_warfare
@@ -276,7 +275,7 @@ focus_tree = {
 				bonus = 0.5
 				uses = 1
 				category = armor
-			}			
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -298,10 +297,10 @@ focus_tree = {
 		available = {
 			NOT = {	
 				OR = {
-					SLO = {is_subject_of = GER}
+					is_subject_of = GER
 					is_in_faction_with = GER
 				}
-			}	
+			}
 			has_doctrine = new_mobile_warfare
 		}
 
@@ -311,7 +310,7 @@ focus_tree = {
 				cost_reduction = 0.5
 				uses = 2
 				category = cat_mobile_warfare
-			}			
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -334,7 +333,7 @@ focus_tree = {
 					GER = {
 						is_subject = no
 						num_of_military_factories > 14					
-					}					
+					}
 				}
 				
 			}
@@ -380,7 +379,7 @@ focus_tree = {
 						producer = GER
 					}
 					
-				}					
+				}
 				else_if = {
 					limit = {
 						has_tech = advanced_medium_tank
@@ -442,7 +441,7 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MILITARY_EQUIPMENT }
-	}		
+	}
 	focus = {
 		id = SLO_mechanization_effort
 		icon = GFX_goal_mechanized_offensive
@@ -471,10 +470,10 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = maintenance_company_tech	
-			}		
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_firepower_focus
 		icon = GFX_goal_generic_army_artillery2
@@ -521,7 +520,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = YUG_artillery_regiments
 		}
-	}	
+	}
 	focus = {
 		id = SLO_planning_focus
 		icon = GFX_goal_generic_position_armies
@@ -550,7 +549,7 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_planning_focus_2
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -576,10 +575,10 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = signal_company_tech
-			}	
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_mass_assault_focus
 		icon = GFX_goal_infantry_offensive
@@ -637,7 +636,7 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_rapid_deployment_focus
 		icon = GFX_goal_generic_military_sphere
@@ -711,8 +710,8 @@ focus_tree = {
 				bonus = 1.0
 				uses = 1
 				category = r56_special_forces_training_tech 
-			}			
-			unlock_decision_tooltip = { decision = cite_an_airborne_unit show_effect_tooltip = yes }			
+			}
+			unlock_decision_tooltip = { decision = cite_an_airborne_unit show_effect_tooltip = yes }
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -739,13 +738,13 @@ focus_tree = {
 							is_in_faction_with = ROOT
 							num_of_factories > 50
 						}
-					}			
+					}
 				}
 				num_of_factories > 50			
 			}
 
 
-		}			
+		}
 		available_if_capitulated = yes
 		completion_reward = {
 			add_research_slot = 1
@@ -960,7 +959,7 @@ focus_tree = {
 						type = air_base
 						level = 2
 						instant_build = yes
-					}				
+					}
 					ROOT = { set_country_flag = aviation_effort_2_AB }
 				}
 			}
@@ -1027,7 +1026,7 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_CAS_effort
 		icon = GFX_goal_generic_CAS
@@ -1174,7 +1173,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-			}			
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1443,7 +1442,7 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = industry
-			}		
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
@@ -1468,15 +1467,15 @@ focus_tree = {
 					type = infrastructure
 					level = 1
 					instant_build = yes 
-				}	
+				}
 			}
 			71 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes 
-				}	
-			}			
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1508,7 +1507,7 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
 				SLO_i_local_resources_factor = 0.1
 				tooltip = local_resources_factor_tt
@@ -1529,11 +1528,11 @@ focus_tree = {
 		prerequisite = { focus = SLO_transslovak_railways }
 		available = {
 			controls_state = 70
-		}		
+		}
 		cost = 5
 		ai_will_do = {
 			factor = 5		
-		}		
+		}
 		available_if_capitulated = yes
 		completion_reward = {
 			70 = {
@@ -1543,9 +1542,9 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}	
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
 				SLO_i_industrial_capacity_factory = 0.15
 				tooltip = industrial_capacity_factory_tt
@@ -1563,11 +1562,11 @@ focus_tree = {
 		available = {
 			controls_state = 70
 			has_tech = synth_oil_experiments
-		}		
+		}
 		cost = 10
 		ai_will_do = {
 			factor = 5			
-		}		
+		}
 		completion_reward = {
 			70 = {
 				add_extra_state_shared_building_slots = 1
@@ -1578,7 +1577,7 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
 				SLO_i_production_oil_factor = 0.05
 				tooltip = production_oil_factor_tt
@@ -1589,7 +1588,7 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = refining_tech
-			}						
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES }
 	}
@@ -1603,9 +1602,9 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 15		
-		}		
+		}
 		available = {
-		}		
+		}
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = {
@@ -1625,7 +1624,7 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
 				SLO_i_industrial_capacity_factory = 0.15
 				tooltip = industrial_capacity_factory_tt
@@ -1643,10 +1642,10 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 15		
-		}		
+		}
 		available = {
 			controls_state = 70
-		}		
+		}
 		completion_reward = {
 			70 = {
 				add_extra_state_shared_building_slots = 1
@@ -1659,7 +1658,7 @@ focus_tree = {
 					type = infrastructure
 					level = 1
 					instant_build = yes 
-				}			
+				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			IF = {
@@ -1698,7 +1697,10 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 30			
-		}		
+		}
+		available = {
+			num_of_factories > 15
+		}
 		available_if_capitulated = yes
 		completion_reward = {
 			add_research_slot = 1
@@ -1721,7 +1723,7 @@ focus_tree = {
 		}
 		available = {
 			controls_state = 664
-		}	
+		}
 		bypass = {
 		}
 
@@ -1740,7 +1742,7 @@ focus_tree = {
 				} 				
 			}
 		}
-	}	
+	}
 	focus = {
 		id = SLO_continue_industrialization
 		icon = GFX_goal_generic_construction
@@ -1750,14 +1752,14 @@ focus_tree = {
 		prerequisite = { focus = SLO_support_innovations }
 		prerequisite = { focus = SLO_zvolen_railway_factory }
 		available = {
-		}		
+		}
 		cost = 10
 		ai_will_do = {
 			factor = 5		
-		}		
+		}
 		available_if_capitulated = yes
 		completion_reward = {
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
 				SLO_i_consumer_goods_factor = 0.1
 				tooltip = consumer_goods_factor_tt
@@ -1810,10 +1812,10 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			base = 5		
-		}		
+		}
 		available_if_capitulated = yes
 		completion_reward = {
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
 				SLO_i_production_speed_buildings_factor = 0.1
 				tooltip = production_speed_buildings_factor_tt
@@ -1821,7 +1823,7 @@ focus_tree = {
 			add_to_variable = {
 				SLO_i_industry_repair_factor = 0.1
 				tooltip = industry_repair_factor_tt
-			}		
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1835,17 +1837,17 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			base = 5		
-		}		
+		}
 		available_if_capitulated = yes
 		completion_reward = {
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
 				SLO_i_production_factory_max_efficiency_factor = 0.1
 				tooltip = production_factory_max_efficiency_factor_tt
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}	
+	}
 	focus = {
 		id = SLO_uranium_mining
 		icon = GFX_focus_generic_uranium_extraction
@@ -1866,7 +1868,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
 				SLO_i_sp_tag_nuclear_power_speed_factor = 0.10
 				tooltip = sp_tag_nuclear_power_speed_factor_tt
@@ -1878,15 +1880,15 @@ focus_tree = {
 			add_to_variable = {
 				SLO_i_production_speed_nuclear_facility_factor = 0.10
 				tooltip = production_speed_nuclear_facility_factor_tt
-			}			
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_breakthrough_progress = {
 				specialization = specialization_nuclear
-				value = 0.5 #was 0.25 but increased w/ the removal of the research buff
+				value = 0.5 #was 0.25 but increased w/ the removal of the researtch buff
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_found_the_nation
 		icon = GFX_goal_SLO_slovak_freedom
@@ -1917,8 +1919,8 @@ focus_tree = {
 					bonus = 1
 					uses = 1
 					category = industry
-				}				
-			}			
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL }
 	}
@@ -1946,7 +1948,7 @@ focus_tree = {
 			add_state_core = 664
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
-	}	
+	}
 	focus = {
 		id = SLO_purge_fascists
 		icon = GFX_goal_fascism_banned
@@ -1962,22 +1964,20 @@ focus_tree = {
 				is_faction_leader = yes
 				is_in_faction_with = SLO
 				NOT = {has_government = fascism}
-			}		
+			}
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = { 
-						OR = {
-							has_government = democratic
-							has_government = neutrality
-							has_government = communism
-						} 
+				OVERLORD = { 
+					OR = {
+						has_government = democratic
+						has_government = neutrality
+						has_government = communism
 					} 
 				}
-			}			
+			}
 		}
 		
 		x = -6
@@ -2039,18 +2039,16 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = { 
-						OR = {
-							has_government = democratic
-							has_government = neutrality
-						} 
+				OVERLORD = { 
+					OR = {
+						has_government = democratic
+						has_government = neutrality
 					} 
 				}
-			}			
+			}
 		}
 		
 		x = 3
@@ -2126,7 +2124,7 @@ focus_tree = {
 						has_government = neutrality
 					} 
 				} 
-			}			
+			}
 		}
 		
 		x = 2
@@ -2165,7 +2163,7 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 3
-		}		
+		}
 		
 		completion_reward = {
 			add_ideas = why_we_fight_focus
@@ -2174,11 +2172,11 @@ focus_tree = {
 				if = {
 					limit = { NOT = { has_idea = neutrality_idea } }
 					set_rule = { can_create_factions = yes }
-				}			
+				}
 			}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-	}	
+	}
 	focus = {
 		id = SLO_seek_trading_partners
 		icon = GFX_goal_generic_positive_trade_relations
@@ -2192,18 +2190,16 @@ focus_tree = {
 			controls_state = 70
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = { 
-						OR = {
-							has_government = democratic
-							has_government = neutrality
-						} 
+				OVERLORD = { 
+					OR = {
+						has_government = democratic
+						has_government = neutrality
 					} 
 				}
-			}			
+			}
 		}
 		
 		x = 0
@@ -2223,8 +2219,8 @@ focus_tree = {
 					type = infrastructure
 					level = 1
 					instant_build = yes 
-				}	
-			}			
+				}
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -2240,18 +2236,16 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = { 
-						OR = {
-							has_government = democratic
-							has_government = neutrality
-						} 
+				OVERLORD = { 
+					OR = {
+						has_government = democratic
+						has_government = neutrality
 					} 
 				}
-			}			
+			}
 		}
 		
 		x = -1
@@ -2290,7 +2284,7 @@ focus_tree = {
 						has_government = neutrality
 					} 
 				}
-			}			
+			}
 		}
 		
 		x = 1
@@ -2305,7 +2299,7 @@ focus_tree = {
 			add_ideas = LAT_invite_foreign_investors
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}	
+	}
 	focus = {
 		id = SLO_agrarian_reforms
 		icon = GFX_goal_agrarian_reform
@@ -2326,17 +2320,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			custom_effect_tooltip = SLO_modify_slovak_industry_tt
+			custom_effect_tooltip = SLO_modify_industry_tt
 			add_to_variable = {
-				SLO_i_conscription_factor = 0.1
+				SLO_i_conscription_factor = 0.05
 				tooltip = conscription_factor_tt
 			}
 			add_to_variable = {
-				SLO_i_consumer_goods_factor = -0.15
+				SLO_i_consumer_goods_factor = -0.1
 				tooltip = consumer_goods_factor_tt
 			}
 			add_to_variable = {
-				SLO_i_global_building_slots_factor = 0.25
+				SLO_i_global_building_slots_factor = 0.2
 				tooltip = global_building_slots_factor_tt
 			}
 		}
@@ -2358,19 +2352,17 @@ focus_tree = {
 							is_major = yes
 							has_government = communism
 						}
-					}		
+					}
 				}
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = {	
-						has_government = communism
-					} 
+				OVERLORD = {	
+					has_government = communism
 				}
-			}			
+			}
 		}
 		
 		x = -2
@@ -2441,13 +2433,11 @@ focus_tree = {
 			has_government = communism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = {	
-						has_government = communism
-					} 
+				OVERLORD = {	
+					has_government = communism
 				}
 			}
 		}
@@ -2488,15 +2478,13 @@ focus_tree = {
 			has_government = communism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = {	
-						has_government = communism
-					} 
+				OVERLORD = {	
+					has_government = communism
 				}
-			}			
+			}
 		}
 		
 		x = 1
@@ -2520,10 +2508,10 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = military_police_tech
-			}			
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 	focus = {
 		id = SLO_purge_the_army
 		icon = GFX_focus_SOV_military_purge
@@ -2533,15 +2521,13 @@ focus_tree = {
 			has_government = communism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = {	
-						has_government = communism
-					} 
+				OVERLORD = {	
+					has_government = communism
 				}
-			}			
+			}
 		}
 		
 		x = 0
@@ -2569,15 +2555,13 @@ focus_tree = {
 			has_government = communism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = {	
-						has_government = communism
-					} 
+				OVERLORD = {	
+					has_government = communism
 				}
-			}			
+			}
 		}
 		
 		x = 0
@@ -2601,15 +2585,13 @@ focus_tree = {
 			has_government = communism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = {	
-						has_government = communism
-					} 
+				OVERLORD = {	
+					has_government = communism
 				}
-			}			
+			}
 		}
 		
 		x = -1
@@ -2625,7 +2607,7 @@ focus_tree = {
 			add_ideas = idea_communist_central_management
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
-	}	
+	}
 	focus = {
 		id = SLO_indoctrinate_the_proletariat
 		icon = GFX_focus_propaganda_soviet
@@ -2635,15 +2617,12 @@ focus_tree = {
 			has_government = communism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
-				
+					is_subject = yes
 				}
-				SLO = { 
-					OVERLORD = {	
-						has_government = communism
-					} 
+				OVERLORD = {	
+					has_government = communism
 				}
-			}			
+			}
 		}
 		
 		x = 0
@@ -2671,15 +2650,13 @@ focus_tree = {
 			has_government = communism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { 
-					OVERLORD = {	
-						has_government = communism
-					} 
+				OVERLORD = {	
+					has_government = communism
 				}
-			}			
+			}
 		}
 		
 		x = 0
@@ -2706,10 +2683,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}			
+			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}	
+	}
 	focus = {
 		id = SLO_reinforce_hlinka_guard
 		icon = GFX_goal_SLO_slovak_blackshirts
@@ -2719,10 +2696,10 @@ focus_tree = {
 				has_government = fascism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { OVERLORD = { has_government = fascism } }
+				OVERLORD = { has_government = fascism }
 			}
 		}
 		x = 6
@@ -2837,10 +2814,10 @@ focus_tree = {
 				bonus = 1
 				uses = 1
 				category = military_police_tech
-			}	
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH  FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
-	}	
+	}
 	focus = {
 		id = SLO_catholic_dominance
 		icon = GFX_goal_SLO_slovak_birth
@@ -2853,10 +2830,10 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { OVERLORD = { has_government = fascism } }
+				OVERLORD = { has_government = fascism }
 			}
 		}
 		x = 1
@@ -2891,7 +2868,7 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
-	}	
+	}
 	focus = {
 		id = SLO_outlaw_the_communist_party
 		icon = GFX_goal_generic_anti_communism
@@ -2901,10 +2878,9 @@ focus_tree = {
 			has_government = fascism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
-				
+					is_subject = yes
 				}
-				SLO = { OVERLORD = { has_government = fascism } }
+				OVERLORD = { has_government = fascism }
 			}
 		}
 		x = -3
@@ -2946,10 +2922,10 @@ focus_tree = {
 			has_government = fascism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { OVERLORD = { has_government = fascism } }
+				OVERLORD = { has_government = fascism }
 			}
 		}
 		x = 0
@@ -2995,10 +2971,10 @@ focus_tree = {
 				has_government = fascism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				
 				}
-				SLO = { OVERLORD = { has_government = fascism } }
+				OVERLORD = { has_government = fascism }
 			}
 		}
 		x = -1
@@ -3108,7 +3084,7 @@ focus_tree = {
 			add_ideas = SLO_integrated_overlord_army
 		}
 		search_filters = { FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_POLITICAL }
-	}	
+	}
 	focus = {
 		id = SLO_hlinka_youth
 		icon = GFX_goal_SLO_hlinka_mladez
@@ -3121,9 +3097,9 @@ focus_tree = {
 			has_government = fascism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				}
-				SLO = { OVERLORD = { has_government = fascism } }
+				OVERLORD = { has_government = fascism }
 			}
 		}
 		available_if_capitulated = yes
@@ -3148,9 +3124,9 @@ focus_tree = {
 			has_government = fascism
 			if = {
 				limit = {
-					SLO = { is_subject = yes } 
+					is_subject = yes
 				}
-				SLO = { OVERLORD = { has_government = fascism } }
+				OVERLORD = { has_government = fascism }
 			}
 		}
 
@@ -3162,7 +3138,7 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_TFV_AUTONOMY }
-	}	
+	}
 	focus = {
 		id = SLO_ideological_fanaticism
 		icon = GFX_goal_flag_fascist_slovakia
@@ -3185,7 +3161,7 @@ focus_tree = {
 			custom_effect_tooltip = kamikaze_focus_tooltip
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
-	}	
+	}
 	focus = {
 		id = SLO_technology_sharing
 		icon = GFX_goal_research_silver_cooperation
@@ -3201,7 +3177,7 @@ focus_tree = {
 					num_of_factories > 50
 				}
 			}
-		}		
+		}
 		x = 0
 		y = 2
 		cost = 10
@@ -3209,40 +3185,26 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			if = {
-				limit = {
-					original_research_slots < 3
-				}
-				add_research_slot = 1
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 1
+				uses = 1
+				category = electronics
 			}
-			
-			custom_effect_tooltip = generic_skip_one_line_tt
-			
-			if = {
-				limit = {
-					original_research_slots > 2
-				}
-				add_tech_bonus = {
-					name = electronics_bonus
-					bonus = 1
-					uses = 1
-					category = electronics
-				}
-				add_tech_bonus = {
-					name = industrial_bonus
-					bonus = 1
-					uses = 1
-					category = industry
-				}	
-				add_tech_bonus = {
-					name = infantry_weapons_bonus
-					bonus = 1
-					uses = 1
-					category = infantry_weapons
-					category = artillery
-				}				
-			}			
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
-	}	
+	}
 }

@@ -1,4 +1,4 @@
-capital = 70
+﻿capital = 70
 
 oob = "SLO_1939"
 
@@ -48,10 +48,6 @@ if = {
 	recruit_character = SLO_gustav_husak	#too young too be leader, DLC gets a leader instance on Smidke
 }
 
-add_ideas = {
-	r56_SLO_strong_catholic_influence
-}
-
 add_dynamic_modifier = {
 	modifier = SLO_industry
 }
@@ -65,6 +61,8 @@ set_variable = { SLO_i_production_speed_buildings_factor = 0 }
 set_variable = { SLO_i_industry_repair_factor = 0 }
 set_variable = { SLO_i_production_factory_max_efficiency_factor = 0 }
 set_variable = { SLO_i_conscription_factor = 0 }
+set_variable = { SLO_i_production_speed_nuclear_reactor_factor = 0 }
+set_variable = { SLO_i_production_speed_nuclear_facility_factor = 0 }
 
 set_technology = {
 

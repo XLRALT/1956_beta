@@ -9,6 +9,9 @@
  r56_SLO_strong_catholic_influence:0 "Influential Catholic Church"
  r56_SLO_dominant_catholic_influence:0 "Catholic Dominance"
 
+ r56_SLO_strong_catholic_influence:0 "Influential Catholic Church"
+ r56_SLO_dominant_catholic_influence:0 "Catholic Dominance"
+
  SLO_militarism_focus:0 "Reinforced Hlinka Guard"
  SLO_nationalism:0 "Slovak Nationalism"
  SLO_planning_expertise:0 "Planning Expertise"
@@ -23,6 +26,9 @@
  SLO_integrated_overlord_army:0 "Integration into Overlord's army"
  SLO_integrated_overlord_army_desc:0 "In order to fight efficiently, we must be maintain constant contact with their command structure."
  SLO_industry:0 "Slovak Industry"
+
+ SLO_industry:0 "Slovak Industry"
+ SLO_modify_industry_tt: "Modify §YSlovak Industry§! by\n"
 
  #manufacturers
  apollo:0 "Apollo"
