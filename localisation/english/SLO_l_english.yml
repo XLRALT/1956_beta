@@ -2,12 +2,14 @@
 ##Add in focus tree fight between german influenced and more radical Hlinka guard, more and more imitating the SS and the Slovak Popular Party (still fascist)
 #Gregorij Rožman antocommunist Slovene Bishop
  SLO_generic_focus:0 "Slovakian national focus"
-
- SLO_modify_slovak_industry_tt:0 "Modify §YSlovak Industry§! by\n"
-
- r56_SLO_uranium_mining_hide:0 "Slovak Industry" #Research boost for dynamic modifier
- r56_SLO_strong_catholic_influence:0 "Influential Catholic Church"
- r56_SLO_dominant_catholic_influence:0 "Catholic Dominance"
+#  SLO_fascism_party:0 "SUS" # vanilla is better according to Simpy, if not move to replace
+#  SLO_fascism_party_long:0 "Slovenská ľudová Strana" # vanilla is better according to Simpy, if not move to replace
+ SLO_democratic_party:0 "DS"
+ SLO_democratic_party_long:0 "Demokratická Strana"
+#  SLO_communism_party:0 "KSS" # same as vanilla
+#  SLO_communism_party_long:0 "Komunistická Strana Slovenska" # same as vanilla
+ SLO_neutrality_party:0 "SNS"
+ SLO_neutrality_party_long:0 "Slovenská Národná Strana"
 
  r56_SLO_strong_catholic_influence:0 "Influential Catholic Church"
  r56_SLO_dominant_catholic_influence:0 "Catholic Dominance"
@@ -25,7 +27,6 @@
  SLO_rapid_deployment:0 "Rapid Deployment"
  SLO_integrated_overlord_army:0 "Integration into Overlord's army"
  SLO_integrated_overlord_army_desc:0 "In order to fight efficiently, we must be maintain constant contact with their command structure."
- SLO_industry:0 "Slovak Industry"
 
  SLO_industry:0 "Slovak Industry"
  SLO_modify_industry_tt: "Modify §YSlovak Industry§! by\n"
