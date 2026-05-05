@@ -8,19 +8,22 @@ state={
 
 	history = {
 
-		owner = CHI
+		owner = HBC	#56
+		add_core_of = HBC	#56
 		add_core_of = CHI
 		add_core_of = PRC
+		set_state_flag = CHI_dagu_shipyard_organization_flag
+		set_state_flag = CHI_taku_shipyard_organization_flag
 
-		1936.1.1 = {
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-				}
-				transfer_state_to = HBC
-				add_core_of = HBC
-			}
-		}
+#		1936.1.1 = {
+#			IF = {
+#				limit = {
+#					has_dlc = "No Compromise, No Surrender"
+#				}
+#				transfer_state_to = HBC
+#				add_core_of = HBC
+#			}
+#		}
 
 		buildings = {
 			infrastructure = 3 #was: 5
@@ -52,6 +55,9 @@ state={
 
 		1938.10.25 = {
 			owner = CHI
+		add_to_array = { state_victory_points = 9843 }
+		add_to_array = { state_victory_points = 10068 }
+		add_to_array = { state_victory_points = 12026 }
 			controller = JAP
 		}
 	}

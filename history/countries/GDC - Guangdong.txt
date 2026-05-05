@@ -55,24 +55,39 @@ set_technology = {
 	infantry_weapons = 1
 }
 
+recruit_character = GXC_chen_jitang
+recruit_character = GDC_ma_binghong
+recruit_character = GDC_zhang_junsong
+recruit_character = GDC_huang_guangrui
+recruit_character = GDC_zhang_meng
+recruit_character = GDC_zeng_yangfu
+recruit_character = GDC_liu_chi_wen
+recruit_character = GDC_zeng_qiqing
+recruit_character = GDC_yuan_dai
+recruit_character = GDC_ye_minyu
+recruit_character = GDC_hu_hanmin
+
+recruit_character = GDC_navy_chief
 IF = {
 	limit = {
 		has_dlc = "No Compromise, No Surrender"
 	}
-	recruit_character = GXC_chen_jitang
 	recruit_character = GND_yu_hanmou
 }
 
+country_event = { id = CHI_warlords.55 days = 132 }		#Hu Hanmin dies.
 
-if = { # TODO_JNS
-	limit = {
-		has_dlc = "Waking the Tiger"
-	}
-	add_ideas = {
-		PRC_government_corruption
-		CHI_ineffective_bureaucracy_warlord
-		CHI_warlord_state_idea
-	}
+add_ideas = {
+	CHI_kmt_economic_influence
+	CHI_model_province
+	warlord_state
+	CHI_vast_kmt_influence
+	CHI_hates_japan
+	GDC_hu_hanmin
+}
+IF = {
+	limit = { has_dlc = "No Compromise, No Surrender" }
+	add_ideas = GXC_uneasy_minds_idea
 }
 
 # Should not exist in the 1939 scenario 
@@ -81,47 +96,30 @@ if = { # TODO_JNS
 #	add_political_power = 1198
 #	add_command_power = 100
 #
-#	if = {
-#		limit = {
-#			has_dlc = "Waking the Tiger"
-#		}
 #
-#		CHI = { add_to_faction = PREV }
-#		add_to_war = {
-#			targeted_alliance = CHI
-#			enemy = JAP
-#			hostility_reason = asked_to_join
-#		}
-#		
-#		#complete_national_focus = CHI_secure_internal_politics
-#		#complete_national_focus = CHI_cooperation_with_the_communists
-#		#complete_national_focus = CHI_land_redistribution
-#		#complete_national_focus = CHI_land_value_tax
-#		#complete_national_focus = CHI_judiciary_reforms
-#		#complete_national_focus = CHI_communist_administrators
-#		#complete_national_focus = CHI_industrial_investment
-#		#complete_national_focus = CHI_public_education_reform
-#		#complete_national_focus = CHI_local_arms_production
-#		#complete_national_focus = CHI_long_term_economic_planning
-#		#complete_national_focus = CHI_ideological_education
-#		#complete_national_focus = CHI_local_arms_development
-#		#complete_national_focus = CHI_heavy_weapons_development
-#		#complete_national_focus = CHI_public_works
-#		#complete_national_focus = CHI_labor_reform
-#		#complete_national_focus = CHI_rural_militias
-#		else = {			
-#			#generic focuses
-#			complete_national_focus = army_effort
-#			complete_national_focus = equipment_effort
-#			complete_national_focus = motorization_effort
-#			complete_national_focus = aviation_effort
-#			complete_national_focus = naval_effort
-#			complete_national_focus = flexible_navy
-#			complete_national_focus = industrial_effort
-#			complete_national_focus = construction_effort
-#			complete_national_focus = production_effort
-#		}	
+#	CHI = { add_to_faction = PREV }
+#	add_to_war = {
+#		targeted_alliance = CHI
+#		enemy = JAP
+#		hostility_reason = asked_to_join
 #	}
+#	
+#	#complete_national_focus = CHI_secure_internal_politics
+#	#complete_national_focus = CHI_cooperation_with_the_communists
+#	#complete_national_focus = CHI_land_redistribution
+#	#complete_national_focus = CHI_land_value_tax
+#	#complete_national_focus = CHI_judiciary_reforms
+#	#complete_national_focus = CHI_communist_administrators
+#	#complete_national_focus = CHI_industrial_investment
+#	#complete_national_focus = CHI_public_education_reform
+#	#complete_national_focus = CHI_local_arms_production
+#	#complete_national_focus = CHI_long_term_economic_planning
+#	#complete_national_focus = CHI_ideological_education
+#	#complete_national_focus = CHI_local_arms_development
+#	#complete_national_focus = CHI_heavy_weapons_development
+#	#complete_national_focus = CHI_public_works
+#	#complete_national_focus = CHI_labor_reform
+#	#complete_national_focus = CHI_rural_militias
 #
 #	add_ideas = {
 #		#laws
@@ -172,3 +170,24 @@ set_politics = {
 set_popularities = {
 	neutrality = 100
 }
+
+add_dynamic_modifier = { modifier = GDC_warlord_army }
+set_variable = { GDC_warlord_army_xp_factor = -0.5 }
+set_variable = { GDC_warlord_army_surrender_limit = 0 }
+set_variable = { GDC_warlord_army_rec_pop = -0.1 }
+set_variable = { GDC_warlord_army_attrition = -0.1 }
+set_variable = { GDC_warlord_army_max_planning = -0.15 }
+set_variable = { GDC_warlord_army_doc_cost = 0.2 }
+set_variable = { GDC_warlord_army_attack = -0.1 }
+set_variable = { GDC_warlord_army_defence = -0.05 }
+set_variable = { GDC_warlord_army_core_attack = 0.02 }
+set_variable = { GDC_warlord_army_core_defence = 0.01 }
+set_variable = { GDC_warlord_army_supply_factor = -0.1 }
+set_variable = { GDC_warlord_army_supply_cons = -0.1 }
+set_variable = { GDC_warlord_army_training_time_factor = -0.1 }
+set_variable = { GDC_warlord_army_spec_cap = -0.1 }
+set_variable = { GDC_warlord_army_spec_attack = 0 }
+set_variable = { GDC_warlord_army_armor_attack = 0 }
+set_variable = { GDC_warlord_army_fort = -0.4 }
+set_variable = { GDC_warlord_army_arty = 0 }
+set_variable = { GDC_warlord_army_terrain = 0 }
