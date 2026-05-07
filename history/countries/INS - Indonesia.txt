@@ -2,7 +2,13 @@ capital = 335 #Jakarta
 
 oob = "INS_1936"
 
-set_convoys = 30
+set_convoys = 65
+add_equipment_to_stockpile = {
+	type = train_equipment
+	amount = 3
+	producer = GER
+}
+
 set_war_support = 0.2
 set_stability = 0.50 
 set_research_slots = 3
@@ -31,6 +37,14 @@ set_technology = {
 
 	transport = 1
 	fuel_silos = 1
+
+	#naval
+	early_ship_hull_submarine = 1
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	basic_battery = 1
 }
 
 if = {
@@ -49,30 +63,6 @@ if = {
 		set_technology = {
 			early_fighter = 1
 			early_bomber = 1
-		}
-	}
-}
-
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
-	set_technology = {
-		early_ship_hull_submarine = 1
-		early_ship_hull_light = 1
-		basic_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		basic_ship_hull_cruiser = 1
-		basic_battery = 1
-	}
-	else = {
-		set_technology = {
-			early_submarine = 1
-			basic_destroyer = 1
-			early_destroyer = 1
-			early_light_cruiser = 1
-			basic_light_cruiser = 1
-			early_heavy_cruiser = 1
 		}
 	}
 }
@@ -97,7 +87,7 @@ recruit_character = INS_sutomo
 recruit_character = INS_abikusno_cokrosuyoso
 recruit_character = INS_buttingha_wichers
 recruit_character = INS_cipto_mangunkusumo
-recruit_character = INS_djokosudjono
+recruit_character = INS_jokosujono
 recruit_character = INS_ernest_douwes_dekker
 recruit_character = INS_frederik_de_hoog
 recruit_character = INS_george_hart
@@ -121,6 +111,7 @@ recruit_character = INS_sukarjo_wiryopranoto
 recruit_character = INS_sukiman
 recruit_character = INS_sukarno
 recruit_character = INS_sutan_syahrir
+recruit_character = INS_tan_malaka
 recruit_character = INS_tjarda_van_starkenborgh_stachouwer
 recruit_character = INS_wuryaningrat
 
@@ -154,8 +145,14 @@ recruit_character = INS_didi_kartasasmita
 recruit_character = INS_gatot_subroto
 recruit_character = INS_mas_pardi
 recruit_character = INS_mohammad_nazir
-
 recruit_character = INS_laurens_walraven
+recruit_character = INS_moestopo
+recruit_character = INS_suharto
+recruit_character = INS_achmad_yani
+recruit_character = INS_alexander_evert_kawilarang
+recruit_character = INS_abdul_haris_nasution
+recruit_character = INS_soedirman
+recruit_character = INS_yos_sudarso
 
 set_cosmetic_tag = INS_HOL # Dutch East Indies
 country_event = { id = indonesia.105 days = 259 }

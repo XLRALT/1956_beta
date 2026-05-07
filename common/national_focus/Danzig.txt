@@ -1,6 +1,7 @@
 #people to search
 #Hermann Rauschning
 #why code for danzig?
+#!gfx:interface\r56_goals.gfx
 focus_tree = {
 	id = danzig_focus
 
@@ -1315,17 +1316,12 @@ focus_tree = {
 				uses = 1
 				category = ss_tech
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = SPR_navy_modernization
-					bonus = 0.5
-					uses = 2
-					category = torpedo_equipment
-				}
-			}			
+			add_tech_bonus = {
+				name = SPR_navy_modernization
+				bonus = 0.5
+				uses = 2
+				category = torpedo_equipment
+			}		
 			add_doctrine_cost_reduction = {
 				name = sub_op_bonus
 				cost_reduction = 0.5

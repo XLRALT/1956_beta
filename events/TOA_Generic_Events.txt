@@ -907,6 +907,7 @@ country_event = {
 			set_party_name = {
 			    ideology = democratic
 			    name = CHL_frente_popular_party
+			    long_name = CHL_frente_popular_party_long
 			}
 		}
 		
@@ -1067,6 +1068,7 @@ country_event = {
 			set_party_name = {
 			    ideology = democratic
 			    name = CHL_popular_freedom_alliance_party
+				long_name = CHL_popular_freedom_alliance_party_long
 			}
 		}
 
@@ -1154,6 +1156,7 @@ country_event = {
 			set_party_name = {
 			    ideology = democratic
 			    name = CHL_communist_but_democratic_party
+				long_name = CHL_communist_but_democratic_party_long
 			}
 		}
 
@@ -1463,10 +1466,29 @@ country_event = {
 				}
 			}			
 		}
-		news_event = { 
-			id = south_american_news.14 
-			days = 3
-			random_days = 6
+		
+		
+		every_country = { 
+			if = {
+				limit = {
+					exists = yes
+					has_capitulated = no
+					OR = {
+						capital_scope = {		#Americans
+							is_core_of = PREV
+							OR = {
+								is_on_continent = north_america
+								is_on_continent = south_america
+							}
+						}
+					}
+				}
+				news_event = { 
+					id = south_american_news.14 
+					days = 3
+					random_days = 6
+				}
+			}
 		}
 	}
 
@@ -1513,8 +1535,6 @@ news_event = {
 	title = south_american_news.14.t
 	desc = south_american_news.14.desc
 	picture = GFX_news_event_south_american_argentine_soldiers
-	
-	major = yes
 	
 	is_triggered_only = yes
 	

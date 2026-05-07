@@ -5,11 +5,15 @@ state={
 	resources={
 		rubber = 75
 		oil = 5
+		coal = 2 #initial distribution
 	}
 
 	history={
 		owner = INS
 		add_core_of = INS
+		add_to_array = { state_victory_points = 10237 }
+		add_to_array = { state_victory_points = 1404 }
+		add_to_array = { state_victory_points = 7296 }
 		victory_points = {
 			10237 3
 		}

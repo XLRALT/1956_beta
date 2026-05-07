@@ -19,8 +19,9 @@ state={
 			}
 		}
 		add_core_of = BRN
-		add_core_of = SWK
+		add_core_of = SAR
 
+		add_to_array = { state_victory_points = 7387 }
 	}
 
 	provinces={ #
