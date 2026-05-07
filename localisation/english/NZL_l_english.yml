@@ -353,7 +353,7 @@
  # Decisions
  NZL_prison_system_cat: "Review of the Prison System"
  NZL_prison_system_cat_desc: "Our Prisons are a reflection of the justice system and our ability to maintain order, Many hope for a change to a system promoting rehabilitiation instead of incarcaration, However with growing political unrest, wartime security concerns, and the challenge of handling subversive elements - We must review the system carefully."
- NZL_abolish_hard_labor_sentences: "Abolish Hard Labour Sentencing"
+ NZL_abolish_hard_labor_sentences: "Abolish Hard Labor Sentencing"
  NZL_abolish_hard_labor_sentences_desc: "Hard labor should not serve as a punishment, It is a primitive and outdated method in a society that values its citizens, regardless of their status. We must eliminate this practice and seek alternative forms of punishment."
  NZL_release_minor_offenders: "Amnesty Program for Minor Sentences"
  NZL_release_minor_offenders_desc: "We may release the strain on some of our Prisons by paroling petty offendees - Freeing up the much needed space for far more harrowing crime than pickpocketting!"
@@ -369,12 +369,12 @@
  # Flags
  NZL_develop_open_prisons_flag: "Developed Open Prisons" 
  NZL_release_minor_offenders_flag: "Released Minor Offendees"
- NZL_abolish_hard_labor_sentences_flag: "Abolished Hard Labour Sentencing"
+ NZL_abolish_hard_labor_sentences_flag: "Abolished Hard Labor Sentencing"
  
  # Ideas
  NZL_review_the_prison_system_idea: "A New Prison System"
  NZL_support_chinese_immigration_idea: "Chinese Immigration Wave"
- NZL_support_chinese_immigration_idea_desc: "Due to the conflit - many seek a chinese seek a new home and relative safety from the conflict. However, concerns have arisen that the new wave of migrants bring with them cheap labour and may destabilize the economy."
+ NZL_support_chinese_immigration_idea_desc: "Due to the conflit - many seek a chinese seek a new home and relative safety from the conflict. However, concerns have arisen that the new wave of migrants bring with them cheap labor and may destabilize the economy."
  NZL_gold_rush_idea: "The Gold Rush"
  NZL_gold_rush_idea_desc: "Many Settlers flock to New Zealand in hopes of striking it big, The newly prospected lands of Otago promise vast gold reserves, however fears grow that this gold is not as plentiful as many hope."
  NZL_gold_fevour_ends: "The Gold Fevour Ends"
@@ -447,7 +447,7 @@
  NZL_frasers_leadership: "Fraser's Leadership"
  NZL_frasers_leadership_desc: "Peter Fraser has proven himself a capable leader, one deserving to lead our nation through these difficult times."
  NZL_begin_lobbying_for_reforms: "Begin Lobbying for Reforms"
- NZL_begin_lobbying_for_reforms_desc: "Begin lobbying for reforms from the newly elected labour government"
+ NZL_begin_lobbying_for_reforms_desc: "Begin lobbying for reforms from the newly elected Labour government"
  NZL_rally_the_opponents: "Rally the Opponents"
  NZL_rally_the_opponents_desc: "We must cooperate with all opponents, even those outside the Labour Party to progress the nation."
  NZL_attempt_at_a_war_economy: "Attempt at a War Economy"
@@ -576,8 +576,8 @@
  NZL_risk_of_inflation_desc: "Rapid wartime spending, public borrowing, and increased demand for scarce goods have begun to strain the economy. Without careful management, rising prices could erode wages, disrupt production, and undermine public confidence in the government."
  NZL_create_wage_and_price_control_board: "Create Wage and Price Control Board"
  NZL_create_wage_and_price_control_board_desc: "We need to establish a Wage and Price Control Board to oversee economic regulation and maintain affordability for essential goods"
- NZL_lower_labour_wages: "Lower Labour Wages"
- NZL_lower_labour_wages_desc: "To keep inflation in check, we must reduce labour wages, though unpopular, it is a necessary measure to preserve national economic health."
+ NZL_lower_labour_wages: "Lower Labor Wages"
+ NZL_lower_labour_wages_desc: "To keep inflation in check, we must reduce labor wages, though unpopular, it is a necessary measure to preserve national economic health."
  NZL_increase_price_controls: "Increase Price Controls"
  NZL_increase_price_controls_desc: "By expanding price controls across our industries, we can contain inflation and ensure fair distribution of resources to all citizens."
  NZL_abolish_food_stamps: "Abolish Food Stamps"
@@ -604,7 +604,7 @@
  # Economic Downturn
  NZL_created_wage_and_price_control_board: "Has taken §HDecision: Create Wage and Price Control Board§!"
  NZL_increased_price_control_goods_decision_flag: "Has taken §HDecision: Increase Price Control§!"
- NZL_lowered_labour_wages_decision_flag: "Has taken §HDecision: Lower Labour Wages§!"
+ NZL_lowered_labour_wages_decision_flag: "Has taken §HDecision: Lower Labor Wages§!"
  NZL_tighten_credit_and_banking_regulations_flag: "Has taken §HDecision: Tighten Credit and Banking Regulations§!"
  NZL_abolish_food_stamps_flag: "Has taken §HDecision: Abolish Food Stamps§!"
  NZL_encouraged_savings_flag: "Has taken §HDecision: Encourage Savings§! [?NZL_encouraged_savings_check|0..0Y]§H/3§!" 
