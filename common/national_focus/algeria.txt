@@ -1401,8 +1401,9 @@ focus_tree = {
     focus = {
         id = ALG_end_france
         icon = GFX_focus_attack_france
-        x = 11
-        y = 9
+        x = 6
+        y = 1
+        relative_position_id = ALG_secure_suez
         cost = 10 
         available = {
             is_subject = no
@@ -3093,17 +3094,12 @@ focus_tree = {
 				uses = 2
 				category = ss_tech
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = SPR_navy_modernization
-					bonus = 1
-					uses = 1
-					category = torpedo_equipment
-				}		
-			}		
+            add_tech_bonus = {
+                name = SPR_navy_modernization
+                bonus = 1
+                uses = 1
+                category = torpedo_equipment
+            }		
 		}
 	}
 	focus = {
@@ -3129,18 +3125,13 @@ focus_tree = {
 				uses = 1
 				category = cl_tech
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = SPR_navy_modernization
-					bonus = 1
-					uses = 1
-					category = naval_gunnery_tech
-					category = naval_shell_tech
-				}
-			}
+            add_tech_bonus = {
+                name = SPR_navy_modernization
+                bonus = 1
+                uses = 1
+                category = naval_gunnery_tech
+                category = naval_shell_tech
+            }
 		}
 	}
 	focus = {

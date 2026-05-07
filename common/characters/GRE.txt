@@ -14,7 +14,7 @@ characters={
 		}
 	}
 
-	GRE_george_two={
+	GRE_king_george_ii={
 		name="George II"
 		portraits={
 			civilian={

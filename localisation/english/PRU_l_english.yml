@@ -966,7 +966,7 @@
  PRU_restore_the_viceroyalty_system_desc:0 "The old viceroyalty system was outraged by a republican feeling that brought ruin and backwardness to Peru, it is the mission of King to restore the roots of our Empire."
  PRU_royal_haciendas:0 "Royal Haciendas"
  PRU_royal_haciendas_desc:0 "The Royal Haciendas system will be in charge of controlling and managing the tax collection system, being necessary since the previous republican system was full of corruption and informality."
- PRU_labour_reforms:0 "Labour Reform"
+ PRU_labour_reforms:0 "Labor Reform"
  PRU_labour_reforms_desc:0 "The Peruvian labor system is a total disaster, since its creation it has always been governed by an outdated informal system full of corruption, the situation will soon change with the new labor reforms that will be established."
  PRU_create_orejones_battalions:0 "Create Orejones Battalions"
  PRU_create_orejones_battalions_desc:0 "The Orejones were in the past the Elite units of the Inca Empire, men willing to die for the Sapa Inca and who gave everything on the battlefield."
@@ -1038,7 +1038,7 @@
  PRU_create_apra:0 "Consolidate the Aprismo"
  PRU_create_apra_desc:0 "The great alliance of all the peoples of South America will create another socialist bloc that will really watch over the rights of all the peoples , the teachings of Victor Haya de la Torre are still alive in his movement that began in Mexico and today expanded throughout America"
  PRU_revive_the_bolivarian_dream:0 "Revive the Bolivarian Dream"
- PRU_revive_the_bolivarian_Dream_desc:0 "The Bolivarian feeling will manage to appease the populations of the conquered northern territories, the feeling that thanks to our conquest the Gran Colombian territories are once again unified."
+ PRU_revive_the_bolivarian_dream_desc:0 "The Bolivarian feeling will manage to appease the populations of the conquered northern territories, the feeling that thanks to our conquest the Gran Colombian territories are once again unified."
  PRU_liberate_brazil:0 "Liberate Brazil"
  PRU_liberate_brazil_desc:0 "The dictatorship of [BRA.GetLeader] has come very far in its crimes against its own population, it is necessary for the people of [BRA.GetNameDefCap] to rise up with the help of our army."
  PRU_liberate_cub:0 "Liberate Cuba"
@@ -1532,7 +1532,7 @@ PRU_america_imperial_desc:0 "Our destiny is to lead America into an era of imper
  PRU_unlock_inca_generals:0 "Unlock §YInca Generals§!"
  PRU_america_commie:0 "Declare war on all the §RRed§! countries of South America"
  PRU_america_axis:0 "Make your alliance stronger"
- form_pru_hispanoamerica_category:0 "The legacy of Gran Peru"
+ form_pru_hispanoamerica_category:0 "The Legacy of Gran Peru"
  form_pru_hispanoamerica:0 "Integrate our neighbors"
  PRU_apra_core:0 "Manages to integrate the conquered territories"
 
@@ -1772,7 +1772,7 @@ PRU_america_imperial_desc:0 "Our destiny is to lead America into an era of imper
  PRU_our_industry:0 "Our Industry"
  PRU_BCR:0 "BCR"
  PRU_external_debt:0 "External Debt"
- PRU_forced_industria:"Forced Industria"
+ PRU_forced_industria:"$PRU_forced_industrialization$"
 
  PRU_inca_army:0 "Inca Army"
 

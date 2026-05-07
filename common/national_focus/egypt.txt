@@ -380,7 +380,7 @@ focus_tree = {
 			compare_autonomy_state > autonomy_puppet
 			has_war = no
 			NOT = {
-				is_puppet_of = PAL
+				is_subject_of = PAL
 			}
 		}
 		prerequisite = {
@@ -611,17 +611,12 @@ focus_tree = {
 				uses = 1
 				category = tp_tech
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = JAP_expand_the_snlf
-					bonus = 1
-					uses = 1
-					category = amphibious_armor_tech
-				}				
-			}									
+			add_tech_bonus = {
+				name = JAP_expand_the_snlf
+				bonus = 1
+				uses = 1
+				category = amphibious_armor_tech
+			}										
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}			
@@ -1890,7 +1885,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			any_other_country = {
 				is_major = yes
 				has_government = fascism
@@ -2027,7 +2022,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			any_other_country = {
 				is_major = yes
 				has_government = democratic
@@ -2092,7 +2087,7 @@ focus_tree = {
 		y = 1
 		cost = 10
 		available = {
-			is_puppet = no
+			is_subject = no
 			any_other_country = {
 				capital_scope = {
 					is_on_continent = africa
@@ -2109,7 +2104,6 @@ focus_tree = {
 		prerequisite = {
 			focus = EGY_rekindle_the_unstable_alliance
 		}
-		search_filters = {}
 		ai_will_do = {
 			factor = 10
 		}
@@ -3404,16 +3398,11 @@ focus_tree = {
 				uses = 1
 				category = tp_tech 
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = EGY_avenge_the_battle_of_tell_el_kebir
-					bonus = 1
-					uses = 1
-					category = amphibious_armor_tech
-				}				
+			add_tech_bonus = {
+				name = EGY_avenge_the_battle_of_tell_el_kebir
+				bonus = 1
+				uses = 1
+				category = amphibious_armor_tech
 			}			
 			create_wargoal = {
 				target = ENG
@@ -5038,7 +5027,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			any_other_country = {
 				is_major = yes
 				has_government = communism
@@ -5796,7 +5785,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			is_in_faction = no
-			is_puppet = no
+			is_subject = no
 			any_other_country = {
 				is_major = yes
 				has_government = fascism
@@ -6014,17 +6003,12 @@ focus_tree = {
 				uses = 1
 				category = tp_tech 
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = TUR_realize_the_nightmare_of_meiji
-					bonus = 1
-					uses = 1
-					category = amphibious_armor_tech
-				}				
-			}			
+			add_tech_bonus = {
+				name = TUR_realize_the_nightmare_of_meiji
+				bonus = 1
+				uses = 1
+				category = amphibious_armor_tech
+			}				
 			create_wargoal = {
 				target = ENG
 				type = puppet_wargoal_focus
@@ -6484,17 +6468,12 @@ focus_tree = {
 				uses = 1
 				category = tp_tech 
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = TUR_realize_the_nightmare_of_meiji
-					bonus = 1
-					uses = 1
-					category = amphibious_armor_tech
-				}				
-			}
+			add_tech_bonus = {
+				name = TUR_realize_the_nightmare_of_meiji
+				bonus = 1
+				uses = 1
+				category = amphibious_armor_tech
+			}	
 			create_wargoal = {
 				target = ENG
 				type = puppet_wargoal_focus
@@ -6974,7 +6953,7 @@ focus_tree = {
 	}
 	focus = {
 		id = EGY_expand_jonglei_aluminum
-		icon = GFX_focus_generic_aluminum
+		icon = GFX_goal_EGY_egypt_aluminium
 		relative_position_id = EGY_development_in_sudan
 		x = 0
 		y = 3
@@ -8110,7 +8089,7 @@ focus_tree = {
 	}
 	focus = {
 		id = EGY_air_defenses
-		icon = GFX_goal_EGY_air_defense
+		icon = GFX_goal_generic_fortify_aa
 		relative_position_id = EGY_modernize_our_weaponry
 		x = -2
 		y = 1
@@ -8562,17 +8541,12 @@ focus_tree = {
 				uses = 1
 				category = dd_tech
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = EGY_hunt_class_destroyers
-					bonus = 1.0
-					uses = 2
-					category = naval_minesweeping
-					category = naval_minelaying
-				}
+			add_tech_bonus = {
+				name = EGY_hunt_class_destroyers
+				bonus = 1.0
+				uses = 2
+				category = naval_minesweeping
+				category = naval_minelaying
 			}
 		}
 	}
@@ -8597,17 +8571,12 @@ focus_tree = {
 				uses = 1
 				category = cl_tech
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = EGY_replace_miniscule_vessels
-					bonus = 1
-					uses = 1
-					category = naval_gunnery_tech
-					category = naval_shell_tech
-				}
+			add_tech_bonus = {
+				name = EGY_replace_miniscule_vessels
+				bonus = 1
+				uses = 1
+				category = naval_gunnery_tech
+				category = naval_shell_tech
 			}
 		}
 	}
@@ -8695,17 +8664,12 @@ focus_tree = {
 				uses = 1
 				category = ss_tech
 			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = ss_bonus
-					bonus = 1
-					uses = 1
-					technology = basic_submarine_snorkel
-					technology = improved_submarine_snorkel
-				}
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1
+				uses = 1
+				technology = basic_submarine_snorkel
+				technology = improved_submarine_snorkel
 			}
 		}
 	}

@@ -51,6 +51,8 @@ every_possible_country = {
 				tag = AFG
 				tag = INS
 				PHI_SEA = yes
+				tag = GSM
+				tag = NXM
 			}
 		}
 		# avoid generic advisors in temporary countries
@@ -571,6 +573,9 @@ every_possible_country = {
 			original_tag = SIL
 			original_tag = KSH
 			original_tag = CYP
+			original_tag = TRA
+			original_tag = AHV
+			original_tag = VCW
 		}
 	}
 	# generic political advisors

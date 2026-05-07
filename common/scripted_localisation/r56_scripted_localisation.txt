@@ -904,6 +904,14 @@ defined_text = {
 		localization_key = GFX_news_event_saf_coup
 	}
 	text = {
+		trigger = {
+			FROM = {
+				original_tag = MAL
+			}			
+		}
+		localization_key = GFX_report_news_malaysian_independence
+	}
+	text = {
 		localization_key = GFX_news_event_eng_decolonization
 	}
 }
@@ -1087,7 +1095,80 @@ defined_text = {
 		localization_key = GFX_news_event_fall_of_athens_ENG
 	}
 	text = {
+		trigger = {
+			ROOT = {
+				OR = {
+					original_tag = GER	
+					original_tag = PRE
+					original_tag = BAY
+					has_cosmetic_tag = GER_REUNITED					
+				}
+			}
+		}
+		localization_key = GFX_news_event_GER_fate_of_greece
+	}
+	text = {
 		localization_key = GFX_news_event_fall_of_athens
+	}
+}
+defined_text = {
+	name = GetFallofIstanbulImage
+	text = {
+		trigger = {
+			root = { #more specific African pics before this one
+				capital_scope = {
+					is_on_continent = africa
+					is_core_of = FROM
+				}
+				NOT = { #you never know these days
+					OR = {
+						original_tag = IRQ
+						original_tag = SAU
+						original_tag = YEM
+						original_tag = OMA
+						original_tag = EGY
+						original_tag = LBA
+						original_tag = JOR
+						original_tag = PAL
+						original_tag = LEB
+						original_tag = SYR
+						original_tag = KUW
+						original_tag = UAE
+						original_tag = QAT
+						original_tag = TUN
+						original_tag = ALG
+						original_tag = MOR
+						original_tag = ADU
+												
+						#####
+						original_tag = FRA
+						original_tag = HOL
+						original_tag = ENG
+						original_tag = ITA
+						AND = {
+							original_tag = COG
+							OR = {
+								has_government = fascism
+								has_country_leader = { character = COG_pierre_ryckmans ruling_only = yes }
+							}
+						}
+						AND = {
+							original_tag = SAF
+							OR = {
+								has_government = fascism
+								has_government = democratic
+								has_government = neutrality
+							}
+						}						
+					}
+				}
+				controls_state = 797
+			}
+		}
+		localization_key = GFX_news_event_fall_of_istanbul_african
+	}
+	text = {
+		localization_key = GFX_news_event_fall_of_istanbul
 	}
 }
 defined_text = {
@@ -1359,6 +1440,10 @@ defined_text = {
 					original_tag = PRC
 					original_tag = SHX
 					original_tag = SIC
+					original_tag = XIC
+					original_tag = GDC
+					original_tag = HBC
+					original_tag = SND
 					original_tag = KHM
 
 					original_tag = NKR
@@ -1932,6 +2017,10 @@ defined_text = {
 					original_tag = KHM
 					original_tag = SHX
 					original_tag = SIC
+					original_tag = XIC
+					original_tag = GDC
+					original_tag = HBC
+					original_tag = SND
 					original_tag = XSM
 					original_tag = YUN				
 				}
@@ -2000,6 +2089,10 @@ defined_text = {
 					original_tag = KHM
 					original_tag = SHX
 					original_tag = SIC
+					original_tag = XIC
+					original_tag = GDC
+					original_tag = HBC
+					original_tag = SND
 					original_tag = XSM
 					original_tag = YUN				
 				}
@@ -3124,6 +3217,35 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			BRN = {
+				has_country_leader = {
+					character = BRN_ahmad_tajuddin
+					ruling_only = yes
+				}
+			}
+			any_country = {
+				has_country_flag = alliance_applicant@ROOT
+				OR = {
+					original_tag = BRN
+					original_tag = ENG
+					original_tag = NZL
+					original_tag = AST
+				}				
+			}
+			any_country = {
+				has_country_flag = alliance_inviter@ROOT
+				OR = {
+					original_tag = BRN
+					original_tag = ENG
+					original_tag = NZL
+					original_tag = AST
+				}				
+			}
+		}
+		localization_key = GFX_report_news_event_bruneian_sultan_and_allies
+	}
+	text = {
+		trigger = {
 			any_country = {
 				has_country_flag = alliance_applicant@ROOT
 				OR = {
@@ -4111,6 +4233,10 @@ defined_text = {
 					original_tag = SIK
 					original_tag = SHX
 					original_tag = SIC
+					original_tag = XIC
+					original_tag = GDC
+					original_tag = HBC
+					original_tag = SND
 					original_tag = MAN
 					original_tag = GXC	
 					original_tag = BHU
@@ -4265,6 +4391,10 @@ defined_text = {
 					original_tag = SIK
 					original_tag = SHX
 					original_tag = SIC
+					original_tag = XIC
+					original_tag = GDC
+					original_tag = HBC
+					original_tag = SND
 					original_tag = CHI
 					original_tag = MAN
 					original_tag = GXC	
@@ -6108,6 +6238,15 @@ defined_text = {
 			}
 		}
 		localization_key = GFX_news_event_KUR_partisans
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_country_flag = partisan_rebellion
+				original_tag = BRN
+			}
+		}
+		localization_key = GFX_report_news_event_bruneian_flags
 	}	
 	text = {
 		trigger = {
@@ -6373,6 +6512,10 @@ defined_text = {
 					original_tag = PRC
 					original_tag = SHX
 					original_tag = SIC
+					original_tag = XIC
+					original_tag = GDC
+					original_tag = HBC
+					original_tag = SND
 					original_tag = KHM
 
 					original_tag = BHU
@@ -6582,4 +6725,29 @@ defined_text = {
 		localization_key = ""
 	}
 }
-	
+defined_text = {
+	name = GetRoyalArmyFocusName
+	text = {
+		trigger = {
+			ROOT = {
+				has_government = neutrality
+			}
+		}
+		localization_key = TAG_royal_army_scripted_loc_name
+	}	
+	text = {
+		localization_key = TAG_regular_army_scripted_loc_name
+	}	
+}	
+defined_text = {
+	name = USA_destroyers_for_bases_idea_dynamic
+	text = {
+		trigger = {
+			has_dlc = "No Compromise, No Surrender"
+		}
+		localization_key = USA_destroyers_for_bases_idea_NCNS
+	}
+	text = {
+		localization_key = USA_destroyers_for_bases_idea
+	}
+}

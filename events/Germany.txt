@@ -900,6 +900,12 @@ country_event = {
 			}
 		}		
 	}
+
+	immediate = {
+		SOV = {
+			set_country_flag = SOV_block_joining_against_poland
+		}
+	}
 	
 	mean_time_to_happen = {
 		days = 1
@@ -1429,47 +1435,47 @@ country_event = {
 		ai_chance = {
 			base = 2
 		}
-		every_state = {
-			limit = {
-				controller = {
-					OR = {
-						has_war_with = SOU
-						original_tag = ROOT
-						is_in_faction_with = ROOT
-						is_in_faction_with = SOV
-						original_tag = SOV
-					}
-				}
-				owner = {
-					original_tag = POL
-				}
-			}
-			if = {
+		every_country_with_original_tag = {
+    		original_tag_to_check = POL
+			every_owned_state = {
 				limit = {
-					OR = {
-						state = 935
-						state = 97
-						state = 91
-						state = 89
-						state = 93
-						state = 94
-						state = 95
-						state = 936
-						state = 96
-						state = 784	#Lithuania
-					}
-				}
-				set_state_controller_to = SOU
-			}
-			else = {
-				if = {
-					limit = {
-						controller = { #dont transfer Polish lands occupied by German allies
+					controller = {
+						OR = {
+							has_war_with = SOU
+							original_tag = ROOT
+							is_in_faction_with = ROOT
 							is_in_faction_with = SOV
 							original_tag = SOV
 						}
 					}
-					set_state_controller_to = GER
+				}
+				if = {
+					limit = {
+						OR = {
+							state = 935
+							state = 97
+							state = 91
+							state = 89
+							state = 93
+							state = 94
+							state = 95
+							state = 936
+							state = 96
+							state = 784	#Lithuania
+						}
+					}
+					set_state_controller_to = SOU
+				}
+				else = {
+					if = {
+						limit = {
+							controller = { #dont transfer Polish lands occupied by German allies
+								is_in_faction_with = SOV
+								original_tag = SOV
+							}
+						}
+						set_state_controller_to = GER
+					}
 				}
 			}
 		}
@@ -1499,48 +1505,48 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
-		every_state = {
-			limit = {
-				controller = {
-					OR = {
-						has_war_with = SOU
-						original_tag = ROOT
-						is_in_faction_with = ROOT
-						is_in_faction_with = SOV
-						original_tag = SOV
-					}
-				}
-				owner = {
-					original_tag = POL
-				}
-			}
-			if = {
+		every_country_with_original_tag = {
+    		original_tag_to_check = POL
+			every_owned_state = {
 				limit = {
-					OR = {
-						state = 935
-						state = 97
-						state = 91
-						state = 89
-						state = 93
-						state = 94
-						state = 95
-						state = 936
-						state = 96
-						state = 92		#Lublin, extra
-						state = 934		#Suwalki, extra - the treaty doesnt specify this area, only rivers for the more southern border, most not on the game map
-					}
-				}
-				set_state_controller_to = SOU
-			}
-			else = {
-				if = {
-					limit = {
-						controller = { #dont transfer Polish lands occupied by German allies
+					controller = {
+						OR = {
+							has_war_with = SOU
+							original_tag = ROOT
+							is_in_faction_with = ROOT
 							is_in_faction_with = SOV
 							original_tag = SOV
 						}
 					}
-					set_state_controller_to = GER
+				}
+				if = {
+					limit = {
+						OR = {
+							state = 935
+							state = 97
+							state = 91
+							state = 89
+							state = 93
+							state = 94
+							state = 95
+							state = 936
+							state = 96
+							state = 92		#Lublin, extra
+							state = 934		#Suwalki, extra - the treaty doesnt specify this area, only rivers for the more southern border, most not on the game map
+						}
+					}
+					set_state_controller_to = SOU
+				}
+				else = {
+					if = {
+						limit = {
+							controller = { #dont transfer Polish lands occupied by German allies
+								is_in_faction_with = SOV
+								original_tag = SOV
+							}
+						}
+						set_state_controller_to = GER
+					}
 				}
 			}
 		}
@@ -1549,7 +1555,7 @@ country_event = {
 			set_province_controller = 12562
 			set_province_controller = 524
 		}
-		set_global_flag = GER_used_original_MR	#allow Germany to influence Lituania only if the Soviets are not to be ceded it
+		set_global_flag = GER_used_original_MR	#allow Germany to influence Lithuania only if the Soviets are not to be ceded it
 		create_wargoal = {
 			type = annex_everything
 			target = LIT
@@ -2572,7 +2578,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 100
-				CZE = {	has_completed_focus = CZKE_sabotage_anchluss }
+				CZE = {	has_completed_focus = CZE_support_oster }
 			}
 			modifier = {
 				add = 100
@@ -2781,10 +2787,10 @@ country_event = {
 		}
 		ai_chance = {
 		 	base = 90
-			modifier = {																									###### Change made for CZKE mod  line added
-				add = 100																									###### Change made for CZKE mod  line added
-				CZE = {	NOT = { has_completed_focus = CZKE_petition_league_of_nations }										###### Change made for CZKE mod  line added
-				}																											###### Change made for CZKE mod  line added
+			modifier = {																									###### Change made for CZE mod  line added
+				add = 100																									###### Change made for CZE mod  line added
+				CZE = {	NOT = { has_completed_focus = CZE_petition_league_of_nations }										###### Change made for CZE mod  line added
+				}																											###### Change made for CZE mod  line added
 			}
 			modifier = {
 				factor = 0.3
@@ -2885,10 +2891,10 @@ country_event = {
 				factor = 0
 				is_in_faction_with = GER
 			}
-			modifier = {																								###### Change made for CZKE mod  line added
-				factor = 100																							###### Change made for CZKE mod  line added
-				CZE = {	has_completed_focus = CZKE_petition_league_of_nations } 										###### Change made for CZKE mod  line added
-			}																											###### Change made for CZKE mod  line added
+			modifier = {																								###### Change made for CZE mod  line added
+				factor = 100																							###### Change made for CZE mod  line added
+				CZE = {	has_completed_focus = CZE_petition_league_of_nations } 										###### Change made for CZE mod  line added
+			}																											###### Change made for CZE mod  line added
 			modifier = {											#if Czechs haven't appealed to the League, this will make a factor 0
 				add = -10
 				ENG_is_on_historical_plan_trigger = yes
@@ -3244,7 +3250,7 @@ country_event = {
 				is_in_faction = no
 				CZE = { 
 					is_faction_leader = yes 
-					has_completed_focus = CZKE_revive_little_entente
+					has_completed_focus = CZE_revive_little_entente
 				}
 			}
 			CZE = { add_to_faction = FRA }
@@ -3545,6 +3551,34 @@ country_event = {
 			}
 		}
 		GER = { country_event = germany.50 }
+		#pfot
+		if = { 
+			limit = {
+				has_dlc = "Peace For Our Time"
+			}
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = CZE_the_fall_of_the_republic_warning_munich_tt
+			}
+			hidden_effect = {
+				country_event = {
+					id = MUN_the_fall_of_the_republic.1
+					days = 6
+    				random_hours = 24
+				}
+			}
+		}
+		else = {
+			CZE = { #benes goes to exile after Germany annexed Sudetenland
+				country_event = { 
+					id = CZE.8
+					days = 3
+				}
+			}
+		}
 	}
 	option = { # Refuse anyway
 		name = germany.46.b
@@ -3724,12 +3758,6 @@ country_event = {
 		set_country_flag = sudetenland_acquired
 		hidden_effect = {
 			news_event = { hours = 6 id = news.56 }
-			CZE = { #benes goes to exile after Germany annexed Sudetenland
-				country_event = { 
-					id = czke.8
-					days = 3
-				}
-			}
 			if = {
 				limit = {
 					country_exists = YUG
@@ -3875,7 +3903,19 @@ country_event = {
 				}
 			}
 		}
-		custom_effect_tooltip = GAME_OVER_TT
+		if = { #r56
+			limit = {
+				country_exists = SLO
+			}
+			#Now you can play as Slovakia instead of game over
+			custom_effect_tooltip = generic_skip_one_line_tt
+			SLO = {
+				change_tag_from = CZE
+			}
+		}
+		else = {
+			custom_effect_tooltip = GAME_OVER_TT
+		}
 	}
 	option = { # Refuse
 		name = germany.53.b
