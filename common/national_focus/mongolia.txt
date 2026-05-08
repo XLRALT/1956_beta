@@ -11,7 +11,7 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 4000 y = 1300 }
+	continuous_focus_position = { x = 2800 y = 800 }
 
 	initial_show_position = {
 		x = 59
@@ -43,6 +43,22 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 30	
+		}
+
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { 
+					has_completed_focus = MON_rely_on_national_strength
+					has_completed_focus = MON_host_emergency_great_khural_assembly
+					has_completed_focus = MON_form_the_provisional_government
+				}
+			}
 		}
 
 		available = {
@@ -5704,6 +5720,16 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = MON_true_hero_for_the_people
+		offset = {
+			x = -20
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_rely_on_national_strength
+			}
+		}
 		cost = 5
 
 		available = {
@@ -5855,6 +5881,16 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = MON_true_hero_for_the_people
+		offset = {
+			x = -20
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_rely_on_national_strength
+			}
+		}
 		cost = 8
 
 		ai_will_do = {
@@ -6336,6 +6372,16 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = MON_remove_nominal_leadership
+		offset = {
+			x = -20
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_rely_on_national_strength
+			}
+		}
 		cost = 5
 		prerequisite = {
 			focus = MON_true_hero_for_the_people
@@ -7428,6 +7474,16 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = MON_joint_technological_development
+		offset = {
+			x = -4
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_rely_on_national_strength
+			}
+		}
 		cost = 10
 		prerequisite = {
 			focus = MON_joint_technological_development
@@ -7549,6 +7605,16 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MON_reform_national_script
+		offset = {
+			x = 1
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_rely_on_national_strength
+			}
+		}
 		cost = 10
 		prerequisite = {
 			focus = MON_solidify_language_institutes
@@ -7579,10 +7645,36 @@ focus_tree = {
 		x = 16
 		y = 0
 		relative_position_id = MON_hold_plenum_of_central_committee
+		offset = {
+			x = -20
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_rely_on_national_strength
+			}
+		}
 		cost = 6
 
 		ai_will_do = {
 			factor = 30	
+		}
+
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { 
+					has_completed_focus = MON_hold_plenum_of_central_committee
+					has_completed_focus = MON_host_emergency_great_khural_assembly
+					has_completed_focus = MON_form_the_provisional_government
+				}
+			}
 		}
 
 		available = {
@@ -7626,6 +7718,16 @@ focus_tree = {
 		x = 4
 		y = 0
 		relative_position_id = MON_joint_technological_development
+		offset = {
+			x = -5
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_rely_on_national_strength
+			}
+		}
 		cost = 6
 
 		prerequisite = { focus = MON_rely_on_national_strength }
@@ -7859,6 +7961,16 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = MON_rely_on_national_strength
+		offset = {
+			x = -30
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_form_the_provisional_government
+			}
+		}
 		cost = 10
 
 		prerequisite = { focus = MON_rely_on_national_strength focus = MON_form_the_provisional_government }
@@ -8791,6 +8903,16 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = MON_a_socialist_republic
+		offset = {
+			x = -20
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_rely_on_national_strength
+			}
+		}
 		cost = 7.16
 		prerequisite = {
 			focus = MON_a_socialist_republic
@@ -10081,6 +10203,16 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = MON_adopt_sun_yat_sen_principles
+		offset = {
+			x = -30
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_form_the_provisional_government
+			}
+		}
 		cost = 10
 
 		available = {
@@ -10173,6 +10305,16 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = MON_adopt_sun_yat_sen_principles
+		offset = {
+			x = -30
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_form_the_provisional_government
+			}
+		}
 		cost = 6
 
 		available = {
@@ -10461,6 +10603,16 @@ focus_tree = {
 		x = 6
 		y = 1
 		relative_position_id = MON_sabotage_great_khural
+		offset = {
+			x = -30
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_form_the_provisional_government
+			}
+		}
 		cost = 5
 		prerequisite = {
 			focus = MON_sabotage_great_khural
@@ -11559,6 +11711,16 @@ focus_tree = {
 		x = 30
 		y = 0
 		relative_position_id = MON_hold_plenum_of_central_committee
+		offset = {
+			x = -30
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_form_the_provisional_government
+			}
+		}
 		cost = 5
 
 		allow_branch = {
@@ -11571,7 +11733,8 @@ focus_tree = {
 				}
 				NOT = { 
 					has_completed_focus = MON_hold_plenum_of_central_committee
-					has_completed_focus = MON_rely_on_national_strength 
+					has_completed_focus = MON_rely_on_national_strength
+					has_completed_focus = MON_host_emergency_great_khural_assembly
 				}
 			}
 		}
@@ -11770,6 +11933,16 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = MON_form_the_provisional_government
+		offset = {
+			x = -42
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_host_emergency_great_khural_assembly
+			}
+		}
 		cost = 7.16
 
 		available = {
@@ -11796,9 +11969,9 @@ focus_tree = {
 		id = MON_strengthen_buddhist_community
 		icon = GFX_goal_monastries_in_uproar
 		prerequisite = { focus = MON_appeal_to_china focus = MON_matters_of_internal_affairs }
-		x = 1
+		x = -3
 		y = 1
-		relative_position_id = MON_appeal_to_china
+		relative_position_id = MON_matters_of_internal_affairs
 		cost = 5
 
 		ai_will_do = {
@@ -11937,9 +12110,9 @@ focus_tree = {
 		id = MON_guard_southern_border
 		icon = GFX_goal_generic_cavalry
 		prerequisite = { focus = MON_matters_of_internal_affairs }
-		x = 3
+		x = -1
 		y = 1
-		relative_position_id = MON_appeal_to_china
+		relative_position_id = MON_matters_of_internal_affairs
 		cost = 5
 
 		ai_will_do = {
@@ -12169,6 +12342,16 @@ focus_tree = {
 		x = 4
 		y = 0
 		relative_position_id = MON_form_the_provisional_government
+		offset = {
+			x = -42
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = MON_host_emergency_great_khural_assembly
+			}
+		}
 		cost = 10
 
 		allow_branch = {
