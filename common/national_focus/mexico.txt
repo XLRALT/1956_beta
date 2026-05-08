@@ -3604,7 +3604,13 @@ focus_tree = {
 		icon = GFX_focus_ger_revive_kaiserreich
 		available = {
 			OR = {
-				GER = { has_completed_focus = GER_the_central_powers }
+				GER = {
+					OR = {
+						has_completed_focus = GER_the_central_powers
+						has_completed_focus = GER_restore_the_central_powers
+						has_completed_focus = GER_restore_the_empire
+					}
+				}
 				HUN = { has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary }
 			}
 		}
@@ -3627,7 +3633,11 @@ focus_tree = {
 				limit = {
 					GER = { 
 						has_government = neutrality
-						has_completed_focus = GER_the_central_powers
+						OR = {
+							has_completed_focus = GER_the_central_powers
+							has_completed_focus = GER_restore_the_central_powers
+							has_completed_focus = GER_restore_the_empire
+						}
 					}
 				}
 				GER = {
@@ -3638,12 +3648,20 @@ focus_tree = {
 				limit = {
 					GER = { 
 						has_government = neutrality
-						NOT = { has_completed_focus = GER_the_central_powers }
+						NOT = {
+							has_completed_focus = GER_the_central_powers
+							has_completed_focus = GER_restore_the_central_powers
+							has_completed_focus = GER_restore_the_empire
+						}
 					}
 				}
 				GER = {
 					set_rule = { can_create_factions = yes }
-					create_faction = "GER_central_powers_faction"
+					create_faction_from_template = {
+						template = faction_template_GER_mitteleuropa_alliance
+						name = GER_central_powers_faction
+						icon = GFX_faction_logo_generic_13
+					}
 					country_event = { id = generic.2 }
 				}
 			}
@@ -3652,7 +3670,11 @@ focus_tree = {
 					HUN = { has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary }
 				}
 				set_rule = { can_create_factions = yes }
-				create_faction = "GER_central_powers_faction"
+				create_faction_from_template = {
+					template = faction_template_GER_mitteleuropa_alliance
+					name = GER_central_powers_faction
+					icon = GFX_faction_logo_generic_13
+				}
 				HUN = {
 					if = {
 						limit = { ROOT = { is_in_faction = yes } }
