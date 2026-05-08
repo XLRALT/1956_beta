@@ -1,7 +1,7 @@
 shared_focus = {
 	id = R_a_new_state
 	icon = GFX_focus_ger_reichskommisariats
-	x = 19
+	x = 57
 	y = 0
 
 	allow_branch = {
@@ -52,6 +52,10 @@ shared_focus = {
 		add_popularity = { ideology = democratic popularity = -0.1 }
 		add_popularity = { ideology = communism popularity = -0.1 }
 	}
+
+	search_filters = {
+		FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL
+	}
 }
 
 shared_focus = {
@@ -81,6 +85,10 @@ shared_focus = {
 		add_popularity = { ideology = democratic popularity = -0.1 }
 		add_popularity = { ideology = communism popularity = -0.1 }
 	}
+
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
 }
 
 shared_focus = {
@@ -107,6 +115,10 @@ shared_focus = {
 
 	completion_reward = {
 		add_ideas = general_staff
+	}
+
+	search_filters = {
+		FOCUS_FILTER_MILITARY_IMPROVEMENT
 	}
 }
 
@@ -135,6 +147,10 @@ shared_focus = {
 	completion_reward = {
 		add_stability = 0.1
 	}
+
+	search_filters = {
+		FOCUS_FILTER_STABILITY
+	}
 }
 
 shared_focus = {
@@ -161,15 +177,19 @@ shared_focus = {
 
 	completion_reward = {
 		add_equipment_to_stockpile = {
-			type = fighter_equipment
+			type = small_plane_fighter_airframe
 			amount = 200
 			producer = GER
 		}
 		add_equipment_to_stockpile = {
-			type = CAS_equipment
+			type = small_plane_cas_airframe
 			amount = 100
 			producer = GER
 		}
+	}
+
+	search_filters = {
+		FOCUS_FILTER_MILITARY_EQUIPMENT
 	}
 }
 
@@ -206,6 +226,10 @@ shared_focus = {
 			amount = 200
 			producer = GER
 		}
+	}
+
+	search_filters = {
+		FOCUS_FILTER_MILITARY_EQUIPMENT
 	}
 }
 
@@ -248,6 +272,10 @@ shared_focus = {
 			producer = GER
 		}
 	}
+
+	search_filters = {
+		FOCUS_FILTER_MILITARY_EQUIPMENT
+	}
 }
 
 shared_focus = {
@@ -274,6 +302,10 @@ shared_focus = {
 
 	completion_reward = {
 		add_ideas = R_forced_labor
+	}
+
+	search_filters = {
+		FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY
 	}
 }
 
@@ -304,6 +336,10 @@ shared_focus = {
 		army_experience = 20
 		add_ideas = reichskomissariat_army
 	}
+
+	search_filters = {
+		FOCUS_FILTER_MILITARY_IMPROVEMENT
+	}
 }
 
 shared_focus = {
@@ -333,6 +369,10 @@ shared_focus = {
 			remove_idea = reichskomissariat_army
 			add_idea = reichskomissariat_army2
 		}
+	}
+
+	search_filters = {
+		FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_WAR_SUPPORT
 	}
 }
 
@@ -365,6 +405,10 @@ shared_focus = {
 			add_idea = reichskomissariat_army3
 		}
 	}
+
+	search_filters = {
+		FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_WAR_SUPPORT
+	}
 }
 
 shared_focus = {
@@ -390,12 +434,9 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		add_tech_bonus = {
-			name = secret_bonus
-			bonus = 1.0
-			uses = 1
-			category = nuclear
-			category = rocketry
+		add_breakthrough_points = {
+			specialization = specialization_nuclear
+			value = 1
 		}
 	}
 }
