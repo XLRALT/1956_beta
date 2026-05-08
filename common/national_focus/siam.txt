@@ -1,4 +1,5 @@
 #!gfx:interface\r56_goals.gfx
+#!gfx:interface\cotf_goals.gfx
 #^^ For HOI4 Mod Utilities Support - DO NOT DELETE!
 focus_tree = {
 	id = siamese_focus_tree

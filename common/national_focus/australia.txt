@@ -1,4 +1,5 @@
 #!gfx:interface\r56_goals.gfx
+#!gfx:interface\cotf_goals.gfx
 focus_tree = {
 	id = r56_australian_focus
 	

@@ -1,4 +1,5 @@
 ﻿#!gfx:interface\r56_goals.gfx
+#!gfx:interface\cotf_goals.gfx
 # Some parts of the TSR tree have been ported over to the RT56 tree. This tree is far inferior to our tree in every aspect and only exists to make the log not complain but this file should be eliminated altogether in the future.
 focus_tree = {
 	id = manchukuo_focus_tsr

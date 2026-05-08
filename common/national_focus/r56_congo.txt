@@ -4,6 +4,7 @@
 #Joseph Diangienda Kuntima fils de Simon kimbangu
 #add seek new export markets increase trade relations with major in the same faction.
 #!gfx:interface\r56_goals.gfx
+#!gfx:interface\cotf_goals.gfx
 focus_tree = {
 	id = congo_focus_r56
 	

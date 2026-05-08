@@ -8,6 +8,7 @@
 ### search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
 
 #!gfx:interface\r56_goals.gfx
+#!gfx:interface\cotf_goals.gfx
 focus_tree = { 
 	id = danish_focus
 	

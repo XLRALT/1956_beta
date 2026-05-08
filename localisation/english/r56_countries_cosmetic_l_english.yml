@@ -3341,6 +3341,11 @@
  r56_united_ma_clique_tag_communism:0 "Hui People's Republic"
  r56_united_ma_clique_tag_communism_DEF:0 "the Hui People's Republic"
  r56_united_ma_clique_tag_communism_ADJ:0 "Hui"
+
+ #New England Kingdom (Mexico)
+ USA_kingdom_neutrality:0 "Kingdom of New England"
+ USA_kingdom_neutrality_DEF:0 "the Kingdom of New England"
+ USA_kingdom_neutrality_ADJ:0 "New English"
  
 # same as vanilla
 #  united_guiana_neutrality: "Grand Kingdom of El Dorado"

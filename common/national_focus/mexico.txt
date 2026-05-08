@@ -12,6 +12,7 @@
 ### search_filters = { FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
 
 #!gfx:interface\r56_goals.gfx
+#!gfx:interface\cotf_goals.gfx
 focus_tree = {
 	id = mexico_focus_tree
 	country = {
@@ -3353,28 +3354,27 @@ focus_tree = {
 				}
 				add_ideas = MEX_idea_unpopular_restoration
 				custom_effect_tooltip = CHL_skip_one_line_tt
-				if = {
-					limit = { has_dlc = "Gotterdammerung" }
-					create_country_leader = { 	# Use the WuW portrait that it added
-						name = "María Josepha I"
-						desc = " "
-						picture = "gfx/leaders/HUN/portrait_MEX_maria_de_iturbide.dds"
-						expire = "1965.1.1"
+				add_country_leader_role = {
+					character = MEX_maria_de_iturbide
+					promote_leader = yes
+					country_leader = {
 						ideology = absolute_monarchism
-						traits = { charismatic_monarch }
-					}
-				}
-				else = {
-					create_country_leader = {
-						name = "María Josepha I"
-						desc = " "
-						picture = "gfx/leaders/MEX/r56_portrait_MEX_Maria_Josepha_I.dds"
-						expire = "1965.1.1"
-						ideology = absolute_monarchism
+						expire = "1965.1.1.1"
 						traits = { charismatic_monarch }
 					}
 				}
 				hidden_effect = {
+					MEX_maria_de_iturbide = {
+						set_character_name = "María Josepha I"
+					}
+					if = {
+						limit = { NOT = { has_dlc = "Gotterdammerung" } }
+						set_portraits = {
+							civilian = {
+								large = "gfx/leaders/MEX/r56_portrait_MEX_Maria_Josepha_I.dds"
+							}
+						}
+					}
 					set_politics = {
 						ruling_party = neutrality
 						elections_allowed = no
@@ -3465,6 +3465,290 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = MEX_reclaim_the_dynastic_titles
+		icon = GFX_focus_HABSBURG_for_the_glory_of_the_empire
+		prerequisite = { focus = MEX_focus_defend_the_imperial_restoration }
+		x = 1
+		y = 1
+		relative_position_id = MEX_focus_defend_the_imperial_restoration
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_country_leader = { ruling_only = yes character = MEX_maria_de_iturbide }
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = COG_devout_catholic_kingdom_idea
+
+			hidden_effect = {
+				MEX_maria_de_iturbide = {
+					set_character_name = "Maria Josepha von Habsburg"
+				}
+			}
+
+			if = {
+				limit = {
+					AUS = {
+						OR = {
+							has_completed_focus = AUS_reinstate_the_imperial_council
+							has_completed_focus = AUS_moderate_restoration
+							has_completed_focus = AUS_past_glories
+						}
+					}
+				}
+				AUS = {
+					add_ai_strategy = { type = alliance id = MEX value = 200 }
+					add_ai_strategy = { type = befriend id = MEX value = 200 }
+					add_ai_strategy = { type = support id = MEX value = 200 }
+				}
+			}
+			if = {
+				limit = {
+					HUN = {
+						OR = {
+							has_completed_focus = HUN_invite_the_habsburg_prince
+							has_completed_focus = wuw_HUN_reinstate_the_pragmatic_sanction
+						}
+					}
+				}
+				HUN = {
+					add_ai_strategy = { type = alliance id = MEX value = 200 }
+					add_ai_strategy = { type = befriend id = MEX value = 200 }
+					add_ai_strategy = { type = support id = MEX value = 200 }
+				}
+			}
+			if = {
+				limit = {
+					GER = {
+						OR = {
+							has_completed_focus = GER_revive_the_kaiserreich_ww
+							has_completed_focus = GER_the_kaiser_rises
+							has_completed_focus = GER_rally_the_monarchists
+						}
+					}
+				}
+				GER = {
+					add_ai_strategy = { type = alliance id = MEX value = 200 }
+					add_ai_strategy = { type = befriend id = MEX value = 200 }
+					add_ai_strategy = { type = support id = MEX value = 200 }
+				}
+			}
+			if = {
+				limit = {
+					UKR = {
+						has_country_leader = {
+							character = UKR_vasyl_vyshyvanyi
+							ruling_only = yes
+						}
+					}
+				}
+				UKR = {
+					add_ai_strategy = { type = alliance id = MEX value = 200 }
+					add_ai_strategy = { type = befriend id = MEX value = 200 }
+					add_ai_strategy = { type = support id = MEX value = 200 }
+				}
+			}
+			if = {
+				limit = {
+					SPA = {
+						has_country_leader = {
+							character = SPA_karl_pius_von_habsburg
+							ruling_only = yes
+						}
+					}
+				}
+				SPA = {
+					add_ai_strategy = { type = alliance id = MEX value = 200 }
+					add_ai_strategy = { type = befriend id = MEX value = 200 }
+					add_ai_strategy = { type = support id = MEX value = 200 }
+				}
+			}
+			if = {
+				limit = {
+					PRU = {
+						OR = {
+							has_country_leader = {
+								character = PRU_Carlos_I_of_habsburg_king
+								ruling_only = yes
+							}
+							has_country_leader = {
+								character = PRU_Carlos_I_of_habsburg
+								ruling_only = yes
+							}
+						}
+					}
+				}
+				PRU = {
+					add_ai_strategy = { type = alliance id = MEX value = 200 }
+					add_ai_strategy = { type = befriend id = MEX value = 200 }
+					add_ai_strategy = { type = support id = MEX value = 200 }
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
+		id = MEX_join_the_central_powers
+		icon = GFX_focus_ger_revive_kaiserreich
+		available = {
+			OR = {
+				GER = { has_completed_focus = GER_the_central_powers }
+				HUN = { has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary }
+			}
+		}
+		mutually_exclusive = { focus = MEX_revive_the_empire }
+		prerequisite = { focus = MEX_reclaim_the_dynastic_titles }
+		x = -1
+		y = 1
+		relative_position_id = MEX_reclaim_the_dynastic_titles
+		cost = 10
+		ai_will_do = {
+			
+		}
+
+		bypass = {
+			is_in_faction = yes
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					GER = { 
+						has_government = neutrality
+						has_completed_focus = GER_the_central_powers
+					}
+				}
+				GER = {
+					country_event = { id = generic.2 }
+				}
+			}
+			else_if = {
+				limit = {
+					GER = { 
+						has_government = neutrality
+						NOT = { has_completed_focus = GER_the_central_powers }
+					}
+				}
+				GER = {
+					set_rule = { can_create_factions = yes }
+					create_faction = "GER_central_powers_faction"
+					country_event = { id = generic.2 }
+				}
+			}
+			else_if = {
+				limit = {
+					HUN = { has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary }
+				}
+				set_rule = { can_create_factions = yes }
+				create_faction = "GER_central_powers_faction"
+				HUN = {
+					if = {
+						limit = { ROOT = { is_in_faction = yes } }
+						country_event = generic.5 
+					}
+					else = { 
+						custom_effect_tooltip = invite_to_faction_tt
+					}
+				}
+			}
+			set_rule = { can_create_factions = yes }
+		}
+
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+	}
+
+	focus = {
+		id = MEX_revive_the_empire
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		available = {
+			NOT = {
+				HUN = { has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary }
+			}
+		}
+		mutually_exclusive = { focus = MEX_join_the_central_powers }
+		prerequisite = { focus = MEX_reclaim_the_dynastic_titles }
+		x = 1
+		y = 1
+		relative_position_id = MEX_reclaim_the_dynastic_titles
+		cost = 10
+		ai_will_do = {
+			
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					AUS = { exists = yes }
+				}
+				AUS = {
+					add_timed_idea = { idea = GER_rekindle_imperial_sentiment days = 1095 }
+				}
+			}
+			if = {
+				limit = {
+					HUN = { exists = yes }
+				}
+				HUN = {
+					add_timed_idea = { idea = GER_rekindle_imperial_sentiment days = 1095 }
+				}
+			}
+			if = {
+				limit = {
+					CZE = { exists = yes }
+				}
+				CZE = {
+					add_timed_idea = { idea = GER_rekindle_imperial_sentiment days = 1095 }
+				}
+			}
+			custom_effect_tooltip = GER_rekindle_imperial_sentiment_tt
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = {
+					AUS = {
+						OR = {
+							has_completed_focus = AUS_reinstate_the_imperial_council
+							has_completed_focus = AUS_moderate_restoration
+							has_completed_focus = AUS_past_glories
+						}
+					}
+				}
+				AUS = {
+					add_ai_strategy = { type = alliance id = MEX value = 200 }
+					add_ai_strategy = { type = befriend id = MEX value = 200 }
+					add_ai_strategy = { type = support id = MEX value = 200 }
+				}
+			}
+			if = {
+				limit = {
+					HUN = {
+						OR = {
+							has_completed_focus = HUN_invite_the_habsburg_prince
+							has_completed_focus = wuw_HUN_reinstate_the_pragmatic_sanction
+						}
+					}
+				}
+				HUN = {
+					add_ai_strategy = { type = alliance id = MEX value = 200 }
+					add_ai_strategy = { type = befriend id = MEX value = 200 }
+					add_ai_strategy = { type = support id = MEX value = 200 }
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
 
 	focus = {
 		id = MEX_focus_synarchist_communes
@@ -6124,6 +6408,50 @@ focus_tree = {
 				annex_country = { target = USA }
 			}
 		}
+	}
+
+	focus = {
+		id = MEX_no_more_nightmares
+		icon = GFX_goal_USA_domain
+		available = {
+			USA =  {
+				has_government = neutrality
+				is_subject = yes
+				OVERLORD = {
+					OR = {
+						original_tag = MEX
+						is_in_faction_with = MEX
+					}
+				}
+			}
+		}
+		prerequisite = { focus = MEX_focus_redeem_aztlan }
+		x = 0
+		y = 1
+		relative_position_id = MEX_focus_redeem_aztlan
+		cost = 10
+		ai_will_do = {
+			
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+			USA = {
+				create_country_leader = {
+					name = "Norton II"
+					desc = ""
+					picture = "gfx/leaders/USA/cotf_portrait_USA_Norton_II.dds"
+					expire = "1965.1.1"
+					ideology = absolute_monarchism
+					traits = {
+						monarchist_puppet
+					}
+				}
+				set_cosmetic_tag = USA_kingdom
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
