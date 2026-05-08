@@ -12,7 +12,6 @@
 ### search_filters = { FOCUS_FILTER_MEX_CAUDILLO_REBELLION }
 
 #!gfx:interface\r56_goals.gfx
-#!gfx:interface\cotf_goals.gfx
 focus_tree = {
 	id = mexico_focus_tree
 	country = {

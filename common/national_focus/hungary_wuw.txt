@@ -7,7 +7,6 @@
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 
 #!gfx:interface\r56_goals.gfx
-#!gfx:interface\cotf_goals.gfx
 focus_tree = {
 	id = wuw_hungarian_focus
 

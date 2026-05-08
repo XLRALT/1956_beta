@@ -10605,6 +10605,15 @@ spriteType = {
 		textureFile = "gfx/interface/goals/ton/r56_goal_TON_coa_airforce.dds"
 	}
 
+####-----> COTF <><> <><> <><>
+
+	####---> USA - United States <><> <><>
+
+	spriteType = {
+		name = "GFX_goal_USA_domain"
+		texturefile = "gfx/interface/goals/usa/cotf_goal_USA_domain.dds"
+	}
+
 }
 
 

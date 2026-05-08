@@ -16,7 +16,6 @@
 ### search_filters = {FOCUS_FILTER_HISTORICAL}
 
 #!gfx:interface\r56_goals.gfx
-#!gfx:interface\cotf_goals.gfx
 focus_tree = {
 
 	id = japan_wtt_focus

@@ -9,7 +9,6 @@
 ### search_filters = {FOCUS_FILTER_MILITARY_CHARACTER}
 
 #!gfx:interface\r56_goals.gfx
-#!gfx:interface\cotf_goals.gfx
 focus_tree = {
 	id = austria_focus_tree
 	

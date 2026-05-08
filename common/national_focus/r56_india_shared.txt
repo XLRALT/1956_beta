@@ -1,5 +1,4 @@
 #!gfx:interface\r56_goals.gfx
-#!gfx:interface\cotf_goals.gfx
 shared_focus = {
 	id = RAJ_Establish_the_Planning_Commission
 	icon = GFX_goal_generic_state_economy

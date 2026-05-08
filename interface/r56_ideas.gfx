@@ -2997,5 +2997,14 @@ spriteType = {
 		texturefile = "gfx/interface/ideas/sam/r56_idea_SAM_divided_samoa.dds"
 	}
 
+####-----> COTF <><> <><> <><>
+
+	####---> GER - Germany <><> <><>
+
+	spriteType = {
+		name = "GFX_idea_GER_ss_recruitment"
+		texturefile = "gfx/interface/ideas/ger/cotf_idea_GER_ss_recruitment.dds"
+	}
+
 }
 #####---------------------------------------------------------------------> End

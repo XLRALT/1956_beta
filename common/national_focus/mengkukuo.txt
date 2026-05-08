@@ -12,7 +12,6 @@
 # Tree finished and restored by Dutch
 
 #!gfx:interface\r56_goals.gfx
-#!gfx:interface\cotf_goals.gfx
 focus_tree = {
 	id = mengkukuo_focus 
 	

@@ -1,6 +1,5 @@
 #####---------------------------------------------------------------------> Mod by Sig "GreatExperiment" Altre
 #!gfx:interface\r56_goals.gfx
-#!gfx:interface\cotf_goals.gfx
 
 focus_tree = {
 

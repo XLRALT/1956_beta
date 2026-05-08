@@ -1,6 +1,5 @@
 ﻿#####-----> Rt56 Soviet Tree. Made By SpicyAlfredo et al<><> <><> <><>
 #!gfx:interface\r56_goals.gfx
-#!gfx:interface\cotf_goals.gfx
 # ^^ For HOI4 Mod Utilities Support - Do not delete
 focus_tree = {
 	id = soviet_focus_old
