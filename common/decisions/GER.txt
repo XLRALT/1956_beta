@@ -3913,6 +3913,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -4078,6 +4079,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -4336,6 +4338,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -4553,6 +4556,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -4962,6 +4966,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -5203,6 +5208,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -5497,6 +5503,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -6377,6 +6384,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 2 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -6630,6 +6638,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 2 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -6888,6 +6897,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -7197,6 +7207,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -7519,6 +7530,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -8314,6 +8326,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -8761,6 +8774,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -9206,6 +9220,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -9481,6 +9496,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -9859,6 +9875,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -10220,6 +10237,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -11087,6 +11105,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -11772,6 +11791,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -12453,6 +12473,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 6 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
@@ -12889,6 +12910,7 @@ GER_reichskommissariats = {
 					inherit_technology = GER
 					add_offsite_building = { type = arms_factory level = 3 }
 					load_oob = "RK_OOB"
+					add_timed_idea = { idea = ss_recruitment days = 365 }
 				}
 			}
 
