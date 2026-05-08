@@ -3488,7 +3488,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = COG_devout_catholic_kingdom_idea
+			add_ideas = HUN_habsburg_restored
 
 			hidden_effect = {
 				MEX_maria_de_iturbide = {
@@ -3596,7 +3596,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
 
 	focus = {
