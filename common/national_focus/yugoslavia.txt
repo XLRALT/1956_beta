@@ -251,6 +251,88 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YUG_collaborate_with_the_chetniks
+		icon = GFX_goal_generic_anti_communism
+		prerequisite = { focus = YUG_local_militias }
+		x = -1
+		y = 1
+		relative_position_id = YUG_local_militias
+		mutually_exclusive = {
+			focus = YUG_organized_partizans
+		}
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5000
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0.001
+			}
+		}
+
+		available = {
+			NOT = { has_government = communism }
+			OR = {
+				AND = {
+					has_government = fascism
+					surrender_progress > 0.2
+				}
+				AND = {
+					has_capitulated = yes
+					107 = {
+						CONTROLLER = {
+							NOT = { has_government = fascism }
+						}
+					}
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_MANPOWER }
+
+		completion_reward = {
+			add_ideas = chetnik_regiments
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			set_politics = { ruling_party = fascism elections_allowed = no }
+			create_corps_commander = {
+				name = "Draža Mihailović"
+				portrait_path = "gfx/leaders/YUG/Portrait_YUG_draza_mihaijlovic.tga"
+				traits = {
+					war_hero
+					trait_cautious
+					infantry_officer
+					trait_mountaineer
+				}
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			hidden_effect = {
+				create_country_leader = {
+					name = "Draža Mihailović"
+					desc = ""
+					picture = "gfx/leaders/YUG/Portrait_YUG_draza_mihaijlovic.tga"
+					expire = "1965.1.1"
+					ideology = rexism
+					traits = {
+						anti_communist
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = YUG_brigadistas
 		icon = GFX_goal_generic_spanish_civil_war_soldier
 		prerequisite = { 
@@ -3023,6 +3105,43 @@ focus_tree = {
 			swap_ideas = { remove_idea = YUG_idea_empowered_peasant_councils add_idea = YUG_idea_very_empowered_peasant_councils }
 		}
 	}
+
+	focus = {
+		id = YUG_cross_the_borders
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = YUG_yugoslavian_path_to_communism }
+		x = 0
+		y = 1
+		relative_position_id = YUG_yugoslavian_path_to_communism
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_ESPIONAGE }
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				add_ideas = dye_the_balkans_red
+			}
+			else = {
+				add_ideas = dye_the_balkans_red_no_lar
+			}
+		}
+	}
 	
 	focus = {
 		id = YUG_yugoslavian_international_communism
@@ -3105,6 +3224,10 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = YUG_idea_slovene_nationalism
 				add_idea = YUG_idea_slovene_nationalism_2
+			}
+			add_timed_idea = {
+				idea = reorganizing_the_republic
+				days = 365
 			}
 		}
 	}
@@ -3263,7 +3386,8 @@ focus_tree = {
 		id = YUG_organized_partizans
 		icon = GFX_goal_CRO_partisan_army
 		prerequisite = { focus = YUG_local_militias }
-		x = 0
+		mutually_exclusive = { focus = YUG_collaborate_with_the_chetniks }
+		x = 1
 		y = 1
 		relative_position_id = YUG_local_militias
 
@@ -3530,6 +3654,75 @@ focus_tree = {
 			ALB = {
 				country_event = generic.5
 			}
+		}
+	}
+
+	focus = {
+		id = YUG_greater_yugoslavia
+		icon = GFX_focus_YUG_greater_yugoslavia
+		prerequisite = { focus = YUG_invite_bulgaria }
+		prerequisite = { focus = YUG_invite_albania }
+		x = 1
+		y = 1
+		relative_position_id = YUG_invite_bulgaria
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			add_state_core = 44
+			add_state_core = 805
+			add_state_core = 48
+			add_state_core = 212
+			add_state_core = 801
+			add_state_core = 211
+			add_state_core = 77
+			random_other_country = {
+				limit = {
+					is_ai = yes
+					original_tag = ALB
+					has_government = communism
+					OR = {
+						is_subject = no
+						is_subject_of = YUG
+					}
+					is_in_faction_with = YUG
+				}
+				YUG = {
+					annex_country = { target = PREV transfer_troops = yes }
+				}
+			}
+			random_other_country = {
+				limit = {
+					is_ai = yes
+					original_tag = BUL
+					has_government = communism
+					OR = {
+						is_subject = no
+						is_subject_of = YUG
+					}
+					is_in_faction_with = YUG
+				}
+				YUG = {
+					annex_country = { target = PREV transfer_troops = yes }
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = YUG_proclaim_greater_yugoslavia_tt
+			hidden_effect = { set_cosmetic_tag = YUG_GREATER }
 		}
 	}
 
@@ -4382,7 +4575,7 @@ focus_tree = {
 		prerequisite = { focus = YUG_invite_greece }
 		prerequisite = { focus = YUG_invite_hungary }
 		prerequisite = { focus = YUG_invite_romania }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = YUG_invite_greece
 
@@ -4426,6 +4619,95 @@ focus_tree = {
 		completion_reward = {
 			TUR = {
 				country_event = generic.5
+			}
+		}
+	}
+
+	focus = {
+		id = YUG_destroy_the_oppressor
+		icon = GFX_focus_attack_soviet
+		prerequisite = { focus = YUG_invite_greece }
+		prerequisite = { focus = YUG_invite_hungary }
+		prerequisite = { focus = YUG_invite_romania }
+		x = 1
+		y = 1
+		relative_position_id = YUG_invite_greece
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SOV
+				expire = 0
+			}
+		}
+	}
+
+	focus = {
+		id = YUG_form_slavia
+		icon = GFX_focus_SOV_panslavic_nationalism
+		prerequisite = { focus = YUG_destroy_the_oppressor }
+		x = 0
+		y = 1
+		relative_position_id = YUG_destroy_the_oppressor
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			controls_state = 219
+		}
+
+		bypass = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+			set_cosmetic_tag = YUG_slavia
+			add_stability = -0.1
+			set_capital = {
+				state = 219
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SOV
+						is_core_of = BLR
+						is_core_of = UKR
+					}
+				}
+				add_core_of = YUG
+			}
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = POL
+						is_core_of = CZE
+						NOT = { is_core_of = CZE }
+						is_core_of = SLO
+					}
+				}
+				add_claim_by = YUG
 			}
 		}
 	}

@@ -1,0 +1,63 @@
+ideas = {
+	country = {
+		reorganizing_the_republic = {
+			picture = trotskyite_plot
+
+			available = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.1
+				surrender_limit = -0.1
+			}
+		}
+
+		dye_the_balkans_red = {
+			picture = ger_the_great_red_menace
+
+			modifier = {
+				operative_slot = 1
+				boost_ideology_mission_factor = 0.25
+				propaganda_mission_factor = 0.25
+			}
+		}
+
+		dye_the_balkans_red_no_lar = {
+			name = dye_the_balkans_red
+
+			picture = ger_the_great_red_menace
+
+			modifier = {
+				decryption_factor = 0.05
+				boost_ideology_mission_factor = 0.25
+				propaganda_mission_factor = 0.25
+			}
+		}
+
+		chetnik_regiments = {
+			picture = RAJ_private_military_complex
+
+			cancel = {
+				has_government = communism
+			}
+
+			modifier = {
+				stability_factor = -0.05
+				resistance_target_on_our_occupied_states = 0.05
+				resistance_growth_on_our_occupied_states = 0.05
+				resistance_damage_to_garrison_on_our_occupied_states = 0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				equipment_capture = 0.05
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+	}
+}

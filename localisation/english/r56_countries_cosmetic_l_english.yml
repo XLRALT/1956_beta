@@ -3346,77 +3346,14 @@
  USA_kingdom_neutrality:0 "Kingdom of New England"
  USA_kingdom_neutrality_DEF:0 "the Kingdom of New England"
  USA_kingdom_neutrality_ADJ:0 "New English"
- 
-# same as vanilla
-#  united_guiana_neutrality: "Grand Kingdom of El Dorado"
-#  united_guiana_neutrality_DEF: "the Grand Kingdom of El Dorado"
-#  united_guiana_neutrality_ADJ: "Guianan"
-#  united_guiana_fascism: "Empire of Guiana"
-#  united_guiana_fascism_DEF: "the Empire of Guiana"
-#  united_guiana_fascism_ADJ: "Guianan" #
-#  united_guiana_democratic: "Guianan Federal Republic" #
-#  united_guiana_democratic_DEF: "the Guianan Federal Republic"
-#  united_guiana_democratic_ADJ: "Guianan"
-#  united_guiana_communism: "Guianan Soviet Socialist Republic"
-#  united_guiana_communism_DEF: "the Guianan Soviet Socialist Republic"
-#  united_guiana_communism_ADJ: "Guianan"
 
-# same as vanilla
-#  true_plurinational_bolivia_neutrality: "Plurnational State of Bolivia"
-#  true_plurinational_bolivia_fascism: "Plurnational Kingdom of Bolivia"
-#  true_plurinational_bolivia_fascism_DEF: "the Plurnational Kingdom of Bolivia"
-#  true_plurinational_bolivia_fascism_ADJ: "Plurinational"
-#  true_plurinational_bolivia_democratic: "Plurnational Republic of Bolivia"
-#  true_plurinational_bolivia_democratic_DEF: "the Plurnational Republic of Bolivia"
-#  true_plurinational_bolivia_democratic_ADJ: "Plurinational"
-#  true_plurinational_bolivia_communism: "Plurnational People's Republic of Bolivia"
-#  true_plurinational_bolivia_communism_DEF: "the Plurnational People's Republic of Bolivia"
-#  true_plurinational_bolivia_communism_ADJ: "Plurinational"
-
-# same as vanilla
-#  indigenous_brazil_neutrality: "Great Pindorama"
-#  indigenous_brazil_neutrality_DEF: "the Great Pindorama"
-#  indigenous_brazil_neutrality_ADJ: "Pindoraman"
-#  indigenous_brazil_fascism: "Integral Pindoraman"
-#  indigenous_brazil_fascism_DEF: "Integral Pindoraman"
-#  indigenous_brazil_fascism_ADJ: "Pindoraman"
-#  indigenous_brazil_communism: "Pindoraman United People's Communes"
-#  indigenous_brazil_communism_DEF: "the Pindoraman United People's Communes"
-#  indigenous_brazil_communism_ADJ: "Pindoraman"
-
-# same as vanilla
-#  indigenous_mexico_neutrality: "Indigenista Mexico"
-#  indigenous_mexico_neutrality_DEF: "Indigenista Mexico"
-#  indigenous_mexico_neutrality_ADJ: "Mexican"
-#  indigenous_mexico_fascism: "Aztec Empire"
-#  indigenous_mexico_fascism_DEF: "the Aztec Empire"
-#  indigenous_mexico_fascism_ADJ: "Mexican"
-#  indigenous_mexico_democratic: "Indigenista Mexico"
-#  indigenous_mexico_democratic_DEF: "Indigenista Mexico"
-#  indigenous_mexico_democratic_ADJ: "Mexican"
-#  indigenous_mexico_communism: "Huastec-Mixtec-Aztec-Mexican United People's Republic"
-#  indigenous_mexico_communism_DEF: "the Huastec-Mixtec-Aztec-Mexican United People's Republic
-#  indigenous_mexico_communism_ADJ: "Mexican"
-
-# same as vanilla
-#  native_american_usa_neutrality: "United States of Native America"
-#  native_american_usa_neutrality_DEF: "the United States of Native America"
-#  native_american_usa_neutrality_ADJ: "Native American"
-#  native_american_usa_fascism: "Revanchist United States of Native America"
-#  native_american_usa_democratic: "United Native-American States"
-#  native_american_usa_democratic_DEF: "the United Native-American States"
-#  native_american_usa_democratic_ADJ: "Native American"
-
-# same as vanilla
-#  first_nations_canada_neutrality: "Confederated Canadian First Nations"
-#  first_nations_canada_neutrality_DEF: "the Confederated Canadian First Nations"
-#  first_nations_canada_neutrality_ADJ: "First Nations"
-#  first_nations_canada_fascism: "The Great Canadian First Nations"
-#  first_nations_canada_fascism_DEF: "the Great Canadian First Nations"
-#  first_nations_canada_fascism_ADJ: "First Nations"
-#  first_nations_canada_democratic: "Federation of Canadian First Nations"
-#  first_nations_canada_democratic_DEF: "the Federation of Canadian First Nations"
-#  first_nations_canada_democratic_ADJ: "First Nations"
-#  first_nations_canada_communism: "Union of Canadian First Nations"
-#  first_nations_canada_communism_DEF: "the Union of Canadian First Nations"
-#  first_nations_canada_communism_ADJ: "First Nations"
+ #Slavia
+ YUG_slavia_fascism:0 "Radikalna Slavia"
+ YUG_slavia_fascism_DEF:0 "Radikalna Slavia"
+ YUG_slavia_communism:0 "SFR Slavia"
+ YUG_slavia_communism_DEF:0 "the SFR Slavia"
+ YUG_slavia_democratic:0 "Slavian Condeferation"
+ YUG_slavia_democratic_DEF:0 "the Slavian Condeferation"
+ YUG_slavia_neutrality:0 "Slavia"
+ YUG_slavia_neutrality_DEF:0 "Slavia"
+ YUG_slavia_ADJ:0 "Slavian"

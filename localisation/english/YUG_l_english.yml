@@ -274,3 +274,19 @@
  YUG_integrate_northern_dobruja:0 "Integrate Northern Dobruja"
 
  news.329.t.2:1 "Yugoslavia Recognizes the Soviet Union"  #shorter version to avoid text overlap
+
+#COTF
+ reorganizing_the_republic: "Reorganizing the Republic"
+ dye_the_balkans_red: "Dye the Balkans Red"
+ chetnik_regiments: "Chetnik Regiments"
+
+ YUG_cross_the_borders: "Expand the OZNA"
+ YUG_cross_the_borders_desc: "We can't sit here while our peasant brothers are repressed by our neightbour's governments. We will expand the OZNA in order be able to send guerrilla leaders and political leaders to help export the revolution."
+ YUG_greater_yugoslavia: "Greater Yugoslavia"
+ YUG_greater_yugoslavia_desc: "Now that friendly regimes have been installed in Bulgaria and Albania, we are able to press for a unification with both nations."
+ YUG_destroy_the_oppressor: "Destroy the Opressor"
+ YUG_destroy_the_oppressor_desc: ""We are all equal" the Russian butcher says while cutting the head of an Ukranian. The Soviets have proved to be incapable of representing the revolution around the globe. It is time to destroy the new opressor of Moscow."
+ YUG_form_slavia: "A Pan-Slavic Nation"
+ YUG_form_slavia_desc: "The Soviets have proved not to be able to manage a Pan-Slavic nation. It is time for the Yugoslavians to lead the future of both the Slavs and communism."
+ YUG_collaborate_with_the_chetniks: "Collaborate with the Chetniks"
+ YUG_collaborate_with_the_chetniks_desc: "Founded by coronel Draža Mihajlović, the Chetniks are anti-communist monarchist guerrillas. Known for their pragmatism, as well as their anti-semitism and hatred for islam, the Chetniks will fight for the kingdom until it's liberated."
