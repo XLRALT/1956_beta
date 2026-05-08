@@ -299,12 +299,27 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
-			add_ideas = chetnik_regiments
+			swap_ideas = {
+				remove_idea = YUG_idea_local_militias
+				add_idea = chetnik_regiments
+			}
 			add_popularity = { ideology = fascism popularity = 0.1 }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			set_politics = { ruling_party = fascism elections_allowed = no }
-			create_corps_commander = {
-				name = "Draža Mihailović"
-				portrait_path = "gfx/leaders/YUG/Portrait_YUG_draza_mihaijlovic.tga"
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_country_leader_role = {
+				character = YUG_draza_mihailovic
+				promote_leader = yes
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = rexism
+					traits = {
+						anti_communist
+					}
+				}
+			}
+			add_corps_commander_role = {
+				character = YUG_draza_mihailovic
 				traits = {
 					war_hero
 					trait_cautious
@@ -316,18 +331,6 @@ focus_tree = {
 				defense_skill = 2
 				planning_skill = 3
 				logistics_skill = 2
-			}
-			hidden_effect = {
-				create_country_leader = {
-					name = "Draža Mihailović"
-					desc = ""
-					picture = "gfx/leaders/YUG/Portrait_YUG_draza_mihaijlovic.tga"
-					expire = "1965.1.1"
-					ideology = rexism
-					traits = {
-						anti_communist
-					}
-				}
 			}
 		}
 	}
@@ -3108,7 +3111,7 @@ focus_tree = {
 
 	focus = {
 		id = YUG_cross_the_borders
-		icon = GFX_focus_prc_infiltration
+		icon = GFX_goal_arrests
 		prerequisite = { focus = YUG_yugoslavian_path_to_communism }
 		x = 0
 		y = 1
@@ -3683,13 +3686,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
 		completion_reward = {
-			add_state_core = 44
-			add_state_core = 805
-			add_state_core = 48
-			add_state_core = 212
-			add_state_core = 801
-			add_state_core = 211
-			add_state_core = 77
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = BUL
+						is_core_of = ALB
+					}
+				}
+				add_core_of = YUG
+			}
 			random_other_country = {
 				limit = {
 					is_ai = yes
@@ -3701,6 +3706,7 @@ focus_tree = {
 					}
 					is_in_faction_with = YUG
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 				YUG = {
 					annex_country = { target = PREV transfer_troops = yes }
 				}

@@ -1526,6 +1526,9 @@ characters={
 		}
 		name=YUG_draza_mihailovic
 		portraits={
+			civilian={
+				large="gfx/leaders/YUG/r56_portrait_YUG_Draza_Mihailovic.dds"
+			}
 			army={
 				large="gfx/leaders/YUG/r56_portrait_YUG_Draza_Mihailovic.dds"
 				small="GFX_idea_YUG_draza_mihailovic"
