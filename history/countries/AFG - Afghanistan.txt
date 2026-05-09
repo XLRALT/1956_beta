@@ -414,7 +414,7 @@ if = {
 	}
 	create_operative_leader = {
 		name = "Bhagat Ram Talwar"
-		gfx = GFX_Portrait_Operative_ArabicMale1
+		gfx = GFX_portrait_arabia_generic_operative_male_1
 		traits = { operative_commando operative_double_agent }
 		bypass_recruitment = no
 		available_to_spy_master = yes
@@ -428,7 +428,7 @@ if = {
 	}
 	create_operative_leader = {
 		name = "Tawfiq Bay"
-		gfx = GFX_Portrait_Operative_AsianMale10
+		gfx = GFX_portrait_arabia_generic_operative_male_6
 		traits = { operative_linguist }
 		bypass_recruitment = no
 		available_to_spy_master = yes

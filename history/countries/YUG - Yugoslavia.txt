@@ -213,7 +213,7 @@ if = {
 	}
 	create_operative_leader = {
 		name = "Vera Pešić"
-		GFX = GFX_Portrait_Operative_EuropeFemale11
+		GFX = GFX_portrait_europe_generic_operative_female_11
 		traits = { operative_double_agent operative_seducer operative_escape_artist }
 		bypass_recruitment = no
 		available_to_spy_master = yes
@@ -222,7 +222,7 @@ if = {
 	}
 	create_operative_leader = {
 		name = "Tomauševa Kovačić"
-		GFX = GFX_Portrait_Operative_EuropeFemale7
+		GFX = GFX_portrait_europe_generic_operative_female_7
 		traits = { operative_double_agent operative_tough }
 		bypass_recruitment = no
 		available_to_spy_master = yes
@@ -231,7 +231,7 @@ if = {
 	}
 	create_operative_leader = {
 		name = "Emil Vedan"
-		GFX = GFX_Portrait_Operative_EuropeMale7
+		GFX = GFX_portrait_europe_generic_operative_male_7
 		traits = { operative_double_agent operative_infiltrator operative_tough }
 		bypass_recruitment = no
 		available_to_spy_master = yes
