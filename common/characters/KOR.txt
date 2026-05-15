@@ -446,12 +446,24 @@ characters={
 					large = GFX_portrait_KOR_kim_il_sung
 					small = GFX_portrait_KOR_kim_il_sung_small
 				}
+				army = {
+					large = GFX_portrait_KOR_kim_il_sung
+				}
 			}
 			country_leader = {
 				ideology = stalinism
 				traits = { KOR_suryong }
 				expire = "1965.1.1.1"
 				id = -1
+			}
+			field_marshal = {
+				traits = { JAP_communist_sympathizer winter_specialist winter_expert }
+				skill = 3
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 4
+				legacy_id = -1
 			}
 		}
 		instance = {
@@ -465,12 +477,24 @@ characters={
 				civilian = {
 					large = "gfx/leaders/NKR/r56_portrait_NKR_Kim_Il_Sung.dds"
 				}
+				army = {
+					large = "gfx/leaders/NKR/r56_portrait_NKR_Kim_Il_Sung.dds"
+				}
 			}
 			country_leader = {
 				ideology = stalinism
 				traits = { KOR_suryong }
 				expire = "1965.1.1.1"
 				id = -1
+			}
+			field_marshal = {
+				traits = { JAP_communist_sympathizer winter_specialist winter_expert }
+				skill = 3
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 4
+				legacy_id = -1
 			}
 		}
 	}

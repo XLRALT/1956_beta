@@ -1,0 +1,17 @@
+jos_autonomous_state = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_conscription_exemptions_granted
+	
+	recruitable_population_factor = -0.5
+	compliance_gain = 0.25
+	resistance_decay = 0.15
+}
+
+jos_conscription_exemptions = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_conscription_exemptions_granted
+	
+	recruitable_population_factor = -0.85
+}

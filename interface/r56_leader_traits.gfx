@@ -228,4 +228,10 @@ spriteTypes = {
 		name = "GFX_trait_ARM_anti_communist_sympathizer"
 		texturefile = "gfx/interface/traits/personal/r56_trait_anti_communist_sympathizer.dds"
 	}
+
+###--->  KOR <><> <><> <><>
+	spriteType = {
+		name = "GFX_trait_trait_KOR_anarchist"
+		texturefile = "gfx/interface/traits/personal/cotf_trait_KOR_anarchist.dds"
+	}
 }

@@ -1,0 +1,198 @@
+ideas = {
+
+	political_advisor = { 
+
+		KOR_yoon_shi = {
+				
+			picture = generic_political_advisor_asia_3
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			traits = { silent_workhorse }
+
+			ai_will_do = { factor = 4 }
+
+		}
+
+		KOR_tae_kyung = {
+			
+			picture = generic_political_advisor_asia_1
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			traits = { financial_expert }
+		}
+
+		KOR_park_baek = {
+			
+			picture = generic_political_advisor_asia_3
+			
+			allowed = {
+				original_tag = KOR
+			}
+
+			ai_will_do = { factor = 2 }
+			
+			traits = { popular_figurehead }
+		}
+
+	}
+
+	army_chief = { 
+
+		KOR_army_chief_att= {
+				
+			picture = generic_political_advisor_asia_1
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			traits = { army_chief_offensive_2 }
+		}
+
+		KOR_army_chief_def= {
+			
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			traits = { army_chief_defensive_2 }
+		}
+
+	}
+
+	navy_chief = {
+
+		KOR_subs= {
+			
+			picture = generic_political_advisor_asia_1
+			
+			allowed = {
+				original_tag = KOR
+			}
+
+			available = {
+			}
+			
+			traits = { navy_chief_commerce_raiding_2 }
+		}
+
+		KOR_capital_ship= {
+			
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = KOR
+			}
+
+			available = {
+			}
+			
+			traits = { navy_chief_decisive_battle_2 }
+		}
+
+		KOR_no_ship= {
+			
+			picture = generic_political_advisor_asia_3
+			
+			allowed = {
+				original_tag = KOR
+			}
+
+			available = {
+			}
+			
+			traits = { navy_chief_old_guard }
+		}
+	}
+
+	air_chief = {
+		
+		KOR_fighters= {
+			
+			picture = generic_political_advisor_asia_3
+			
+			allowed = {
+				original_tag = KOR
+			}
+
+			available = {
+			}
+			
+			traits = { air_air_superiority_2 }
+		}
+
+		KOR_no_air= {
+			
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = KOR
+			}
+
+			available = {
+			}
+			
+			traits = { air_chief_old_guard }
+		}
+	}
+
+	high_command = {
+
+		KOR_artillery_guy = {
+			ledger = army
+
+			picture = generic_political_advisor_asia_3
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			traits = { army_artillery_2 }
+		}
+
+		KOR_infantry_guy = {
+			ledger = army
+
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			traits = { army_infantry_2 }
+		}
+
+		KOR_concealment_guy= {
+			ledger = army
+
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			traits = { army_concealment_2 }
+		}
+
+		KOR_navy_maneuver_guy= {
+			ledger = navy
+
+			picture = generic_political_advisor_asia_1
+			
+			allowed = {
+				original_tag = KOR
+			}
+			
+			traits = { navy_chief_maneuver_3 }
+		}
+
+	}
+}

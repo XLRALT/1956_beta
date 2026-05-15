@@ -47,6 +47,9 @@ l_english:
  jaeger_trait: "Veteran Jaeger"
  jaeger_trait_desc: "§LExpert in guerilla warfare and sabotage operations behind enemy lines.§!"
 
+ trait_KOR_anarchist: "Anarchist"
+ trait_KOR_anarchist_desc: "This general believes in anarchy as the only legitimate form of government."
+
 ##Companies
  r56_train_manufacturer:0 "Train Equipment Designer"
  converted_train_manufacturer:0 "Converted Train Manufacturer"
