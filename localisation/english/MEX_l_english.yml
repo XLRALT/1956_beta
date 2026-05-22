@@ -84,6 +84,15 @@
  MEX_focus_assert_control_in_manila_desc:0 "During Spanish colonial rule, many New Spaniards were settled in the Philippines, where we mixed with native groups, marking our influence on the archipelago. With the [USA.GetAdjective]'s kicked from these lands, we shall reclaim this piece of our national heritage!"
  MEX_focus_assert_control_in_manila_tt:0 "Every controlled state that is a §Y[PHI.GetAdjective]§! core will gain a claim and §Y15§! compliance."
 
+ MEX_reclaim_the_dynastic_titles: "Reclaim the Dynastic Titles"
+ MEX_reclaim_the_dynastic_titles_desc: "Maria de Iturbide is the daughter of Salvador de Iturbide, grandson of the first emperor of Mexico and adopted son of Maximilian von Habsburg. She would be a member of the royal house of Habsburg if it wasn't for the fact that Maximilian I renounced to his titles as archduke of Austria and prince of Hungary and Bohemia. Though, due to being born in a rich family in Austria-Hungary and being married to an aristocratic noble, it is possible for her to be able to reclaim her titles."
+ MEX_join_the_central_powers: "Join the Central Powers"
+ MEX_join_the_central_powers_desc: "The Central Powers offered Mexico to join them against the USA in the Great War, though due to us being recovering from a recent civil war, we were not able to even consider the possibility. However, now that both empires have been reborn, it is time to join their call."
+ MEX_revive_the_empire: "Revive the Empire"
+ MEX_revive_the_empire_desc: "We need allies against the enemies of Mexico, and the old home of Maria Josepha in the Danube may be a helpful one."
+ MEX_no_more_nightmares: "No More Nightmares"
+ MEX_no_more_nightmares_desc: "The well-known "American Dream" only existed for the Americans themselves. While they enjoyed their riches and luxuries, many nations in Latin America were exploited by their companies and constant invasions when the current government of the invaded country didn't aligned to the US interests.Now it is time to end the "American Nightmare"." 
+
  MEX_EMPIRE_neutrality:0 "Mexican Empire"
  MEX_EMPIRE_neutrality_def:0 "the Mexican Empire"
 
@@ -437,13 +446,3 @@
  tt_MEX_racial_tensions:0 "Won't go unnoticed, will cause racial tensions in America to heighten."
 
  MEX_zoot_suit_riots_flag:0 "Zoot Suit riot happened"
-
-#COTF
- MEX_reclaim_the_dynastic_titles: "Reclaim the Dynastic Titles"
- MEX_reclaim_the_dynastic_titles_desc: "Maria de Iturbide is the daughter of Salvador de Iturbide, grandson of the first emperor of Mexico and adopted son of Maximilian von Habsburg. She would be a member of the royal house of Habsburg if it wasn't for the fact that Maximilian I renounced to his titles as archduke of Austria and prince of Hungary and Bohemia. Though, due to being born in a rich family in Austria-Hungary and being married to an aristocratic noble, it is possible for her to be able to reclaim her titles."
- MEX_join_the_central_powers: "Join the Central Powers"
- MEX_join_the_central_powers_desc: "The Central Powers offered Mexico to join them against the USA in the Great War, though due to us being recovering from a recent civil war, we were not able to even consider the possibility. However, now that both empires have been reborn, it is time to join their call."
- MEX_revive_the_empire: "Revive the Empire"
- MEX_revive_the_empire_desc: "We need allies against the enemies of Mexico, and the old home of Maria Josepha in the Danube may be a helpful one."
- MEX_no_more_nightmares: "No More Nightmares"
- MEX_no_more_nightmares_desc: "The well-known "American Dream" only existed for the Americans themselves. While they enjoyed their riches and luxuries, many nations in Latin America were exploited by their companies and constant invasions when the current government of the invaded country didn't aligned to the US interests.Now it is time to end the "American Nightmare"." 

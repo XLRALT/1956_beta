@@ -2422,6 +2422,59 @@ ideas = {
 				faction_trade_opinion_factor = -0.25
 			}
 		}
+
+		ss_recruitment = {
+			picture = generic_fascist_army
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army = 0.25
+				training_time_army_factor = -0.1
+				army_core_attack_factor = -0.1
+				army_core_defence_factor = -0.1
+				conscription_factor = -0.25
+			}
+			cancel = {
+				NOT = { has_government = fascism }
+			}
+		}
+
+		ss_army = {
+			picture = generic_fascist_army
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_weekly = 0.005
+				experience_gain_army = 0.05
+				training_time_army_factor = 0.15
+				army_morale_factor = 0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				conscription = 0.05
+				conscription_factor = -0.7
+			}
+			cancel = {
+				NOT = { has_government = fascism }
+			}
+		}
 	}
 	# TECHNOLOGY
 	tank_manufacturer = {

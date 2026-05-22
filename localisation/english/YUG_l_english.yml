@@ -6,6 +6,9 @@
  YUG_little_entente_ally:0 "The Little Entente"
  YUG_little_entente_enemy:0 "The Little Entente"
  YUG_charismatic_opportunist:0 "Charismatic Opportunist"
+ reorganizing_the_republic: "Reorganizing the Republic"
+ dye_the_balkans_red: "Dye the Balkans Red"
+ chetnik_regiments: "Chetnik Regiments"
 #  engine_factory:0 "Engine Manufacturer"
  YUG_organized_partizans:0 "Organized Partizans"
  YUG_organized_partizans_desc:0 "In order to face the threat of an invasion we must organize resistance cells in advance. Those groups will prepare caches, prepare potential dropping fields and recruit locals in order to gather intelligence. All those efforts will ensure to put a maximum of pressure on the rear of the enemies lines."
@@ -272,14 +275,6 @@
  YUG_integrate_central_albania:0 "Integrate Central Albania"
  YUG_integrate_southern_albania:0 "Integrate Southern Albania"
  YUG_integrate_northern_dobruja:0 "Integrate Northern Dobruja"
-
- news.329.t.2:1 "Yugoslavia Recognizes the Soviet Union"  #shorter version to avoid text overlap
-
-#COTF
- reorganizing_the_republic: "Reorganizing the Republic"
- dye_the_balkans_red: "Dye the Balkans Red"
- chetnik_regiments: "Chetnik Regiments"
-
  YUG_cross_the_borders: "Expand the OZNA"
  YUG_cross_the_borders_desc: "We can't sit here while our peasant brothers are repressed by our neightbour's governments. We will expand the OZNA in order be able to send guerrilla leaders and political leaders to help export the revolution."
  YUG_greater_yugoslavia: "Greater Yugoslavia"
@@ -290,3 +285,5 @@
  YUG_form_slavia_desc: "The Soviets have proved not to be able to manage a Pan-Slavic nation. It is time for the Yugoslavians to lead the future of both the Slavs and communism."
  YUG_collaborate_with_the_chetniks: "Collaborate With the Chetniks"
  YUG_collaborate_with_the_chetniks_desc: "Founded by coronel Draža Mihajlović, the Chetniks are anti-communist monarchist guerrillas. Known for their pragmatism, as well as their anti-semitism and hatred for islam, the Chetniks will fight for the kingdom until it's liberated."
+
+ news.329.t.2:1 "Yugoslavia Recognizes the Soviet Union"  #shorter version to avoid text overlap

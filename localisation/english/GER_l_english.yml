@@ -4373,8 +4373,8 @@
  r56_GER_economic_uncertainty_desc:0 "The Industrialists are anxious about the economic choices that the government has to make. Choosing whether to keep or scrap the MEFO Bills scheme for another growth scheme would ease these market anxieties about our economy at home and internationally."
  r56_ger_ersatz_idea_1:0 "Ersatzmaterialien"
  r56_ger_ersatz_idea_1_desc:0 "The economy is not getting access to all the materials it needs from international trade. We must use what we have to make substitutions."
- 
- 
+ ss_recruitment: "SS Recruitment"
+ ss_army: "SS Army"
 
  GER_enigma_machine0:0 "Enigma Machine"
  GER_enigma_machine1:0 "Improved Enigma Machine"
@@ -5278,7 +5278,3 @@
 
  SAX_friedrich_christian_ii:0 "Friedrich Christian II"
  SAX_wilhelm_buck:0 "Wilhelm Buck"
-
-#COTF
- ss_recruitment: "SS Recruitment"
- ss_army: "SS Army"
