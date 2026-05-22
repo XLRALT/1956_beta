@@ -14,42 +14,6 @@ opinion_modifiers = {
 	
 	strategic_opinion = { value = 80 }
 	
-###------> ARG <><> <><> <><> <><> <><>
-
-	demanded_falkland_islands = { value = -70 }
-	
-	arg_claim = { value = -100 }
-	
-	arg_coop = {
-		trade = yes
-		value = 50 
-	}
-	
-	demanded_georgia_island = { value = -50 }
-	
-	arg_anti_semitic_ger = { value = 50 }
-	
-	arg_anti_semitic = { value = -25 }
-	
-	broken_treaty = { value = -30 }
-	
-	have_a_plan = { value = 25 }
-	
-	americas_talks = { value = 70 }
-	
-	arg_influence = { value = 80 }
-	
-	denied_malvinas = { value = -100 }
-	
-	denied_south_georgia = { value = -100 }
-	
-	refused_coop = { value = -30 }
-	
-	arg_malbran = { 
-		trade = yes
-		value = 30 
-	}
-	
 ###------> ARM <><> <><> <><> <><> <><>
 
 	ARM_liberators = {

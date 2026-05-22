@@ -2,994 +2,530 @@
 # Argentinian Events #
 ######################
 
-add_namespace = argentina
-add_namespace = latin
+add_namespace = arg
 
-country_event = { 
-	id = argentina.1 #External Advisors
-	title = argentina.1.t
-	desc = argentina.1.d
+# choose your leader
 
-	picture = GFX_CZKE_french_mission_report
-
+country_event = {
+	id = arg.1
+	title = "Holding the elections"
+	desc = arg.1.desc
+	picture = GFX_report_event_generic_rally_3
+	timeout_days = 14
+	
 	is_triggered_only = yes
 	
 	option = {
-		name = argentina.1.eng
-		trigger = {
-			ENG = {
-				has_civil_war = no
+		name = arg.1.a
+		ai_chance = { base = 100 }
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		add_popularity = { ideology = neutrality popularity = -1 }
+		create_country_leader = {
+			name = "Roberto María Ortiz"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_ARG_Ortiz.tga"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				hope_of_argentina
 			}
-		}		
-		ENG = { country_event = { days = 1 id = argentina.5 } } #Event that lets the UK decide whether they want to help or not
+		}
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		set_party_name = { 
+			ideology = democratic
+			name = ARG_completely_fair_elections
+			long_name = ARG_completely_fair_elections_long
+		}
 	}
 	option = {
-		name = argentina.1.ger
-		trigger = {
-			GER = {
-				has_civil_war = no
+		name = arg.1.b
+		ai_chance = { base = 100 }
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		add_popularity = { ideology = neutrality popularity = -1 }
+		create_country_leader = {
+			name = "Roberto María Ortiz"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_ARG_Ortiz.tga"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				hope_of_argentina
 			}
-		}		
-		GER = { country_event = { days = 1 id = argentina.6 } } #Event that lets Germany decide whether they want to help or not
+		}
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		set_party_name = { 
+			ideology = democratic
+			name = ARG_completely_fair_elections
+			long_name = ARG_completely_fair_elections_long
+		}
 	}
 	option = {
-		name = argentina.1.sov
-		trigger = {
-			SOV = {
-				has_civil_war = no
+		name = arg.1.c
+		ai_chance = { base = 100 }
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		add_popularity = { ideology = neutrality popularity = -1 }
+		create_country_leader = {
+			name = "Roberto María Ortiz"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_ARG_Ortiz.tga"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				hope_of_argentina
 			}
-		}		
-		SOV = { country_event = { days = 1 id = argentina.7 } } #Event that lets the SOV decide whether they want to help or not
+		}
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		set_party_name = { 
+			ideology = democratic
+			name = ARG_completely_fair_elections
+			long_name = ARG_completely_fair_elections_long
+		}
 	}
 	option = {
-		name = argentina.1.usa
-		trigger = {
-			USA = {
-				has_civil_war = no
+		name = arg.1.d
+		ai_chance = { base = 100 }
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		add_popularity = { ideology = neutrality popularity = -1 }
+		create_country_leader = {
+			name = "Roberto María Ortiz"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_ARG_Ortiz.tga"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				hope_of_argentina
 			}
-		}		
-		USA = { country_event = { days = 1 id = argentina.8 } } #Event that lets the USA decide whether they want to help or not
+		}
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		set_party_name = { 
+			ideology = democratic
+			name = ARG_completely_fair_elections
+			long_name = ARG_completely_fair_elections_long
+		}
 	}
 }
 
+# roberto ortiz gets sick
 country_event = {
-	id = argentina.2 #Demand Malvinas
-	title = argentina.2.t
-	desc = argentina.2.d
+	id = arg.2
+	title = "Ortiz condition worsens"
+	desc = arg.2.d
+	picture = GFX_report_event_finnish_letter
+	timeout_days = 14
 	
 	is_triggered_only = yes
 	
-	picture = GFX_report_event_destroyers
+	option = { #
+		name = arg.2.a
+		ai_chance = { base = 100 }
+		add_country_leader_trait = infirm
+		set_country_flag = ARG_roberto_ortiz
+	}
+}
 
+# roberto ortiz gets better
+country_event = {
+	id = arg.3
+	title = "A miracle"
+	desc = arg.3.d
+	picture = GFX_report_event_generic_rally
+	timeout_days = 14
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = arg.3.a
+		ai_chance = { base = 100 }
+		add_stability = 0.1
+		remove_country_leader_trait = hope_of_argentina
+		remove_country_leader_trait = infirm
+		remove_country_leader_trait = the_absentee_president
+		add_country_leader_trait = beacon_of_hope
+		set_country_flag = ARG_roberto_ortiz_lives
+	}
+}
+
+# choose your dictator
+
+country_event = {
+	id = arg.4
+	title = "Electing the leader of the junta"
+	desc = arg.4.desc
+	picture = GFX_report_event_soviet_purge_officers_02
+	timeout_days = 14
+	
+	is_triggered_only = yes
+	
 	option = {
-		name = argentina.2.cede
-		ARG = { country_event = { days = 1 id = argentina.26} }
+		name = arg.4.a
+		ai_chance = { base = 0 }
+		create_country_leader = {
+			name = "Arturo Rawson"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_ARG_Arturo_Rawson.tga"
+			expire = "1965.1.1"
+			ideology = oligarchism
+			traits = {
+				military_junta_leader
+			}
+		}
+	}
+	option = {
+		name = arg.4.b
+		ai_chance = { base = 100 }
+		create_country_leader = {
+			name = "Pedro Pablo Ramírez"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_Argentine_Pablo_Ramirez.tga"
+			expire = "1965.1.1"
+			ideology = oligarchism
+			traits = {
+				military_junta_leader
+			}
+		}
+	}
+	option = {
+		name = arg.4.c
+		ai_chance = { base = 0 }
+		create_country_leader = {
+			name = "Edelmiro Julián Farrell"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_Argentine_Edelmiro_Farrell.tga"
+			expire = "1965.1.1"
+			ideology = oligarchism
+			traits = {
+				military_junta_leader
+			}
+		}
+	}
+	option = {
+		name = arg.4.d
+		ai_chance = { base = 0 }
+		create_country_leader = {
+			name = "Juan Domingo Perón"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_Argentina_Juan_Peron_General.tga"
+			expire = "1965.1.1"
+			ideology = oligarchism
+			traits = {
+				military_junta_leader
+			}
+		}
+	}
+}
+
+# choose your commie
+
+country_event = {
+	id = arg.5
+	title = "Electing the leader of Argentina"
+	desc = arg.5.d
+	picture = GFX_report_event_soviet_purge_officers_02
+	timeout_days = 14
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = arg.5.a
+		ai_chance = { base = 0 }
+		add_popularity = { ideology = fascism popularity = 0.2 }
+		set_politics = { ruling_party = fascism elections_allowed = no }
+		create_country_leader = {
+			name = "Juan Domingo Perón"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_Argentina_Juan_Peron_General.tga"
+			expire = "1965.1.1"
+			ideology = left_nationalism
+			traits = {
+				#
+			}
+		}
+	}
+	option = {
+		name = arg.5.b
+		ai_chance = { base = 100 }
+		add_popularity = { ideology = communism popularity = 0.1 }
+		create_country_leader = {
+			name = "Antonio Soto"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_FOP_Antonio_Soto.tga"
+			expire = "1953.3.1"
+			ideology = anarchist_communism
+			traits = {
+				#
+			}
+		}
+	}
+	option = {
+		name = arg.5.c
+		ai_chance = { base = 0 }
+		add_popularity = { ideology = communism popularity = 0.1 }
+		create_country_leader = {
+			name = "Fanny Jabcovsky"
+			desc = "POLITICS_FANNY_JABCOVSKY_DESC"
+			picture = "gfx/leaders/ARG/Portrait_FOP_Fanny_Jabcovsky.tga" 
+			expire = "1965.1.1"
+			ideology = marxism
+			female = yes
+			traits = {
+				#
+			}
+		}
+	}
+}
+
+#annex andesia
+country_event = {
+	id = arg.6
+	title = "Andesian Dream"
+	desc = arg.6.d
+	picture = GFX_report_event_generic_conference
+	timeout_days = 14
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = arg.6.a
 		ai_chance = { 
-			base = 30
+			base = 0
 			modifier = {
+				has_government = communism
 				add = 100
-				ARG = { has_army_size = { size > 30 } }
 			}
-		}
-	}
-
-	option = {
-		name = argentina.2.deny
-		ARG = { country_event = { days = 1 id = argentina.27} }
-	}	
-}
-
-country_event = {
-	id = argentina.3 #Uruguayan Occupation
-	title = argentina.3.t
-	desc = argentina.3.d
-	
-	is_triggered_only = yes
-	
-	picture = GFX_report_event_polish_army
-	
-	option = {
-		name = argentina.3.cede
-		ARG = { country_event = { days = 1 id = argentina.38 } }
-		ai_chance = { 
-			base = 30 
 			modifier = {
-				factor = 0.5
-				strength_ratio = {
-					tag = ARG
-					ratio < 0.5
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = argentina.3.deny
-		ARG = { country_event = { days = 1 id = argentina.39 } }
-	}
-}
-
-country_event = {
-	id = argentina.4 #USSR Research Agreement
-	title = argentina.4.t
-	desc = argentina.4.d
-	
-	is_triggered_only = yes
-	
-	picture = GFX_report_event_radar_01
-
-	option = {
-		name = argentina.4.accept
-		ARG = { country_event = { days = 1 id = argentina.40 } }
-		ai_chance = { 
-			base = 0 
-			modifier = {
-				add = 80
-				NOT = {
-					has_war_with = ARG
-				}
-			}
-		}
-		add_tech_bonus = {
-			name = electronics_bonus
-			bonus = 0.5
-			uses = 1
-			category = electronics
-		}
-		add_tech_bonus = {
-			name = electronics_bonus
-			bonus = 0.5
-			uses = 1
-			category = radar_tech
-		}
-		custom_effect_tooltip = generic_skip_one_line_tt
-		add_breakthrough_progress = {
-			specialization = specialization_air
-			value = 0.50
-		}
-	}
-	
-	option = {
-		name = argentina.4.refuse
-		ARG = { country_event = { days = 1 id = argentina.41 } }
-	}
-}
-
-country_event = {
-	id = argentina.5 #British Help
-	title = argentina.5.t
-	desc = argentina.5.d
-	
-	picture = GFX_report_event_eng_royal_family
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.5.help
-		ai_chance = { 
-			base = 0 
-			modifier = {
-				add = 100
-				NOT = {
-					has_war_with = ARG
-				}
-			}
-		}
-		ARG = { country_event = { days = 1 id = argentina.10 } }
-	}
-	option = {
-		name = argentina.5.refuse 
-		ARG = { country_event = { days = 1 id = argentina.9 } }
-	}
-}
-
-country_event = {
-	id = argentina.6 #German Help
-	title = argentina.6.t
-	desc = argentina.6.d
-	
-	picture = GFX_report_event_german_advisors_remain
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.6.help
-		ai_chance = { 
-			base = 100 
-			modifier = {
+				is_subject = yes
 				factor = 0
-				OR = {
-					has_war_with = ARG
-					has_opinion = {
-						target = ARG
-						value < -25
-					}
-				}
 			}
 		}
-		ARG = { country_event = { days = 1 id = argentina.11 } }
-	}
-	option = {
-		name = argentina.6.refuse 
-		ARG = { country_event = { days = 1 id = argentina.9 } }
-	}
-}
-
-country_event = {
-	id = argentina.7 #Soviet Help
-	title = argentina.7.t
-	desc = argentina.7.d
-	
-	picture = GFX_report_event_soviet_soldiers
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.7.help
-		ai_chance = { 
-			base = 100 
-			modifier = {
-				factor = 0
-				OR = {
-					has_war_with = ARG
-					has_opinion = {
-						target = ARG
-						value < -25
-					}
-				}
+		ARG = { annex_country = { target = ROOT transfer_troops = yes } }
+		ROOT = {
+			every_unit_leader = {
+				set_nationality = ARG
 			}
 		}
-		ARG = { country_event = { days = 1 id = argentina.12 } }
-	}
-	option = {
-		name = argentina.7.refuse 
-		ARG = { country_event = { days = 1 id = argentina.9 } }
-	}
-}
-
-country_event = {
-	id = argentina.8 #USA Help
-	title = argentina.8.t
-	desc = argentina.8.d
-	
-	picture = GFX_report_event_usa_destroyers
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.8.help
-		ai_chance = { 
-			base = 100 
-			modifier = {
-				factor = 0
-				OR = {
-					has_war_with = ARG
-					has_opinion = {
-						target = ARG
-						value < -25
-					}
-				}
-			}
-		}
-		ARG = { country_event = { days = 1 id = argentina.13 } }
-	}
-	option = {
-		name = argentina.8.refuse 
-		ARG = { country_event = { days = 1 id = argentina.9 } }
-	}
-}
-
-country_event = {
-	id = argentina.9 #Advisors Denial
-	title = argentina.9.t
-	desc = argentina.9.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.9.help #Ask someone else
-		ARG = { country_event = { days = 1 id = argentina.1 } }
-	}
-	option = {
-		name = argentina.9.refuse #Go our own way
-	}
-}
-
-country_event = {
-	id = argentina.10 #British Advisors
-	title = argentina.10.t
-	desc = argentina.10.d
-	
-	picture = GFX_report_event_british_inspect_troops
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.10.a
 		ARG = {
-			add_ideas = arg_british_advisors
-			if = {
+			every_state = {
 				limit = {
-					ENG = {
-						has_government = democratic
-					}
+					is_core_of = ROOT
 				}
-				add_popularity = {
-					ideology = democratic
-					popularity = 0.05
-				}
-			}			
-		}
-	}
-}
-
-country_event = {
-	id = argentina.11 #German Advisors
-	title = argentina.11.t
-	desc = argentina.11.d
-	
-	picture = GFX_report_event_german_advisors_remain
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.11.a
-		ARG = {
-			add_ideas = arg_german_advisors
-			if = {
-				limit = {
-					GER = {
-						has_government = fascism
-					}
-				}
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.05
-				}
-			}			
-		}
-
-	}
-}
-
-country_event = {
-	id = argentina.12 #Soviet Advisors
-	title = argentina.12.t
-	desc = argentina.12.d
-	
-	picture = GFX_report_event_soviet_soldiers_tank
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.12.a
-		ARG = {
-			add_ideas = arg_soviet_advisors
-			if = {
-				limit = {
-					SOV = {
-						has_government = communism
-					}
-				}
-				add_popularity = {
-					ideology = communism
-					popularity = 0.05
-				}
-			}			
-		}
-	}
-}
-
-country_event = {
-	id = argentina.13 #American Advisors
-	title = argentina.13.t
-	desc = argentina.13.d
-	
-	picture = GFX_report_event_generic_usa_treaty
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.13.a
-		ARG = {
-			add_ideas = arg_american_advisors
-			if = {
-				limit = {
-					USA = {
-						has_government = democratic
-					}
-				}
-				add_popularity = {
-					ideology = democratic
-					popularity = 0.05
-				}
-			}			
-		}
-	}
-}
-	
-country_event = {
-	id = argentina.14 #Argentina asks to join the Axis
-	title = argentina.14.t
-	desc = argentina.14.d
-	
-	picture = GFX_report_event_german_troops
-
-	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			save_event_target_as = alliance_inviter
-			FROM = {
-				save_event_target_as = alliance_applicant
-			}
-		}
-	}
-
-	option = {
-		name = argentina.14.a
-		ai_chance = { 
-			base = 80 
-			modifier = {
-				factor = 0
-				OR = {
-					has_war_with = FROM
-					has_opinion = {
-						target = FROM
-						value < -25
-					}
-				}
-			}
-		}
-		GER = { add_to_faction = FROM }
-	#	ARG = { country_event = { days = 1 id = argentina.42 } }
-		hidden_effect = {
-			set_country_flag = alliance_inviter@ROOT
-			FROM = { set_country_flag = alliance_applicant@ROOT }
-			news_event = { id = news.289 hours = 12 }
-		}		
-	}
-	option = {
-		name = argentina.14.b
-		ai_chance = { 
-			base = 20 
-			modifier = {
-				factor = 0
-				FROM = {
-					surrender_progress < 0.01
-				}
-				
-			}
-		}		
-		FROM = { country_event = { days = 1 id = argentina.43 } }
-	}
-}
-
-country_event = {
-	id = argentina.15 #Argentina asks to join the Comintern
-	title = argentina.15.t
-	desc = argentina.15.d
-
-	picture = GFX_report_event_stalin_01
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.15.a
-		ai_chance = { 
-			base = 0 
-			modifier = {
-				add = 80
-				NOT = {
-					has_war_with = FROM
-				}
-			}
-		}
-		FROM = { country_event = { days = 1 id = argentina.44 } }
-	}
-	option = {
-		name = argentina.15.b
-		FROM = { country_event = { days = 1 id = argentina.45 } }
-	}
-}
-
-country_event = {
-	id = argentina.16 #Ask for malvinas peacefuly
-	title = argentina.16.t
-	desc = argentina.16.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.16.a
-		ai_chance = { 
-			base = 0 
-			modifier = {
-				add = 100
-				NOT = {
-					has_war_with = ARG
-				}
-			}
-		}
-		ARG = { country_event = { days = 1 id = argentina.30 } }
-	}
-	option = {
-		name = argentina.16.b
-		ARG = { country_event = { days = 1 id = argentina.31 } }
-	}
-}
-
-country_event = {
-	id = argentina.17 #Ask for South Georgia
-	title = argentina.17.t
-	desc = argentina.17.d
-	
-	picture = GFX_report_event_ast_navy
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.17.a
-		ai_chance = { 
-			base = 0 
-			modifier = {
-				add = 100
-				NOT = {
-					has_war_with = ARG
-				}
-			}
-		}
-		ARG = { country_event = { days = 1 id = argentina.32 } }
-	}
-	option = {
-		name = argentina.17.b
-		ARG = { country_event = { days = 1 id = argentina.33 } }
-	}
-}
-
-country_event = {
-	id = argentina.18 #Demand South Georgia
-	title = argentina.18.t
-	desc = argentina.18.d
-	
-	picture = GFX_report_event_ast_navy
-
-	is_triggered_only = yes
-	option = {
-		name = argentina.18.a
-		ai_chance = { 
-			base = 30
-			modifier = {
-				add = 100
-				ARG = { has_army_size = { size > 30 } }
-			}
-		}
-		ARG = { country_event = { days = 1 id = argentina.28 } }
-	}
-	option = {
-		name = argentina.18.b
-		ARG = { country_event = { days = 1 id = argentina.29 } }
-	}
-}
-
-
-country_event = {
-	id = argentina.23 #Brazil Coop
-	title = argentina.23.t
-	desc = argentina.23.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.23.a
-		ai_chance = { 
-			base = 0 
-			modifier = {
-				add = 100
-				NOT = {
-					has_war_with = ARG
-				}
-			}
-		}
-		ARG = { country_event = { days = 1 id = argentina.34 } }
-		
-		502 = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-		
-		503 = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-	}
-	option = {
-		name = argentina.23.b
-		ARG = { country_event = { days = 1 id = argentina.35 } }
-	}
-}
-
-country_event = {
-	id = argentina.24 #Brazil Non-Agression
-	title = argentina.24.t
-	desc = argentina.24.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.24.a
-		ai_chance = { 
-			base = 0 
-			modifier = {
-				add = 100
-				NOT = {
-					has_war_with = ARG
-				}
-			}
-		}
-		ARG = { 
-			country_event = { days = 1 id = argentina.36 } 
-			diplomatic_relation = { country = BRA relation = non_aggression_pact }
-		}
-	}
-	option = {
-		name = argentina.24.b
-		ARG = { country_event = { days = 1 id = argentina.37 } }
-	}
-}
-
-country_event = {
-	id = argentina.25 #Join the allies
-	title = argentina.25.t
-	desc = argentina.25.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.25.a
-		ai_chance = { 
-			base = 0 
-			modifier = {
-				add = 100
-				NOT = {
-					has_war_with = ARG
-				}
-			}
-		}
-		ARG = { country_event = { days = 1 id = argentina.46 } }
-	}
-	option = {
-		name = argentina.25.b
-		ARG = { country_event = { days = 1 id = argentina.47 } }
-	}
-}
-
-country_event = {
-	id = argentina.26 #British cede the Malvinas (By force)
-	title = argentina.26.t
-	desc = argentina.26.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.26.a
-		ARG = { transfer_state = 299 }
-	}
-}
-
-country_event = {
-	id = argentina.27 #British refuse the demand of Malvinas (By force)
-	title = argentina.27.t
-	desc = argentina.27.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.27.a
-		ARG = {
-			create_wargoal = {
-				type = take_state_focus
-				target = ENG
-				generator = { 299 }
-			}
-		}
-	}
-}
-
-country_event = {
-	id = argentina.28 #British cede South georgia (By force)
-	title = argentina.28.t
-	desc = argentina.28.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.28.a
-		ARG = { transfer_state = 720 }
-	}
-}
-
-country_event = {
-	id = argentina.29 #British refuse the demand of SG (By force)
-	title = argentina.29.t
-	desc = argentina.29.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.29.a
-		ARG = {
-			create_wargoal = {
-				type = take_state_focus
-				target = ENG
-				generator = { 720 }
-			}
-		}
-	}
-}
-
-country_event = {
-	id = argentina.30 #British cede Malvinas (Peacefuly)
-	title = argentina.30.t
-	desc = argentina.30.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.30.a
-		ARG = { transfer_state = 299 }
-	}
-}
-
-country_event = {
-	id = argentina.31 #British refuse Malvinas claim (Peacefuly)
-	title = argentina.31.t
-	desc = argentina.31.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.31.a
-		add_opinion_modifier = { target = ENG modifier = denied_malvinas }
-	}
-}
-
-country_event = {
-	id = argentina.32 #British cede SG (Peacefuly)
-	title = argentina.32.t
-	desc = argentina.32.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.32.a
-		ARG = { transfer_state = 720 }
-	}
-}
-
-country_event = {
-	id = argentina.33 #British refuse SG claim (Peacefuly)
-	title = argentina.33.t
-	desc = argentina.33.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.33.a
-		add_opinion_modifier = { target = ENG modifier = denied_south_georgia }
-	}
-}
-
-country_event = {
-	id = argentina.34 #Brazil accepts coop
-	title = argentina.34.t
-	desc = argentina.34.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.34.a
-	}
-}
-
-country_event = {
-	id = argentina.35 #Brazil refuses coop
-	title = argentina.35.t
-	desc = argentina.35.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.35.a
-		add_opinion_modifier = { target = BRA modifier = refused_coop }
-	}
-}
-
-country_event = {
-	id = argentina.36 #Brazil accept Non-Agression
-	title = argentina.36.t
-	desc = argentina.36.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.36.a
-	}
-}
-
-country_event = {
-	id = argentina.37 #Brazil refuses Non-Agression
-	title = argentina.37.t
-	desc = argentina.37.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.37.a
-		add_opinion_modifier = { target = BRA modifier = refused_coop }
-	}
-}
-
-country_event = {
-	id = argentina.38 #Uruguay surrenders
-	title = argentina.38.t
-	desc = argentina.38.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.38.a
-		300 = {
-			if = {
-				limit = { is_owned_by = URG }
 				add_core_of = ARG
 			}
 		}
-		annex_country = { target = URG transfer_troops = no }
-	}
-}
-
-country_event = {
-	id = argentina.39 #Uruguay Resists
-	title = argentina.39.t
-	desc = argentina.39.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.39.a
-		create_wargoal = {
-			type = take_state_focus
-			target = URG
-			generator = { 300 1059 1060 }
+		ARG = {
+			add_ideas = andesian_federation_ARG
 		}
 	}
-}
-
-country_event = {
-	id = argentina.40 #USSR research agreement (yes)
-	title = argentina.40.t
-	desc = argentina.40.d
 	
-	is_triggered_only = yes
-	option = {
-		name = argentina.40.a
-		add_tech_bonus = {
-			name = electronics_bonus
-			bonus = 0.5
-			uses = 1
-			category = electronics
+	option = { #
+		name = arg.6.b
+		ai_chance = { 
+			base = 100
+			modifier = {
+				has_government = communism
+				factor = 0
+			}
 		}
-		add_tech_bonus = {
-			name = electronics_bonus
-			bonus = 0.5
-			uses = 1
-			category = radar_tech
+		ARG = {
+			create_wargoal = { 
+				type = annex_everything
+				target = ROOT
+			}
 		}
-		custom_effect_tooltip = generic_skip_one_line_tt
-		add_breakthrough_progress = {
-			specialization = specialization_air
-			value = 0.25
-		}	
-	}
+		ARG = {
+			every_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_claim_by = ARG
+			}
+		}
+    }
+
 }
 
+# march in buenos aires
 country_event = {
-	id = argentina.41 #USSR research agreement (no)
-	title = argentina.41.t
-	desc = argentina.41.d
+	id = arg.7
+	title = "March in Buenos Aires"
+	desc = arg.7.d
+	picture = GFX_report_event_bul_muraviev_protest
+	timeout_days = 14
 	
 	is_triggered_only = yes
-	option = {
-		name = argentina.41.a
-	}
-}
-
-#country_event = {
-#	id = argentina.42 #Argentina accepted into the axis
-#	title = argentina.42.t
-#	desc = argentina.42.d
-#	
-#	is_triggered_only = yes
-#	option = {
-#		name = argentina.42.a
-#		
-#	}
-#}
-
-country_event = {
-	id = argentina.43 #Germany says no
-	title = argentina.43.t
-	desc = argentina.43.d
 	
-	is_triggered_only = yes
-	option = {
-		name = argentina.43.a
-	}
-}
-
-country_event = {
-	id = argentina.44 #Argentina accepted into the conmitern
-	title = argentina.44.t
-	desc = argentina.44.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.44.a
-		SOV = { add_to_faction = ROOT }
-	}
-}
-
-country_event = {
-	id = argentina.45 #Soviet says no
-	title = argentina.45.t
-	desc = argentina.45.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.45.a
-	}
-}
-
-country_event = {
-	id = argentina.46 #Argentina accepted into the allies
-	title = argentina.46.t
-	desc = argentina.46.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.46.a
-		ENG = { add_to_faction = ARG }
-	}
-}
-
-country_event = {
-	id = argentina.47 #Britain says no
-	title = argentina.47.t
-	desc = argentina.47.d
-	
-	is_triggered_only = yes
-	option = {
-		name = argentina.47.a
-	}
-}
-
-country_event = {
-	id = latin.1 #Anti War Treaty (The same is used for every wave)
-	title = latin.1.t
-	desc = latin.1.d
-	
-	is_triggered_only = yes
-	option = {
-		name = latin.1.a #Sign the treaty
-		ai_chance = { base = 90 }
-		add_stability = 0.05
-		add_ideas = latin_peace
-	}
-	option = {
-		name = latin.1.b #Don't sign the treaty
-		ai_chance = { base = 10 }
-	}
-}
-
-country_event = {
-	id = latin.2 #Invitation to the Patria Grande
-	title = latin.2.t
-	desc = latin.2.d
-	
-	is_triggered_only = yes
-	option = {
-		name = latin.2.a
+	option = { #
+		name = arg.7.a
 		ai_chance = { base = 100 }
-		ARG = { add_to_faction = ROOT }
-		add_stability = 0.01
-		add_ai_strategy = {
-			type = alliance
-			id = "ARG"
-			value = 200
+		create_country_leader = {
+			name = "Manuel Carlés"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_ARG_Manuel_Carles.tga"
+			expire = "1965.1.1"
+			ideology = gen_nazism
+			traits = {
+				#
+			}
+		}
+		if = { limit = { has_war = no }
+			set_country_flag = redzones_arg_fascist
+			508 = { set_demilitarized_zone = yes }
+			509 = { set_demilitarized_zone = yes }
+			823 = { set_demilitarized_zone = yes }
+			828 = { set_demilitarized_zone = yes }
+			512 = { set_demilitarized_zone = yes }
+		}
+	}
+}
+
+# third patagonia rebelde
+country_event = {
+	id = arg.8
+	title = "Third Patagonia Rebelde"
+	desc = arg.8.d
+	picture = GFX_report_event_spr_anarchist_success
+	timeout_days = 14
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = arg.8.a
+		ai_chance = { base = 100 }
+		create_country_leader = {
+			name = "Antonio Soto"
+			desc = ""
+			picture = "gfx/leaders/ARG/Portrait_FOP_Antonio_Soto.tga"
+			expire = "1953.3.1"
+			ideology = anarchist_communism
+			traits = {
+				
+			}
+		}
+		if = { limit = { has_war = no }
+		set_country_flag = redzones_arg_commie
+		278 = { set_demilitarized_zone = yes }
+		510 = { set_demilitarized_zone = yes }
+		824 = { set_demilitarized_zone = yes }
+		}
+	}
+}
+
+# Investment - Argentina Delivers an Investment Portfolio
+country_event = {
+	id = arg.9
+	title = "Argentina delivers an investiment portfolio"
+	desc = arg.9.d
+	picture = GFX_report_event_tur_industry
+
+	is_triggered_only = yes
+
+	
+	option = {
+		name = arg.9.a #ok
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 20
+				has_opinion = {
+					target = ARG
+					value > 25
+				}
+			}
+			modifier = {
+				add = 30
+				has_opinion = {
+					target = ARG
+					value > 75
+				}
+			}
+		}
+		activate_targeted_decision = { target = ARG decision = ROOT_invest_in_turkish_state_building }
+		if = {
+			limit = {
+				has_opinion = {
+					target = ARG
+					value > 25
+				}
+			}
+			activate_targeted_decision = { target = ARG decision = ROOT_invest_in_turkish_state_light_industry }
+		}
+		if = {
+			limit = {
+				has_opinion = {
+					target = ARG
+					value > 50
+				}
+			}
+			activate_targeted_decision = { target = ARG decision = ROOT_invest_in_turkish_state_heavy_industry }
 		}
 	}
 	option = {
-		name = latin.2.b
+		name = arg.9.b #no
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 20
+				has_opinion = {
+					target = ARG
+					value < -10
+				}
+			}
+			modifier = {
+				add = 30
+				has_war = yes
+			}
+			modifier = {
+				add = 50
+				has_opinion = {
+					target = ARG
+					value < -75
+				}
+			}
+		}
+		ARG = { country_event = { id = bftb_turkey.127 days = 1 } }
+	}
+}
+
+# giv malvinas
+country_event = {
+	id = arg.10
+	title = "Argentina asks for control over the Falklands"
+	desc = arg.10.d
+	picture = GFX_report_event_japan_europe_pact
+	timeout_days = 14
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = arg.10.a
+		ai_chance = { base = 100 }
+		ARG = {
+			transfer_state = 299
+			if = {
+				limit = { ROOT = { owns_state = 720 } }
+				transfer_state = 720
+			}
+		}
+	}
+
+	option = { #
+		name = arg.10.b
 		ai_chance = { base = 0 }
+		
+	}
+}
+
+# no
+country_event = {
+	id = arg.11
+	title = "[FROM.GetLeader] refuses"
+	desc = arg.11.d
+	picture = GFX_report_event_japan_europe_pact
+	timeout_days = 14
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = arg.11.a
+		ai_chance = { base = 100 }
 	}
 }

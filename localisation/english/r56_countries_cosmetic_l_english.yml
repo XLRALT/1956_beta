@@ -3357,3 +3357,47 @@
  YUG_slavia_neutrality:0 "Slavia"
  YUG_slavia_neutrality_DEF:0 "Slavia"
  YUG_slavia_ADJ:0 "Slavian"
+
+ #Argentine Confederation
+ ARG_names_fascism:0 "Argentine Confederation"
+ ARG_names_fascism_DEF:0 "the Argentine Confederation"
+ ARG_names_communism:0 "Argentine Syndicates"
+ ARG_names_communism_DEF:0 "the Argentine Syndicates"
+
+ #La Plata
+ ARG_LPT_fascism:0 "La Plata"
+ ARG_LPT_neutrality:0 "La Plata"
+ ARG_LPT_democratic:0 "Federation of La Plata"
+ ARG_LPT_communism:0 "Communes of La Plata"
+ ARG_LPT_fascism_DEF:0 "La Plata"
+ ARG_LPT_neutrality_DEF:0 "La Plata"
+ ARG_LPT_democratic_DEF:0 "the Federation of La Plata"
+ ARG_LPT_communism_DEF:0 "the Communes of La Plata"
+ ARG_LPT_ADJ:0 "Platense"
+
+ #Peronist Argentina
+ ARG_peron_fascism:0 "Republic of Argentina"
+ ARG_peron_fascism_DEF:0 "the Republic of Argentina"
+
+ #Argentine Confederation Communist
+ ARG_commie_fascism:0 "Argentine Confederation"
+ ARG_commie_fascism_DEF:0 "the Argentine Confederation"
+ ARG_commie_communism:0 "Argentine Syndicates"
+ ARG_commie_communism_DEF:0 "the Argentine Syndicates"
+
+ #Andesia
+ ARG_andesia_fascism:0 "Andesian State"
+ ARG_andesia_neutrality:0 "Andesian Commune"
+ ARG_andesia_democratic:0 "Andesian Federation"
+ ARG_andesia_communism:0 "Andesia"
+ ARG_andesia_fascism_DEF:0 "the Andesian State"
+ ARG_andesia_neutrality_DEF:0 "the Andesian Commune"
+ ARG_andesia_democratic_DEF:0 "the Andesian Federation"
+ ARG_andesia_communism_DEF:0 "Andesia"
+ ARG_andesia_ADJ:0 "Andesian"
+
+ #Argentine Confederation Communist 2
+ ARG_commie_2_fascism:0 "Argentine Confederation"
+ ARG_commie_2_fascism_DEF:0 "the Argentine Confederation"
+ ARG_commie_2_communism:0 "Argentine Union"
+ ARG_commie_2_communism_DEF:0 "the Argentine Union"
