@@ -23,7 +23,7 @@ characters={
 		}
 		country_leader={
 			ideology=socialism
-			traits={ stout_defender }
+			traits={ tenacious_negotiator stout_defender }
 			expire="1965.1.1"
 			id=-1
 		}
@@ -1770,7 +1770,7 @@ characters={
 
 		country_leader={
 			ideology=socialism
-			traits={ r56_trait_opposed_to_fascism }
+			traits={ r56_trait_opposed_to_fascism reluctant_interventionist }
 			expire="1965.1.1"
 			id=-1
 		}
