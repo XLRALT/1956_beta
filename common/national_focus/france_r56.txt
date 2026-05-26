@@ -79,62 +79,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY }
 	}
 	focus = {
-		id = FRA_rearmament
-		icon = GFX_goal_generic_build_tank
-		cost = 10
-		x = 11
-		y = 0
-		available = {
-			OR = {
-				threat > 0.05
-				GER = {
-					has_completed_focus = GER_remilitarize_the_rhineland
-				}
-				has_war_support > 0.2
-			}
-		}
-		bypass = {
-			OR = {
-				has_idea = low_economic_mobilisation
-				has_idea = partial_economic_mobilisation
-				has_idea = war_economy
-				has_idea = tot_economic_mobilisation
-			}
-		}
-		
-		ai_will_do = {
-			factor = 2
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					OR = {
-						GER = {
-							has_added_tension_amount > 5
-						}
-						ITA = {
-							has_added_tension_amount > 5
-						}
-						ENG = {
-							has_added_tension_amount > 5
-						}
-					}
-				}
-				add_war_support = 0.05
-			}
-			if = {
-				limit = {
-					has_idea = civilian_economy
-				}
-				swap_ideas = {
-					remove_idea = civilian_economy
-					add_idea = low_economic_mobilisation
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
-	}
-	focus = {
 		id = FRA_radicalize_front
 		icon = GFX_goal_support_communism
 		cost = 10
@@ -143,8 +87,7 @@ focus_tree = {
 			focus = FRA_far_right_leagues
 			focus = FRA_action_francaise
 		}
-		relative_position_id = FRA_rearmament	#dont use political ones, which may be hidden
-		x = 6
+		x = 16
 		y = 0
 		allow_branch = {
 			if = {
@@ -205,8 +148,7 @@ focus_tree = {
 			
 			has_country_flag = FRA_1936_election
 		}
-		relative_position_id = FRA_rearmament	#dont use political ones, which may be hidden
-		x = 15
+		x = 25
 		y = 0
 		offset = {
 			x = -5
@@ -283,8 +225,7 @@ focus_tree = {
 			focus = FRA_radicalize_front
 			focus = FRA_action_francaise
 		}
-		relative_position_id = FRA_rearmament	#dont use political ones, which may be hidden
-		x = 26
+		x = 36
 		y = 0
 		offset = {
 			x = -17
@@ -340,8 +281,7 @@ focus_tree = {
 			focus = FRA_radicalize_front
 			focus = FRA_far_right_leagues
 		}
-		relative_position_id = FRA_rearmament	#dont use political ones, which may be hidden
-		x = 39
+		x = 49
 		y = 0
 		offset = {
 			x = -20
@@ -2628,329 +2568,7 @@ focus_tree = {
 			remove_worker_shortage_effect = yes
 		}
 	}
-	focus = {
-		id = FRA_war_material_licence
-		icon = GFX_goal_ammunitions
-		cost = 10
-		prerequisite = {
-			focus = FRA_rearmament
-		}
-		x = 10
-		y = 1
-		
-		ai_will_do = {
-			factor = 2
-		}
 
-		available = {
-			has_war_support > 0.2 #just making sure you aren't meta gaming
-		}
-		continue_if_invalid = yes
-		completion_reward = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}    
-				country_event = {
-					id = france.aat.2
-					hours = 12
-				}
-			}
-			else = {
-				country_event = {
-					id = france.130
-					hours = 12
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-					is_core_of = ROOT
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					is_core_of = ROOT
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = FRA_commit_automobile_manufacturer
-		icon = GFX_goal_generic_automobile
-		cost = 10
-		prerequisite = {
-			focus = FRA_rearmament
-		}
-		x = 12
-		y = 1
-		
-		ai_will_do = {
-			factor = 2
-		}
-		continue_if_invalid = yes
-		available = {
-			has_war_support > 0.2 #just making sure you aren't meta gaming
-		}
-
-		completion_reward = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}    
-				country_event = {
-					id = france.aat.1
-					hours = 12
-				}
-			}
-			else = {
-				country_event = {
-					id = france.131
-					hours = 12
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-					is_core_of = ROOT
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					is_core_of = ROOT
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = FRA_defense_national_funds
-		icon = GFX_goal_generic_national_defense_fund
-		cost = 10
-		prerequisite = {
-			focus = FRA_commit_automobile_manufacturer
-		}
-		prerequisite = {
-			focus = FRA_war_material_licence
-		}
-		continue_if_invalid = yes
-		available = {
-			has_war_support > 0.25
-			OR = {
-				threat > 0.25
-				any_home_area_neighbor_country = {
-					has_added_tension_amount > 10
-				}
-			}
-		}
-		x = 11
-		y = 2
-		bypass = {
-			has_war = yes
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		completion_reward = {
-			unlock_decision_tooltip = FRA_nationalize_industy
-			add_ideas = FRA_industrial_support1
-			custom_effect_tooltip = FRA_defense_national_funds_tooltip
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
-	}
-	focus = {
-		id = FRA_partial_mobilization
-		icon = GFX_mobilisation
-		cost = 10
-		prerequisite = {
-			focus = FRA_defense_national_funds
-		}
-		x = 11
-		y = 3
-		continue_if_invalid = yes
-		available = {
-			has_war_support > 0.25
-			OR = {
-				threat > 0.25
-				any_home_area_neighbor_country = {
-					has_added_tension_amount > 15
-				}
-			}
-		}
-		bypass = {
-			OR = {
-				has_idea = partial_economic_mobilisation
-				has_idea = war_economy
-				has_idea = tot_economic_mobilisation
-			}
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		completion_reward = {
-			add_war_support = 0.05
-			add_ideas = partial_economic_mobilisation
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
-	}
-	focus = {
-		id = FRA_military_complex_nationalisation
-		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10
-		prerequisite = {
-			focus = FRA_partial_mobilization
-		}
-		x = 10
-		y = 4
-		ai_will_do = {
-			factor = 1.2
-		}
-		completion_reward = {
-			unlock_decision_tooltip = FRA_nationalize_military_complex
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = paul_faure
-		}
-	}
-	focus = {
-		id = FRA_aircraft_manufacturer_nationalisation
-		icon = GFX_goal_generic_air_production
-		cost = 10
-		prerequisite = {
-			focus = FRA_partial_mobilization
-		}
-		x = 12
-		y = 4
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			FRA_air_force_improvement = yes
-			unlock_decision_tooltip = FRA_nationalize_aircraft
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = felix_gouin
-		}
-	}
-	focus = {
-		id = FRA_war_effort_law
-		icon = GFX_goal_generic_more_territorial_claims
-		cost = 10
-		prerequisite = {
-			focus = FRA_military_complex_nationalisation
-			focus = FRA_aircraft_manufacturer_nationalisation
-		}
-		x = 11
-		y = 5
-		continue_if_invalid = yes
-		available = {
-			has_war_support > 0.30
-			threat > 0.30
-		}
-		bypass = {
-			OR = {
-				has_idea = war_economy
-				has_idea = tot_economic_mobilisation
-			}
-		}
-		ai_will_do = {
-			factor = 1.5
-		}
-		completion_reward = {
-			add_war_support = 0.05
-			add_ideas = war_economy
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
-	}
-	focus = {
-		id = FRA_wartime_organisation_act
-		icon = GFX_goal_generic_production
-		cost = 10
-		prerequisite = {
-			focus = FRA_defense_national_funds
-		}
-		continue_if_invalid = yes
-		available = {
-			OR = {
-				has_war = yes
-				AND = {
-					has_war_support > 0.5
-					has_stability > 0.5
-				}
-			}
-		}
-		x = 13
-		y = 3
-		ai_will_do = {
-			factor = 1.5
-		}
-		completion_reward = {
-			add_ideas = FRA_wartime_focus
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-	focus = {
-		id = FRA_further_armament_program
-		icon = GFX_focus_secret_rearmament
-		cost = 10
-		prerequisite = {
-			focus = FRA_wartime_organisation_act
-		}
-		continue_if_invalid = yes
-		available = {
-			has_war_support > 0.35
-		}
-		x = 13
-		y = 5
-		ai_will_do = {
-			factor = 1.5
-		}
-		
-		completion_reward = {
-			add_ideas = FRA_armament_program
-		}
-	}
 	focus = {
 		id = FRA_intervention_committee
 		icon = GFX_focus_ger_great_red_menace

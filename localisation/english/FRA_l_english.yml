@@ -431,8 +431,6 @@
 
 	#### REARMEMENT FOCUS ####
 
- FRA_rearmament:0 "Rearmament"
- FRA_rearmament_desc:0 "A resurgent [GER.GetNameDef] grows stronger by each day. Better late than never, we need to rearm our country."
  FRA_military_complex_nationalisation:0 "Military Complex Nationalization"
  FRA_military_complex_nationalisation_desc:0 "Our fabrication facilities and production capacity are still limited. We can force the nationalization of some crucial manufacturers to reach some real production efficiency."
  FRA_defense_national_funds:0 "Defense National Funds"
