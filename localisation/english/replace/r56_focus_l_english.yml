@@ -1,6 +1,10 @@
 ﻿l_english:
 #focus_l_english
  #TODO - France Only
+ FRA_extra_research_slot: "National Center for Scientific Research" #edit
+ FRA_extra_research_slot_desc: "To coordinate the activity of our current research laboratories, we must merge all of the organisms to a national center to boost our research capacity." #edit
+ FRA_extra_research_slot_2: "Research Grants" #edit
+ FRA_extra_research_slot_2_desc: "To galvanize our national research production, we could give our best scientist teams more grants. Advances in technology can provide us with the edge where we most need it." #edit
  FRA_jet_effort_desc: "Air combat is all about mobility. The jet engine is such a decisive advancement that the enemy pilots will seem to stand still while we rip them out of the sky." #edit
  FRA_defensive_focus: "Giraud Plan" #edit
  FRA_defensive_focus_desc: "In times like these, it is best to strengthen our defenses. If there are threats, let them come to us so that we can deal with them on our land. We have a perfect candidate to lead our army; all we need is the word to do so." #edit
