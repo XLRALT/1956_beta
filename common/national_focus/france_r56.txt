@@ -1,6 +1,6 @@
 #!gfx:interface\r56_goals.gfx
 focus_tree = {
-	id = french_focus
+	id = french_focus_r56
 	country = {
 		factor = 0
 		modifier = {
