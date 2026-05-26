@@ -619,15 +619,7 @@ country_event = { #war continues: france gets talented new officers, 5th De Gaul
 		name = axis_minors_vichy_france.12.a
 		army_experience = 5	
 		set_country_flag = de_gaulle_commander
-		add_corps_commander_role = {
-			character = FRA_charles_de_gaulle
-			traits = {  panzer_leader armor_officer harsh_leader media_personality }
-			skill = 4
-			attack_skill = 4
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 2
-		}
+		show_unit_leaders_tooltip = FRA_charles_de_gaulle
 	}	
 }
 country_event = { #event to stabilize the northern occupation zone and the border with Vichy France, expand later to take into account the restauration of France in the new european order

@@ -373,6 +373,23 @@ characters={
 				}
 			}
 		}
+
+		corps_commander = {
+			traits = { panzer_leader armor_officer harsh_leader media_personality }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+			visible = {
+				if = {
+					limit = {
+						tag = VIC
+					}
+					has_country_flag = de_gaulle_commander
+				}
+			}
+		}
 	}
 	FRA_henri_giraud={
 		name="Henri Giraud"
@@ -1115,7 +1132,7 @@ characters={
 
 		advisor={
 			slot = political_advisor
-			idea_token = FRA_charles_maurras
+			idea_token = charles_maurras
 			allowed = {
 				original_tag = FRA
 			}
@@ -1714,8 +1731,8 @@ characters={
 		}
 	}
 
-	FRA_léon_blum={
-		name="Léon Blum"
+	FRA_leon_blum={
+		name=FRA_leon_blum
 		portraits={
 			army={
 				small="GFX_idea_leon_blum"
@@ -1981,7 +1998,7 @@ characters={
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = FRA_georges_bonnet
+			idea_token = georges_bonnet
 			allowed = {
 				original_tag = FRA
 			}

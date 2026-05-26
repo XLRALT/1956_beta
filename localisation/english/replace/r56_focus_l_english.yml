@@ -1,6 +1,18 @@
 ﻿l_english:
 #focus_l_english
- #TODO
+ #TODO - France Only
+ FRA_jet_effort_desc: "Air combat is all about mobility. The jet engine is such a decisive advancement that the enemy pilots will seem to stand still while we rip them out of the sky." #edit
+ FRA_defensive_focus: "Giraud Plan" #edit
+ FRA_defensive_focus_desc: "In times like these, it is best to strengthen our defenses. If there are threats, let them come to us so that we can deal with them on our land. We have a perfect candidate to lead our army; all we need is the word to do so." #edit
+ FRA_aggressive_focus: "De Gaulle Strategy" #edit
+ FRA_alpine_forts_desc: "The [ITA.GetAdjective]s won't cross the border so easily once we finish covering the Alps with our newly planned line of defense. We will have time to respond and reinforce our position." #dynamic
+ FRA_extend_the_maginot_line_desc: "We cannot count on [BEL.GetNameDef] to hold their ground; if they let enemy armies through, we might be in trouble. Extending the Maginot Line is crucial to keeping unwanted troops out of [FRA.GetNameDef]!" #typo, edit, dynamic
+ FRA_infantry_focus: "Levée en Masse" #caps
+ FRA_infantry_focus_desc: "All men and women who can fight will do so. We should put government resources into the production and improvement of infantry weapons." #edit
+ FRA_artillery_focus_desc: "Our Artillery will form a single powerful unit to focus fire on specific points. We will weaken the enemy line and punch our way through one volley at a time if we have to!" #edit
+ FRA_motorized_focus_desc: "Finding better ways to build our infantry vehicles will help us support and reinforce the front lines." #edit
+ FRA_mechanized_focus_desc: "Tanks are the way forward in the military industry. We want to control the battlefield, and we will need new powerful Tanks!" #edit
+ FRA_army_reform_desc: "No infantry unit or high-tech tank alone will win us the war. We must put our efforts into developing both our tactical and strategical capabilities. With the right people on the job, we can evolve as an army." #typo
 #aat_focus_l_english
  SWE_revoke_anti_militia_laws: "Revoke Anti-Militia Laws" #caps
  SWE_hemvarnet: "Hemvärnet"
