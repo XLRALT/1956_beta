@@ -18,7 +18,7 @@ focus_tree = {
 	focus = {
 		id = FRA_devalue_the_franc
 		icon = GFX_focus_fra_devalue_the_franc
-		x = 0
+		x = 4
 		y = 0
 		
 		prerequisite = {}
@@ -46,7 +46,7 @@ focus_tree = {
 	focus = {
 		id = FRA_autoroutes
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 2
+		x = -2
 		y = 1
 		
 		prerequisite = { focus = FRA_devalue_the_franc }
@@ -130,7 +130,7 @@ focus_tree = {
 		id = FRA_sncf
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
-		x = 6
+		x = 2
 		y = 1
 		
 		prerequisite = { focus = FRA_devalue_the_franc }
@@ -197,7 +197,7 @@ focus_tree = {
 		id = FRA_tools_modernisation
 		icon = GFX_goal_generic_production2
 		cost = 10
-		x = 8
+		x = 4
 		y = 1
 		
 		prerequisite = { focus = FRA_devalue_the_franc }
@@ -236,7 +236,7 @@ focus_tree = {
 	focus = {
 			id = FRA_invest_in_the_metropole
 			icon = GFX_goal_generic_construct_civilian
-			x = 0
+			x = -4
 			y = 1
 			
 			prerequisite = { focus = FRA_devalue_the_franc }
@@ -275,13 +275,13 @@ focus_tree = {
 			}
 		}
 		x = 0
-		y = 2
+		y = 1
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}		
 		prerequisite = { focus = FRA_invest_in_the_metropole }
-		relative_position_id = FRA_devalue_the_franc
+		relative_position_id = FRA_invest_in_the_metropole
 
 		bypass = {
 			
@@ -829,7 +829,7 @@ focus_tree = {
 	focus = {
 		id = FRA_invest_in_the_colonies
 		icon = GFX_goal_generic_bills
-		x = 4
+		x = 0
 		y = 1
 		
 		prerequisite = { focus = FRA_devalue_the_franc }
