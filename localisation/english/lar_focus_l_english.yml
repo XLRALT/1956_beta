@@ -823,10 +823,10 @@
  FRA_diplomatic_freedom_desc:1 "The republican governments have shackled themselves to artificial constructs in Eastern Europe who will fall the moment we withdraw our aid. They are liabilities, not assets, and as such we will divest ourselves of them."
  FRA_latin_entente:0 "Latin Entente"
  FRA_latin_entente_desc:1 "The brotherhood that exists between the successor states of the Roman Empire is undeniable. The Germanic people of Europe have ruled the continent for too long. It is time that we reclaimed our national birthright."
- FRA_reach_out_to_spain:0 "Reach Out To Spain"
- FRA_reach_out_to_spain_desc:0 "Freshly recovered from its civil war, Spain is our natural ally in our attempt to reshape the continent."
-#  FRA_invite_portugal:0 "Invite Portugal" # R56
-#  FRA_invite_portugal_desc:1 "While her colonial empire has been much diminished, the flame of exploration and conquest still burns in the heart of every Portuguese." # R56
+ FRA_reach_out_to_spain:0 "Convince Spain"
+ FRA_reach_out_to_spain_desc:0 "Franco and the Spanish nationalists are our natural allies, united by religion, culture, and ideology. Together, we will protect the Latins from the [GER.GetAdjective] threat."
+ FRA_invite_portugal:0 "Invite [POR.GetNameDef]"
+ FRA_invite_portugal_desc:1 "As a Latin country, [POR.GetNameDef] is a natural ally of the [FRA.GetAdjective] people. We must strengthen these bonds of friendship."
  FRA_compensate_italy:0 "Compensate Italy"
  FRA_compensate_italy_desc:0 "In the past, conflicts over some tiny stretches of desert have drawn our nations into conflict. Such nonsense is easily stopped, and a mutually agreeable outcome can quickly be found."
  FRA_intervention_in_greece:0 "Intervention in Greece"

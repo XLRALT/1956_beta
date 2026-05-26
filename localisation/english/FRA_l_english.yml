@@ -526,8 +526,6 @@
  FRA_industrial_decentralization_desc:0 "Decentralization of the industry will allow better democratization of labor, bringing us closer to workers' control over the economy."
 	#### FASCIST FOCUS ####
 
- FRA_far_right_leagues:0 "Far-Right Leagues"
- FRA_far_right_leagues_desc:0 "The far-right leagues are several [FRA.GetAdjective] far-right movements opposed to parliamentarism, which mainly dedicated themselves to military parades, street brawls, demonstrations, and riots. To unite [FRA.GetNameDef], we could use them to assert our superiority and strength, to avoid succumbing to decay."
  FRA_front_liberte:0 "Front de la Liberté"
  FRA_front_liberte_desc:0 "To oppose us against the Popular Front, we must form an anti-Marxist alliance with the other right-wing movements. This Front de la Liberté will federate those who protest against collectivism."
  FRA_support_ppf:0 "French Popular Party"
@@ -554,8 +552,6 @@
  FRA_woo_italy_desc:0 "[ITA.GetNameDefCap] has the potential to become a mighty nation. Thanks to the strong leadership of [ITA.GetLeader], the people of [ITA.GetNameDef] are united and ready to fight for the right cause. Let that cause be ours."
  FRA_dismantle_germany:0 "Dismantle [GER.GetNameDef]"
  FRA_dismantle_germany_desc:0 "The [GER.GetAdjective]s have left us with no other choice. For the sake of [FRA.GetNameDef] and the future of our children, it is time for war."
- FRA_convince_spain:0 "Convince Spain"
- FRA_convince_spain_desc:0 "Franco and the Spanish nationalists are our natural allies, united by religion, culture, and ideology. Together, we will protect the Latins from the [GER.GetAdjective] threat."
  FRA_plan_xiv:0 "Plan XIV"
  FRA_plan_xiv_desc:0 "We have already secured the north. Only [SWI.GetNameDefCap] remains as a potential path to reach us. We cannot tolerate that."
  FRA_nothern_italy_claim:0 "[ITA.GetAdjective] Claims"
@@ -587,8 +583,6 @@
  FRA_union_latins_desc:0 "An alliance based upon common Latin civilization and culture in Europe ([ITA.GetNameDef], [FRA.GetNameDef], Spain, [POR.GetNameDef], and [ROM.GetNameDef]) will balance the power between us and Germany. Let's start with [ROM.GetNameDef]; they can retain stability with our backing."
  FRA_restoration:0 "Restoration"
  FRA_restoration_desc:0 "It's time to end the Republic and return France to its natural heir. The new monarchy will unite the people behind a strong leader."
- FRA_invite_portugal:0 "Invite [POR.GetNameDef]"
- FRA_invite_portugal_desc:0 "As a Latin country, [POR.GetNameDef] is a natural ally of the [FRA.GetAdjective] people. We must strengthen these bonds of friendship."
  FRA_retake_haiti:0 "Retake Haiti"
  FRA_retake_haiti_desc:0 "Haiti was lost because of a slave revolt after the Revolution. If we want to enforce our positions in the Caribbeans and recover our prestige, we must retake it by any means."
  FRA_recover_quebec:0 "Recover Quebec"
