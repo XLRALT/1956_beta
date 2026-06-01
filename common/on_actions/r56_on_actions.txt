@@ -1606,12 +1606,12 @@ on_actions = {
 							traits = { trickster guerilla_fighter }
 						}
 						add_naval_commander_role = {
-							Character = INS_yos_sudarso
+							character = INS_yos_sudarso
 							skill = 2
 							attack_skill = 2
 							defense_skill = 3
-							planning_skill = 2
-							logistics_skill = 2
+							maneuvering_skill = 2
+							coordination_skill = 2
 						}
 						every_core_state = { # all states are automatically given to INS, return allied-occupied ones to HOL
 							limit = {
