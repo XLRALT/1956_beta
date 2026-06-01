@@ -5,7 +5,7 @@ country_event = {
 	id = czech.1
 	title = czech.1.t
 	desc = czech.1.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -42,7 +42,7 @@ country_event = {
 	id = czech.2
 	title = czech.1.t
 	desc = czech.2.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -61,7 +61,7 @@ country_event = {
 	id = czech.3
 	title = czech.1.t
 	desc = czech.3.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -79,7 +79,7 @@ country_event = {
 	id = czech.4
 	title = czech.4.t
 	desc = czech.4.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -121,7 +121,7 @@ country_event = {
 	id = czech.5
 	title = czech.4.t
 	desc = czech.5.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -142,7 +142,7 @@ country_event = {
 	id = czech.6
 	title = czech.4.t
 	desc = czech.6.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -160,7 +160,7 @@ country_event = {
 	id = czech.7
 	title = czech.7.t
 	desc = czech.7.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -201,7 +201,7 @@ country_event = {
 	id = czech.8
 	title = czech.7.t
 	desc = czech.8.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -222,7 +222,7 @@ country_event = {
 	id = czech.9
 	title = czech.7.t
 	desc = czech.9.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -240,7 +240,7 @@ country_event = {
 	id = czech.10
 	title = czech.7.t
 	desc = czech.10.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -285,7 +285,7 @@ country_event = {
 	id = czech.11
 	title = czech.7.t
 	desc = czech.11.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -307,7 +307,7 @@ country_event = {
 	id = czech.12
 	title = czech.7.t
 	desc = czech.12.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -325,7 +325,7 @@ country_event = {
 	id = czech.14
 	title = czech.14.t
 	desc = czech.14.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -377,16 +377,11 @@ country_event = {
 			target = SLO
 			type = annex_everything
 		}
-		every_state = {
-			limit = { is_owned_by = SLO }
-			add_core_of = SLO
-		}
-		if = {
-			limit = {
-				664 = { NOT = { is_owned_by = SLO } }
-			}
-			SLO = { add_state_claim = 664 }
-		}
+		SLO = { add_state_core = 70 }
+		SLO = { add_state_core = 71 }
+		SLO = { add_state_core = 73 }
+		SLO = { add_state_core = 664 }
+		SLO = { add_state_core = 996 } #r56
 		
 		hidden_effect = {
 			SLO = {
@@ -419,7 +414,7 @@ country_event = {
 	id = czech.15
 	title = czech.14.t
 	desc = czech.15.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -438,7 +433,7 @@ country_event = {
 	id = czech.16
 	title = czech.16.t
 	desc = czech.16.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -475,7 +470,7 @@ country_event = {
 	id = czech.17
 	title = czech.16.t
 	desc = czech.17.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -493,7 +488,7 @@ country_event = {
 	id = czech.18
 	title = czech.16.t
 	desc = czech.18.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -511,7 +506,7 @@ country_event = {
 	id = czech.19
 	title = czech.19.t
 	desc = czech.19.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -527,10 +522,48 @@ country_event = {
 		puppet = CZE
 		CZE = {
 			country_event = { id = czech.20 hours = 6 }
+			if = {
+				limit = {
+					has_dlc = "Peace For Our Time"
+				}
+				# transfer_units_fraction= {
+				# 	target = GER
+				# 	stockpile_ratio = 0.75
+				# 	army_ratio = 0.75
+				# 	navy_ratio = 0.75
+				# 	air_ratio = 0.75
+				# }
+				promote_character = CZE_jaroslav_krejchi	#replace Gadja
+				if = {
+					limit = {
+						has_power_balance = {
+							id = CZE_bop_army_readiness
+						}
+					}
+					effect_tooltip = {
+						remove_power_balance = {
+							id = CZE_bop_army_readiness
+						}
+					}
+					hidden_effect = {
+						CZE_bop_stop_the_bop_and_give_final_idea = yes
+						remove_ideas = CZE_ready_for_anything_idea	#normally you get this as a reward for removing, but nu uh, you don't deserve it
+					}
+				}
+			}
 		}
 		
 		hidden_effect = {
-			
+			if = {
+				limit = {
+					RKH = {
+						exists = no #Hey, you never know
+					}
+				}
+				CZE = {
+					set_cosmetic_tag = RKH
+				}
+			}
 		}
 	}
 	
@@ -553,7 +586,7 @@ country_event = {
 	id = czech.20
 	title = czech.20.t
 	desc = czech.20.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -562,6 +595,12 @@ country_event = {
 		effect_tooltip = {
 			GER = {
 				puppet = CZE
+			}
+			if = {
+				limit = {
+					has_dlc = "Peace For Our Time"
+				}
+				promote_character = CZE_jaroslav_krejchi	#replace Gadja
 			}
 		}
 		hidden_effect = {
@@ -574,7 +613,7 @@ country_event = {
 	id = czech.21
 	title = czech.21.t
 	desc = czech.21.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -592,7 +631,7 @@ country_event = {
 	id = czech.22
 	title = czech.22.t
 	desc = czech.22.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -604,6 +643,8 @@ country_event = {
 		GER = {
 			add_state_core = 69
 			transfer_state = 69
+			#add_state_core = 1078 #r56
+			#transfer_state = 1078 #r56
 			add_state_core = 74
 			transfer_state = 74
 		}
@@ -612,7 +653,7 @@ country_event = {
 				AUS = {
 					OR = {
 						is_in_faction_with = GER
-						is_puppet_of = GER
+						is_subject_of = GER
 					}
 				}
 			}
@@ -655,7 +696,7 @@ country_event = {
 	id = czech.23
 	title = czech.22.t
 	desc = czech.23.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -672,7 +713,7 @@ country_event = {
 	id = czech.24
 	title = czech.22.t
 	desc = czech.24.d
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -690,7 +731,7 @@ country_event = {
 	id = czech.25
 	title = czech.25.t
 	desc = czech.25.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -734,7 +775,7 @@ country_event = {
 	id = czech.26
 	title = czech.25.t
 	desc = czech.26.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -757,7 +798,7 @@ country_event = {
 	id = czech.27
 	title = czech.25.t
 	desc = czech.27.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -775,7 +816,7 @@ country_event = {
 	id = czech.28
 	title = czech.28.t
 	desc = czech.27.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -819,7 +860,7 @@ country_event = {
 	id = czech.29
 	title = czech.28.t
 	desc = czech.26.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -842,7 +883,7 @@ country_event = {
 	id = czech.30
 	title = czech.28.t
 	desc = czech.27.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -860,7 +901,7 @@ country_event = {
 	id = czech.32
 	title = czech.32.t
 	desc = czech.32.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -905,7 +946,7 @@ country_event = {
 	id = czech.33
 	title = czech.32.t
 	desc = czech.33.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -932,7 +973,7 @@ country_event = {
 	id = czech.34
 	title = czech.32.t
 	desc = czech.34.d
-	picture = GFX_report_event_hitler_handshake
+	picture = GFX_report_event_generic_handshake
 	
 	is_triggered_only = yes
 	
@@ -964,8 +1005,9 @@ country_event = {
 				OR = {
 					has_cosmetic_tag = CZE_union
 					has_cosmetic_tag = CZE_second_republic
-					has_cosmetic_tag = UBF_united_balkan_federation
+					has_cosmetic_tag = CZE_union_expanded
 					has_cosmetic_tag = CZE_fall_of_the_republic
+					has_cosmetic_tag = CZE_CEF
 				}
 				SLO = {
 					is_subject_of = ROOT
@@ -990,6 +1032,7 @@ country_event = {
 	
 	trigger = {
 		original_tag = CZE
+		has_cosmetic_tag = CZE_ONLY	#The DLC autonomist path can reach at least 4 cosmetic tags while having the global flag be true, a union with Poland, the CEF, 2nd republic and Austria-Hungary (=Great Moravia)
 		OR = {
 			owns_state = 70
 			owns_state = 71
