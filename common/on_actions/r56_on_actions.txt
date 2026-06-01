@@ -145,13 +145,25 @@ on_actions = {
 						name = "AIFB"
 						long_name = "All India Forward Bloc"
 					}
-					create_country_leader = {
-						name = "Subhas Chandra Bose"
-						picture = "gfx/leaders/RAJ/r56_portrait_RAJ_Subhas_Chadra_Bose.dds"
-						expire = "1965.1.1"
-						ideology = despotism
-						traits = {
-							indomitable_perseverance
+					if = {
+						limit = {
+							NOT = {
+								has_character = RAJ_subhas_chanda_bose
+							}
+						}
+						RAJ_subhas_chanda_bose = {
+							set_nationality = PREV
+						}
+					}
+					add_country_leader_role = {
+						character = RAJ_subhas_chanda_bose
+						promote_leader = yes
+						country_leader = {
+							ideology = despotism
+							expire = 1965.1.1
+							traits = {
+								indomitable_perseverance
+							}
 						}
 					}
 				}
@@ -4716,13 +4728,25 @@ on_actions = {
 					name = "AIFB"
 					long_name = "All India Forward Bloc"
 				}
-				create_country_leader = {
-					name = "Subhas Chandra Bose"
-					picture = "gfx/leaders/RAJ/r56_portrait_RAJ_Subhas_Chadra_Bose.dds"
-					expire = "1965.1.1"
-					ideology = despotism
-					traits = {
-						indomitable_perseverance
+				if = {
+					limit = {
+						NOT = {
+							has_character = RAJ_subhas_chanda_bose
+						}
+					}
+					RAJ_subhas_chanda_bose = {
+						set_nationality = PREV
+					}
+				}
+				add_country_leader_role = {
+					character = RAJ_subhas_chanda_bose
+					promote_leader = yes
+					country_leader = {
+						ideology = despotism
+						expire = 1965.1.1
+						traits = {
+							indomitable_perseverance
+						}
 					}
 				}
 			}
@@ -7080,7 +7104,7 @@ on_actions = {
 					NOT = {
 						any_other_country = {
 							has_country_leader = {
-								name = "Subhas Chandra Bose"
+								character = RAJ_subhas_chanda_bose
 								ruling_only = no
 							}
 						}
@@ -7092,14 +7116,25 @@ on_actions = {
 						}
 					}
 				}
-				create_country_leader = {
-					name = "Subhas Chandra Bose"
-					desc = " "
-					picture = "gfx/leaders/RAJ/r56_portrait_RAJ_Subhas_Chadra_Bose.dds"
-					expire = "1965.1.1"
-					ideology = fascism_ideology
-					traits = {
-						indomitable_perseverance
+				if = {
+					limit = {
+						NOT = {
+							has_character = RAJ_subhas_chanda_bose
+						}
+					}
+					RAJ_subhas_chanda_bose = {
+						set_nationality = PREV
+					}
+				}
+				add_country_leader_role = {
+					character = RAJ_subhas_chanda_bose
+					promote_leader = yes
+					country_leader = {
+						ideology = fascism_ideology
+						expire = 1965.1.1
+						traits = {
+							indomitable_perseverance
+						}
 					}
 				}
 			}
