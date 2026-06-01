@@ -15,8 +15,11 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		custom_effect_tooltip = r56_greece.1.a_tt
-		add_to_variable = { GRE_i_stability_factor = 0.02 }
+		custom_effect_tooltip = GRE_R56_modify_greek_economy_tt
+		add_to_variable = {
+			GRE_i_stability_factor = 0.02
+			tooltip = stability_factor_tt
+		}
 	}
 	
 	option = {
@@ -28,8 +31,11 @@ country_event = {
 				factor = 0
 			}
 		}
-		custom_effect_tooltip = r56_greece.1.b_tt
-		add_to_variable = { GRE_i_consumer_goods_factor = -0.05 }
+		custom_effect_tooltip = GRE_R56_modify_greek_economy_tt
+		add_to_variable = {
+			GRE_i_consumer_goods_factor = -0.05
+			tooltip = consumer_goods_factor_tt
+		}
 	}
 }
 
@@ -269,13 +275,6 @@ country_event = {
 			}
 		}
 		transfer_state = 341
-		341 = {
-			set_state_name = "Anatoliki Thraki"
-		}
-		set_province_name = {
-			id = 9833
-			name = "Constantinople"
-		}
 		remove_state_claim = 339
 		remove_state_claim = 340
 		remove_state_claim = 347
@@ -372,13 +371,16 @@ country_event = {
 			long_name = GRE_military_junta_party_long
 			name = GRE_military_junta_party
 		}
-		create_country_leader = {
-			name = "Alexandros Papagos"
-			picture = "r56_portrait_GRE_Alexander_Papagos.dds"
-			expire = "1965.1.1"
-			ideology = military_junta
-			traits = {
-				r56_trait_opposed_to_communism
+		add_country_leader_role = {
+			character = GRE_alexandros_papagos_r56
+			promote_leader = yes
+			country_leader = {
+				ideology = military_junta
+				traits = {
+					r56_trait_opposed_to_communism
+				}
+				expire = 1965.1.1
+				id = -1
 			}
 		}
 	}
@@ -506,16 +508,6 @@ country_event = {
 				factor = 100
 			}
 		}
-		341 = {
-			set_state_name = "Anatoliki Thraki"
-		}
-		797 = {
-			set_state_name = "Konstantinoupolis"
-		}		
-		set_province_name = {
-			id = 9833
-			name = "Konstantinoupolis"
-		}
 		add_state_core = 341
 		add_state_core = 797
 	}
@@ -574,13 +566,6 @@ country_event = {
 				factor = 100
 			}
 		}
-		340 = {
-			set_state_name = "Bythinia"
-		}
-		set_province_name = {
-			id = 947
-			name = "Prousa"
-		}
 		add_state_core = 340
 	}
 }
@@ -605,13 +590,6 @@ country_event = {
 			modifier = {
 				factor = 100
 			}
-		}
-		347 = {
-			set_state_name = "Nikomedia"
-		}
-		set_province_name = {
-			id = 11811
-			name = "Claudiopolis"
 		}
 		add_state_core = 347
 	}

@@ -1831,6 +1831,9 @@ characters={
 	GRE_alexandros_papagos_r56={ #r56
 		name=GRE_alexandros_papagos
 		portraits={
+			civilian = {
+				large="gfx/leaders/GRE/r56_portrait_GRE_Alexander_Papagos.dds"
+			}
 			army={
 				small="GFX_idea_gre_alexandros_papagos"	#not in DLC folder, revert to generic_army_europe_3 or add in interface if broken
 				large="gfx/leaders/GRE/r56_portrait_GRE_Alexander_Papagos.dds"
