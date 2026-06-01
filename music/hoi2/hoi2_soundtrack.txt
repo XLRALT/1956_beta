@@ -56,7 +56,7 @@ music = {
 				}
 				AND = {
 					capital_scope = {
-						is_on_continent = oceania
+						is_on_continent = australia
 					}
 					is_in_faction_with = JAP
 				}
