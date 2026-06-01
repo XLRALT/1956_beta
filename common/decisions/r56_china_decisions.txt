@@ -3776,7 +3776,7 @@ KMT_kuomintang_national_revolution_category = {
 					original_tag = NXM
 					original_tag = XSM
 					original_tag = SIK
-					original_tag = TNG
+					original_tag = KHM
 					original_tag = RNG
 				}
 				is_major = yes
