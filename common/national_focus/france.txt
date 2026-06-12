@@ -152,10 +152,6 @@ focus_tree = {
 	
 			}
 	
-			cancel_if_invalid = yes
-			continue_if_invalid = no
-			available_if_capitulated = no
-	
 			search_filters = { FOCUS_FILTER_STABILITY }
 			completion_reward = {
 				add_stability = 0.05
@@ -1262,6 +1258,7 @@ focus_tree = {
 			if = {
 				limit = { has_dlc = "Arms Against Tyranny" }
 				add_doctrine_cost_reduction = {
+					name = FRA_fusiliers_marine
 					cost_reduction = 0.5
 					uses = 2
 					category = special_forces_doctrine
@@ -1544,7 +1541,6 @@ focus_tree = {
 			x = -3
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -2063,7 +2059,10 @@ focus_tree = {
 					}
 				}
 				set_rule = { can_create_factions = yes }
-				create_faction = FRA_anti_fascist_coalition
+				create_faction_from_template = {
+					template = faction_template_anti_fascist
+					name = FRA_anti_fascist_coalition
+				}
 				every_neighbor_country = {
 					limit = {
 						is_in_faction = no
@@ -3497,7 +3496,6 @@ focus_tree = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_dlc = "La Resistance"
 						has_game_rule = {
 							rule = obsolete_focus_branches_visibility
 							option = HIDE
@@ -5003,7 +5001,6 @@ focus_tree = {
 			x = -1
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -5015,7 +5012,6 @@ focus_tree = {
 			x = -3
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -5139,7 +5135,6 @@ focus_tree = {
 			hidden_effect = {
 				create_country_leader = {
 					name = "Pierre Laval"
-					desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 					picture = GFX_portrait_fra_pierre_laval
 					expire = "1965.1.1"
 					ideology = rexism
@@ -5420,7 +5415,7 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
-				news_event = { id = lar_news.6 days = 3 random = 5 }
+				news_event = { id = lar_news.6 days = 3 random_days = 5 }
 			}
 		}
 	}	
@@ -5459,7 +5454,6 @@ focus_tree = {
 			}
 			create_country_leader = {
 				name = "François de la Rocque"
-				desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 				picture = GFX_portrait_fra_francois_de_la_rocque
 				expire = "1965.1.1"
 				ideology = fascism_ideology
@@ -5896,7 +5890,6 @@ focus_tree = {
 			add_stability = -0.05
 			create_country_leader = {
 				name = "Jacques Doriot"
-				desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 				picture = GFX_portrait_fra_jacques_doriot
 				expire = "1965.1.1"
 				ideology = nazism
@@ -7006,7 +6999,6 @@ focus_tree = {
 			x = -14
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -7169,7 +7161,6 @@ focus_tree = {
 				}
 				create_country_leader = {
 					name = "Jean III"
-					desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 					picture = GFX_portrait_fra_jean_duke_of_guise
 					expire = "1965.1.1"
 					ideology = moderatism
@@ -7181,7 +7172,6 @@ focus_tree = {
 			else = {
 				create_country_leader = {
 					name = "Henri VI"
-					desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 					picture = GFX_portrait_fra_henry_count_of_paris
 					expire = "1965.1.1"
 					ideology = moderatism
@@ -7460,25 +7450,17 @@ focus_tree = {
 				}
 				create_country_leader = {
 					name = "Alphonse I"
-					desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 					picture = GFX_portrait_SPA_alfonso_xiii
 					expire = "1965.1.1"
 					ideology = despotism
-					traits = {
-						
-					}
 				}
 			}
 			else = {
 				create_country_leader = {
 					name = "Jacques II"
-					desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 					picture = GFX_portrait_fra_infante_jaime
 					expire = "1965.1.1"
 					ideology = despotism
-					traits = {
-						
-					}
 				}
 			}
 			set_party_name = {
@@ -7527,7 +7509,10 @@ focus_tree = {
 					country_exists = SPB
 				}
 				set_rule = { can_create_factions = yes }
-				create_faction = FRA_legitimist_faction
+				create_faction_from_template = {
+					template = faction_template_european_dominance_monarchist
+					name = FRA_legitimist_faction
+				}
 				SPB = { country_event = generic.5 }
 			}
 			else = {
@@ -7709,13 +7694,9 @@ focus_tree = {
 		completion_reward = {
 			create_country_leader = {
 				name = "Napoléon VI"
-				desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 				picture = GFX_portraits_fra_napoleon_vi
 				expire = "1965.1.1"
 				ideology = despotism
-				traits = {
-					
-				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			set_party_name = {
@@ -8103,15 +8084,13 @@ focus_tree = {
 					is_owned_or_subject_trigger = yes
 					CONTROLLER = {
 						NOT = {
-							OR = {
-								tag = BAY
-								tag = MEK
-								tag = SAX
-								tag = HAN
-								tag = SHL
-								tag = WUR
-								tag = CZE
-							}
+							tag = BAY
+							tag = MEK
+							tag = SAX
+							tag = HAN
+							tag = SHL
+							tag = WUR
+							tag = CZE
 						}
 					}
 					NOT = {
@@ -8205,41 +8184,9 @@ focus_tree = {
 		y = 0
 
 		offset = {
-			x = -16
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "La Resistance" }
-			}
-		}
-		offset = {
-			x = -12
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "La Resistance"}
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_form_the_popular_front
-			}
-		}
-		offset = {
-			x = -9
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "La Resistance"}
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_revive_the_national_bloc
-			}
-		}
-		offset = {
 			x = -27
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -8251,7 +8198,6 @@ focus_tree = {
 			x = -8
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -8263,7 +8209,6 @@ focus_tree = {
 			x = -10
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -8275,7 +8220,6 @@ focus_tree = {
 			x = -6
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -8287,7 +8231,6 @@ focus_tree = {
 			x = -3
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -8300,7 +8243,6 @@ focus_tree = {
 			x = -20
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -8313,7 +8255,6 @@ focus_tree = {
 			x = -11
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -8325,7 +8266,6 @@ focus_tree = {
 			x = -17
 			y = 0
 			trigger = {
-				has_dlc = "La Resistance"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -14450,13 +14390,8 @@ focus_tree = {
 			hidden_effect = {
 				set_cosmetic_tag = FRA_KINGDOM
 			}
-			if = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				hidden_effect = {
-					news_event = { id = lar_news.8 days = 3 random_days = 5 }
-				}
+			hidden_effect = {
+				news_event = { id = lar_news.8 days = 3 random_days = 5 }
 			}
 			mark_focus_tree_layout_dirty = yes
 		}
@@ -14752,7 +14687,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = remove_political_advisor
-			show_ideas_tooltip = FRA_charles_maurras
+			show_ideas_tooltip = charles_maurras
 			add_political_power = 200
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -18517,7 +18452,7 @@ focus_tree = {
 					traits = { operative_linguist }
 					bypass_recruitment = no
 					available_to_spy_master = yes
-					female = yes
+					gender = female
 					nationalities = { FRA }
 				}
 			
@@ -18527,7 +18462,7 @@ focus_tree = {
 					traits = { operative_tough }
 					bypass_recruitment = no
 					available_to_spy_master = yes
-					female = yes
+					gender = female
 					nationalities = { FRA }
 				}
 				create_operative_leader = {

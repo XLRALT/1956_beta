@@ -1115,7 +1115,7 @@ characters={
 
 		advisor={
 			slot = political_advisor
-			idea_token = FRA_charles_maurras
+			idea_token = charles_maurras
 			allowed = {
 				original_tag = FRA
 			}
@@ -1714,7 +1714,7 @@ characters={
 		}
 	}
 
-	FRA_léon_blum={
+	FRA_leon_blum={
 		name="Léon Blum"
 		portraits={
 			army={
@@ -1981,7 +1981,7 @@ characters={
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = FRA_georges_bonnet
+			idea_token = georges_bonnet
 			allowed = {
 				original_tag = FRA
 			}
