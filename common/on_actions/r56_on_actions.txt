@@ -21833,6 +21833,43 @@ on_actions = {
 					}
 				}
 			}
+
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							AND = {
+								original_tag = GER
+								GER = {
+									is_faction_leader = yes
+									has_doctrine = new_mobile_warfare
+									has_war_with = ROOT
+								}
+							}
+							AND = {
+								any_enemy_country = {
+									is_in_faction_with = GER
+								}
+								GER = {
+									is_faction_leader = yes
+									has_doctrine = new_mobile_warfare
+									has_war_with = ROOT
+								}
+							}
+						}
+					}
+					FROM = {
+						original_tag = FRA
+					}
+					FROM.FROM = {
+						state = 29
+					}
+				}
+				ROOT = {
+					retire_character = FRA_gaston_billotte
+					#TODO Make an event about his death
+				}
+			}
 		}
 	}
 

@@ -507,8 +507,8 @@
  #FRA
 #  FRA_communism_party:0 "PCF"
 #  FRA_communism_party_long:0 "Parti Communiste Français"
- FRA_democratic_party:0 "PR"
- FRA_democratic_party_long:0 "Parti Radical"
+ FRA_democratic_party:0 "AD - RI - RRRS - PRS - FR"
+ FRA_democratic_party_long:0 "Alliance Démocratique - Radicaux Indépendants - Parti Radical - Parti Républicain Socialiste - Fédération Républicaine"
  FRA_fascism_party:0 "Ligues"
  FRA_fascism_party_long:0 "Ligues d'extrême droite"
  FRA_neutrality_party:0 "AF"

@@ -1,6 +1,4 @@
-﻿capital = 16
-
-set_naval_oob = "FRA_1936_naval_mtg"
+﻿capital = 16 # Paris/Ile de France
 
 if = {
 	limit = {
@@ -16,6 +14,10 @@ if = {
 	}
 	set_oob = "FRA_1936_nsb"
 }
+
+starting_train_buffer = 2
+
+set_naval_oob = "FRA_1936_naval_mtg"
 
 ##Revisited in 2024.8.12 https://www.imfdb.org/wiki/Berthier_Rifles [In the 1930s about 80,000 of them were converted for using a new 7.5x54mm MAS cartridge; this version is known as Mle. 1907/15 M.34] (80000 / 10[Equipment per Manpower] * 0.3 [30% stuff to stockpile?])
 add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 240 producer = FRA }	#from on_actions, might need to revisit
@@ -39,8 +41,8 @@ if = {
 		set_technology = {
 			early_fighter = 1
 			naval_bomber1 = 1
-			cv_naval_bomber1 = 1
 			cv_early_fighter = 1
+			cv_naval_bomber1 = 1
 			early_bomber = 1
 			tactical_bomber1 = 1
 			CAS1 = 1
@@ -49,140 +51,21 @@ if = {
 	}
 }
 
-recruit_character = FRA_felix_eboue
-recruit_character = FRA_georges_thierry_d_argenlieu
-recruit_character = FRA_louis_bourguignon
-recruit_character = FRA_pierre_laval
-recruit_character = FRA_philippe_petain
-recruit_character = FRA_edouard_daladier
-recruit_character = FRA_maurice_thorez
-recruit_character = FRA_maurice_gamelin
-recruit_character = FRA_maxime_weygand
-recruit_character = FRA_alphonse_georges
-recruit_character = FRA_charles_de_gaulle
-recruit_character = FRA_henri_giraud
-recruit_character = FRA_charles_huntziger
-recruit_character = FRA_henry_freydenberg
-recruit_character = FRA_jeanmarie_charles_abrial
-recruit_character = FRA_jeanpierre_esteva
-recruit_character = FRA_jean_de_laborde
-recruit_character = FRA_jean_romatet
-recruit_character = FRA_emile_laure
-recruit_character = FRA_joseph_doumenc
-recruit_character = FRA_jean_decoux
-recruit_character = FRA_emile_muselier
-recruit_character = FRA_marcel_bucard
-recruit_character = FRA_marcel_deat
-recruit_character = FRA_charles_maurras
-recruit_character = FRA_maurice_pujo
-recruit_character = FRA_paul_reynaud
-recruit_character = FRA_pierre_mendes_france
-recruit_character = FRA_benoit_frachon
-recruit_character = FRA_paul_faure
-recruit_character = FRA_charles_tillon
-recruit_character = FRA_lucien_midol
-recruit_character = FRA_abel_bonnard
-recruit_character = FRA_paul_marion
-recruit_character = FRA_jacques_duclos
-recruit_character = FRA_felix_gouin
-recruit_character = FRA_henri_barbe
-recruit_character = FRA_pierre_pucheu
-recruit_character = FRA_charles_detmar
-recruit_character = FRA_georges_claude
-recruit_character = FRA_jean_zay
-recruit_character = FRA_leon_blum
-recruit_character = FRA_leon_daudet
-recruit_character = FRA_robert_brasillach
-recruit_character = FRA_paul_granier_de_cassagnac
-recruit_character = FRA_edouard_herriot
-recruit_character = FRA_georges_mandel
-recruit_character = FRA_georges_bonnet
-recruit_character = FRA_guy_la_chambre
-recruit_character = FRA_vincent_auriol
-recruit_character = FRA_georges_monnet
-recruit_character = FRA_marx_dormoy
-recruit_character = FRA_paul_ramadier
-recruit_character = FRA_marceau_pivert
-recruit_character = FRA_rene_lefeuvre
-recruit_character = FRA_daniel_mayer
-recruit_character = FRA_pierre_brossolette
-recruit_character = FRA_xavier_vallat
-recruit_character = FRA_philippe_henriot
-recruit_character = FRA_joseph_darnaud
-recruit_character = FRA_georges_loustaunau_lacau
-recruit_character = FRA_eugene_deloncle
-recruit_character = FRA_henri_martin
-recruit_character = FRA_jean_filiol
-recruit_character = FRA_maurice_gauche
-recruit_character = FRA_albert_sarraut
-recruit_character = FRA_camille_chautemps
-recruit_character = FRA_marcel_déat
-recruit_character = FRA_jacques_doriot
-recruit_character = FRA_marcel_gensoul
-recruit_character = FRA_victorhenri_schweisguth
-recruit_character = FRA_francois_darlan
-recruit_character = FRA_renéÉmile_godfroy
-recruit_character = FRA_georges_blanchard
-#recruit_character = FRA_gaston_billotte
-recruit_character = FRA_rene_olry
-recruit_character = FRA_aimé_doumenc
-#recruit_character = FRA_adolphe_guillaumat
-recruit_character = FRA_charles_noguès
-recruit_character = FRA_joseph_vuillemin
-recruit_character = FRA_robert_odic
-recruit_character = FRA_philippe_fequant
-recruit_character = FRA_jean_francois_jannekeyn
-recruit_character = FRA_martial_valin
-recruit_character = FRA_alfred_heurtaux
-recruit_character = FRA_philippe_leclerc
-recruit_character = FRA_rene_prioux
-recruit_character = FRA_pierre_alombert_goget
-recruit_character = FRA_henri_marie_auguste_bineau
-recruit_character = FRA_philippe_kieffer
-recruit_character = FRA_adolphe_cise
-recruit_character = FRA_henry_de_rancourt_de_mimerand
-recruit_character = FRA_georges_catroux
-recruit_character = FRA_edgard_de_larminat
-recruit_character = FRA_louis_kahn
-recruit_character = FRA_victor_denain
-#recruit_character = FRA_frederic_irene_joliot_curie
-recruit_character = FRA_jean_marie_bergeret
-#recruit_character = FRA_roger_vitrac		#related branch currently hidden
-#recruit_character = FRA_edmond_barrachin	#related branch currently hidden
-recruit_character = FRA_eugene_bridoux
-recruit_character = FRA_marie_pierre_koenig
-recruit_character = FRA_alphonse_juin				#starts empty, gains command role through event
-recruit_character = FRA_jean_de_lattre_de_tassigny	#starts empty, gains command role through event
-recruit_character = FRA_georges_robert
-recruit_character = FRA_andre_gaston_pretelat
-recruit_character = FRA_henri_blehaut
-recruit_character = FRA_robert_touchon
-recruit_character = FRA_edouard_requin
-recruit_character = FRA_aubert_frere
-recruit_character = FRA_victor_bourret
-recruit_character = FRA_robert_altmayer
-recruit_character = FRA_frix_michelier
-recruit_character = FRA_pierre_goybet
-recruit_character = FRA_antoinemariebenoit_besson
-recruit_character = FRA_charles_laurent
-recruit_character = FRA_andre_chapelon
-recruit_character = FRA_alphonse_de_chateaubriant
-recruit_character = FRA_jean_iii
-recruit_character = FRA_jacques_henri_bourbon
+set_autonomy = {
+	target = FRI
+	autonomy_state = autonomy_integrated_puppet
+}
 
-
-recruit_character = FRA_jerome_napoleon_bonaparte
-#scientists
-recruit_character = FRA_irene_joliot_curie
-recruit_character = FRA_frederic_joliot_curie
-recruit_character = FRA_francois_hussenot
-recruit_character = FRA_louis_renault
-recruit_character = FRA_emile_rimailho
-recruit_character = FRA_eugene_schneider_ii
-recruit_character = FRA_henri_edmond_fouche
-recruit_character = FRA_joseph_bethenod
 set_research_slots = 4
-set_stability = 0.5
+IF = {
+	limit = {
+		has_dlc = "Gotterdammerung"
+	}
+	set_stability = 0.45 # Was 0.5, but they now get +5% from the Eiffel Tower
+	ELSE = {
+		set_stability = 0.5
+	}
+}
 set_war_support = 0.1
 
 add_command_power = 20
@@ -204,11 +87,6 @@ add_breakthrough_progress = {
 
 country_event = { id = france.103 days = 15 random_days = 5 }		#deflation starts
 country_event = { id = france.103 days = 947 random_days = 30 }		#communists remove support from Popular Front
-
-set_autonomy = {
-	target = FRI
-	autonomy_state = autonomy_integrated_puppet
-}
 
 677 = {
 	start_resistance = yes
@@ -252,6 +130,7 @@ set_technology = {
 	fuel_silos = 1
 	fuel_refining = 1
 	basic_train = 1
+	basic_fortification_tech = 1
 
 	# Naval Technologies
 	basic_naval_mines = 1
@@ -277,24 +156,9 @@ set_technology = {
 	cruiser_submarines = 1
 
 }
+
 set_grand_doctrine = grand_battleplan
 set_grand_doctrine = new_fleet_in_being
-if = {
-	limit = {
-		has_dlc = "La Resistance"
-		FRA = { is_ai = no }
-	}
-	set_technology = {
-		armored_car1 = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "Battle for the Bosporus"
-	}
-	set_technology = { camelry = 1 }
-	load_oob = camel_template
-}
 
 if = {
 	limit = {
@@ -325,6 +189,24 @@ if = {
 	}
 }
 
+if = {
+	limit = {
+		has_dlc = "Battle for the Bosporus"
+	}
+	set_technology = { camelry = 1 }
+	load_oob = camel_template
+}
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+		FRA = { is_ai = no }
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+
 set_convoys = 300
 
 set_politics = {
@@ -332,18 +214,6 @@ set_politics = {
 	last_election = "1932.5.1"
 	election_frequency = 48
 	elections_allowed = yes
-}
-
-set_party_name = {
-    ideology = democratic
-    long_name = "Alliance Démocratique - Radicaux Indépendants - Parti Radical - Parti Républicain Socialiste - Fédération Républicaine "
-    name = "AD - RI - RRRS - PRS - FR"
-}
-
-set_party_name = {
-    ideology = fascism
-    long_name = "Far-Right Leagues"
-    name = "Far-Right Leagues"
 }
 
 set_popularities = {
@@ -356,14 +226,15 @@ set_popularities = {
 add_to_tech_sharing_group = french_research
 
 add_ideas = {
-	MTG_naval_treaty_adherent
 	FRA_victors_of_wwi
 	FRA_disjointed_government
 	FRA_protected_by_the_maginot_line
 	limited_conscription
-	FRA_political_violence
 	FRA_full_employment
-	#FRA_inefficient_economy_2
+	FRA_political_violence
+	FRA_inefficient_economy_2
+	MTG_naval_treaty_adherent
+
 	FRA_outdated_airforce
 }
 
@@ -375,13 +246,195 @@ give_guarantee = ROM
 give_guarantee = BEL	#Instead of a an event which is meant to always fire - Fantom
 
 diplomatic_relation = {
-    country = MNC
-    relation = docking_rights
-    active = yes
+	country = MNC
+	relation = docking_rights
+	active = yes
 }
+
+recruit_character = FRA_pierre_laval
+recruit_character = FRA_edouard_daladier
+recruit_character = FRA_maurice_thorez
+recruit_character = FRA_rene_nicod
+recruit_character = FRA_philippe_petain
+recruit_character = FRA_jean_de_lattre_de_tassigny
+recruit_character = FRA_alphonse_juin
+recruit_character = FRA_maurice_gamelin
+recruit_character = FRA_maxime_weygand
+recruit_character = FRA_alphonse_georges
+recruit_character = FRA_antoinemariebenoit_besson
+recruit_character = FRA_charles_de_gaulle
+recruit_character = FRA_philippe_leclerc
+recruit_character = FRA_henri_giraud
+recruit_character = FRA_charles_huntziger
+recruit_character = FRA_gastonhenri_billotte
+recruit_character = FRA_henry_freydenberg
+recruit_character = FRA_rene_olry
+recruit_character = FRA_francois_darlan
+recruit_character = FRA_jeanmarie_charles_abrial
+recruit_character = FRA_jeanpierre_esteva
+recruit_character = FRA_jean_de_laborde
+recruit_character = FRA_jean_romatet
+recruit_character = FRA_emile_laure
+recruit_character = FRA_joseph_doumenc
+# recruit_character = FRA_denis_guillaumat # Has been removed to make way for Charles Maurras, but might be readded
+recruit_character = FRA_philippe_fequant
+recruit_character = FRA_victor_denain
+#recruit_character = FRA_jean_marie_abrial #duplicate character
+recruit_character = FRA_jean_decoux
+recruit_character = FRA_jean_marie_bergeret
+recruit_character = FRA_marcel_gensoul
+recruit_character = FRA_martial_valin
+recruit_character = FRA_rene_emile_godfroy
+recruit_character = FRA_joseph_vuillemin
+recruit_character = FRA_henri_marie_auguste_bineau
+recruit_character = FRA_louis_kahn
+recruit_character = FRA_robert_odic
+recruit_character = FRA_jean_francois_jannekeyn
+recruit_character = FRA_emile_muselier
+recruit_character = FRA_alfred_heurtaux
+recruit_character = FRA_rene_prioux
+recruit_character = FRA_pierre_alombert_goget
+recruit_character = FRA_gaston_henry_haye
+recruit_character = FRA_georges_bonnet
+recruit_character = FRA_philippe_henriot
+recruit_character = FRA_paul_reynaud
+recruit_character = FRA_pierre_pucheu
+recruit_character = FRA_charles_tillon
+recruit_character = FRA_vincent_auriol
+recruit_character = FRA_rene_massigli
+recruit_character = FRA_charles_maurras
+recruit_character = FRA_zivony_peshkov
+recruit_character = FRA_roger_salengro
+recruit_character = FRA_leon_blum
+recruit_character = FRA_felix_gouin
+recruit_character = FRA_paul_baudouin
+recruit_character = FRA_maurice_gauche
+recruit_character = FRA_jacques_duclos
+recruit_character = FRA_marcel_bucard
+recruit_character = FRA_georges_valois
+recruit_character = FRA_marcel_deat
+
+recruit_character = FRA_irene_joliot_curie
+recruit_character = FRA_frederic_joliot_curie
+recruit_character = FRA_francois_hussenot
+recruit_character = FRA_louis_renault
+recruit_character = FRA_henri_edmond_fouche
+recruit_character = FRA_joseph_bethenod
+recruit_character = FRA_emile_rimailho
+recruit_character = FRA_eugene_schneider_ii
+
+#RT56 CHARACTERS
+recruit_character = FRA_jean_iii
+recruit_character = FRA_jacques_henri_bourbon
+recruit_character = FRA_jerome_napoleon_bonaparte
+recruit_character = FRA_louis_bourguignon
+recruit_character = FRA_andre_gaston_pretelat
+recruit_character = FRA_robert_touchon
+recruit_character = FRA_edouard_requin
+recruit_character = FRA_aubert_frere
+recruit_character = FRA_victor_bourret
+recruit_character = FRA_robert_altmayer
+recruit_character = FRA_georges_robert
+recruit_character = FRA_henri_blehaut
+recruit_character = FRA_frix_michelier
+recruit_character = FRA_pierre_goybet
+recruit_character = FRA_paul_faure
+recruit_character = FRA_maurice_pujo
+recruit_character = FRA_pierre_mendes_france
+recruit_character = FRA_benoit_frachon
+recruit_character = FRA_lucien_midol
+recruit_character = FRA_abel_bonnard
+recruit_character = FRA_paul_marion
+recruit_character = FRA_henri_barbe
+recruit_character = FRA_charles_detmar
+recruit_character = FRA_georges_claude
+recruit_character = FRA_jean_zay
+#recruit_character = FRA_edmond_barrachin #related branch currently hidden
+#recruit_character = FRA_roger_vitrac #related branch currently hidden
+recruit_character = FRA_leon_daudet
+recruit_character = FRA_robert_brasillach
+recruit_character = FRA_paul_granier_de_cassagnac
+recruit_character = FRA_edouard_herriot
+recruit_character = FRA_georges_mandel
+recruit_character = FRA_guy_la_chambre
+recruit_character = FRA_charles_laurent
+recruit_character = FRA_andre_chapelon
+recruit_character = FRA_georges_monnet
+recruit_character = FRA_marx_dormoy
+recruit_character = FRA_paul_ramadier
+recruit_character = FRA_marceau_pivert
+recruit_character = FRA_rene_lefeuvre
+recruit_character = FRA_daniel_mayer
+recruit_character = FRA_pierre_brossolette
+recruit_character = FRA_xavier_vallat
+recruit_character = FRA_joseph_darnaud
+recruit_character = FRA_georges_loustaunau_lacau
+recruit_character = FRA_eugene_deloncle
+recruit_character = FRA_henri_martin
+recruit_character = FRA_jean_filiol
+recruit_character = FRA_alphonse_de_chateaubriant
+recruit_character = FRA_albert_sarraut
+recruit_character = FRA_camille_chautemps
+recruit_character = FRA_marcel_déat
+recruit_character = FRA_jacques_doriot
+recruit_character = FRA_victorhenri_schweisguth
+recruit_character = FRA_georges_blanchard
+recruit_character = FRA_gaston_billotte
+recruit_character = FRA_aimé_doumenc
+#recruit_character = FRA_adolphe_guillaumat #in his 70s at game start - TODO maybe add an option to put him back into active service?
+recruit_character = FRA_charles_noguès
+recruit_character = FRA_adolphe_cise
+recruit_character = FRA_felix_eboue
+recruit_character = FRA_philippe_kieffer
+recruit_character = FRA_henry_de_rancourt_de_mimerand
+recruit_character = FRA_georges_thierry_d_argenlieu
+recruit_character = FRA_marie_pierre_koenig
+recruit_character = FRA_georges_catroux
+recruit_character = FRA_edgard_de_larminat
+recruit_character = FRA_eugene_bridoux
 
 if = {
 	limit = { has_dlc = "La Resistance" }
+	create_operative_leader = {
+		name = "Jeannie Rousseau"
+		GFX = GFX_portrait_jennie_rousseau
+		traits = { operative_linguist }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		gender = female
+		nationalities = { FRA }
+	}
+
+	create_operative_leader = {
+		name = "Odette Samson"
+		GFX = GFX_portrait_odette_samson
+		traits = { operative_tough }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		gender = female
+		nationalities = { FRA }
+	}
+
+	create_operative_leader = {
+		name = "René Joyeuse"
+		GFX = GFX_portrait_rene_joyeuse
+		traits = { operative_infiltrator operative_commando }
+		bypass_recruitment = no
+		available_to_spy_master = no
+		nationalities = { FRA QUE }
+	}
+
+	create_operative_leader = {
+		name = "Gilbert Renault"
+		GFX = GFX_portrait_gilbert_renault
+		traits = { }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { FRA }
+	}
+
+	#RT56 Operatives
+
 	create_operative_leader = {
 		name = "Hans-Thilo Schmidt"
 		#random portrait
@@ -406,7 +459,7 @@ if = {
 		traits = {  operative_tough }
 		bypass_recruitment = no
 		available_to_spy_master = yes
-		nationalities = { WLL BEL}
+		nationalities = { WLL BEL }
 	}
 }
 
@@ -416,8 +469,6 @@ if = {
 #	traits = { }
 #	skill = 2
 #}
-
-### END MOD ###
 
 if = {
 	limit = {

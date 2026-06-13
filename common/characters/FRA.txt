@@ -3458,42 +3458,6 @@ characters={
 		}
 	}
 
-	FRA_renéÉmile_godfroy={
-		name="René-Émile Godfroy"
-		portraits={
-			army={
-				large="gfx/leaders/FRA/Portrait_France_Rene-Emile_Godfroy.dds"
-				small="gfx/interface/ideas/idea_FRA_rene-emile_godfroy.dds"
-			}
-			army={
-				small="GFX_idea_rene_emile_godfroy"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = rene_emile_godfroy
-			ledger = navy
-			allowed = {
-				original_tag = FRA
-			}
-			traits = {
-				navy_screen_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		navy_leader={
-			traits={ old_guard_navy gentlemanly battleship_adherent spotter }
-			skill=2
-			attack_skill=2
-			defense_skill=1
-			maneuvering_skill=2
-			coordination_skill=2
-			legacy_id=0
-		}
-	}
 	FRA_georges_blanchard={
 		name="Georges Blanchard"
 		portraits={
@@ -3528,7 +3492,7 @@ characters={
 			defense_skill=2
 			planning_skill=4
 			logistics_skill=2
-			legacy_id=814
+			legacy_id=-1
 		}
 	}
 	FRA_aimé_doumenc={
