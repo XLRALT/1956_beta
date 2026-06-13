@@ -2174,7 +2174,7 @@ characters = {
 			}
 			army = {
 				large = "gfx/leaders/ARG/Portrait_Argentina_Fanny_Schoonheyt.dds"
-				small = "GFX_idea_female_europe"
+				small = "GFX_idea_generic_political_advisor_female_europe"
 			}
 		}
 		corps_commander = {
