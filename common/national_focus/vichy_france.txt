@@ -99,7 +99,7 @@ focus_tree = {
 		bypass = {
 			OR = {
 				FRA = {
-					has_country_flag = juin_commander
+					has_character = FRA_alphonse_juin
 				}
 				country_exists = FRA
 			}

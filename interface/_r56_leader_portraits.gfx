@@ -69,6 +69,7 @@ spriteTypes = {
 	spriteType = { name = GFX_Portrait_FRA_Andre_Gaston_Pretelat_small texturefile = "gfx/interface/ideas/fra/advisors/r56_advisor_FRA_Andre_Gaston_Pretelat.dds" }
 	spriteType = { name = GFX_Portrait_FRA_Aubert_Frere texturefile = "gfx/leaders/FRA/r56_portrait_FRA_Aubert_Frere.dds" }
 	spriteType = { name = GFX_Portrait_FRA_Aubert_Frere_small texturefile = "gfx/interface/ideas/fra/advisors/r56_advisor_FRA_Aubert_Frere.dds" }
+	spriteType = { name = GFX_Portrait_FRA_Charles_De_Gaulle_Civilian texturefile = "gfx/leaders/FRA/r56_portrait_FRA_Charles_De_Gaulle_Civilian.dds" }
 	spriteType = { name = GFX_Portrait_FRA_Edouard_Requin texturefile = "gfx/leaders/FRA/r56_portrait_FRA_Edouard_Requin.dds" }
 	spriteType = { name = GFX_Portrait_FRA_Edouard_Requin_small texturefile = "gfx/interface/ideas/fra/advisors/r56_advisor_FRA_Edouard_Requin.dds" }
 	spriteType = { name = GFX_Portrait_FRA_Georges_Robert texturefile = "gfx/leaders/FRA/r56_portrait_FRA_Georges_Robert.dds" }

@@ -876,31 +876,15 @@ focus_tree = {
 		bypass = {
 			OR = {
 				FRA = {
-					has_country_flag = juin_commander
+					has_character = FRA_alphonse_juin
 				}
 				country_exists = FRA
 			}
 
 		}
 		completion_reward = {
-			if = {
-				limit = {
-					all_country = {
-						FRA_alphonse_juin = {		#no doppelgangers
-							is_unit_leader = no
-						}
-					}
-				}
-				add_corps_commander_role = {
-					character = FRA_alphonse_juin
-					traits = { panzer_leader  }
-					skill = 4
-					attack_skill=3
-					defense_skill=2
-					planning_skill=4
-					logistics_skill=4
-					legacy_id = -1
-				}
+			FRA_alphonse_juin = {
+				set_nationality = ROOT
 			}
 			add_manpower = 1000
 			army_experience = 5

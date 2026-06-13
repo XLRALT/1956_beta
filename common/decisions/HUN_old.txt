@@ -237,7 +237,7 @@ foreign_influence = {
 
 			FRA = {
 				add_country_leader_role = {
-					character = FRA_françois_darlan
+					character = FRA_francois_darlan
 					country_leader = {
 					  ideology=fascism_ideology
 					  traits = { navy_chief_decisive_battle_1 }
