@@ -3617,6 +3617,7 @@ focus_tree = {
 				}
 			}
 		}
+		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT }
 	}
 	focus = {
 		id = FRA_confirm_eastern_commitments
@@ -3679,7 +3680,7 @@ focus_tree = {
 	}
 	focus = {
 		id = FRA_strengthen_the_little_entente
-		icon = GFX_focus_generic_little_entente
+		icon = GFX_CZE_alliance
 		x = -1
 		y = 1
 		
@@ -3773,11 +3774,12 @@ focus_tree = {
 		relative_position_id = FRA_strengthen_the_little_entente
 		cost = 5
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 		completion_reward = {
 			YUG = { country_event = france.17 }
 		}
+		search_filters = { FOCUS_FILTER_ALLIANCE }
 	}
 
 	focus = {
@@ -3803,11 +3805,12 @@ focus_tree = {
 		relative_position_id = FRA_invite_yugoslavia
 		cost = 5
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
 		completion_reward = {
 			ROM = { country_event = france.17 }
 		}
+		search_filters = { FOCUS_FILTER_ALLIANCE }
 	}
 	focus = {
 		id = FRA_invest_in_our_weaker_allies
@@ -3842,27 +3845,17 @@ focus_tree = {
 
 
 		completion_reward = {
+			custom_effect_tooltip = FRA_invest_in_our_weaker_allies_tt
 			every_other_country = {
 				limit = {
 					is_in_faction_with = ROOT
 					NOT = { is_subject_of = ROOT }
+					has_capitulated = no
 					check_variable = { num_of_military_factories < FRA.num_of_military_factories }
 				}
-				random_owned_state = {
-					limit = {
-						is_core_of = PREV
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
+				add_offsite_building = {
+					type = arms_factory
+					level = 3
 				}
 			}
 		}
@@ -3872,21 +3865,6 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		x = 0
 		y = 1
-
-		allow_branch = {
-			if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				NOT = {
-					has_completed_focus = FRA_invite_communist_ministers
-					has_completed_focus = FRA_utilize_the_leagues
-				}
-			}
-		}
 
 		prerequisite = {
 			focus = FRA_invest_in_our_weaker_allies
@@ -3940,8 +3918,8 @@ focus_tree = {
 	}
 	focus = {
 		id = FRA_foreign_guest_workers
-		icon = GFX_focus_generic_manpower
-		x = 3
+		icon = GFX_BEL_union_agreement
+		x = 2
 		y = 1
 		
 		prerequisite = {
@@ -3951,7 +3929,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
 
 		available = {
@@ -3967,11 +3945,13 @@ focus_tree = {
 			remove_worker_shortage_effect = yes
 		}
 	}
+
 	focus = {
-		id = FRA_join_the_ententes
-		icon = GFX_focus_chi_british_cooperation
+		id = FRA_intervention
+		icon = GFX_goal_generic_military_sphere
 		x = 1
-		y = 1
+		y = 2
+		
 		prerequisite = {
 			focus = FRA_strengthen_the_little_entente
 		}
@@ -3983,35 +3963,69 @@ focus_tree = {
 		}
 
 		available = {
-			ENG = {
-				is_faction_leader = yes
-			}
-			is_subject = no
-			NOT = {
-				has_war_with = ENG
-			}
+
 		}
 		
 		bypass = {
 
 		}
 
-
 		completion_reward = {
-			ENG = { 
-				if = {
-					limit = { ROOT = { is_in_faction = yes } }
-					country_event = lar_fra_join_the_ententes.1
-				}
-				else = { 
-					custom_effect_tooltip = invite_to_faction_tt
-				}
+			set_rule = {
+				can_send_volunteers = yes
+			}
+			add_ideas = {
+				FRA_intervention_idea
 			}
 		}
 	}
+
+	#focus = {
+	#	id = FRA_join_the_ententes
+	#	icon = GFX_focus_chi_british_cooperation
+	#	x = 1
+	#	y = 1
+	#	prerequisite = {
+	#		focus = FRA_strengthen_the_little_entente
+	#	}
+	#	relative_position_id = FRA_strengthen_the_little_entente
+	#	cost = 10
+	#
+	#	ai_will_do = {
+	#		factor = 3
+	#	}
+	#
+	#	available = {
+	#		ENG = {
+	#			is_faction_leader = yes
+	#		}
+	#		is_subject = no
+	#		NOT = {
+	#			has_war_with = ENG
+	#		}
+	#	}
+	#	
+	#	bypass = {
+	#
+	#	}
+	#
+	#
+	#	completion_reward = {
+	#		ENG = { 
+	#			if = {
+	#				limit = { ROOT = { is_in_faction = yes } }
+	#				country_event = lar_fra_join_the_ententes.1
+	#			}
+	#			else = { 
+	#				custom_effect_tooltip = invite_to_faction_tt
+	#			}
+	#		}
+	#	}
+	#	search_filters = { FOCUS_FILTER_ALLIANCE }
+	#}
 	focus = {
 		id = FRA_revive_the_franco_polish_alliance
-		icon = GFX_focus_generic_polish_deal
+		icon = GFX_goal_generic_befriend_poland
 		x = 1
 		y = 1
 		prerequisite = {
@@ -4021,7 +4035,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
 
 		available = {
@@ -4041,6 +4055,15 @@ focus_tree = {
 					is_faction_leader = yes
 				}
 				POL = { country_event = generic.5 }
+			}
+			else_if = {
+				limit = {
+					is_in_faction = no
+					POL = {
+						is_faction_leader = yes
+					}
+				}
+				POL = { country_event = generic.2 }
 			}
 			else = {
 				give_guarantee = POL
@@ -4127,7 +4150,7 @@ focus_tree = {
 	 		focus = FRA_strengthen_the_little_entente
 	 		focus = FRA_buy_time
 	 	}
-		x = 5
+		x = 4
 		y = 1
 		relative_position_id = FRA_strengthen_the_little_entente
 		cost = 10
@@ -4158,7 +4181,7 @@ focus_tree = {
 			}
 		}
 	 	prerequisite = { focus = FRA_strengthen_government_support }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = FRA_strengthen_government_support
 		cost = 10
@@ -4176,13 +4199,16 @@ focus_tree = {
 	}
 	focus = {
 		id = FRA_go_with_britain
-		icon = GFX_focus_chi_british_cooperation
+		icon = GFX_ENG_alliance
 		available = {
 			is_subject = no
 			has_government = democratic
 			ENG = {
 				exists = yes
 				has_government = democratic
+				NOT = {
+					has_completed_focus = ENG_a_change_in_course
+				}
 			}
 			NOT = { has_war_with = ENG }
 			is_in_faction = no
@@ -4195,7 +4221,7 @@ focus_tree = {
 		}
 	 	prerequisite = { focus = FRA_buy_time }
 	 	mutually_exclusive = { focus = FRA_france_leads }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = FRA_buy_time
 		cost = 10
@@ -4221,21 +4247,319 @@ focus_tree = {
 				factor = 0
 				has_idea = GER_communist_refugees
 			}
+			modifier = {
+				factor = 0
+				ENG = {
+					has_completed_focus = ENG_concessions_to_the_trade_unions
+				}
+			}
 		}
 		completion_reward = {
 			ENG = { country_event = { id = britain.13 } }
+			if = {
+				limit = {
+					YUG = { is_guaranteed_by = ROOT }
+				}
+				ROOT = {
+					diplomatic_relation = {
+						country = YUG
+						relation = guarantee
+						active = no
+					}
+					add_ai_strategy = {
+						type = ignore
+						id = "YUG"
+						value = 100
+					}
+				}
+				YUG = {
+					add_opinion_modifier = { target = ROOT modifier = western_betrayal }
+				}
+			}
+			if = {
+				limit = {
+					CZE = { is_guaranteed_by = ROOT }
+				}
+				ROOT = {
+					diplomatic_relation = {
+						country = CZE
+						relation = guarantee
+						active = no
+					}
+					add_ai_strategy = {
+						type = ignore
+						id = "CZE"
+						value = 100
+					}
+				}
+				CZE = {
+					add_opinion_modifier = { target = ROOT modifier = western_betrayal }
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_ALLIANCE }
 	}
 	focus = {
-		id = FRA_arms_purchases_in_the_us
-		icon = GFX_goal_generic_build_tank
-		x = 0
+		id = FRA_economic_cooperation_agreement
+		icon = GFX_allies
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = FRA_go_with_britain
 		}
 		relative_position_id = FRA_go_with_britain
 		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			is_subject = no
+			is_in_faction_with = ENG
+		}
+		
+		bypass = {
+
+		}
+
+
+		completion_reward = {
+			country_event = france.129
+		}
+	}
+	focus = {
+		id = FRA_invite_benelux
+		icon = GFX_goal_BEL_deterrence
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = FRA_economic_cooperation_agreement
+		}
+		relative_position_id = FRA_economic_cooperation_agreement
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			OR = {
+				BEL = {
+					is_in_faction = no
+				}
+				LUX = {
+					is_in_faction = no
+				}
+			}
+			is_in_faction = yes
+			is_subject = no
+		}
+		
+		bypass = {
+			BEL = {
+				OR = {
+					exists = no
+					is_subject = yes
+					has_war_with = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			LUX = {
+				OR = {
+					exists = no
+					is_subject = yes
+					has_war_with = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+
+		completion_reward = {
+			if = {
+				limit = {
+					is_in_faction_with = ENG
+					ENG = {
+						is_faction_leader = yes
+					}
+				}
+				ENG = {
+					country_event = france.108
+				}
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+					BEL = {
+						is_in_faction = no
+					}
+				}
+				BEL = {
+					country_event = generic.5
+				}
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+					LUX = {
+						is_in_faction = no
+					}
+				}
+				LUX = {
+					country_event = generic.5
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+	}
+	focus = {
+		id = FRA_preventive_intervention
+		icon = GFX_victor
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = FRA_invite_benelux
+			focus = FRA_invite_romania
+		}
+		prerequisite = {
+			focus = FRA_defensive_strategems
+		}
+		relative_position_id = FRA_invite_benelux
+		cost = 10
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				any_other_country = {
+					OR = {
+						has_government = democratic
+						AND = {
+							original_tag = POL
+							has_government = neutrality
+						}
+					}
+					OR = {
+						has_war_with = GER
+						has_war_with = PRE
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_war_support < 0.4
+			}
+		}
+
+		available = {
+			is_subject = no
+			NOT = { has_idea = FRA_disjointed_government }
+			r56_script_i_am_sane = yes
+			any_country = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			threat > 0.25
+		}
+		
+		bypass = {
+
+		}
+
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+					NOT = { is_in_faction_with = ROOT }
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = topple_government
+						expire = 0
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+	focus = {
+		id = FRA_research_treaty
+		icon = GFX_goal_generic_scientific_exchange
+		x = -5
+		y = 1
+		prerequisite = {
+			focus = FRA_invite_benelux
+			focus = FRA_invite_romania
+		}
+		prerequisite = {
+			focus = FRA_defensive_strategems
+		}
+		relative_position_id = FRA_invite_benelux
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			is_subject = no
+			is_in_faction = yes
+		}
+		
+		bypass = {
+
+		}
+
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+	focus = {
+		id = FRA_arms_purchases_in_the_us
+		icon = GFX_Goal_USA_arsenal_of_democracy
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = FRA_go_with_britain
+		}
+		relative_position_id = FRA_go_with_britain
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -4253,6 +4577,7 @@ focus_tree = {
 
 		completion_reward = {
 			USA = { country_event = lar_arms_purchases.1 }
+			custom_effect_tooltip = if_they_accept_tt
 			unlock_decision_category_tooltip = FRA_weapons_purchases_category
 		}
 	}
@@ -12562,45 +12887,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = FRA_support_the_finns
-		icon = GFX_focus_invite_finland
-		x = 1
-		y = 1
-		prerequisite = {
-			focus = FRA_reynaud_economic_reforms
-			focus = FRA_rearmament_policy
-		}
-		relative_position_id = FRA_rearmament_policy
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			FIN = {
-				has_war = yes
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-			is_subject = no
-		}
-
-		completion_reward = {
-			army_experience = 10
-			FIN = {
-				add_manpower = 10000
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 2500
-					producer = FRA
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT }
-	}
-	focus = {
 		id = FRA_go_with_britain
 		icon = GFX_ENG_alliance
 		cost = 10
@@ -12707,32 +12993,6 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-	focus = {
-		id = FRA_arms_purchases_in_the_us
-		icon = GFX_Goal_USA_arsenal_of_democracy
-		x = 2
-		y = 2
-		prerequisite = {
-			focus = FRA_go_with_britain
-		}
-		relative_position_id = FRA_go_with_britain
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			country_exists = USA
-			USA_can_sell_weapons_trigger = yes
-		}
-		
-		completion_reward = {
-			USA = { country_event = lar_arms_purchases.1 }
-			custom_effect_tooltip = if_they_accept_tt
-			unlock_decision_category_tooltip = FRA_weapons_purchases_category
-		}
 	}	
 	focus = {
 		id = FRA_little_entente
@@ -12837,72 +13097,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
 	focus = {
-		id = FRA_intervention
-		icon = GFX_goal_generic_military_sphere
-		cost = 10
-		prerequisite = {
-			focus = FRA_little_entente
-		}
-		relative_position_id = FRA_little_entente
-		x = -3
-		y = 1
-		
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			set_rule = {
-				can_send_volunteers = yes
-			}
-			add_ideas = {
-				FRA_intervention_idea
-			}
-		}
-	}
-	focus = {
-		id = FRA_invite_yugoslavia
-		icon = GFX_goal_generic_befriend_yugoslavia
-		cost = 5
-		prerequisite = {
-			focus = FRA_little_entente
-		}
-		relative_position_id = FRA_little_entente
-		x = -1
-		y = 1
-		available = {
-			YUG = {
-				is_in_faction = no
-			}
-			is_faction_leader = yes
-			is_subject = no
-		}
-		bypass = {
-			OR = {
-				AND = {
-					is_faction_leader = no
-					is_in_faction = yes
-				}
-				YUG = {
-					OR = {
-						exists = no
-						is_subject = yes
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-						is_in_faction = yes
-					}
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		completion_reward = {
-			YUG = {
-				country_event = france.17
-			}
-		}
-	}
-	focus = {
 		id = FRA_popular_front_united
 		icon = GFX_france_first
 		cost = 10
@@ -12958,118 +13152,6 @@ focus_tree = {
 				remove_ideas = FRA_reforms_failed
 			}
 		}
-	}
-	focus = {
-		id = FRA_economic_cooperation_agreement
-		icon = GFX_allies
-		cost = 10
-		prerequisite = {
-			focus = FRA_go_with_britain
-		}
-		relative_position_id = FRA_go_with_britain
-		x = 1
-		y = 1
-		available = {
-			is_subject = no
-			is_in_faction_with = ENG
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		completion_reward = {
-			country_event = france.129
-		}
-	}
-	focus = {
-		id = FRA_invite_benelux
-		icon = GFX_goal_BEL_deterrence
-		cost = 10
-		prerequisite = {
-			focus = FRA_economic_cooperation_agreement
-		}
-		prerequisite = {
-			focus = FRA_popular_front_united
-		}
-		relative_position_id = FRA_popular_front_united
-		x = 1
-		y = 1
-		available = {
-			OR = {
-				BEL = {
-					is_in_faction = no
-				}				
-				LUX = {
-					is_in_faction = no
-				}				
-			}
-			is_in_faction = yes
-			is_subject = no
-		}
-		bypass = {
-			BEL = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
-			LUX = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
-					is_in_faction_with = ROOT
-				}
-			}			
-		#	LUX = {
-		#		OR = {
-		#			exists = no
-		#			is_subject = yes
-		#			has_war_with = ROOT
-		#			is_in_faction_with = ROOT
-		#		}
-		#	}
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					is_in_faction_with = ENG
-					ENG = {
-						is_faction_leader = yes
-					}
-				}
-				ENG = {
-					country_event = france.108
-				}				
-			}
-			if = {
-				limit = {
-					is_faction_leader = yes
-					BEL = {
-						is_in_faction = no
-					}
-				}
-				BEL = {
-					country_event = generic.5
-				}					
-			}
-			if = {
-				limit = {
-					is_faction_leader = yes
-					LUX = {
-						is_in_faction = no
-					}
-				}
-				LUX = {
-					country_event = generic.5
-				}					
-			}			
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
 	}
 	focus = {
 		id = FRA_front_liberte
@@ -17723,415 +17805,6 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-	focus = {
-		id = FRA_invite_romania
-		icon = GFX_goal_generic_befriend_romania
-		cost = 5
-		prerequisite = {
-			focus = FRA_invite_yugoslavia
-		}
-		relative_position_id = FRA_invite_yugoslavia
-		x = 1
-		y = 1
-		available = {
-			is_faction_leader = yes
-			is_subject = no
-			OR = {
-				has_government = democratic
-				has_government = neutrality
-			}
-		}
-		bypass = {
-			OR = {
-				AND = {
-					is_faction_leader = no
-					is_in_faction = yes
-				}
-				ROM = {
-					OR = {
-						exists = no
-						is_subject = yes
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-						is_in_faction = yes	
-						has_government = communism
-						has_government = fascism
-					}
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 3
-		}
-		completion_reward = {
-			ROM = {
-				country_event = france.17
-			}
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-	focus = {
-		id = FRA_invite_poland
-		icon = GFX_goal_generic_befriend_poland
-		cost = 10
-		prerequisite = {
-			focus = FRA_little_entente
-		}
-		relative_position_id = FRA_little_entente
-		x = -2
-		y = 2
-		available = {
-			is_subject = no
-			OR = {
-				AND = {
-					is_faction_leader = yes
-					NOT = {
-						any_country = {
-							is_in_faction_with = ROOT
-							has_war_with = POL
-						}
-					}
-				}
-				AND = {
-					POL = {
-						has_government = democratic
-						is_faction_leader = yes
-					}
-					is_in_faction = no
-				}
-
-
-			}
-
-		}
-		bypass = {
-			POL = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 3
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					is_faction_leader = yes
-				}
-				POL = {
-					country_event = france.17
-				}				
-			}
-			if = {
-				limit = {
-					is_in_faction = no
-					POL = {
-						is_faction_leader = yes
-					}
-				}
-				POL = {
-					country_event = generic.2
-				}				
-			} 
-
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-	focus = {
-		id = FRA_foreign_guest_workers
-		icon = GFX_BEL_union_agreement
-		x = -1
-		y = 1
-		prerequisite = {
-			focus = FRA_invite_romania
-		}
-		relative_position_id = FRA_invite_romania
-		cost = 10
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			FRA_has_worker_shortage = yes
-		}
-		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {
-			remove_worker_shortage_effect = yes
-		}
-	}
-	focus = {
-		id = FRA_invest_in_our_weaker_allies
-		icon = GFX_goal_generic_build_tank
-		x = 1
-		y = 1
-		prerequisite = {
-			focus = FRA_invite_romania
-		}
-		relative_position_id = FRA_invite_romania
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			is_in_faction = yes
-			any_other_country = {
-				is_in_faction_with = ROOT
-				custom_trigger_tooltip = {
-					tooltip = FRA_invest_in_our_weaker_allies_trigger_tt
-					check_variable = { num_of_military_factories < FRA.num_of_military_factories }
-				}
-			}
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = FRA_invest_in_our_weaker_allies_tt
-			every_other_country = {
-				limit = {
-					is_in_faction_with = ROOT
-					NOT = { is_subject_of = ROOT }
-					has_capitulated = no
-					check_variable = { num_of_military_factories < FRA.num_of_military_factories }
-				}
-				add_offsite_building = {
-					type = arms_factory
-					level = 2
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_coordinate_rearmament
-		icon = GFX_goal_generic_position_armies
-		x = 0
-		y = 1
-		allow_branch = {
-			if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				NOT = {
-					has_completed_focus = FRA_radicalize_front
-					has_completed_focus = FRA_far_right_leagues
-					has_completed_focus = FRA_action_francaise
-				}
-			}
-		}
-		prerequisite = {
-			focus = FRA_invest_in_our_weaker_allies
-		}
-		relative_position_id = FRA_invest_in_our_weaker_allies
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			is_in_faction = yes
-		}
-		
-		completion_reward = {
-			if = {
-				limit = {
-					is_in_faction = no
-				}
-				custom_effect_tooltip = FRA_coordinate_rearmament_tt
-			}
-			else = {
-				every_country = {
-					limit = {
-						is_in_faction_with = ROOT
-					}
-					add_relation_modifier = {
-						target = ROOT
-						modifier = FRA_coordinate_rearmament
-					}
-				}
-				every_country = {
-					limit = {
-						is_in_faction_with = ROOT
-					}
-					ROOT = {
-						add_relation_modifier = {
-							target = PREV
-							modifier = FRA_coordinate_rearmament
-						}
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = FRA_join_the_ententes
-		icon = GFX_focus_chi_british_cooperation
-		x = 1
-		y = 1
-		prerequisite = {
-			focus = FRA_little_entente
-		}
-		relative_position_id = FRA_little_entente
-		cost = 10
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			is_subject = no
-			has_government = democratic
-			ENG = {
-				exists = yes
-				has_government = democratic
-				is_faction_leader = yes
-				NOT = {
-					OR = {
-						has_completed_focus = ENG_a_change_in_course
-						has_completed_focus = ENG_visit_germany
-					}
-				}
-			}
-			NOT = {
-				has_war_with = ENG
-			}
-		}
-
-		completion_reward = {
-			ENG = { 
-				if = {
-					limit = { ROOT = { is_in_faction = yes } }
-					country_event = lar_fra_join_the_ententes.1
-				}
-				else = { 
-					custom_effect_tooltip = invite_to_faction_tt
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-	focus = {
-		id = FRA_research_treaty
-		icon = GFX_goal_generic_scientific_exchange
-		cost = 10
-		prerequisite = {
-			focus = FRA_popular_front_united
-		}
-		relative_position_id = FRA_popular_front_united
-		x = -1
-		y = 1
-		available = {
-			is_subject = no
-			is_in_faction = yes
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = electronics_bonus
-				bonus = 1
-				uses = 1
-				category = electronics
-			}
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1
-				uses = 1
-				category = industry
-			}   
-			add_tech_bonus = {
-				name = infantry_weapons_bonus
-				bonus = 1
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-	focus = {
-		id = FRA_preventive_intervention
-		icon = GFX_victor
-		cost = 10
-		prerequisite = {
-			focus = FRA_invite_benelux
-			focus = FRA_invite_romania
-		}
-		relative_position_id = FRA_invite_benelux
-		x = -1
-		y = 1
-		available = {
-			is_subject = no
-			NOT = { has_idea = FRA_disjointed_government }
-			r56_script_i_am_sane = yes
-			any_country = {
-				OR = {
-					has_government = communism
-					has_government = fascism
-				}
-			}
-			threat > 0.25
-		}
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				factor = 2
-				any_other_country = {
-					OR = {
-						has_government = democratic
-						AND = {
-							original_tag = POL
-							has_government = neutrality
-						}
-					}						
-					OR = {
-						has_war_with = GER
-						has_war_with = PRE
-					}	
-				}	
-			}
-			modifier = {
-				factor = 0
-				has_war = yes
-			}
-			modifier = {
-				factor = 0
-				has_war_support < 0.4
-			}
-		}
-		completion_reward = {
-			every_country = {
-				limit = {
-					OR = {
-						has_government = communism
-						has_government = fascism
-					}
-					NOT = { is_in_faction_with = ROOT }
-					OR = {
-						is_major = yes
-						is_neighbor_of = ROOT
-					}
-				}
-				ROOT = {
-					create_wargoal = {
-						target = PREV
-						type = topple_government
-						expire = 0
-					}
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 	focus = {
 		id = FRA_humanite_unie
