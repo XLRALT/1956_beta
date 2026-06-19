@@ -16,14 +16,7 @@ focus_tree = {
 
 	default = no
 	shared_focus = HABSBURG_part_of_something_bigger
-	#shared_focus = AH_austro_hungarian_unification
 	continuous_focus_position = { x = 0 y = 1250 }
-
-	#shortcut = {
-	#	name = CZE_auh_branch
-	#	target = AH_austro_hungarian_unification
-	#	scroll_wheel_factor = 1.0
-	#}
 
 	shortcut = {
 		name = CZE_politics
@@ -4606,7 +4599,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_czechoslovak_government_reform
-		icon = GFX_goal_cze_reform_czechoslovak_government
+		icon = GFX_goal_CZE_reform_czechoslovak_government
 
 		mutually_exclusive = { focus = CZE_state_defense_law focus = CZE_empower_internationalism }
 
@@ -4733,12 +4726,6 @@ focus_tree = {
 
 		mutually_exclusive = { focus = CZE_democratic_reforms }
 		prerequisite = { focus = CZE_extend_military_service }
-
-		allow_branch = {
-			NOT = {	#more of a pre-war thing to do
-				has_country_flag = yalta_unlock_focuses
-			}
-		}
 
 		available = {
 			custom_trigger_tooltip = { 
@@ -4976,7 +4963,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_sokol_movement
-		icon = GFX_goal_cze_support_sokol_movement
+		icon = GFX_goal_CZE_support_sokol_movement
 
 		prerequisite = { focus = CZE_czechoslovak_government_reform }
 
@@ -5110,7 +5097,7 @@ focus_tree = {
 
 	focus = {    ###### Requires changes in germany.40 event in order to work properly
  		id = CZE_petition_league_of_nations
- 		icon = GFX_goal_cze_petition_league_of_nations
+ 		icon = GFX_goal_CZE_petition_league_of_nations
 
  		prerequisite = { focus = CZE_democratic_reforms }
 		mutually_exclusive = { focus = CZE_revive_little_entente }
@@ -5325,7 +5312,7 @@ focus_tree = {
 
 		focus = {
 		id = CZE_revive_little_entente
-		icon = GFX_goal_cze_revive_the_little_entente
+		icon = GFX_goal_CZE_revive_the_little_entente
 		prerequisite = { focus = CZE_democratic_reforms }
 		mutually_exclusive = { focus = CZE_petition_league_of_nations }
 
@@ -6447,7 +6434,7 @@ focus_tree = {
 
 	focus = {
 		id = CZE_union_with_warsaw
-		icon = GFX_goal_cze_westslavia
+		icon = GFX_goal_CZE_westslavia
  		prerequisite = { focus = CZE_split_poland }
 		relative_position_id = CZE_split_poland
 		x = 0
