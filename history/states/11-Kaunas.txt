@@ -2,10 +2,7 @@
 state={
 	id=11
 	name="STATE_11"
-	manpower=971940
-	
-	state_category = town
-	
+
 	history={
 		owner = LIT
 		victory_points = {
@@ -17,17 +14,22 @@ state={
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
-			industrial_complex = 2
-			#air_base = 4
+			industrial_complex = 2 #r56
+
 		}
 		add_core_of = LIT
+
 		add_to_array = { state_victory_points = 6296 }
 		add_to_array = { state_victory_points = 9357 }
+
 	}
-	
+
 	provinces={
 		327 6296 6360 9357 9404 
 	}
 
-	local_supplies=0.0 
+	local_supplies=10.0 
+	manpower=971940
+	buildings_max_level_factor=1.000
+	state_category=town
 }

@@ -206,11 +206,11 @@ focus_tree = {
 				limit = {
 					can_build_railway = {
 						start_province = 6583
-						target_province = 13427
+						target_province = 13375
 					}
 				}
 				build_railway = { 
-					path = { 6583 13427 }
+					path = { 6583 13375 }
 				}
 			}
 			add_equipment_to_stockpile = {

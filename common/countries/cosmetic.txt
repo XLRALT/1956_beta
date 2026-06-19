@@ -213,96 +213,6 @@ GER_provisional_gvt = {
 	color_ui = rgb { 115 115 115 }
 }
 
-GER_prov_gov = {
-	color = rgb { 128 128 128 }
-	color_ui = rgb { 115 115 115 }
-}
-
-GER_prov_gov_gold = {
-	color = rgb { 246 182 0 }
-	color_ui = rgb { 246 182 0 }
-}
-
-GER_pres_gov_gold = {
-	color = rgb { 246 182 0 }
-	color_ui = rgb { 246 182 0 }
-}
-
-GER_gr_pres_gov_gold = {
-	color = rgb { 246 182 0 }
-	color_ui = rgb { 246 182 0 }
-}
-
-GER_rep_gold = {
-	color = rgb { 246 182 0 }
-	color_ui = rgb { 246 182 0 }
-}
-
-GER_gr_rep_gold = {
-	color = rgb { 246 182 0 }
-	color_ui = rgb { 246 182 0 }
-}
-
-GER_kpd_temp = {
-	color = rgb { 150 0 0 }
-	color_ui = rgb { 150 0 0 }
-}
-
-GER_kpd_gdr = {
-	color = rgb { 200 0 0 }
-	color_ui = rgb { 200 0 0 }
-}
-
-GER_kpd_soviet = {
-	color = rgb { 150 0 0 }
-	color_ui = rgb { 150 0 0 }
-}
-
-GER_kpd_cosmetic = {
-	color = rgb { 207 30 96 }
-	color_ui = rgb { 207 30 96 }
-}
-
-GER_council = {
-	color = rgb { 207 30 96 }
-	color_ui = rgb { 207 30 96 }
-}
-
-GER_council_eur = {
-	color = rgb { 133 0 43 }
-	color_ui = rgb { 133 0 43 }
-}
-
-GER_council_world = {
-	color = rgb { 133 0 43 }
-	color_ui = rgb { 133 0 43 }
-}
-
-GER_emp = {
-	color = rgb { 63 0 66 }
-	color_ui = rgb { 255 0 255 }
-}
-
-GER_gr_emp = {
-	color = rgb { 63 0 66 }
-	color_ui = rgb { 255 0 255 }
-}
-
-GER_col_emp = {
-	color = rgb { 63 0 66 }
-	color_ui = rgb { 255 0 255 }
-}
-
-GER_rep = {
-	color = rgb { 79 79 102 }
-	color_ui = rgb { 79 79 102 }
-}
-
-GER_gr_rep = {
-	color = rgb { 79 79 102 }
-	color_ui = rgb { 79 79 102 }
-}
-
 GER_german_empire = {
 	color = rgb { 128 128 128 }
 	color_ui = rgb { 115 115 115 }
@@ -336,12 +246,22 @@ GER_greater_german_reich = {
 	color_ui = rgb { 115 115 115 }
 }
 
+ADU = {
+	color = rgb { 240 230 155 }
+	color_ui = rgb { 240 230 155 }
+}
+
 CAT_aragon = {
 	color = rgb { 166 68 72 }
 	color_ui = rgb { 166 68 72 }
 }
 
 CHI_warlord_PRC = {
+	color = rgb { 245 12 55 }
+	color_ui = rgb { 178 34 60 }
+}
+
+PRC_proclaimed = {
 	color = rgb { 245 12 55 }
 	color_ui = rgb { 178 34 60 }
 }
@@ -432,6 +352,7 @@ SPR_habsburg = {
 	color = rgb { 255 128 0 }
 	color_ui = rgb { 255 255 122 }
 }
+
 SPC_regional_defense_council_of_iberia = {
 	color = rgb { 204 0 0 }
 	color_ui = rgb { 35 35 35 }
@@ -974,6 +895,7 @@ ETH_African_Union = {
 	color = rgb { 193 43 43}
 	color_ui = rgb { 193 43 43}
 }
+
 regnum_bospori = {
  color = rgb { 179 0 179 }
  color_ui = rgb { 102 0 102 }
@@ -1600,11 +1522,6 @@ GER_strasserite_state = {
 	color_ui = rgb { 115 115 115 }
 }
 
-GER_r56_strasserite_state = {
-	color = rgb { 54 54 54 }
-	color_ui = rgb { 115 115 115 }
-}
-
 GER_communism = {
 	color = rgb { 175 20 60 }
 	color_ui = rgb { 175 20 60 }
@@ -1639,6 +1556,7 @@ HND_UNIFIED = {
 	color = rgb { 204 102 0 }
 	color_ui = rgb { 128 64 0 }
 }
+
 JOR_emirate = {
 	color = rgb { 201 56 93 }
 	color_ui = rgb { 255 73 121 }
@@ -1769,6 +1687,11 @@ BRM_british = {
 	color_ui = rgb { 255 73 121 }
 }
 
+greater_mongolia = {
+	color = rgb { 38 77 0 }
+	color_ui = rgb { 13 26 0 }
+}
+
 united_mahgreb = {
 	color = rgb { 0 128 43 }
 	color_ui = rgb { 0 77 26 }
@@ -1798,6 +1721,7 @@ PHI_second_republic_tag_war = {
 	color = rgb { 31 31 122 }
 	color_ui = rgb { 16 16 61 }
 }
+
 AFG_central_asia = {
 	color = rgb { 41 82 163 }
 	color_ui = rgb { 25 51 102 }
@@ -1839,11 +1763,6 @@ SIK_ssr = {
 }
 
 sinkiang_ma = {
-	color = rgb { 97 51 153 }
-	color_ui = rgb { 85 45 134 }
-}
-
-r56_sinkiang_ma = {
 	color = rgb { 97 51 153 }
 	color_ui = rgb { 85 45 134 }
 }
@@ -1942,7 +1861,6 @@ SIA_great_thai_empire = { #Mandate 1, Phibun, historical
 	color = rgb { 252 253 254 } 
 	color_ui = rgb { 252 253 254 }
 }
-
 CZE_puppet = {	
 	color = rgb { 54 167 156 }
 	color_ui = rgb { 70 217 203 }
@@ -2901,4 +2819,104 @@ qing_dynasty = {
 CHI_salvation_gov = {
 	color = hsv { 0.04 0.25 0.95 }
 	color_ui = hsv { 0.04 0.25 0.95 }
+}
+
+GER_prov_gov = {
+	color = rgb { 128 128 128 }
+	color_ui = rgb { 115 115 115 }
+}
+
+GER_prov_gov_gold = {
+	color = rgb { 246 182 0 }
+	color_ui = rgb { 246 182 0 }
+}
+
+GER_pres_gov_gold = {
+	color = rgb { 246 182 0 }
+	color_ui = rgb { 246 182 0 }
+}
+
+GER_gr_pres_gov_gold = {
+	color = rgb { 246 182 0 }
+	color_ui = rgb { 246 182 0 }
+}
+
+GER_rep_gold = {
+	color = rgb { 246 182 0 }
+	color_ui = rgb { 246 182 0 }
+}
+
+GER_gr_rep_gold = {
+	color = rgb { 246 182 0 }
+	color_ui = rgb { 246 182 0 }
+}
+
+GER_kpd_temp = {
+	color = rgb { 150 0 0 }
+	color_ui = rgb { 150 0 0 }
+}
+
+GER_kpd_gdr = {
+	color = rgb { 200 0 0 }
+	color_ui = rgb { 200 0 0 }
+}
+
+GER_kpd_soviet = {
+	color = rgb { 150 0 0 }
+	color_ui = rgb { 150 0 0 }
+}
+
+GER_kpd_cosmetic = {
+	color = rgb { 207 30 96 }
+	color_ui = rgb { 207 30 96 }
+}
+
+GER_council = {
+	color = rgb { 207 30 96 }
+	color_ui = rgb { 207 30 96 }
+}
+
+GER_council_eur = {
+	color = rgb { 133 0 43 }
+	color_ui = rgb { 133 0 43 }
+}
+
+GER_council_world = {
+	color = rgb { 133 0 43 }
+	color_ui = rgb { 133 0 43 }
+}
+
+GER_emp = {
+	color = rgb { 63 0 66 }
+	color_ui = rgb { 255 0 255 }
+}
+
+GER_gr_emp = {
+	color = rgb { 63 0 66 }
+	color_ui = rgb { 255 0 255 }
+}
+
+GER_col_emp = {
+	color = rgb { 63 0 66 }
+	color_ui = rgb { 255 0 255 }
+}
+
+GER_rep = {
+	color = rgb { 79 79 102 }
+	color_ui = rgb { 79 79 102 }
+}
+
+GER_gr_rep = {
+	color = rgb { 79 79 102 }
+	color_ui = rgb { 79 79 102 }
+}
+
+r56_sinkiang_ma = {
+	color = rgb { 97 51 153 }
+	color_ui = rgb { 85 45 134 }
+}
+
+GER_r56_strasserite_state = {
+	color = rgb { 54 54 54 }
+	color_ui = rgb { 115 115 115 }
 }
