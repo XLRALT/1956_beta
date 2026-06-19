@@ -541,10 +541,6 @@
  CZE.311.d:0 "The [SOV.getAdjective] project to develop an atomic bomb began during World War II due to the discovery of the American, British, and Canadian nuclear project. The project was directed by [SOV.getAdjective] nuclear physicist Igor Kurchatov, while the military logistics and intelligence efforts were undertaken and managed by NKVD people's commissar Lavrentiy Beria.\n\nThe single most significant problem during the early Soviet project was the procurement of uranium ore, as the USSR had no known domestic sources at the beginning of the project. The large deposits of Kazakhstan and other regions of the Soviet Union were not yet discovered, so the project had to rely on foreign sources.\n\nIt is not far-fetched to think that closer cooperation between the Czechoslovak Intelligence Service and the NKVD could be used for secret procurement of uranium ore from Jachymov in exchange for oil or other mineral resources the Czech industry was sorely lacking."
  CZE.311.a:0 "Try to negotiate a deal with their agents"
  CZE.312.t:0 "Czechoslovak Uranium for the [SOV.getAdjective] Nuclear Program"
-
-
- CZE_hungarian_alliance:0 "Hungarian Alliance"
- CZE_hungarian_alliance_desc:0 "Now that democracy has been restored in Hungary, they must become our allies rather than our enemies."
  CZE.312.d:0 "Comrade [SOV.GetName], the NKVD reports that it can obtain high-quality uranium ore from Czechoslovakia in exchange for crude oil deliveries and other resources for their industry. Should we negotiate the deal and secure the uranium?"
  CZE.312.a:0 "Da. Secure as much as possible for our research."
  CZE.312.b:0 "Just procure some samples; we have other priorities at the moment."
@@ -650,8 +646,6 @@
  CZE.333.t:0 "[From.GetNameDefCap] Refuses Czechoslovak Proposal"
  CZE.333.d:0 "Despite our best efforts to reform the Little Entente, our most recent attempt to reach out to one of the nations has been met with skepticism. [From.GetLeader] has refused to join the alliance, perhaps doubting our motives or being concerned that aligning too closely with us would make them a target."
  CZE.333.a:0 "They could already be a target for all they know!"
- CZE_hungary_intervention:0 "Intervention in Hungary"
- CZE_hungary_intervention_desc:0 "Czechoslovakia had a complicated relationship with Hungary. After the proclamation of independence in 1918, border tensions in Slovakia resulted in armed conflict. Since then, Hungary was always somewhat of a thorn in the back of Czechoslovakia."
  CZE_austria_intervention:0 "Intervention in Austria"
  CZE_austria_intervention_desc:0 "Czechoslovakian leadership was well-aware of the rising fascist support in Austria, and fears of an Austro-German alliance of some sort were not mere superstition as later years would show."
  CZE_claims_bohemian_crown:0 "Claims on Former Bohemian Crown Lands"

@@ -4942,14 +4942,6 @@ focus_tree = {
 				factor = 0.1
 				has_war_support > 0.65
 			}
-			modifier = {
-				factor = 0.1
-				has_government = communism
-			}
-			modifier = {
-				factor = 0
-				has_government = fascism
-			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -5310,7 +5302,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 
-		focus = {
+	focus = {
 		id = CZE_revive_little_entente
 		icon = GFX_goal_CZE_revive_the_little_entente
 		prerequisite = { focus = CZE_democratic_reforms }
@@ -5427,77 +5419,242 @@ focus_tree = {
 	}
 
 	focus = {
-		id = CZE_hungary_intervention
-		icon = GFX_goal_generic_attack_hungary
-		prerequisite = { focus = CZE_invite_romania }
-		prerequisite = { focus = CZE_invite_yugoslavia }
-		mutually_exclusive = { focus = CZE_hungarian_alliance }
+		id = CZE_faction_tech_sharing
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = CZE_invite_yugoslavia focus = CZE_invite_romania }
+		x = -1
+		y = 1
 		relative_position_id = CZE_invite_yugoslavia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_completed_focus = CZE_invite_romania
+			}
+			modifier = {
+				factor = 1.5
+				has_completed_focus = CZE_invite_yugoslavia
+			}
+			modifier = {
+				factor = 0.1
+				HABSBURG_joint_trigger = yes
+			}
+		}
+
+		available = {
+			is_in_faction = yes
+			is_faction_leader = yes
+		}
+
+		bypass = {
+			is_in_faction = yes
+			is_faction_leader = no
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_to_tech_sharing_group = little_entente_research_group
+			every_country = {
+				limit = {
+					is_in_faction_with = CZE
+				}
+				add_to_tech_sharing_group = little_entente_research_group
+			}
+		}
+	}
+
+	focus = {
+		id = CZE_security_council
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = CZE_invite_yugoslavia focus = CZE_invite_romania }
+		x = 1
+		y = 1
+		relative_position_id = CZE_invite_yugoslavia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 1.5
+				has_completed_focus = CZE_invite_romania
+			}
+			modifier = {
+				factor = 1.5
+				has_completed_focus = CZE_invite_yugoslavia
+			}
+			modifier = {
+				factor = 0.1
+				HABSBURG_joint_trigger = yes
+			}
+		}
+
+		available = {
+			is_in_faction = yes
+		}
+
+		bypass = {
+
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = CZE_planning_bonus
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_ideas = CZE_planning_bonus
+			}
+		}
+	}
+
+	focus = {
+		id = CZE_deal_with_hungary
+		icon = GFX_focus_generic_attack_hungary
+		prerequisite = { focus = CZE_security_council }
+		mutually_exclusive = { focus = CZE_rapprochement_with_hungary }
 		x = 0
 		y = 1
+		relative_position_id = CZE_security_council
+
 		cost = 5
+
+		ai_will_do = {
+			factor = 0.9
+			modifier = {
+				factor = 0.1
+				HABSBURG_joint_trigger = yes
+			}
+		}
+
 		available = {
 			r56_script_i_am_sane = yes
-			HUN = {
-				r56_script_target_is_sane = yes
+			NOT = {
+				is_in_faction_with = HUN
 			}
 			HUN = {
+				exists = yes
+				is_subject = no
 				NOT = {
 					has_government = democratic
 				}
 			}
-		}	
-		
+		}
+
 		bypass = {
 			HUN = {
+				exists = no
+				is_subject_of = CZE
 				r56_script_standard_bypass = yes
 			}
-		}	
-		
+		}
 
-		will_lead_to_war_with = HUN
+		available_if_capitulated = yes
+
 		completion_reward = {
 			create_wargoal = {
-				type = topple_government
+				type = annex_everything
 				target = HUN
 				expire = 0
 			}
 		}
+
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
-	focus = {
-		id = CZE_hungarian_alliance
-		mutually_exclusive = { focus = CZE_hungary_intervention }
-		available = {
-			is_faction_leader = yes
-			HUN = {
-				has_government = democratic
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-		}
-		
-		icon = GFX_goal_generic_befriend_hungary
-		prerequisite = { focus = CZE_invite_romania }
-		prerequisite = { focus = CZE_invite_yugoslavia }
 
-		relative_position_id = CZE_invite_romania
-		x = 0
+	focus = {
+		id = CZE_deal_with_bulgaria
+		icon = GFX_focus_generic_attack_bulgaria
+		prerequisite = { focus = CZE_security_council }
+		x = 2
 		y = 1
+		relative_position_id = CZE_security_council
+
 		cost = 5
 
-		completion_reward = {
-			HUN = {
-				country_event = generic.5
+		ai_will_do = {
+			factor = 0.9
+			modifier = {
+				factor = 0.1
+				HABSBURG_joint_trigger = yes
 			}
 		}
-		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_POLITICAL }
+
+		available = {
+			NOT = {
+				is_in_faction_with = BUL
+			}
+			BUL = { exists = yes }
+			BUL = { is_subject = no }
+			OR = {
+				is_in_faction_with = ROM
+				has_subject = ROM
+				owns_state = 46
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BUL
+				expire = 0
+			}
+		}
 	}
+
+	focus = {
+		id = CZE_rapprochement_with_hungary
+		icon = GFX_focus_generic_befriend_hungary
+		prerequisite = { focus = CZE_security_council }
+		mutually_exclusive = { focus = CZE_deal_with_hungary }
+		x = -2
+		y = 1
+		relative_position_id = CZE_security_council
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 0.4
+			modifier = {
+				factor = 0.1
+				HABSBURG_joint_trigger = yes
+			}
+		}
+
+		available = {
+			is_faction_leader = yes
+			NOT = {
+				is_in_faction_with = HUN
+			}
+			HUN = { exists = yes }
+			HUN = { is_subject = no }
+		}
+
+		bypass = {
+
+		}
+
+		completion_reward = {
+			HUN = { country_event = { hours = 1 id = czech.32 } }
+		}
+
+		search_filters = { FOCUS_FILTER_ALLIANCE }
+	}
+
 	focus = {
 		id = CZE_claims_bohemian_crown
 		icon = GFX_full_czech_citizenship
-		prerequisite = { focus = CZE_hungary_intervention focus = CZE_hungarian_alliance }
+		prerequisite = { focus = CZE_deal_with_hungary focus = CZE_rapprochement_with_hungary }
 		bypass = {
 			OR = {
 				CZE = { owns_state = 66 }
@@ -5505,8 +5662,8 @@ focus_tree = {
 			}
 		}
 
-		relative_position_id = CZE_hungary_intervention
-		x = 1
+		relative_position_id = CZE_deal_with_hungary
+		x = -1
 		y = 1
 
 		cost = 10
