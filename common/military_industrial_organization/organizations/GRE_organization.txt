@@ -14,7 +14,7 @@ GRE_biamax_organization = {
 	icon = GFX_idea_gre_biamax
 	allowed = {	
 		tag = GRE
-		has_dlc = "Battle for the Bosporus"
+		has_focus_tree = greek_focus #R56
 	}
 	available = {
 		owner = { has_completed_focus = GRE_crack_down_on_foreign_monopolies }
@@ -90,7 +90,7 @@ GRE_royal_hellenic_naval_shipyard_bftb_organization = {
 					has_idea = GRE_george_ii_restrained
 					has_idea = GRE_george_ii_r56 #r56
 					has_country_leader = { 
-						name = "George II"
+						character = GRE_king_george_ii
 						ruling_only = yes
 					}
 					custom_trigger_tooltip = {
@@ -192,11 +192,13 @@ GRE_pyrkal_organization = {
 	icon = GFX_idea_gre_pyrkal
 	allowed = {	
 		tag = GRE
-		has_dlc = "Battle for the Bosporus"
 	}
 	available = {
 		owner = {
-			has_completed_focus = GRE_crack_down_on_foreign_monopolies
+			OR = { #R56 - R56 tree compatibility
+				has_completed_focus = GRE_crack_down_on_foreign_monopolies
+				has_completed_focus = GRE_infantry_weapons
+			}
 		}
 	}
 }
@@ -205,7 +207,7 @@ GRE_petropoulos_organization = {
 	icon = GFX_idea_gre_petropoulos
 	allowed = {	
 		tag = GRE
-		has_dlc = "Battle for the Bosporus"
+		has_focus_tree = greek_focus #R56
 	}
 	available = {
 		owner = {
