@@ -122,11 +122,11 @@ country_event = { #Endsieg
 			if = {
 				limit = {
 					NOT = {
-						has_tech = r56_militia_tech
+						has_tech = militia_tech
 					}
 				}
 				set_technology = {
-					r56_militia_tech = 1
+					militia_tech = 1
 				}
 				set_country_flag = r56_militia_formation_flag
 			}
@@ -4454,6 +4454,9 @@ country_event = { #Germany proposes to aid Britain in exchange for some colonies
 			set_state_owner_to = GER
 		}
 		737 = {
+			set_state_owner_to = GER
+		}
+		1138 = {
 			set_state_owner_to = GER
 		}
 		725 = {
@@ -10392,6 +10395,7 @@ country_event = {
 		}
 		add_war_support = 0.01
 		add_political_power = 15
+		clr_country_flag = GER_eupen_active
 	}
 }
 country_event = {
@@ -10408,6 +10412,7 @@ country_event = {
 			type = take_state_focus
 		}
 		add_war_support = 0.025
+		clr_country_flag = GER_eupen_active
 	}
 	option = {
 		name = new_ger.60.b
@@ -10415,6 +10420,7 @@ country_event = {
 		ai_chance = {
 			base = 0
 		}
+		clr_country_flag = GER_eupen_active
 	}
 }
 country_event = {
@@ -10507,6 +10513,7 @@ country_event = {
 				has_country_flag = GER_eupen_plebiscite_done
 			}
 			965 = { transfer_state_to = ROOT }
+			clr_country_flag = GER_eupen_active
 		}
 		else = {
 			965 = {
@@ -10574,6 +10581,7 @@ country_event = {
 		}
 		add_political_power = -25
 		add_war_support = -0.05
+		clr_country_flag = GER_eupen_active
 	}
 }
 country_event = {
@@ -10651,6 +10659,7 @@ country_event = {
 			}
 		}
 		add_political_power = 15
+		clr_country_flag = GER_eupen_active
 	}
 }
 country_event = {
@@ -10671,6 +10680,7 @@ country_event = {
 			base = 0
 		}
 		add_political_power = -15
+		clr_country_flag = GER_eupen_active
 	}
 }
 country_event = {
@@ -10791,6 +10801,7 @@ country_event = {
 		}
 		add_war_support = 0.01
 		add_political_power = 15
+		clr_country_flag = GER_memel_active
 	}
 }
 country_event = {
@@ -10807,6 +10818,7 @@ country_event = {
 			type = take_state_focus
 		}
 		add_war_support = 0.025
+		clr_country_flag = GER_memel_active
 	}
 	option = {
 		name = new_ger.70.b
@@ -10814,6 +10826,7 @@ country_event = {
 			base = 0
 		}
 		add_political_power = -50
+		clr_country_flag = GER_memel_active
 	}
 }
 country_event = {
@@ -10902,9 +10915,10 @@ country_event = {
 		name = new_ger.73.a
 		IF = {
 			limit = {
-				has_country_flag = GER_memel_plebiscite_done
+				original_tag = GER
 			}
 			188 = { transfer_state_to = ROOT }
+			clr_country_flag = GER_memel_active
 		}
 		else = {
 			188 = {
@@ -10972,6 +10986,7 @@ country_event = {
 		}
 		add_political_power = -25
 		add_war_support = -0.05
+		clr_country_flag = GER_memel_active
 	}
 }
 country_event = {
@@ -11041,6 +11056,7 @@ country_event = {
 			give_guarantee = FROM
 		}
 		add_political_power = 15
+		clr_country_flag = GER_memel_active
 	}
 }
 country_event = {
@@ -11061,6 +11077,7 @@ country_event = {
 			base = 0
 		}
 		add_political_power = -15
+		clr_country_flag = GER_memel_active
 	}
 }
 country_event = {
@@ -11097,7 +11114,7 @@ country_event = {
 					NOT = {
 						tag = GER
 					}
-					LIT = {
+					DEN = {
 						is_puppet_of = PREV
 					}
 					NOT = {
@@ -11248,6 +11265,7 @@ country_event = {
 		add_stability = 0.05
 		add_political_power = 50
 		FROM = { country_event = CHI_warlords.20}
+		FROM = { clr_country_flag = GER_poland_active }
 	}
 	option = {
 		name = new_ger.82.b
@@ -11271,6 +11289,7 @@ country_event = {
 				strength_ratio = { tag = GER ratio < 0.5 }
 			}
 		}
+		FROM = { clr_country_flag = GER_poland_active }
 		FROM = { country_event = CHI_warlords.19}
 	}
 }
@@ -11317,6 +11336,7 @@ country_event = {
 		add_stability = 0.05
 		add_war_support = 0.05
 		add_political_power = 50
+		FROM = { clr_country_flag = GER_poland_active }
 		FROM = { country_event = CHI_warlords.20}
 		ai_chance = {
 			base = 50
@@ -11370,6 +11390,7 @@ country_event = {
 			base = 0
 		}
 		add_political_power = -25
+		clr_country_flag = GER_poland_active
 	}
 }
 country_event = {
@@ -11416,6 +11437,9 @@ country_event = {
 		86 = { transfer_state_to = FROM}
 		add_political_power = -50
 		add_war_support = -0.05
+		FROM = {
+			clr_country_flag = GER_poland_active
+		}
 		FROM = { country_event = CHI_warlords.20}
 	}
 	option = {
@@ -11465,6 +11489,7 @@ country_event = {
 			target = FROM
 			type = take_state_focus
 		}
+		clr_country_flag = GER_poland_active
 	}
 	option = {
 		name = new_ger.86.b
@@ -11473,6 +11498,7 @@ country_event = {
 		}
 		add_political_power = -25
 		add_war_support = -0.05
+		clr_country_flag = GER_poland_active
 	}
 }
 country_event = {
@@ -11516,7 +11542,10 @@ country_event = {
 		86 = { transfer_state_to = FROM}
 		add_political_power = -50
 		add_war_support = -0.05
-		FROM = { country_event = CHI_warlords.20}
+		FROM = { 
+			clr_country_flag = GER_poland_active
+			country_event = CHI_warlords.20
+		}
 		diplomatic_relation = {
 			country = FROM
 			relation = non_aggression_pact
@@ -11552,6 +11581,7 @@ country_event = {
 		ai_chance = {
 			base = 0
 		}
+		clr_country_flag = GER_poland_active
 	}
 }
 country_event = {
@@ -11681,6 +11711,7 @@ country_event = {
 			}
 		}
 		FROM = {
+			clr_country_flag = GER_austria_active
 			annex_country = {
 				target = ROOT
 				transfer_troops = yes
@@ -11710,6 +11741,9 @@ country_event = {
 		add_timed_idea = {
 			idea = GER_surprise_austria
 			days = 30
+		}
+		FROM = {
+			clr_country_flag = GER_austria_active
 		}
 	}
 }
@@ -11801,6 +11835,7 @@ country_event = {
 				target = ROOT
 				transfer_troops = yes
 			}
+			clr_country_flag = GER_austria_active
 		}
 	}
 	option = {
@@ -11851,6 +11886,7 @@ country_event = {
 	option = {
 		name = new_ger.91.a
 		add_war_support = 0.05
+		clr_country_flag = GER_austria_active
 	}
 }
 country_event = {
@@ -12012,6 +12048,9 @@ country_event = {
 		}
 		add_political_power = 150
 		add_stability = 0.1
+		FROM = {
+			clr_country_flag = GER_austria_active
+		}
 		hidden_effect = { FROM = { country_event = CHI_warlords.20}}
 	}
 	option = {
@@ -12032,7 +12071,10 @@ country_event = {
 				}
 			}
 		}
-		GER = { set_country_flag = GER_austria_rejected }
+		GER = { 
+			set_country_flag = GER_austria_rejected
+			clr_country_flag = GER_austria_active
+		}
 		hidden_effect = { FROM = { country_event = CHI_warlords.19}}
 	}
 }
@@ -12088,7 +12130,10 @@ country_event = {
 				}
 			}
 		}
-		FROM = { add_to_faction = ROOT }
+		FROM = {
+			add_to_faction = ROOT
+			clr_country_flag = GER_austria_active
+		}
 		add_political_power = 75
 		add_stability = 0.05
 		hidden_effect = { FROM = { country_event = CHI_warlords.20}}
@@ -12114,6 +12159,9 @@ country_event = {
 					}
 				}
 			}
+		}
+		FROM = {
+			clr_country_flag = GER_austria_active
 		}
 		hidden_effect = { FROM = { country_event = CHI_warlords.19}}
 	}
@@ -12434,6 +12482,7 @@ country_event = {
 	option = {
 		name = new_ger.102.a
 		
+		clr_country_flag = GER_colony_active
 		FROM = {
 			every_controlled_state = {
 				limit = { has_state_flag = GER_colonial_demand_flag}
@@ -12465,12 +12514,14 @@ country_event = {
 		trigger = { 
 			FROM = { NOT = { has_country_flag = No_sell_colonies_to_ger }}
 		}
+		clr_country_flag = GER_colony_active
 	}
 	option = {
 		name = new_ger.103.b
 		trigger = { 
 			FROM = { has_country_flag = No_sell_colonies_to_ger }
 		}
+		clr_country_flag = GER_colony_active
 	}
 }
 country_event = {
@@ -12487,6 +12538,7 @@ country_event = {
 				target = ROOT
 				type = take_state_focus
 			}
+			clr_country_flag = GER_colony_active
 		}
 		FROM = { country_event = CHI_warlords.19 }
 	}
@@ -12498,6 +12550,9 @@ country_event = {
 				add = 10000
 				surrender_progress > 0.1
 			}
+		}
+		FROM = {
+			clr_country_flag = GER_colony_active
 		}
 		FROM = { country_event = CHI_warlords.20 }
 		every_state = {
@@ -12515,7 +12570,8 @@ country_event = {
 					state = 743 
 					state = 647 
 					state = 1096 
-					state = 737 
+					state = 737
+					state = 1138
 					state = 684 
 					state = 633 
 					state = 634 
@@ -12796,6 +12852,7 @@ country_event = {
 		}
 		add_war_support = 0.01
 		add_political_power = 15
+		clr_country_flag = GER_south_tyrol_active
 	}
 }
 country_event = {
@@ -12812,6 +12869,7 @@ country_event = {
 			type = take_state_focus
 		}
 		add_war_support = 0.025
+		clr_country_flag = GER_south_tyrol_active
 	}
 	option = {
 		name = new_ger.115.b
@@ -12819,6 +12877,7 @@ country_event = {
 			base = 0
 		}
 		add_political_power = -50
+		clr_country_flag = GER_south_tyrol_active
 	}
 }
 country_event = {
@@ -12881,6 +12940,7 @@ country_event = {
 			transfer_state = 39
 			remove_state_claim = 850
 		}
+		clr_country_flag = GER_south_tyrol_active
 	}
 }
 country_event = {
@@ -12928,6 +12988,7 @@ country_event = {
 		}
 		add_political_power = -25
 		add_war_support = -0.05
+		clr_country_flag = GER_south_tyrol_active
 	}
 }
 country_event = {
@@ -13002,6 +13063,7 @@ country_event = {
 			add_manpower = 275000
 		}
 		add_political_power = 15
+		clr_country_flag = GER_south_tyrol_active
 	}
 }
 country_event = {
@@ -13022,6 +13084,7 @@ country_event = {
 			base = 0
 		}
 		add_political_power = -15
+		clr_country_flag = GER_south_tyrol_active
 	}
 }
 country_event = {
@@ -13897,7 +13960,7 @@ country_event = {
 		name = new_ger.149.a
 		IF = {
 			limit = {
-				has_country_flag = GER_sudetenland_plebiscite_done
+				original_tag = GER
 			}
 			effect_tooltip = {
 				every_state = {
@@ -13912,6 +13975,7 @@ country_event = {
 					transfer_state_to = ROOT
 				}
 			}
+			clr_country_flag = GER_sudetenland_active
 		}
 		else = {
 			every_controlled_state = {
@@ -14192,6 +14256,7 @@ country_event = {
 		}
 		add_political_power = -25
 		add_war_support = -0.05
+		clr_country_flag = GER_sudetenland_active
 	}
 }
 country_event = {
@@ -14294,6 +14359,7 @@ country_event = {
 			give_guarantee = FROM
 		}
 		add_political_power = 15
+		clr_country_flag = GER_sudetenland_active
 	}
 }
 country_event = {
@@ -14314,6 +14380,7 @@ country_event = {
 			base = 0
 		}
 		add_political_power = -15
+		clr_country_flag = GER_sudetenland_active
 	}
 }
 country_event = { #End Goal
@@ -14720,6 +14787,7 @@ country_event = {
 		name = new_ger.160.a
 		FROM = {
 			country_event = CHI_warlords.20
+			clr_country_flag = GER_poland_active
 		}
 		POL = {
 			country_event = new_ger.161
@@ -14730,7 +14798,7 @@ country_event = {
 		ai_chance = {
 			base = 0
 		}
-		FROM = { clr_country_flag = GER_posen_demanded country_event = CHI_warlords.19}
+		FROM = { clr_country_flag = GER_poland_active clr_country_flag = GER_posen_demanded country_event = CHI_warlords.19}
 	}
 }
 country_event = {
@@ -15219,6 +15287,7 @@ country_event = {
 		add_war_support = 0.025
 		add_political_power = 100
 		set_country_flag = GER_sudetenland_issue_solved
+		clr_country_flag = GER_sudetenland_active
 	}
 }
 country_event = {
@@ -15750,12 +15819,18 @@ country_event = {
 	}
 	option = {
 		name = new_ger.179.c
+		ai_chance = {
+			base = 0
+		}
 		set_country_flag = GER_infiltrate
 		custom_effect_tooltip = GER_kpd_infiltrate_tt
 		show_ideas_tooltip = GER_infiltrated_communications_network
 	}
 	option = {
 		name = new_ger.179.e
+		ai_chance = {
+			base = 0
+		}
 		set_country_flag = GER_break_comms
 		custom_effect_tooltip = GER_kpd_break_comms_tt
 		show_ideas_tooltip = GER_obliterated_communications_network
