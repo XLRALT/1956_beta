@@ -508,8 +508,6 @@
 
 	#### COMMUNIST FOCUS ####
 
- FRA_radicalize_front:0 "Radicalize the Left"
- FRA_radicalize_front_desc:0 "The reforms of the Popular Front aren't drastic enough to straighten up the current situation. We must radicalize our politics and allow more communists into the government."
  FRA_grands_travaux:0 "Grands Travaux"
  FRA_grands_travaux_desc:0 "A series of social construction programs will come with the new socialization of the country. It will decrease unemployment and create public structures."
  FRA_ideological_indoctrination:0 "National Mobilization"
@@ -524,8 +522,6 @@
  FRA_scientific_convention_desc:0 "The [SOV.GetAdjective]s have offered to extend scientific cooperation. We should sign a convention between our two countries to stimulate research and technological innovation."
  FRA_research_cooperation:0 "Scientific Cooperation"
  FRA_research_cooperation_desc:0 "[SOV.GetAdjective]s are intelligent and resourceful people, but they do not possess the infrastructure for serious scientific programs. We will work with our allies, sharing knowledge and breakthroughs for mutual benefit."
- FRA_assistance_treaty:0 "[FRA.GetAdjective]-[SOV.GetAdjective] Treaty of Mutual Assistance"
- FRA_assistance_treaty_desc:0 "A bilateral treaty between our two communist countries will reduce the threat from central Europe. Mainly, the pact of mutual assistance will prevent the danger of aggression from [GER.GetNameDef]."
  FRA_fascist_threat:0 "The Fascist Threat"
  FRA_fascist_threat_desc:0 "The Versailles Treaty and economic sanctions haven't stopped any aggressive nationalists but provided fertile soil to even more sinister movements. We must defeat any fascism, no matter the cost!"
  FRA_collectivisation:0 "Collectivization"

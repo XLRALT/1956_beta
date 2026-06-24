@@ -6788,7 +6788,8 @@ country_event = {
 			modifier = {
 				factor = 2
 				OR ={
-					has_completed_focus = FRA_radicalize_front
+					has_completed_focus = FRA_leftist_rhetoric
+					has_completed_focus = FRA_invite_communist_ministers
 					has_completed_focus = FRA_support_blum
 				}
 				
@@ -6975,7 +6976,10 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.1
-				has_completed_focus = FRA_radicalize_front
+				OR = {
+					has_completed_focus = FRA_leftist_rhetoric
+					has_completed_focus = FRA_invite_communist_ministers
+				}
 			}
 		}
 		effect_tooltip = {
@@ -7119,7 +7123,10 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				has_completed_focus = FRA_radicalize_front
+				OR = {
+					has_completed_focus = FRA_leftist_rhetoric
+					has_completed_focus = FRA_invite_communist_ministers
+				}
 			}
 			modifier = { #Appropriate PC for Foreign Affairs
 				factor = 1.25

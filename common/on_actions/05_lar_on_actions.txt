@@ -1262,18 +1262,31 @@ on_actions = {
 					}
 				}
 				load_focus_tree = { tree = french_focus keep_completed = no }
-				complete_national_focus = FRA_radicalize_front
 				if = {
 					limit = {
-						has_country_leader = {
-							ruling_only = yes
-							name = "Léon Jouhaux"
+						has_dlc = "La Resistance"
+					}
+					complete_national_focus = FRA_invite_communist_ministers
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_dlc = "La Resistance"
 						}
 					}
-					unlock_national_focus = FRA_work_with_the_cgt
-				}
-				else = {
-					unlock_national_focus = FRA_pcf_sfio_coalition
+					complete_national_focus = FRA_leftist_rhetoric
+					if = {
+						limit = {
+							has_country_leader = {
+								ruling_only = yes
+								name = "Léon Jouhaux"
+							}
+						}
+						unlock_national_focus = FRA_work_with_the_cgt
+					}
+					else = {
+						unlock_national_focus = FRA_pcf_sfio_coalition
+					}
 				}
 			}
 			if = {

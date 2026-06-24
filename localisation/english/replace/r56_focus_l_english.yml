@@ -1,6 +1,10 @@
 ﻿l_english:
 #focus_l_english
  #TODO
+ FRA_leftist_rhetoric: "Radicalize the Left" #rework
+ FRA_leftist_rhetoric_desc: "The reforms of the Popular Front aren't drastic enough to straighten up the current situation. We must radicalize our politics and allow more communists into the government." #rework
+ FRA_join_comintern: "[FRA.GetAdjective]-[SOV.GetAdjective] Treaty of Mutual Assistance" #rework
+ FRA_join_comintern_desc: "A bilateral treaty between our two communist countries will reduce the threat from central Europe. Mainly, the pact of mutual assistance will prevent the danger of aggression from [GER.GetNameDef]." #rework
 #aat_focus_l_english
  SWE_revoke_anti_militia_laws: "Revoke Anti-Militia Laws" #caps
  SWE_hemvarnet: "Hemvärnet"

@@ -2085,7 +2085,8 @@ ENG_organize_the_blackshirts = {
 			#							FRA = {
 			#								OR = {
 			#									has_completed_focus = FRA_far_right_leagues
-			#									has_completed_focus = FRA_radicalize_front
+			#									has_completed_focus = FRA_leftist_rhetoric
+			#									has_completed_focus = FRA_invite_communist_ministers
 			#									has_completed_focus = FRA_action_francaise
 			#								}
 			#							}	
@@ -2142,7 +2143,8 @@ ENG_organize_the_blackshirts = {
 				#						FRA = {
 				#							OR = {
 				#								has_completed_focus = FRA_far_right_leagues
-				#								has_completed_focus = FRA_radicalize_front
+			#									has_completed_focus = FRA_leftist_rhetoric
+			#									has_completed_focus = FRA_invite_communist_ministers
 				#								has_completed_focus = FRA_action_francaise
 				#							}
 				#						}	

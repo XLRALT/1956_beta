@@ -204,7 +204,7 @@
 				rule = obsolete_focus_branches_visibility
 				option = HIDE
 			}
-			has_completed_focus = FRA_radicalize_front
+			has_completed_focus = FRA_leftist_rhetoric
 		}
 	}
 	offset = {

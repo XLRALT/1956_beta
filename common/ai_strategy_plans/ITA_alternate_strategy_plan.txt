@@ -172,7 +172,10 @@ ITA_alt_fascist_grandi = {
 				has_completed_focus = ENG_concessions_to_the_trade_unions
 			}
 			FRA = {
-				has_completed_focus = FRA_radicalize_front
+				has_completed_focus = FRA_leftist_rhetoric
+			}
+			FRA = {
+				has_completed_focus = FRA_invite_communist_ministers
 			}
 		}
 	}
@@ -1214,7 +1217,10 @@ ITA_mussolini_stresa_plan = {
 				has_completed_focus = ENG_concessions_to_the_trade_unions
 			}
 			FRA = {
-				has_completed_focus = FRA_radicalize_front
+				has_completed_focus = FRA_leftist_rhetoric
+			}
+			FRA = {
+				has_completed_focus = FRA_invite_communist_ministers
 			}
 		}
 	}

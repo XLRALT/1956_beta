@@ -26,7 +26,8 @@ FRA_democratic_little_entente_plan = {
 
 	focus_factors = {
 		FRA_status_quo = 30
-		FRA_radicalize_front = 0
+		FRA_leftist_rhetoric = 0 #No LaR
+		FRA_invite_communist_ministers = 0 #LaR
 		FRA_far_right_leagues = 0
 		FRA_action_francaise = 0
 		FRA_support_daladier = 0
@@ -49,6 +50,9 @@ FRA_communist_humanite_unie_plan = {
 
 	allowed = {
 		original_tag = FRA
+		NOT = {
+			has_dlc = "La Resistance"
+		}
 	}
 
 	enable = {
@@ -63,19 +67,19 @@ FRA_communist_humanite_unie_plan = {
 
 	ai_national_focuses = {
 		#Always go for these focuses when available:
-		FRA_radicalize_front
+		FRA_leftist_rhetoric
 		FRA_work_with_the_cgt
 		FRA_humanite_unie
 	}
 
 
 	focus_factors = {
-		FRA_radicalize_front = 30
+		FRA_leftist_rhetoric = 30
 		FRA_status_quo = 0
 		FRA_far_right_leagues = 0
 		FRA_action_francaise = 0
 		FRA_pcf_sfio_coalition = 0
-		FRA_assistance_treaty = 0
+		FRA_join_comintern = 0
 	}
 
 	#Keep small, as it is used as a factor for some things, such as research needs.
@@ -94,6 +98,9 @@ FRA_communist_comintern_plan = {
 
 	allowed = {
 		original_tag = FRA
+		NOT = {
+			has_dlc = "La Resistance"
+		}
 	}
 
 	enable = {
@@ -107,7 +114,7 @@ FRA_communist_comintern_plan = {
 	}
 
 	focus_factors = {
-		FRA_radicalize_front = 30
+		FRA_leftist_rhetoric = 30
 		FRA_status_quo = 0
 		FRA_far_right_leagues = 0
 		FRA_action_francaise = 0
@@ -117,9 +124,9 @@ FRA_communist_comintern_plan = {
 
 	ai_national_focuses = {
 		#Always go for these focuses when available:
-		FRA_radicalize_front
+		FRA_leftist_rhetoric
 		FRA_pcf_sfio_coalition
-		FRA_assistance_treaty
+		FRA_join_comintern
 	}
 
 	#Keep small, as it is used as a factor for some things, such as research needs.
@@ -152,14 +159,15 @@ FRA_fascist_front_liberte_plan = {
 
 	ai_national_focuses = {
 		#Always go for these focuses when available:
-		FRA_radicalize_front
+		FRA_leftist_rhetoric
 		FRA_pcf_sfio_coalition
-		FRA_assistance_treaty
+		FRA_join_comintern
 	}
 
 	focus_factors = {
 		FRA_far_right_leagues = 30
-		FRA_radicalize_front = 0
+		FRA_leftist_rhetoric = 0 #No LaR
+		FRA_invite_communist_ministers = 0 #LaR
 		FRA_status_quo = 0
 		FRA_action_francaise = 0
 		FRA_cagoule_coup = 0
@@ -202,7 +210,8 @@ FRA_fascist_la_cagoule_coup_plan = {
 
 	focus_factors = {
 		FRA_far_right_leagues = 30
-		FRA_radicalize_front = 0
+		FRA_leftist_rhetoric = 0 #No LaR
+		FRA_invite_communist_ministers = 0 #LaR
 		FRA_status_quo = 0
 		FRA_action_francaise = 0
 		FRA_front_liberte = 0
@@ -246,7 +255,8 @@ FRA_monarchist_orleanists_plan = {
 
 	focus_factors = {
 		FRA_action_francaise = 30
-		FRA_radicalize_front = 0
+		FRA_leftist_rhetoric = 0 #No LaR
+		FRA_invite_communist_ministers = 0 #LaR
 		FRA_status_quo = 0
 		FRA_far_right_leagues = 0
 		FRA_brumaire_movement = 0
@@ -291,7 +301,8 @@ FRA_monarchist_legitismist_plan = {
 
 	focus_factors = {
 		FRA_action_francaise = 30
-		FRA_radicalize_front = 0
+		FRA_leftist_rhetoric = 0 #No LaR
+		FRA_invite_communist_ministers = 0 #LaR
 		FRA_status_quo = 0
 		FRA_far_right_leagues = 0
 		FRA_brumaire_movement = 0
@@ -337,7 +348,8 @@ FRA_monarchist_bonapartists_plan = {
 	focus_factors = {
 		FRA_action_francaise = 30
 		FRA_brumaire_movement = 100
-		FRA_radicalize_front = 0
+		FRA_leftist_rhetoric = 0 #No LaR
+		FRA_invite_communist_ministers = 0 #LaR
 		FRA_status_quo = 0
 		FRA_far_right_leagues = 0
 		FRA_side_with_the_orleanists = 0

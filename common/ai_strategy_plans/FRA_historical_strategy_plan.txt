@@ -101,7 +101,8 @@ FRA_historical_plan = {
 
 	focus_factors = {
 		FRA_vienot_agreement = 0
-		FRA_radicalize_front = 0
+		FRA_leftist_rhetoric = 0 #No LaR
+		FRA_invite_communist_ministers = 0 #LaR
 		FRA_support_blum = 0
 		FRA_little_entente = 0
 		FRA_far_right_leagues = 0

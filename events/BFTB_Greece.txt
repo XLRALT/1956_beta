@@ -274,7 +274,7 @@ country_event = {
 				FRA = {
 					OR = {
 						has_completed_focus = FRA_humanite_unie
-						has_completed_focus = FRA_assistance_treaty
+						has_completed_focus = FRA_join_comintern
 					}
 					
 				}
