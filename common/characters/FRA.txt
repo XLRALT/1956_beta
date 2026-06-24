@@ -224,7 +224,6 @@ characters={
 			traits = {
 				army_chief_defensive_2
 			}
-			cost = 100
 			ai_will_do = {
 				factor = 7
 			}
@@ -232,7 +231,7 @@ characters={
 		advisor={
 			cost = 100
 			slot = theorist
-			idea_token = maxime_weygand
+			idea_token = maxime_weygand2
 			ledger = army
 			allowed = {
 				original_tag = FRA
@@ -248,6 +247,12 @@ characters={
 			}
 			ai_will_do = {
 				base = 0.5
+				modifier = {
+					factor = 0
+
+					GER = { is_ai = yes }
+					date < 1939.1.1
+				}
 			}
 		}
 		

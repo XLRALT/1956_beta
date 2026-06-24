@@ -2264,10 +2264,6 @@ spriteType = {
 		texturefile = "gfx/interface/ideas/fra/advisors/r56_idea_EFR_advisor_paul_gastin.dds"
 	}
 	spriteType = {#?
-		name = "GFX_idea_EFR_maxime_weygand"
-		texturefile = "gfx/interface/ideas/idea_maxime_weygand.dds"
-	}
-	spriteType = {#?
 		name = "GFX_idea_EFR_francois_darlan"
 		texturefile = "gfx/interface/ideas/idea_francois_darlan.dds"
 	}
