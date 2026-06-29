@@ -353,7 +353,7 @@ FRA_monarchist_bonapartists_plan = {
 		FRA_status_quo = 0
 		FRA_far_right_leagues = 0
 		FRA_side_with_the_orleanists = 0
-		FRA_union_latins = 0
+		FRA_latin_entente = 0
 		FRA_support_the_legitimatises = 0
 	}
 
