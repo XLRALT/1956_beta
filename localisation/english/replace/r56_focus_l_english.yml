@@ -88,6 +88,14 @@
  #TODO
  FRA_status_quo_desc: "[FRA.GetNameDefCap] is the cradle and protector of liberty and should remain so. If we ever wish to achieve unity again, we must stabilize our democracy before it dwindles." #rewrite
  FRA_strengthen_the_little_entente_desc: "The Little Entente, an alliance formed after the Great War to prevent aggression from Austria and Hungary to their neighbors, was supported by France but has now begun to fall apart. Instead of securing ties with [ENG.GetNameDef], we should take the initiative to restore and consolidate this faction, starting with its founders in [CZE.GetNameDef]." #rewrite
+ FRA_union_latins: "Latin Union" #rewrite
+ FRA_union_latins_desc: "An alliance based upon common Latin civilization and culture in Europe ([ITA.GetNameDef], [FRA.GetNameDef], Spain, [POR.GetNameDef], and [ROM.GetNameDef]) will balance the power between us and Germany. Let's start with [ROM.GetNameDef]; they can retain stability with our backing." #rewrite
+ FRA_convince_spain: "Convince Spain" #rewrite
+ FRA_convince_spain_desc: "Franco and the Spanish nationalists are our natural allies, united by religion, culture, and ideology. Together, we will protect the Latins from the [GER.GetAdjective] threat." #rewrite
+ FRA_invite_portugal: "Invite [POR.GetNameDef]" #rewrite
+ FRA_invite_portugal_desc: "As a Latin country, [POR.GetNameDef] is a natural ally of the [FRA.GetAdjective] people. We must strengthen these bonds of friendship." #rewrite
+ FRA_unite_the_crowns: "Proclaim the Dual Monarchy" #rewrite
+ FRA_unite_the_crowns_desc: "Our kings are the same. It's only fitting that our nations should be too." #rewrite
 #mtg_focus_l_english
  MEX_focus_royal_dutch_shell_desc: "Royal Dutch Shell is a British and Dutch firm holding 60% of Mexican oil concessions. By compromising with the foreign oil companies on the matter of labor disputes, we can come to an accommodation that is beneficial to us both." #typo
  MEX_focus_purchase_belize_desc: "This small territory was long claimed by the Spanish crown in colonial times, though never settled by peninsulares. After the loss of Spain's colonial empire during the Napoleonic Wars, Britain gradually solidified a hold on the territory, culminating in the creation of the colony of British Honduras in 1862. The territory ought to be turned over to Mexico as a gesture of good faith." #typo
