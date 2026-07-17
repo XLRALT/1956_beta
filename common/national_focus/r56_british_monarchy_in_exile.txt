@@ -78,6 +78,48 @@
 				has_completed_focus = AST_R56_australia_first 
 			}
 		}
+
+		offset = {
+			x = 69
+			y = 0
+			trigger = {
+				has_focus_tree = australia_taog_focus
+			}
+		}
+		offset = {
+			x = -49
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = AST_australia_first
+			}
+		}
+		offset = {
+			x = -25
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = AST_war_is_coming
+			}
+		}
+		offset = {
+			x = -58
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = AST_against_war_and_fascism
+			}
+		}
+
 		offset = {
 			x = 4
 			y = 0
@@ -180,15 +222,26 @@
 			if = {
 				limit = {
 					original_tag = AST
+					has_dlc = "Thunder at Our Gates"
 				}
 				NOT = {
 					OR = {
 						has_government = communism
-						has_idea = AST_R56_appeal_to_the_labour_dissidents_idea
+						has_completed_focus = AST_against_war_and_fascism
 						has_idea_with_trait = communist_revolutionary
 						has_civil_war = yes
 					}
-				}				
+				}
+				else = {
+					NOT = {
+						OR = {
+							has_government = communism
+							has_idea = AST_R56_appeal_to_the_labour_dissidents_idea
+							has_idea_with_trait = communist_revolutionary
+							has_civil_war = yes
+						}
+					}
+				}
 			}
 			if = {
 				limit = {

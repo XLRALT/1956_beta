@@ -25,7 +25,9 @@ focus_tree = {
 	shared_focus = GEN_begin_industrial_buildup
 	shared_focus = GEN_industrial_boom
 	shared_focus = GEN_State_Matter
+
 	shared_focus = ENG_welcome_british_exiles
+
 	shared_focus = TRK_turkestan_unification
 	shared_focus = USC_UNIFIED_central_american_unification
 	shared_focus = GCO_UNIFIED_gran_colombian_unification
