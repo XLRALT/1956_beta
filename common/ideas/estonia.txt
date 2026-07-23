@@ -828,28 +828,4 @@ ideas = {
             }
         }
 	}
-
-
-	# ADVISORS
-	political_advisor = {
-
-		EST_friedrich_akel = {
-
-			picture = EST_friedrich_akel
-
-			allowed = {
-				original_tag = EST
-			}
-
-			available = {
-				has_completed_focus = EST_appoint_fredrich_karl_akel
-			}
-			
-			traits = { hawk fascist_sympathies }
-
-			ai_will_do = {
-				factor = 5
-			}
-		}
-	}		
 }

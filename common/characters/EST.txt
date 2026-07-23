@@ -1367,6 +1367,43 @@ characters={
 			}
 		}
 	}
+	EST_friedrich_akel={
+		name=EST_friedrich_akel
+		portraits={
+			army={
+				small="GFX_idea_EST_friedrich_akel"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = EST_friedrich_akel
+			allowed = {
+				original_tag = EST
+			}
+			available = {
+				IF = { 
+					limit = {
+						has_dlc = "No Step Back"
+						has_global_flag = EST_vanilla_focus_tree
+					}
+					has_government = neutrality
+					else = {
+						has_completed_focus = EST_appoint_fredrich_karl_akel
+					}
+				} 
+			}
+			traits = {
+				hawk 
+			}
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 5
+					has_completed_focus = EST_appoint_fredrich_karl_akel
+				}
+			}
+		}
+	}
 	EST_viktor_pihlak={
 		name="Viktor Pihlak"
 		portraits={

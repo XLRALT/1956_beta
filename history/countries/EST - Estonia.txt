@@ -73,6 +73,7 @@ recruit_character = EST_johannes_orasmaa
 recruit_character = EST_aleksander_pulk
 recruit_character = EST_karl_selter
 recruit_character = EST_kaarl_eenpalu
+recruit_character = EST_friedrich_akel
 recruit_character = EST_nikolai_kann 
 recruit_character = EST_viktor_pihlak
 recruit_character = EST_eduard_kimber
